@@ -1,6 +1,10 @@
 " Vi compatibility
 set nocompatible
 
+set nomodeline
+set autoread
+set clipboard=unnamedplus
+
 " Encoding
 set encoding=utf-8
 
@@ -52,9 +56,10 @@ function! Run()
     if expand("%:e")=="cpp" || expand("%:e")=="cxx"
         !g++ -std=c++11 -I. -Wall -Wextra "%" && "./a.out"
     elseif expand("%:e")=="c"
-        !gcc -std=c11 -Wall -Wformat-security -Winit-self -Wno-pointer-sign -Wignored-qualifiers -Wfloat-equal -Wnested-externs -Wmissing-field-initializers -Wmissing-parameter-type -Wold-style-definition -Wold-style-declaration -Wstrict-prototypes -Wtype-limits -Wswitch-default -lm && "./a.out"
+        !gcc -std=c99 -Wall -Wformat-security -Winit-self -Wno-pointer-sign -Wignored-qualifiers -Wfloat-equal -Wnested-externs -Wmissing-field-initializers -Wmissing-parameter-type -Wold-style-definition -Wold-style-declaration -Wstrict-prototypes -Wtype-limits -Wswitch-default -lm -O2 "%" && "./a.out"
     elseif expand("%:e")=="hs"
         !ghc "%" && "./" . expand("%:r")
+    endif
 endfunction
 
 " Key mappings
