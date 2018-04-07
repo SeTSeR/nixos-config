@@ -31,3 +31,6 @@
 [submodule ".vim/pack/plugins/start/vimtex"]
 	path = .vim/pack/plugins/start/vimtex
 	url = https://github.com/lervag/vimtex
+[submodule ".vim/pack/themes/opt/vim-colors-solarized"]
+	path = .vim/pack/themes/opt/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
