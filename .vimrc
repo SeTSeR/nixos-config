@@ -1,6 +1,9 @@
 " Vi compatibility
 set nocompatible
 
+" Fix backspace behavior
+set backspace=indent,eol,start
+
 set nomodeline
 set autoread
 set clipboard=unnamedplus
@@ -12,6 +15,7 @@ set encoding=utf-8
 set number
 set relativenumber
 set ruler
+set noshowmode
 
 " Deoplete settings
 let g:deoplete#enable_at_startup = 1
@@ -50,10 +54,10 @@ set expandtab
 
 " Syntax highlight
 filetype indent plugin on
-syntax on
+syntax enable
 set termguicolors
 set background=dark
-colorscheme solarized8
+colorscheme solarized
 
 " Runner
 function! Run()
