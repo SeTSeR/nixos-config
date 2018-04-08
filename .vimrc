@@ -33,6 +33,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_asm_checkers = ['nasm']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -62,10 +63,18 @@ colorscheme solarized
 
 " Runner
 function! Run()
-    if expand("%:e")=="cpp" || expand("%:e")=="cxx"
+    if !empty(glob("~/.vim/Makefile"))
+        set makeprg=gmake\ -f\ ~/.vim/Makefile
+        !cp ~/.vim/io.inc "%:p:h"
+        make! "%:r"
+        !rm io.inc
+        !sh -c "./" . expand("%:r")
+    elseif expand("%:e")=="cpp" || expand("%:e")=="cxx"
         !g++ -std=c++11 -I. -Wall -Wextra "%" && "./a.out"
     elseif expand("%:e")=="c"
         !gcc -std=c99 -Wall -Wformat-security -Winit-self -Wno-pointer-sign -Wignored-qualifiers -Wfloat-equal -Wnested-externs -Wmissing-field-initializers -Wmissing-parameter-type -Wold-style-definition -Wold-style-declaration -Wstrict-prototypes -Wtype-limits -Wswitch-default -lm -O2 "%" && "./a.out"
+    elseif expand("%:e")=="asm"
+        !~/.vim/build_asm.sh "%" "%:p:h"
     elseif expand("%:e")=="hs"
         !ghc "%" && "./" . expand("%:r")
     endif
