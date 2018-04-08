@@ -55,7 +55,6 @@ set expandtab
 " Syntax highlight
 filetype indent plugin on
 syntax enable
-set termguicolors
 set background=dark
 colorscheme solarized
 
