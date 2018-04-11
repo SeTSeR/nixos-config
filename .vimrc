@@ -92,13 +92,13 @@ function! Run()
         !rm io.inc
         !./%<
     elseif expand("%:e")=="cpp" || expand("%:e")=="cxx"
-        !g++ -std=c++11 -I. -Wall -Wextra "%" && "./a.out"
+        !g++ -std=c++11 -I. -Wall -Wextra % -o %< && ./%<
     elseif expand("%:e")=="c"
-        !gcc -std=c99 -Wall -Wformat-security -Winit-self -Wno-pointer-sign -Wignored-qualifiers -Wfloat-equal -Wnested-externs -Wmissing-field-initializers -Wmissing-parameter-type -Wold-style-definition -Wold-style-declaration -Wstrict-prototypes -Wtype-limits -Wswitch-default -lm -O2 "%" && "./a.out"
+        !gcc -std=c99 -Wall -Wformat-security -Winit-self -Wno-pointer-sign -Wignored-qualifiers -Wfloat-equal -Wnested-externs -Wmissing-field-initializers -Wmissing-parameter-type -Wold-style-definition -Wold-style-declaration -Wstrict-prototypes -Wtype-limits -Wswitch-default -lm -O2 % -o ./%< && ./%<
     elseif expand("%:e")=="asm"
-        !~/.vim/build_asm.sh "%" "%:p:h"
+        !~/.vim/build_asm.sh % && ./%<
     elseif expand("%:e")=="hs"
-        !ghc "%" && "./" . expand("%:r")
+        !ghc % && ./%<
     endif
 endfunction
 
