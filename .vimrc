@@ -17,6 +17,22 @@ set relativenumber
 set ruler
 set noshowmode
 
+" Detect running OS
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
+" Set makeprg
+if g:os == "Linux"
+    set makeprg=make\ -f\ ~/.vim/Makefile
+elseif g:os == "OpenBSD"
+    set makeprg=gmake\ -f\ ~/.vim/Makefile
+endif
+
 " Call pathogen if there's no native package manager
 if !has('packages')
     execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
@@ -71,11 +87,10 @@ colorscheme solarized
 " Runner
 function! Run()
     if !empty(glob("~/.vim/Makefile"))
-        set makeprg=gmake\ -f\ ~/.vim/Makefile
         !cp ~/.vim/io.inc "%:p:h"
         make! "%:r"
         !rm io.inc
-        !sh -c "./" . expand("%:r")
+        !./%<
     elseif expand("%:e")=="cpp" || expand("%:e")=="cxx"
         !g++ -std=c++11 -I. -Wall -Wextra "%" && "./a.out"
     elseif expand("%:e")=="c"
