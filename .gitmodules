@@ -37,3 +37,6 @@
 [submodule ".vim/pack/plugins/start/vim-airline-themes"]
 	path = .vim/pack/plugins/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule ".vim/pack/plugins/start/deoplete-clang2"]
+	path = .vim/pack/plugins/start/deoplete-clang2
+	url = https://github.com/tweekmonster/deoplete-clang2
