@@ -43,3 +43,6 @@
 [submodule ".vim/pack/plugins/start/deoplete-jedi"]
 	path = .vim/pack/plugins/start/deoplete-jedi
 	url = https://github.com/zchee/deoplete-jedi
+[submodule ".vim/pack/plugins/start/vim-markdown"]
+	path = .vim/pack/plugins/start/vim-markdown
+	url = https://github.com/gabrielelana/vim-markdown
