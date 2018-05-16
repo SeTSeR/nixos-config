@@ -40,3 +40,6 @@
 [submodule ".vim/pack/plugins/start/deoplete-clang2"]
 	path = .vim/pack/plugins/start/deoplete-clang2
 	url = https://github.com/tweekmonster/deoplete-clang2
+[submodule ".vim/pack/plugins/start/deoplete-jedi"]
+	path = .vim/pack/plugins/start/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
