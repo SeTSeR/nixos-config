@@ -46,3 +46,6 @@
 [submodule ".vim/pack/plugins/start/vim-markdown"]
 	path = .vim/pack/plugins/start/vim-markdown
 	url = https://github.com/gabrielelana/vim-markdown
+[submodule ".vim/pack/plugins/start/rust.vim"]
+	path = .vim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
