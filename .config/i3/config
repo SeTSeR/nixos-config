@@ -167,8 +167,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness 
+bindsym XF86MonBrightnessUp exec xbacklight -ctrl intel_backlight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -ctrl intel_backlight -dec 20 # decrease screen brightness 
+
+# Keyboard brightness controls
+bindsym XF86KbdBrightnessUp exec xbacklight -ctrl asus::kbd_backlight -inc 20
+bindsym XF86KbdBrightnessDown exec xbacklight -ctrl asus::kbd_backlight -dec 20
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
