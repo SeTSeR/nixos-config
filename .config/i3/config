@@ -190,3 +190,11 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Disable title bar for all windows
 for_window [class="^.*"] border pixel 1
+
+# Automatically move windows to appropriate workspaces
+for_window [class="Firefox"] move container to workspace 1
+for_window [class="urxvt"] move container to workspace 2
+for_window [class="Steam"] move container to workspace 3
+for_window [class="Spotify"] move container to workspace 4
+for_window [class="Discord"] move container to workspace 5
+for_window [class="Telegram"] move container to workspace 6
