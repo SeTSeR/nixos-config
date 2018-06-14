@@ -155,6 +155,7 @@ exec xrdb -merge .Xresources
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+    font pango:Ubuntu Mono 8, Awesome 8
     status_command i3status
 	position top
 }
