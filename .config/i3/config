@@ -153,7 +153,7 @@ bindsym $mod+r mode "resize"
 exec setxkbmap "us,ru" ",winkeys" "grp:caps_toggle"
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xrdb -merge .Xresources
-exec firefox
+exec google-chrome-stable
 exec spotify
 exec discord
 exec telegram-desktop
@@ -192,7 +192,7 @@ bindsym XF86AudioPrev exec playerctl previous
 for_window [class="^.*"] border pixel 1
 
 # Automatically move windows to appropriate workspaces
-for_window [class="Firefox"] move container to workspace number 1: 
+for_window [class="google-chrome"] move container to workspace number 1: 
 for_window [class="urxvt"] move container to workspace number 2: 
 for_window [class="Steam"] move container to workspace number 3: 
 for_window [class="Spotify"] move container to workspace number 4: 
