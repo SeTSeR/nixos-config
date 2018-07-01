@@ -188,6 +188,9 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Screenshot hotkey
+bindsym --release Print exec --no-startup-id "import png:- | xclip -selection c -t image/png"
+
 # Disable title bar for all windows
 for_window [class="^.*"] border pixel 1
 
