@@ -49,3 +49,6 @@
 [submodule ".vim/pack/plugins/start/rust.vim"]
 	path = .vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule ".vim/pack/themes/opt/darcula"]
+	path = .vim/pack/themes/opt/darcula
+	url = https://github.com/blueshirts/darcula

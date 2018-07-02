@@ -81,8 +81,7 @@ set expandtab
 " Syntax highlight
 filetype indent plugin on
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme darcula
 
 " Runner
 function! Run()
