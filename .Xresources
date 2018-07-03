@@ -1,3 +1,5 @@
+URxvt.scrollBar: false
+
 URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: true
 
@@ -17,12 +19,12 @@ URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=16:antialias=true:hinting=tr
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
 
-*background:            S_base03
-*foreground:            S_base0
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
+*background:            S_base3
+*foreground:            S_base00
+*fadeColor:             S_base3
+*cursorColor:           S_base01
+*pointerColorBackground:S_base1
+*pointerColorForeground:S_base01
 
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
