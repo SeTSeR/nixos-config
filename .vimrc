@@ -82,6 +82,9 @@ syntax enable
 set background=light
 colorscheme solarized
 
+" Enable spell check for Markdown
+au BufRead *.md setlocal spell
+
 " Runner
 function! Run()
     if !empty(glob("~/.vim/Makefile"))
