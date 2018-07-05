@@ -29,8 +29,6 @@ endif
 " Set makeprg
 if g:os == "Linux"
     set makeprg=make\ -f\ ~/.vim/Makefile
-elseif g:os == "OpenBSD"
-    set makeprg=gmake\ -f\ ~/.vim/Makefile
 endif
 
 " Call pathogen if there's no native package manager
