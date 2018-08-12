@@ -1,0 +1,19 @@
+set imap_user = "setser200018@gmail.com"
+set imap_pass = "mypass"
+
+set spoolfile="imaps://imap.gmail.com/INBOX"
+set folder="imaps://imap.gmail.com"
+set sendmail="/usr/local/bin/msmtp -a setser200018@gmail.com -t -i"
+set from="setser200018@gmail.com"
+set realname="Sergey Makarov"
+set use_from=yes
+set envelope_from="yes"
+set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set signature="~/.signature"
+set sort=threads
+
+set crypt_use_gpgme=yes
+set crypt_autosign=yes
+set crypt_replyencrypt=yes
+set header_cache="~/.muttcache"
