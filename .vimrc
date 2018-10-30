@@ -36,13 +36,6 @@ if !has('packages')
     execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
 endif
 
-" Deoplete settings
-if has('timers')
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-endif
-
 " Airline settings
 set laststatus=2
 let g:airline_powerline_fonts = 1
@@ -54,7 +47,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_asm_checkers = ['nasm']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
