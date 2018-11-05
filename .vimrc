@@ -36,6 +36,13 @@ if !has('packages')
     execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
 endif
 
+" Deoplete settings
+if has('timers')
+    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
+    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+endif
+
 " Airline settings
 set laststatus=2
 let g:airline_powerline_fonts = 1
@@ -47,6 +54,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_asm_checkers = ['nasm']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -69,7 +77,7 @@ set softtabstop=4
 set expandtab
 
 " Syntax highlight
-filetype indent plugin on
+filetype plugin indent on
 syntax enable
 set background=light
 colorscheme solarized
@@ -98,3 +106,18 @@ endfunction
 " Key mappings
 map <F4> gg=G
 map <F5> :call Run()<CR>
+
+" For binary files
+augroup Binary
+    au!
+    au BufReadPre  *.bin let &bin=1
+    au BufReadPost * if &bin | %!xxd
+    au BufReadPost * set ft=xxd | endif
+    au BufWritePre * if &bin | %!xxd -r
+    au BufWritePre * endif
+    au BufWritePost * if &bin | %!xxd
+    au BufWritePost * set nomod | endif
+augroup END
+
+" Disable YCM questions
+let g:ycm_confirm_extra_conf = 0

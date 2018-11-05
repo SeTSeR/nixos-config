@@ -49,3 +49,6 @@
 [submodule ".vim/pack/themes/opt/darcula"]
 	path = .vim/pack/themes/opt/darcula
 	url = https://github.com/blueshirts/darcula
+[submodule ".vim/pack/plugins/start/YouCompleteMe"]
+	path = .vim/pack/plugins/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
