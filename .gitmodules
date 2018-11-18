@@ -19,9 +19,6 @@
 [submodule ".vim/pack/plugins/start/neovim-yarp"]
 	path = .vim/pack/plugins/start/neovim-yarp
 	url = https://github.com/roxma/nvim-yarp
-[submodule ".vim/pack/plugins/start/syntastic"]
-	path = .vim/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule ".vim/pack/plugins/start/vim-airline"]
 	path = .vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline

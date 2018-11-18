@@ -7,6 +7,7 @@ set backspace=indent,eol,start
 set nomodeline
 set autoread
 set clipboard=unnamedplus
+set splitright
 
 " Encoding
 set encoding=utf-8
@@ -36,29 +37,20 @@ if !has('packages')
     execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
 endif
 
-" Deoplete settings
-if has('timers')
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
-    let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
-endif
-
 " Airline settings
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#vimtex#enabled = 1
+let g:airline#extensions#vimtex#left = "{"
+let g:airline#extensions#vimtex#right = "}"
+let g:airline#extensions#vimtex#compiled = "c₁"
+let g:airline#extensions#vimtex#continuous = "c"
+let g:airline#extensions#vimtex#viewer = "v"
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_asm_checkers = ['nasm']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Vimtex settings
+let g:vimtex_enabled = 1
 
 " Temporary files
 set noswapfile
@@ -121,3 +113,6 @@ augroup END
 
 " Disable YCM questions
 let g:ycm_confirm_extra_conf = 0
+
+" Set folding method
+set foldmethod=syntax
