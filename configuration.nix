@@ -10,11 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  # Overlays settings
-  nixpkgs.overlays =
-  [ (import ./overlays/nix-local)
-  ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -42,6 +37,7 @@
   environment.systemPackages = with pkgs; [
     wget
     vim
+    git
     networkmanager
     btrfs-progs
     gcc
@@ -49,6 +45,8 @@
     pulseaudio
     sudo
     lightdm
+    zsh
+    logmein-hamachi
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -80,7 +78,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 27015 ];
+  networking.firewall.allowedTCPPorts = [ 27015 26900 ];
   networking.firewall.allowedUDPPorts = [ 27015 ];
   networking.firewall.allowPing = true;
   # Or disable the firewall altogether.
@@ -89,18 +87,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
   
-  # Udev rule for backlight
-  services.udev = {
-    extraRules = ''
-      SUBSYSTEM=="backlight", ACTION=="add", \
-        RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness", \
-        RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
-      SUBSYSTEM=="leds", ACTION=="add", KERNEL=="*::kbd_backlight", \
-        RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/leds/%k/brightness", \
-        RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"      
-    '';
-  };
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -122,6 +108,9 @@
   # Enable hamachi
   services.logmein-hamachi.enable = true;
 
+  # Activate D-Bus socket
+  services.dbus.socketActivated = true;
+
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
@@ -131,37 +120,15 @@
     isNormalUser = true;
     home = "/home/smakarov";
     description = "Sergey Makarov";
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "libvirt" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      steam
-      discord
-      spotify
-      oh-my-zsh
-      tdesktop
-      rxvt_unicode
-      zsh
-      logmein-hamachi
-      imagemagick7
-      xclip
-      unzip
-      nitrogen
-      git
-      firefox
-      efibootmgr
-      gnupg
-      nox
-      python3
-      stack
-      htop
-      unrar
-      torsocks
-      nix-zsh-completions
-      xpdf
-      djview
-      acpilight
-      vim-custom
-    ];
+  };
+
+  security.sudo = {
+    enable = true;
+    extraConfig = ''
+smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild switch
+    '';
   };
  
   # For Steam
@@ -174,5 +141,8 @@
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09"; # Did you read the comment?
+
+  # Enable automatic upgrades
+  system.autoUpgrade.enable = true;
 
 }

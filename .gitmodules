@@ -49,3 +49,6 @@
 [submodule ".vim/pack/plugins/start/YouCompleteMe"]
 	path = .vim/pack/plugins/start/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule ".config/nixpkgs/overlays/nixpkgs-overlays"]
+	path = .config/nixpkgs/overlays/nixpkgs-overlays
+	url = git@github.com:SeTSeR/nixpkgs-overlays
