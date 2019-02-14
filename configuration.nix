@@ -47,6 +47,7 @@
     lightdm
     zsh
     logmein-hamachi
+    manpages
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -115,6 +116,8 @@
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
+  users.mutableUsers = false;
+  users.users.root.hashedPassword = "$6$I1DA5i2qtMUiZe$lhEzV/.ikRj.hRDBdUVN391VPCxsZWMUBgb.aKySTMa43VE2JmD/F8CvvgPy1cgesA7gEg9eFum6S9wxHxnu9.";
   # Set up the user
   users.users.smakarov = {
     isNormalUser = true;
@@ -122,6 +125,7 @@
     description = "Sergey Makarov";
     extraGroups = [ "wheel" "networkmanager" "video" "libvirt" ];
     shell = pkgs.zsh;
+    hashedPassword = "$6$bhfILKl6NKxZT25$wOQ0A9AtNYLCGLHcR4Bee7VBzYUusq4Af.DAL4Qr5c12JN3LBYH1PFtm.UvCcvXjZ1PbpuhGndnQCgbPaj/.C.";
   };
 
   security.sudo = {
