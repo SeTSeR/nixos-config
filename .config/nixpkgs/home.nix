@@ -1,8 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  imports = [
+    ./modules
+  ];
+
+  home.sessionVariables.EDITOR = "vim-custom";
 
   home.packages = with pkgs; [
     steam
@@ -28,25 +34,16 @@
     nix-zsh-completions
     python3
     vim-custom
+    file
+    stdman
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    oh-my-zsh = {
-      enable = true;
-      theme = "agnoster";
-      plugins = [
-        "colorize"
-        "command-not-found"
-        "git"
-        "git-extras"
-        "github"
-      ];
-    };
-    shellAliases = {
-      vim = "vim-custom";
-    };
-  };
+  xresources.extraConfig = builtins.readFile (
+    pkgs.fetchFromGitHub {
+      owner = "solarized";
+      repo = "xresources";
+      rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
+      sha256 = "0lxv37gmh38y9d3l8nbnsm1mskcv10g3i83j0kac0a2qmypv1k9f";
+    } + "/Xresources.light"
+  );
 }
