@@ -1,0 +1,3 @@
+[submodule "imports/home-manager"]
+	path = imports/home-manager
+	url = git@github.com:rycee/home-manager
