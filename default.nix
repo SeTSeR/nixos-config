@@ -7,7 +7,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
       "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref="master"; }}/nixos"
     ];
 
