@@ -6,7 +6,7 @@ import os
 
 print("Installation of SeTSeR's config.")
 
-subprocess.check_output(["git", "submodule", "--init", "--recursive"])
+subprocess.check_output(["git", "submodule", "update", "--init", "--recursive"])
 
 config = "/mnt/etc/nixos/configuration.nix"
 
