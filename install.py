@@ -11,10 +11,10 @@ subprocess.check_output(["git", "submodule", "update", "--init", "--recursive"])
 config = "/mnt/etc/nixos/configuration.nix"
 
 print("Creating ", config)
-open(config, 'w').write('import %s', os.cwd())
+os.makedirs("/mnt/etc/nixos", exist_ok=True)
+open(config, 'w').write('import %s' % os.getcwd())
 print("Done")
 print("Installing")
-subprocess.check_output(["nixos-generate-config"])
 subprocess.check_output(["nixos-generate-config", "--root", "/mnt"])
 subprocess.check_output(["nixos-install", "--root", "/mnt"])
 os.mkdir("/home/smakarov/.config/")
