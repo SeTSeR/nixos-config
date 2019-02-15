@@ -74,6 +74,8 @@
     source-code-pro
   ];
 
+  virtualisation.virtualbox.host.enable = true;
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -124,7 +126,7 @@
     isNormalUser = true;
     home = "/home/smakarov";
     description = "Sergey Makarov";
-    extraGroups = [ "wheel" "networkmanager" "video" "libvirt" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "libvirt" "virtualbox" ];
     shell = pkgs.zsh;
     hashedPassword = "$6$bhfILKl6NKxZT25$wOQ0A9AtNYLCGLHcR4Bee7VBzYUusq4Af.DAL4Qr5c12JN3LBYH1PFtm.UvCcvXjZ1PbpuhGndnQCgbPaj/.C.";
   };
