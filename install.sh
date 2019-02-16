@@ -17,7 +17,13 @@ echo "Installing"
 nixos-generate-config --root /mnt
 ln -s /mnt/etc/nixos/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 nixos-install
-mkdir /mnt/$USER_HOME/.config
-ln -s $(pwd)/.config/i3status /mnt/$USER_HOME/.config/i3status
-ln -s $(pwd)/.config/nixpkgs /mnt/$USER_HOME/.config/nixpkgs
-echo "Done"
+if [ $? -eq 0 ]; then
+    mkdir /mnt/$USER_HOME/.config
+    ln -s $(pwd)/.config/i3status /mnt/$USER_HOME/.config/i3status
+    ln -s $(pwd)/.config/nixpkgs /mnt/$USER_HOME/.config/nixpkgs
+    echo "Done"
+else
+    rm /etc/nixos/hardware-configuration.nix
+    rm -r /mnt/etc/nixos
+    echo "Installation failed"
+fi
