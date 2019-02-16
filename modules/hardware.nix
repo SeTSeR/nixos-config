@@ -14,5 +14,6 @@ with rec
     grub.efiSupport = true;
     grub.efiInstallAsRemovable = true;
     grub.device = "nodev";
+  } else {
   });
 }
