@@ -10,20 +10,9 @@ device:
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref="master"; }}/nixos"
+      ./modules
     ];
   inherit device;
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   i18n = {
@@ -82,13 +71,6 @@ device:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 27015 26900 ];
-  networking.firewall.allowedUDPPorts = [ 27015 ];
-  networking.firewall.allowPing = true;
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
