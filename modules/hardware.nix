@@ -1,19 +1,18 @@
 { pkgs, config, lib, ... }:
 
-with rec
+let
+  isVM = !isNull (builtins.match "^VirtualBox-.*" config.device);
+in
 {
-  inherit (config) device;
-};
-{
-  boot.loader = {
-    systemd-boot.enable = (device == "ASUS-Laptop");
-    efi.canTouchEfiVariables = (device == "ASUS-Laptop");
-  } // (if (!isNull (builtins.match "^VirtualBox-.*")) then {
+  boot.loader = (if isVM then {
     grub.enable = true;
     grub.useOSProber = true;
     grub.efiSupport = true;
     grub.efiInstallAsRemovable = true;
     grub.device = "nodev";
   } else {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   });
+  boot.initrd.checkJournalingFS = !isVM;
 }
