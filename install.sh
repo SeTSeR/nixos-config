@@ -19,10 +19,10 @@ ln -s /mnt/etc/nixos/hardware-configuration.nix /etc/nixos/hardware-configuratio
 nixos-install
 if [ $? -eq 0 ]; then
     mkdir /mnt/$USER_HOME/.config
-    ln -s $(pwd)/.config/i3status /mnt/$USER_HOME/.config/i3status
-    ln -s $(pwd)/.config/nixpkgs /mnt/$USER_HOME/.config/nixpkgs
+    ln -s .config/i3status /mnt/$USER_HOME/.config/i3status
+    ln -s .config/nixpkgs /mnt/$USER_HOME/.config/nixpkgs
     rm /etc/nixos/hardware-configuration.nix
-    nix-env -e  nixos.git
+    nix-env -e nixos.git
     echo "Done"
 else
     rm /etc/nixos/hardware-configuration.nix
