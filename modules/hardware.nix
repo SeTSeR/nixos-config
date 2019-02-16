@@ -7,9 +7,8 @@ in
   boot.loader = (if isVM then {
     grub.enable = true;
     grub.useOSProber = true;
-    grub.efiSupport = true;
-    grub.efiInstallAsRemovable = true;
-    grub.device = "nodev";
+    grub.efiSupport = false;
+    grub.device = "/dev/sda";
   } else {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
