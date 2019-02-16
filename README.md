@@ -1,8 +1,6 @@
 # Installation
 
-```bash
-# git clone https://github.com/SeTSeR/dotfiles
-# bash init_root.sh
-Log in as smakarov.
-$ bash init.sh
-```
+1. Partition and format disks.
+2. Mount NixOS root to `/mnt`.
+3. Clone this repo.
+4. Run `install.sh`
