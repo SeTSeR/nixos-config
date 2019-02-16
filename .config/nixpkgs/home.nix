@@ -36,6 +36,7 @@
     vim-custom
     file
     stdman
+    vk-messenger
   ];
 
   xresources.extraConfig = builtins.readFile (
