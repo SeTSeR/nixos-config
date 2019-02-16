@@ -21,9 +21,12 @@ if [ $? -eq 0 ]; then
     mkdir /mnt/$USER_HOME/.config
     ln -s $(pwd)/.config/i3status /mnt/$USER_HOME/.config/i3status
     ln -s $(pwd)/.config/nixpkgs /mnt/$USER_HOME/.config/nixpkgs
+    rm /etc/nixos/hardware-configuration.nix
+    nix-env -e  nixos.git
     echo "Done"
 else
     rm /etc/nixos/hardware-configuration.nix
     rm -r /mnt/etc/nixos
+    nixos-env -e nixos.git
     echo "Installation failed"
 fi
