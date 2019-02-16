@@ -13,5 +13,6 @@ with rec
     grub.useOsProber = true;
     grub.efiSupport = true;
     grub.efiInstallAsRemovable = true;
+    grub.device = "nodev";
   });
 }
