@@ -2,13 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+device:
 { config, pkgs, options, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
+      /etc/nixos/hardware-configuration.nix
       "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref="master"; }}/nixos"
     ];
+  inherit device;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
