@@ -11,7 +11,7 @@ USER_HOME="/home/smakarov"
 echo "Creating ${CONFIG}"
 mkdir -p /mnt/etc/nixos
 read -p "Enter your device name:" HOSTNAME
-echo "import $(pwd) $HOSTNAME" > $CONFIG
+echo "import $(pwd) \"$HOSTNAME\"" > $CONFIG
 echo "Done"
 echo "Installing"
 nixos-generate-config --root /mnt
