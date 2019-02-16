@@ -9,13 +9,13 @@ device:
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref = "master"; }}/nixos"
+      ./imports/home-manager/nixos
       ./modules
     ];
   inherit device;
 
   nixpkgs.overlays = [
-    (import (builtins.fetchGit { url = "https://github.com/SeTSeR/nixpkgs-overlays.git"; ref = "master"; }))
+    (import ./imports/nixpkgs-overlays)
   ];
 
   # Select internationalisation properties.

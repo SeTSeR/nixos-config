@@ -5,6 +5,8 @@ echo "SeTSeR's config installation."
 CONFIG="/mnt/etc/nixos/configuration.nix"
 USER_HOME="/home/smakarov"
 
+nix-shell -p git --run "git submodule update --init --recursive"
+
 read -p "Do you know the password? [Y/n]: " ASK_PASSWORD
 if [ "$ASK_PASSWORD" != "n" ]; then
     nix-shell -p gnupg --run "gpg -d secret.nix.gpg"
