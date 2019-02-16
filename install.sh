@@ -10,11 +10,12 @@ USER_HOME="/home/smakarov"
 
 echo "Creating ${CONFIG}"
 mkdir -p /mnt/etc/nixos
+read -p "Enter your device name:" hostname
 echo "{ config, pkgs, options, ... }:
 {
     imports = [
         ./hardware-configuration.nix
-        $(pwd)
+        $(pwd) $(hostname)
     ];
 }" > $CONFIG
 echo "Done"
