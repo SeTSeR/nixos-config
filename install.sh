@@ -9,7 +9,7 @@ nix-shell -p git --run "git submodule update --init --recursive"
 
 read -p "Do you know the password? [Y/n]: " ASK_PASSWORD
 if [ "$ASK_PASSWORD" != "n" ]; then
-    nix-shell -p gnupg --run "gpg -d secret.nix.gpg"
+    nix-shell -p gnupg --run "gpg -d secret.nix.gpg" > secret.nix
     echo "secret.nix extracted!"
 fi
 
