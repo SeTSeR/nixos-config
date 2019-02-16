@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.urxvt = {
+  home-manager.users.smakarov.programs.urxvt = {
     enable = true;
     scroll = {
       bar.enable = false;

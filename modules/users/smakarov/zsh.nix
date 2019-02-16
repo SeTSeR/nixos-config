@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 {
-  programs.zsh = {
+  home-manager.users.smakarov.programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;

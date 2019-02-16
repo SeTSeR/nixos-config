@@ -1,3 +1,0 @@
-[submodule "nixpkgs-overlays"]
-	path = .config/nixpkgs/overlays/nixpkgs-overlays
-	url = https://github.com/SeTSeR/nixpkgs-overlays

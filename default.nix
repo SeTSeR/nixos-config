@@ -9,10 +9,14 @@ device:
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref="master"; }}/nixos"
+      "${builtins.fetchGit { url = "https://github.com/rycee/home-manager"; ref = "master"; }}/nixos"
       ./modules
     ];
   inherit device;
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchGit { url = "https://github.com/SeTSeR/nixpkgs-overlays.git"; ref = "master"; }))
+  ];
 
   # Select internationalisation properties.
   i18n = {
@@ -105,15 +109,6 @@ device:
 
   users.mutableUsers = false;
   users.users.root.hashedPassword = "$6$I1DA5i2qtMUiZe$lhEzV/.ikRj.hRDBdUVN391VPCxsZWMUBgb.aKySTMa43VE2JmD/F8CvvgPy1cgesA7gEg9eFum6S9wxHxnu9.";
-  # Set up the user
-  users.users.smakarov = {
-    isNormalUser = true;
-    home = "/home/smakarov";
-    description = "Sergey Makarov";
-    extraGroups = [ "wheel" "networkmanager" "video" "libvirt" "virtualbox" ];
-    shell = pkgs.zsh;
-    hashedPassword = "$6$bhfILKl6NKxZT25$wOQ0A9AtNYLCGLHcR4Bee7VBzYUusq4Af.DAL4Qr5c12JN3LBYH1PFtm.UvCcvXjZ1PbpuhGndnQCgbPaj/.C.";
-  };
 
   security.sudo = {
     enable = true;

@@ -2,7 +2,7 @@
 let term = "${pkgs.rxvt_unicode}/bin/urxvt";
 in
 {
-  xsession.windowManager.i3 = {
+  home-manager.users.smakarov.xsession.windowManager.i3 = {
     enable = true;
     config = rec {
       assigns = {

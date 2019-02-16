@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.git = {
+  home-manager.users.smakarov.programs.git = {
     enable = true;
     signing = {
       key = "6F8A18AE4101103F3C5424B96AA23A1193B7064B";
