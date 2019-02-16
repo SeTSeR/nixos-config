@@ -10,5 +10,6 @@
     ./xresources.nix
     ./smakarov.nix
     ./i3status.nix
+    ./ssh.nix
   ];
 }
