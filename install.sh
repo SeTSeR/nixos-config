@@ -27,6 +27,6 @@ if [ $? -eq 0 ]; then
 else
     rm /etc/nixos/hardware-configuration.nix
     rm -r /mnt/etc/nixos
-    nixos-env -e nixos.git
+    nix-env -e nixos.git
     echo "Installation failed"
 fi
