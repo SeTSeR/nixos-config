@@ -1,5 +1,9 @@
 { config, pkgs, lib, ... }:
 {
+  nixpkgs.overlays = [
+    (import ../../../imports/nixpkgs-overlays)
+  ];
+
   home-manager.users.smakarov.programs.home-manager.enable = true;
 
   home-manager.users.smakarov.home.packages = with pkgs; [

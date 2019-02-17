@@ -14,10 +14,6 @@ device:
     ];
   inherit device;
 
-  nixpkgs.overlays = [
-    (import ./imports/nixpkgs-overlays)
-  ];
-
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
