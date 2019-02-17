@@ -68,8 +68,6 @@ device:
     source-code-pro
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
