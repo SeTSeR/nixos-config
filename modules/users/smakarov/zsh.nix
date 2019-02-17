@@ -17,6 +17,7 @@
     };
     shellAliases = {
       vim = "vim-custom";
+      post = ''curl -F "f:1=<-" ix.io'';
     };
   };
 }
