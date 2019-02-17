@@ -14,8 +14,11 @@ in
     efi.canTouchEfiVariables = true;
   });
   boot.initrd.checkJournalingFS = !isVM;
-
+  
   # For Steam
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
+  
+  # For brightness control
+  hardware.acpilight.enable = true;
 }

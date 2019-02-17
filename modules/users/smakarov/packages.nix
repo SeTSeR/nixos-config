@@ -26,7 +26,6 @@
     torsocks
     xpdf
     djview
-    acpilight
     nix-zsh-completions
     python3
     vim-custom
