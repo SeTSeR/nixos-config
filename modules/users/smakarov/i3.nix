@@ -69,10 +69,10 @@ in
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 -5%";
         "XF86AudioMute" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-mute 0 toggle";
-        "XF86MonBrightnessUp" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -inc 20";
-        "XF86MonBrightnessDown" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -dec 20";
-        "XF86KbdBrightnessUp" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -inc 20";
-        "XF86KbdBrightnessDown" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -dec 20";
+        "XF86MonBrightnessUp" = "exec sudo ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -inc 20";
+        "XF86MonBrightnessDown" = "exec sudo ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -dec 20";
+        "XF86KbdBrightnessUp" = "exec sudo ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -inc 20";
+        "XF86KbdBrightnessDown" = "exec sudo ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -dec 20";
         "--release Print" = "exec --no-startup-id \"import png:- | xclip -selection c -t image/png\"";
       } // builtins.listToAttrs (
         builtins.genList (x: {name = "${modifier}+${toString (x + 6)}"; value = "workspace ${toString (x + 6)}";}) 4
