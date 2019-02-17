@@ -35,5 +35,4 @@ device:
 
   # Enable automatic upgrades
   system.autoUpgrade.enable = true;
-
 }
