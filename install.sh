@@ -11,6 +11,11 @@ read -p "Do you know the password? [Y/n]: " ASK_PASSWORD
 if [ "$ASK_PASSWORD" != "n" ]; then
     nix-shell -p gnupg --run "gpg -d secret.nix.gpg" > secret.nix
     echo "secret.nix extracted!"
+else
+    echo "{
+    id_rsa = "";
+}"
+    echo "secret.nix created!"
 fi
 
 echo "Creating ${CONFIG}..."
