@@ -41,7 +41,6 @@ device:
     pulseaudio
     sudo
     lightdm
-    zsh
     logmein-hamachi
     manpages
   ];
