@@ -13,8 +13,8 @@ if [ "$ASK_PASSWORD" != "n" ]; then
     echo "secret.nix extracted!"
 else
     echo "{
-    id_rsa = "";
-}"
+    id_rsa = \"\";
+}" > secret.nix
     echo "secret.nix created!"
 fi
 
