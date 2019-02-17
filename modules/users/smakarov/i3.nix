@@ -37,6 +37,7 @@ in
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; notification = false; }
         { command = "${pkgs.spotify}/bin/spotify"; }
         { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
+        { command = "${pkgs.vk-messenger}/bin/vk"; }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
