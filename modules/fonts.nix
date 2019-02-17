@@ -11,5 +11,6 @@
     font-awesome_5
     ubuntu_font_family
     source-code-pro
+    powerline-fonts
   ];
 }

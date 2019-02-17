@@ -7,6 +7,6 @@
       scrollOnOutput = false;
       scrollOnKeystroke = true;
     };
-    fonts = [ "xft:Source Code Pro:pixelsize=16:antialias=true:hinting=true" ];
+    fonts = [ "xft:Source Code Pro Powerline:pixelsize=16:antialias=true:hinting=true" "xft:Source Code Pro:pixelsize=16:antialias=true:hinting=true" ];
   };
 }
