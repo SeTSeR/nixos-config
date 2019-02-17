@@ -45,4 +45,6 @@
 
   # Enable Tor
   services.tor.enable = true;
+
+  services.geoclue2.enable = true;
 }
