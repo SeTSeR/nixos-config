@@ -4,7 +4,7 @@
     services.redshift = {
       enable = true;
       brightness.day = "1";
-      brightness.night = "0.3";
+      brightness.night = "0.5";
       provider = "geoclue2";
       temperature.night = 1588;
     };
