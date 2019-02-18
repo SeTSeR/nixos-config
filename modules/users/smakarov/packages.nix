@@ -28,7 +28,7 @@
     djview
     nix-zsh-completions
     python3
-    vim-custom
+    vim-generic
     file
     stdman
     vk-messenger
