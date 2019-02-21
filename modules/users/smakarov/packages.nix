@@ -26,7 +26,6 @@
     xpdf
     djview
     nix-zsh-completions
-    vim-generic
     file
     stdman
     vk-messenger

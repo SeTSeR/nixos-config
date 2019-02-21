@@ -11,6 +11,7 @@
     ./urxvt.nix
     ./ssh.nix
     ./xresources.nix
+    ./vim.nix
     ./zsh.nix
   ];
 }

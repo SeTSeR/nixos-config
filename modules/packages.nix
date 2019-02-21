@@ -4,7 +4,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    vim
     git
     networkmanager
     btrfs-progs

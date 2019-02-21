@@ -16,7 +16,6 @@
       ];
     };
     shellAliases = {
-      vim = "vim-generic";
       post = ''curl -F "f:1=<-" ix.io'';
     };
   };
