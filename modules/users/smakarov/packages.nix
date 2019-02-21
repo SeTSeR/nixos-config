@@ -19,7 +19,6 @@
     firefox
     efibootmgr
     gnupg
-    python3
     stack
     htop
     unrar
@@ -27,7 +26,6 @@
     xpdf
     djview
     nix-zsh-completions
-    python3
     vim-generic
     file
     stdman
