@@ -9,5 +9,11 @@
       temperature.night = 1588;
     };
     services.blueman-applet.enable = true;
+    services.udiskie = {
+      enable = true;
+      automount = false;
+      notify = true;
+      tray = "auto";
+    };
   };
 }
