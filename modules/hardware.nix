@@ -16,8 +16,12 @@ in
   boot.initrd.checkJournalingFS = !isVM;
   
   hardware = {
-    # For Steam
-    opengl.driSupport32Bit = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      # For Steam
+      driSupport32Bit = true;
+    };
     pulseaudio = {
       enable = true;
       # For Steam
@@ -27,5 +31,6 @@ in
     };
     acpilight.enable = true;
     bluetooth.enable = true;
+    cpu.intel.updateMicrocode = true;
   };
 }
