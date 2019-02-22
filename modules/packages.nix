@@ -14,5 +14,6 @@
     lightdm
     logmein-hamachi
     manpages
+    fuse_exfat
   ];
 }
