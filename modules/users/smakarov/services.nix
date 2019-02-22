@@ -8,5 +8,6 @@
       provider = "geoclue2";
       temperature.night = 1588;
     };
+    services.blueman-applet.enable = true;
   };
 }

@@ -5,7 +5,7 @@
   programs.mtr.enable = true;
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   programs.dconf.enable = true;
-  services.dbus.packages = [ pkgs.gnome3.dconf ];
+  services.dbus.packages = [ pkgs.gnome3.dconf pkgs.blueman ];
   
   # List services that you want to enable:
 
