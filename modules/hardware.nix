@@ -15,19 +15,17 @@ in
   });
   boot.initrd.checkJournalingFS = !isVM;
   
-  # For Steam
-  hardware.opengl.driSupport32Bit = true;
-
-  hardware.pulseaudio = {
-    enable = true;
+  hardware = {
     # For Steam
-    support32Bit = true;
-    package = pkgs.pulseaudioFull;
+    opengl.driSupport32Bit = true;
+    pulseaudio = {
+      enable = true;
+      # For Steam
+      support32Bit = true;
+      # For bt headphones
+      package = pkgs.pulseaudioFull;
+    };
+    acpilight.enable = true;
+    bluetooth.enable = true;
   };
-  
-  # For brightness control
-  hardware.acpilight.enable = true;
-
-  # Enable Bluetooth
-  hardware.bluetooth.enable = true;
 }
