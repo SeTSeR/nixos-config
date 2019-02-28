@@ -52,6 +52,13 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  au!
+  au VimEnter * :Vexplore
+augroup END
+
 filetype plugin indent on
 syntax enable
 colorscheme solarized
