@@ -9,7 +9,7 @@ in
         "1: " = [ { class = "Chromium"; } { class = "Firefox"; } ];
         "2: " = [ { class = "urxvt"; } ];
         "3: " = [ { class = "Steam"; } ];
-        "5: " = [ { class = "^Telegram"; } { class = "^VK"; } { class = "^Discord"; } ];
+        "5: " = [ { class = "^Telegram"; } { class = "^VK"; } { class = "^Discord"; } { class = "^Mail"; } ];
       };
       bars = [
         {

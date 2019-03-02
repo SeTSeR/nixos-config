@@ -29,5 +29,6 @@
     file
     stdman
     vk-messenger
+    thunderbird
   ];
 }
