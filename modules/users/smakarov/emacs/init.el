@@ -34,7 +34,7 @@
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
 
 (setq auto-save-file-name-transforms
-      `((".*" "~/.emacs.d/autosave/" t)))
+      `((".*" "~/.emacs.d/auto-save-list/" t)))
 
 (setq-default indent-tabs-mode nil)
 
@@ -50,7 +50,7 @@
 (defconst user-init-dir
     (cond ((boundp 'user-emacs-directory) user-emacs-directory)
           ((boundp 'user-init-directory)  user-init-directory)
-          (t "~/.emacs.d/")))
+         (t "~/.emacs.d/")))
 
 ;; Function for loading user files
 (defun load-user-file (file)
@@ -65,7 +65,9 @@
     (("C-x g" . magit-status )))
 
 (use-package flycheck
-  :config (global-flycheck-mode))
+  :config
+  (global-flycheck-mode)
+  (setq-default flycheck-clang-language-standard "gnu++17"))
 
 (use-package company
     :diminish company-mode
