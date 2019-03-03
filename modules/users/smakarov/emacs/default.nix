@@ -29,6 +29,7 @@
         evil-tabs
         smartparens
         company-irony-c-headers
+        rainbow-delimiters
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;

@@ -76,11 +76,15 @@
 
 (use-package powerline
   :config
-  (powerline-center-theme)
-)
+  (powerline-center-theme))
 
 (use-package smartparens
   :config (smartparens-global-mode 1))
+
+;; Parentheses highlight
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+(show-paren-mode 1)
 
 (use-package org-install
     :bind (("C-c l" . org-store-link)
