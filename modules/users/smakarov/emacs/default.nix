@@ -19,7 +19,6 @@
         irony
         flycheck
         flycheck-pkg-config
-        flycheck-irony
         auto-indent-mode
         markdown-mode
         company

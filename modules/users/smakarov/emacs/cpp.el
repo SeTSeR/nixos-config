@@ -8,12 +8,7 @@
     :hook
     (c-mode . irony-mode)
     (c++-mode . irony-mode)
-    
-    (use-package flycheck-irony
-      :config
-      (eval-after-load 'flycheck
-        '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup)))
-
+    :config
     (use-package company-irony-c-headers
       :config
       (eval-after-load 'company
