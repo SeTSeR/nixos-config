@@ -34,6 +34,12 @@ in
       nix-zsh-completions
       unstable.vk-messenger
       thunderbird
+      wakatime
+      irony-server
+      clang
+      cargo
+      rustracer
+      irony-server
     ];
   };
 }

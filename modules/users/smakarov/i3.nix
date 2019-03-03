@@ -38,6 +38,7 @@ in
         { command = "${pkgs.spotify}/bin/spotify"; }
         { command = "${pkgs.unstable.tdesktop}/bin/telegram-desktop"; }
         { command = "${pkgs.unstable.vk-messenger}/bin/vk"; }
+        { command = "${pkgs.emacs}/bin/emacs --daemon"; }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
