@@ -5,6 +5,8 @@
 device:
 { config, pkgs, options, ... }:
 
+let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -24,8 +26,15 @@ device:
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
  
-  # For Steam
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    # For Steam
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      unstable = import unstableTarball {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database

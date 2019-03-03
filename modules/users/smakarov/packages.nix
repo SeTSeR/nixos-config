@@ -10,7 +10,7 @@
     steam
     discord
     spotify
-    tdesktop
+    unstable.tdesktop
     rxvt_unicode
     imagemagick7
     xclip
@@ -28,7 +28,7 @@
     nix-zsh-completions
     file
     stdman
-    vk-messenger
+    unstable.vk-messenger
     thunderbird
   ];
 }
