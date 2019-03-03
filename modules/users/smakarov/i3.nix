@@ -36,8 +36,8 @@ in
       startup = [
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; notification = false; }
         { command = "${pkgs.spotify}/bin/spotify"; }
-        { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
-        { command = "${pkgs.vk-messenger}/bin/vk"; }
+        { command = "${pkgs.unstable.tdesktop}/bin/telegram-desktop"; }
+        { command = "${pkgs.unstable.vk-messenger}/bin/vk"; }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
@@ -73,10 +73,10 @@ in
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 -5%";
         "XF86AudioMute" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-mute 0 toggle";
-        "XF86MonBrightnessUp" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -inc 20";
-        "XF86MonBrightnessDown" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl intel_backlight -dec 20";
-        "XF86KbdBrightnessUp" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -inc 20";
-        "XF86KbdBrightnessDown" = "exec ${pkgs.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -dec 20";
+        "XF86MonBrightnessUp" = "exec ${pkgs.unstable.acpilight}/bin/xbacklight -ctrl intel_backlight -inc 20";
+        "XF86MonBrightnessDown" = "exec ${pkgs.unstable.acpilight}/bin/xbacklight -ctrl intel_backlight -dec 20";
+        "XF86KbdBrightnessUp" = "exec ${pkgs.unstable.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -inc 20";
+        "XF86KbdBrightnessDown" = "exec ${pkgs.unstable.acpilight}/bin/xbacklight -ctrl asus::kbd_backlight -dec 20";
         "--release Print" = "exec --no-startup-id \"import png:- | xclip -selection c -t image/png\"";
       } // builtins.listToAttrs (
         builtins.genList (x: {name = "${modifier}+${toString (x + 6)}"; value = "workspace ${toString (x + 6)}";}) 4

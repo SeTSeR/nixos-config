@@ -1,34 +1,39 @@
 { config, pkgs, lib, ... }:
+let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+in
 {
-  nixpkgs.overlays = [
-    (import ../../../imports/nixpkgs-overlays)
-  ];
-
-  home-manager.users.smakarov.programs.home-manager.enable = true;
-
-  home-manager.users.smakarov.home.packages = with pkgs; [
-    steam
-    discord
-    spotify
-    unstable.tdesktop
-    rxvt_unicode
-    imagemagick7
-    xclip
-    unzip
-    nitrogen
-    firefox
-    efibootmgr
-    gnupg
-    stack
-    htop
-    unrar
-    torsocks
-    xpdf
-    djview
-    nix-zsh-completions
-    file
-    stdman
-    unstable.vk-messenger
-    thunderbird
-  ];
+  home-manager.users.smakarov = {
+    nixpkgs.config = {
+      # For Steam
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        unstable = import unstableTarball {
+          config = config.nixpkgs.config;
+        };
+      };
+    };
+    
+    home.packages = with pkgs; [
+      unstable.steam
+      unstable.discord
+      unstable.spotify
+      unstable.tdesktop
+      rxvt_unicode
+      imagemagick7
+      xclip
+      unzip
+      nitrogen
+      firefox
+      efibootmgr
+      gnupg
+      htop
+      unrar
+      torsocks
+      xpdf
+      djview
+      nix-zsh-completions
+      unstable.vk-messenger
+      thunderbird
+    ];
+  };
 }
