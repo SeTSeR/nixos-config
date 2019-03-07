@@ -46,6 +46,8 @@
   :config
   (auto-indent-global-mode))
 
+(electric-indent-mode 1)
+
 ;; User's configuration directory
 (defconst user-init-dir
     (cond ((boundp 'user-emacs-directory) user-emacs-directory)
