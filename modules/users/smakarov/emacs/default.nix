@@ -30,6 +30,7 @@
         smartparens
         company-irony-c-headers
         rainbow-delimiters
+        google-c-style
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;
