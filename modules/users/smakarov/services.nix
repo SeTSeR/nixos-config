@@ -15,6 +15,5 @@
       notify = true;
       tray = "auto";
     };
-    services.emacs.enable = true;
   };
 }
