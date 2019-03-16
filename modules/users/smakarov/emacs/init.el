@@ -98,7 +98,6 @@
     (setq org-log-done t))
 
 (cua-mode 1)
-(desktop-save-mode 1)
 (global-linum-mode 1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
