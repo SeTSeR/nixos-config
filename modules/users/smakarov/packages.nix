@@ -1,5 +1,39 @@
 { config, pkgs, lib, ... }:
 let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
+    homePackages = with pkgs; [
+      unstable.discord
+      unstable.spotify
+      unstable.steam
+      unstable.vk-messenger
+      xpdf
+      djview
+      torsocks
+    ];
+    cppPackages = with pkgs; [
+      irony-server
+      clang
+    ];
+    rustPackages = with pkgs; [
+      cargo
+      rustc
+      rustPlatform.rustcSrc
+      rustracer
+    ];
+    commonPackages = with pkgs; [
+      unstable.tdesktop
+      rxvt_unicode
+      imagemagick7
+      xclip
+      unzip
+      nitrogen
+      firefox
+      efibootmgr
+      gnupg
+      htop
+      unrar
+      thunderbird
+      wakatime
+    ] ++ cppPackages ++ rustPackages;
 in
 {
   home-manager.users.smakarov = {
@@ -12,34 +46,7 @@ in
         };
       };
     };
-    
-    home.packages = with pkgs; [
-      unstable.steam
-      unstable.discord
-      unstable.spotify
-      unstable.tdesktop
-      rxvt_unicode
-      imagemagick7
-      xclip
-      unzip
-      nitrogen
-      firefox
-      efibootmgr
-      gnupg
-      htop
-      unrar
-      torsocks
-      xpdf
-      djview
-      nix-zsh-completions
-      unstable.vk-messenger
-      thunderbird
-      wakatime
-      irony-server
-      clang
-      cargo
-      rustracer
-      irony-server
-    ];
+
+    home.packages = commonPackages ++ homePackages;
   };
 }
