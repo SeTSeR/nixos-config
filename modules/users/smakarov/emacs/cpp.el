@@ -19,14 +19,13 @@
         (add-hook 'c-mode-common-hook 'set-prac-c-style)))
 
 (use-package irony-mode
-    :hook
-    (c-mode . irony-mode)
-    (c++-mode . irony-mode)
+  :hook
+  (c-mode . irony-mode)
+  (c++-mode . irony-mode)
+  :config
+  (use-package company-irony-c-headers
     :config
-    (use-package company-irony-c-headers
-      :config
-      (eval-after-load 'company
-        '(add-to-list
-          'company-backends '(company-irony-c-headers company-irony)))))
+    (eval-after-load 'company
+      '(add-to-list 'company-backends '(company-irony-c-headers company-irony)))))
 
 ;;; cpp.el ends here
