@@ -37,34 +37,29 @@
       `((".*" "~/.emacs.d/auto-save-list/" t)))
 
 (setq-default indent-tabs-mode nil)
-
 (setq-default tab-always-indent 'complete)
 
 (setq compilation-scroll-output 'first-error)
-
-(use-package auto-indent-mode
-  :config
-  (auto-indent-global-mode))
 
 (electric-indent-mode 1)
 
 ;; User's configuration directory
 (defconst user-init-dir
-    (cond ((boundp 'user-emacs-directory) user-emacs-directory)
-          ((boundp 'user-init-directory)  user-init-directory)
-         (t "~/.emacs.d/")))
+  (cond ((boundp 'user-emacs-directory) user-emacs-directory)
+        ((boundp 'user-init-directory)  user-init-directory)
+        (t "~/.emacs.d/")))
 
 ;; Function for loading user files
 (defun load-user-file (file)
   "Load FILE in current user's configuration directory."
-    (interactive "f")
-    (load-file (expand-file-name file user-init-dir)))
+  (interactive "f")
+  (load-file (expand-file-name file user-init-dir)))
 
 (global-wakatime-mode)
 
 (use-package magit
-    :bind
-    (("C-x g" . magit-status )))
+  :bind
+  (("C-x g" . magit-status )))
 
 (use-package flycheck
   :config
@@ -72,11 +67,11 @@
   (setq-default flycheck-clang-language-standard "gnu++17"))
 
 (use-package company
-    :diminish company-mode
-    :config (global-company-mode 1))
+  :diminish company-mode
+  :config (global-company-mode 1))
 
 (use-package solarized-theme
-    :config (load-theme 'solarized-light t))
+  :config (load-theme 'solarized-light t))
 
 (use-package powerline
   :config
@@ -91,13 +86,12 @@
 (show-paren-mode 1)
 
 (use-package org-install
-    :bind (("C-c l" . org-store-link)
-           ("C-c a" . org-store-agenda))
-    :config
-    (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-    (setq org-log-done t))
+  :bind (("C-c l" . org-store-link)
+         ("C-c a" . org-store-agenda))
+  :config
+  (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+  (setq org-log-done t))
 
-(cua-mode 1)
 (global-linum-mode 1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
@@ -109,7 +103,7 @@
 (load-user-file "rust.el")
 
 (use-package markdown-mode
-:mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
+  :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
