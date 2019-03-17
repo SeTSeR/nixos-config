@@ -13,10 +13,9 @@
   (google-make-newline-indent))
 
 (use-package cc-mode
-    :config
-    (use-package google-c-style
-        :config
-        (add-hook 'c-mode-common-hook 'set-prac-c-style)))
+  :config
+  (use-package google-c-style
+    :hook (c-mode-common . set-prac-cc-style)))
 
 (use-package irony-mode
   :hook
