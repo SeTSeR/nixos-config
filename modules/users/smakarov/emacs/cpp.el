@@ -4,13 +4,16 @@
 
 ;;; Code:
 
-(defun set-prac-c-style ()
+(defconst prac-cc-style
+  '("google"
+    (c-basic-offset . 4))
+  "C++ style for practicum.")
+
+(defun set-prac-cc-style ()
+  "Set style for practicum."
   (google-set-c-style)
-  (c-add-style "prac-style"
-               '("google"
-                 (indent-tabs-mode . nil)
-                 (c-basic-offset . 4)) t)
-  (google-make-newline-indent))
+  (google-make-newline-indent)
+  (c-add-style "prac-style" prac-cc-style t))
 
 (use-package cc-mode
   :config
