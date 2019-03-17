@@ -18,6 +18,7 @@ let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/arc
       rustc
       rustPlatform.rustcSrc
       rustracer
+      jetbrains.idea-ultimate
     ];
     commonPackages = with pkgs; [
       unstable.tdesktop
