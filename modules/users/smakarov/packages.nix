@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
-let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz;
-    homePackages = with pkgs; [
+let homePackages = with pkgs; [
       unstable.discord
       unstable.spotify
       unstable.steam
@@ -18,7 +17,7 @@ let unstableTarball = fetchTarball https://github.com/NixOS/nixpkgs-channels/arc
       rustc
       rustPlatform.rustcSrc
       rustracer
-      jetbrains.idea-ultimate
+      jetbrains.clion
     ];
     commonPackages = with pkgs; [
       unstable.tdesktop
@@ -42,7 +41,7 @@ in
       # For Steam
       allowUnfree = true;
       packageOverrides = pkgs: {
-        unstable = import unstableTarball {
+        unstable = import ../../../imports/nixpkgs-unstable {
           config = config.nixpkgs.config;
         };
       };

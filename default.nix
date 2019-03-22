@@ -30,7 +30,7 @@ in
     # For Steam
     allowUnfree = true;
     packageOverrides = pkgs: {
-      unstable = import unstableTarball {
+      unstable = import imports/nixpkgs-unstable {
         config = config.nixpkgs.config;
       };
     };
