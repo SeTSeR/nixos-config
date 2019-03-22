@@ -27,10 +27,9 @@ echo "Installing..."
 nixos-generate-config --root /mnt
 ln -s /mnt/etc/nixos/hardware-configuration.nix /etc/nixos/hardware-configuration.nix
 nixos-install
-rm /etc/nixos/hardware-configuration.nix
 if [ $? -eq 0 ]; then
+    rm /etc/nixos/hardware-configuration.nix
     echo "Done!"
 else
-    rm -r /mnt/etc/nixos
     echo "Installation failed!"
 fi
