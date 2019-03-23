@@ -29,6 +29,9 @@ ln -s /mnt/etc/nixos/hardware-configuration.nix /etc/nixos/hardware-configuratio
 nixos-install
 if [ $? -eq 0 ]; then
     rm /etc/nixos/hardware-configuration.nix
+    chown -R smakarov:users $(pwd)/..
+    echo "Fixing path in ${CONFIG}..."
+    echo "import ${$(pwd)#/mnt/} \"$HOSTNAME\"" > $CONFIG
     echo "Done!"
 else
     echo "Installation failed!"
