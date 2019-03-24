@@ -16,7 +16,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "emacs";
     };
   };
 }
