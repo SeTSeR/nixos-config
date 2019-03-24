@@ -6,7 +6,9 @@
 
 (defconst prac-cc-style
   '("google"
-    (c-basic-offset . 4))
+    (c-basic-offset . 4)
+    (c-offsets-alist
+     . ((access-label . -))))
   "C++ style for practicum.")
 
 (defun set-prac-cc-style ()
