@@ -1,5 +1,10 @@
-{ pkgs, config, ... }:
+{ config, pkgs, lib, ... }:
 let term = "${pkgs.rxvt_unicode}/bin/urxvt";
+    homeCommands = [
+        { command = "${pkgs.unstable.vk-messenger}/bin/vk"; }
+        { command = "${pkgs.spotify}/bin/spotify"; }
+        { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; notification = false; }
+    ];
 in
 {
   home-manager.users.smakarov.xsession.windowManager.i3 = {
@@ -34,12 +39,8 @@ in
         ];
       };
       startup = [
-        { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; notification = false; }
-        { command = "${pkgs.spotify}/bin/spotify"; }
         { command = "${pkgs.unstable.tdesktop}/bin/telegram-desktop"; }
-        { command = "${pkgs.unstable.vk-messenger}/bin/vk"; }
-        { command = "${pkgs.emacs}/bin/emacs --daemon"; }
-      ];
+      ] ++ lib.optionals config.deviceSpecific.isHomeMachine homeCommands;
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
