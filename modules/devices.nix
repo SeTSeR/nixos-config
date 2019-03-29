@@ -11,6 +11,7 @@ with types;
     deviceSpecific = let device = config.device;
     in rec {
       isHomeMachine = (device == "ASUS-Laptop");
+      isWorkMachine = (device == "Ryzen-PC");
     };
   };
 }

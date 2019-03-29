@@ -1,6 +1,7 @@
 {pkgs, ...}:
 {
   imports = [
+    ./guest
     ./smakarov
   ];
 
