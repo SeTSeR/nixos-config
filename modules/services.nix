@@ -25,10 +25,7 @@
     layout = "us,ru(winkeys)";
     xkbOptions = "grp:caps_toggle";
     libinput.enable = true;
-    desktopManager = {
-      default = "none";
-      xterm.enable = false;
-    };
+    desktopManager.mate.enable = true;
     displayManager.lightdm.enable = true;
     windowManager.i3.enable = true;
   };
