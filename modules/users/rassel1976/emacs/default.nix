@@ -1,6 +1,6 @@
 { config, pkgs, libs, ... }:
 {
-  home-manager.users.guest = {
+  home-manager.users.rassel1976 = {
     programs.emacs = {
       enable = true;
       package = pkgs.emacs;

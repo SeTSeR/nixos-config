@@ -33,10 +33,11 @@ let homePackages = with pkgs; [
       unrar
       thunderbird
       wakatime
+      vscode
     ] ++ cppPackages ++ rustPackages;
 in
 {
-  home-manager.users.guest = {
+  home-manager.users.rassel1976 = {
     nixpkgs.config = {
       # For Steam
       allowUnfree = true;

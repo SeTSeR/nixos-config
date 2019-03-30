@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  home-manager.users.guest.programs.vim = {
+  home-manager.users.rassel1976.programs.vim = {
     enable = true;
     settings = {
       background = "light";
