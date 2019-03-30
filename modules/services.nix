@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -34,8 +34,8 @@
   };
 
   # Enable hamachi
-  services.logmein-hamachi.enable = true;
-
+  services.logmein-hamachi.enable = config.deviceSpecific.isHomeMachine;
+  
   # Activate D-Bus socket
   services.dbus.socketActivated = true;
 
