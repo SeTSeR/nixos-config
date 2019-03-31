@@ -8,4 +8,7 @@
     extraGroups = [ "networkmanager" ];
     password = "";
   } else lib.mkForce {};
+
+  systemd.services.home-manager-rassel1976.enable = if config.deviceSpecific.isWorkMachine then true
+  else lib.mkForce false;
 }
