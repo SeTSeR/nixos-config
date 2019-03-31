@@ -25,7 +25,7 @@
     layout = "us,ru(winkeys)";
     xkbOptions = "grp:caps_toggle";
     libinput.enable = true;
-    desktopManager.mate.enable = true;
+    desktopManager.mate.enable = config.deviceSpecific.isWorkMachine;
     displayManager.lightdm.enable = true;
     windowManager.i3.enable = true;
   };

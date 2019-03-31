@@ -1,8 +1,7 @@
 { pkgs, config, lib, ... }:
-let isWorkMachine = true;
-in {
+{
   # Set up the user
-  users.users.rassel1976 = if isWorkMachine then {
+  users.users.rassel1976 = if config.deviceSpecific.isWorkMachine then {
     isNormalUser = true;
     home = "/home/rassel1976";
     description = "Nikita Golovanov";

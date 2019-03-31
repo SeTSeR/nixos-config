@@ -1,6 +1,5 @@
 { pkgs, config, ... }:
 {
-
   programs.zsh.enable = true;
   programs.adb.enable = true;
   # Set up the user
