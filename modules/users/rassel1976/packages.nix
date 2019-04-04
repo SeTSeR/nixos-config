@@ -11,6 +11,7 @@ let homePackages = with pkgs; [
     cppPackages = with pkgs; [
       irony-server
       clang
+      cmake
     ];
     rustPackages = with pkgs; [
       cargo
