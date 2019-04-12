@@ -3,7 +3,6 @@
 ;;; Main Emacs settings file
 
 ;;; Code:
-
 (setq load-prefer-newer t) ; Don't load outdated byte code
 
 ;; Package sources
@@ -104,6 +103,9 @@
 
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
+
+(use-package ace-jump-mode
+  :bind ("C-c SPC" . ace-jump-mode))
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)

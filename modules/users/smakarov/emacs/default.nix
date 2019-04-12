@@ -6,6 +6,7 @@
       package = pkgs.emacs;
       extraPackages = epkgs: with epkgs; [
         use-package
+        ace-jump-mode
         diminish
         nix-mode
         nixos-options
