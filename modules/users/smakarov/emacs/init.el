@@ -71,7 +71,7 @@
   :config (global-company-mode 1))
 
 (use-package dracula-theme
-  :config (load-theme 'dracula-theme t))
+  :config (load-theme 'dracula t))
 
 (use-package powerline
   :config
