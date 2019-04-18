@@ -7,6 +7,7 @@ let homePackages = with pkgs; [
       xpdf
       djview
       torsocks
+      boost
     ];
     cppPackages = with pkgs; [
       irony-server
