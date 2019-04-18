@@ -62,8 +62,7 @@
 
 (use-package flycheck
   :config
-  (global-flycheck-mode)
-  (setq-default flycheck-clang-language-standard "gnu++17"))
+  (global-flycheck-mode))
 
 (use-package company
   :diminish company-mode

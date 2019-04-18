@@ -20,7 +20,9 @@
 (use-package cc-mode
   :config
   (use-package google-c-style
-    :hook (c-mode-common . set-prac-cc-style)))
+    :hook (c-mode-common . set-prac-cc-style))
+  :hook (c-mode . (lambda () (setq flycheck-clang-language-standard "c11")))
+        (c++-mode . (lambda () (setq flycheck-clang-language-standard "gnu++17"))))
 
 (use-package irony-mode
   :hook
