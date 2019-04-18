@@ -70,8 +70,8 @@
   :diminish company-mode
   :config (global-company-mode 1))
 
-(use-package solarized-theme
-  :config (load-theme 'solarized-light t))
+(use-package dracula-theme
+  :config (load-theme 'dracula-theme t))
 
 (use-package powerline
   :config

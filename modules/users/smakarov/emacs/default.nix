@@ -13,6 +13,7 @@
         powerline
         magit
         solarized-theme
+        dracula-theme
         evil
         wakatime-mode
         projectile
