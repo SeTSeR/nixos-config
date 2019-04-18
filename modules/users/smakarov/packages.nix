@@ -18,6 +18,7 @@ let homePackages = with pkgs; [
       rustc
       rustPlatform.rustcSrc
       rustracer
+      rustfmt
       jetbrains.clion
     ];
     commonPackages = with pkgs; [

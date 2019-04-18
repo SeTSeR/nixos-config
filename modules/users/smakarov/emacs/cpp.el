@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(setq-default sp-escape-quotes-after-insert nil) ; https://github.com/Fuco1/smartparens/issues/783
+
 (defconst prac-cc-style
   '("google"
     (c-basic-offset . 4)
