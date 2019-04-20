@@ -44,4 +44,7 @@ in
 
   # Enable automatic upgrades
   system.autoUpgrade.enable = true;
+  system.autoUpgrade.channel = if config.deviceSpecific.isHomeMachine
+                             then https://nixos.org/channels/nixos-unstable
+                             else https://nixos.org/channels/nixos-19.03;
 }
