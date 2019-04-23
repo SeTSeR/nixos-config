@@ -83,12 +83,6 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
 
-(use-package org-install
-  :bind (("C-c l" . org-store-link)
-         ("C-c a" . org-store-agenda))
-  :config
-  (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-  (setq org-log-done t))
 
 (global-linum-mode 1)
 (menu-bar-mode -1)
@@ -97,6 +91,7 @@
 
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
+(load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
 

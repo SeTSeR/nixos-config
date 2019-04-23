@@ -38,6 +38,7 @@
     home.file.".emacs.d/cpp.el".source=./cpp.el;
     home.file.".emacs.d/init.el".source=./init.el;
     home.file.".emacs.d/keys.el".source=./keys.el;
+    home.file.".emacs.d/org.el".source=./org.el;
     home.file.".emacs.d/projectile.el".source=./projectile.el;
     home.file.".emacs.d/rust.el".source=./rust.el;
   };
