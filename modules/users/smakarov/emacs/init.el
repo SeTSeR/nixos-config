@@ -68,8 +68,8 @@
   :diminish company-mode
   :config (global-company-mode 1))
 
-(use-package dracula-theme
-  :config (load-theme 'dracula t))
+(use-package gruvbox-theme
+  :config (load-theme 'gruvbox-dark-hard t))
 
 (use-package powerline
   :config
@@ -82,7 +82,6 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
-
 
 (global-linum-mode 1)
 (menu-bar-mode -1)

@@ -15,6 +15,7 @@
         magit
         solarized-theme
         dracula-theme
+        gruvbox-theme
         evil
         wakatime-mode
         projectile
