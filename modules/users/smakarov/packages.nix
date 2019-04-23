@@ -8,6 +8,7 @@ let homePackages = with pkgs; [
       djview
       torsocks
       boost
+      texlive.combined.scheme-full
     ];
     cppPackages = with pkgs; [
       irony-server
