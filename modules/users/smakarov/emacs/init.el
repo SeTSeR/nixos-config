@@ -66,7 +66,9 @@
 
 (use-package company
   :diminish company-mode
-  :config (global-company-mode 1))
+  :config
+  (global-company-mode 1)
+  (setq company-global-modes '(not gud-mode)))
 
 (use-package gruvbox-theme
   :config (load-theme 'gruvbox-dark-hard t))
@@ -90,9 +92,12 @@
 
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
+(load-user-file "lldb-gud.el")
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
+
+(use-package lldb-gud)
 
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
