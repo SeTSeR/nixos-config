@@ -85,6 +85,8 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
 
+(use-package graphviz-dot-mode)
+
 (global-linum-mode 1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)

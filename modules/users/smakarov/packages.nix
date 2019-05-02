@@ -8,6 +8,7 @@ let homePackages = with pkgs; [
       djview
       torsocks
       boost
+      graphviz
       texlive.combined.scheme-full
     ];
     cppPackages = with pkgs; [

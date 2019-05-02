@@ -23,6 +23,7 @@
         flycheck
         flycheck-pkg-config
         auto-indent-mode
+        graphviz-dot-mode
         markdown-mode
         company
         company-irony
