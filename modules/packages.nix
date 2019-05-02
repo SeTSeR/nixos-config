@@ -1,5 +1,15 @@
 { config, pkgs, ... }:
 {
+  nixpkgs.config = {
+    # For Steam
+    allowUnfree = true;
+    packageOverrides = pkgs: {
+      unstable = import ../imports/nixpkgs-unstable {
+        config = config.nixpkgs.config;
+      };
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -12,7 +22,6 @@
     pulseaudio
     sudo
     lightdm
-    logmein-hamachi
     manpages
     fuse_exfat
   ];

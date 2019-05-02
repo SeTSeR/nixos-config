@@ -25,16 +25,6 @@ in
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
- 
-  nixpkgs.config = {
-    # For Steam
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import imports/nixpkgs-unstable {
-        config = config.nixpkgs.config;
-      };
-    };
-  };
 
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
