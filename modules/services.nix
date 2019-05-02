@@ -6,6 +6,18 @@
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf pkgs.blueman ];
+  systemd.coredump = {
+    enable = true;
+    extraConfig = "Storage=journal";
+  };
+  security.pam.loginLimits = [
+    {
+      domain = "smakarov";
+      type = "soft";
+      item = "core";
+      value = 1024;
+    }
+  ];
   
   # List services that you want to enable:
 
