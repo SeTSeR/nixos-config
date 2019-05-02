@@ -13,7 +13,8 @@ let homePackages = with pkgs; [
     ];
     cppPackages = with pkgs; [
       irony-server
-      clang
+      unstable.clang_8
+      unstable.lldb
     ];
     rustPackages = with pkgs; [
       cargo
