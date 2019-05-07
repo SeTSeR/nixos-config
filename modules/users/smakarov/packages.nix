@@ -10,6 +10,7 @@ let homePackages = with pkgs; [
       boost
       graphviz
       texlive.combined.scheme-full
+      cacos
     ];
     cppPackages = with pkgs; [
       irony-server
