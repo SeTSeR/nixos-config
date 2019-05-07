@@ -2,7 +2,6 @@
 {
   imports = 
   [
-    ./acpilight.nix
     ./devices.nix
     ./fonts.nix
     ./hardware.nix
