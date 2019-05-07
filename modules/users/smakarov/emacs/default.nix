@@ -35,6 +35,10 @@
         company-irony-c-headers
         rainbow-delimiters
         google-c-style
+        lsp-mode
+        lsp-ui
+        company-lsp
+        ccls
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;
