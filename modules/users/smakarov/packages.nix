@@ -15,6 +15,9 @@ let homePackages = with pkgs; [
       irony-server
       unstable.clang_8
       unstable.lldb
+      ccls
+      cmake
+      gnumake
     ];
     rustPackages = with pkgs; [
       cargo
