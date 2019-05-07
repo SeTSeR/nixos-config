@@ -20,7 +20,7 @@
         nativeBuildInputs = [ cmake pkgconfig ];
         buildInputs = [ boostpkg curl gcc8 git ];
 
-        cmakeFlags = [ "-DCMAKE_USE_CONAN=OFF -DCMAKE_EXE_LINKER_FLAGS=-ldl" ];
+        cmakeFlags = [ "-DCMAKE_USE_CONAN=OFF -DCMAKE_BUILD_TYPE=Release" ];
 
         enableParallelBuilding = true;
 
