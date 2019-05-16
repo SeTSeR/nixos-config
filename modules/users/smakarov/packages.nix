@@ -27,6 +27,7 @@ let homePackages = with pkgs; [
       rustracer
       rustfmt
       jetbrains.clion
+      rls
     ];
     commonPackages = with pkgs; [
       unstable.tdesktop

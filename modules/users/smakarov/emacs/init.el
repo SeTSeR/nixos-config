@@ -38,6 +38,9 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-always-indent 'complete)
 
+;; Allow sentences ending with one space
+(setq-default sentence-end-double-space nil)
+
 (setq compilation-scroll-output 'first-error)
 
 (electric-indent-mode 1)
