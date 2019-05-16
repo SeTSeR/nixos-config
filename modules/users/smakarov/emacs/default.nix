@@ -28,7 +28,8 @@
         company
         company-irony
         rust-mode
-        flymake-rust
+        flycheck-rust
+        company-racer
         racer
         evil-tabs
         smartparens
