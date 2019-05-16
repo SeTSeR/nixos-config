@@ -7,7 +7,6 @@ let homePackages = with pkgs; [
       xpdf
       djview
       torsocks
-      boost
       graphviz
       texlive.combined.scheme-full
       cacos
@@ -15,10 +14,7 @@ let homePackages = with pkgs; [
     cppPackages = with pkgs; [
       irony-server
       unstable.clang_8
-      unstable.lldb
       ccls
-      cmake
-      gnumake
     ];
     rustPackages = with pkgs; [
       cargo
@@ -26,7 +22,6 @@ let homePackages = with pkgs; [
       rustPlatform.rustcSrc
       rustracer
       rustfmt
-      jetbrains.clion
       rls
     ];
     commonPackages = with pkgs; [
