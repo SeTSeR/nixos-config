@@ -29,8 +29,9 @@ in
       # For bt headphones
       package = pkgs.pulseaudioFull;
     };
-    acpilight.enable = true;
-    bluetooth.enable = true;
-    cpu.intel.updateMicrocode = true;
-  };
+    } // (if config.deviceSpecific.isHomeMachine then {
+      acpilight.enable = true;
+      bluetooth.enable = true;
+      cpu.intel.updateMicrocode = true;
+    } else {});
 }
