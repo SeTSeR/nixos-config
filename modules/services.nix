@@ -53,7 +53,7 @@
   # services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable Tor
-  services.tor.enable = true;
+  services.tor.enable = false;
 
   services.geoclue2.enable = true;
   services.udisks2.enable = true;
