@@ -10,6 +10,7 @@ let homePackages = with pkgs; [
       graphviz
       texlive.combined.scheme-full
       cacos
+      wpa_supplicant_gui
     ];
     cppPackages = with pkgs; [
       irony-server
