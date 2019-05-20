@@ -32,6 +32,16 @@
       };
     in {
       cacos = self.pkgs.callPackage cacosPkg {};
+
+      tdesktop = old.tdesktop.overrideAttrs (oldAttrs: {
+        patches = [
+          (builtins.fetchurl 
+          {
+            url = "https://raw.githubusercontent.com/msva/mva-overlay/master/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"; 
+            sha256 = "12ibh0wfc8jg6hj5dqbvnbzwwjyl86fz65ypvckn8d9msbf0i826";
+          })
+        ] ++ oldAttrs.patches;
+      });
     }
   )];
 
