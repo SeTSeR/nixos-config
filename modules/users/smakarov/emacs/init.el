@@ -57,6 +57,8 @@
   (interactive "f")
   (load-file (expand-file-name file user-init-dir)))
 
+(set-default-font "Source Code Pro Medium-13")
+
 (global-wakatime-mode)
 
 (use-package magit
