@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 let homePackages = with pkgs; [
-      unstable.discord
-      unstable.spotify
-      unstable.steam
-      unstable.vk-messenger
+      discord
+      spotify
+      vk-messenger
+      steam
       xpdf
       djview
       torsocks
