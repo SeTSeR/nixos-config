@@ -40,7 +40,7 @@
     # For Steam
     allowUnfree = true;
     packageOverrides = pkgs: {
-      unstable = import ../imports/nixpkgs-unstable {
+      unstable = import ../imports/nixpkgs {
         config = config.nixpkgs.config;
       };
     };
