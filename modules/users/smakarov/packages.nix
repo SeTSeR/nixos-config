@@ -14,7 +14,7 @@ let homePackages = with pkgs; [
     ];
     cppPackages = with pkgs; [
       irony-server
-      unstable.clang_8
+      clang_8
       ccls
     ];
     rustPackages = with pkgs; [
@@ -26,7 +26,7 @@ let homePackages = with pkgs; [
       rls
     ];
     commonPackages = with pkgs; [
-      unstable.tdesktop
+      tdesktop
       rxvt_unicode
       imagemagick7
       xclip
@@ -46,11 +46,6 @@ in
     nixpkgs.config = {
       # For Steam
       allowUnfree = true;
-      packageOverrides = pkgs: {
-        unstable = import ../../../imports/nixpkgs {
-          config = config.nixpkgs.config;
-        };
-      };
     };
 
     home.packages = commonPackages ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;

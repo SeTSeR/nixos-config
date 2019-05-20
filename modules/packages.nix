@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   nixpkgs.overlays = [ (self: old:
     let cacosPkg = { gcc8Stdenv, fetchgit, pkgconfig, boost, cmake, curl, gcc8, git }:
@@ -35,15 +35,18 @@
     }
   )];
 
+  nixpkgs.pkgs = import ../imports/nixpkgs
+  {
+    config.allowUnfree = true;
+  } // config.nixpkgs.config;
 
-  nixpkgs.config = {
-    # For Steam
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import ../imports/nixpkgs {
-        config = config.nixpkgs.config;
-      };
-    };
+  nix = {
+    nixPath = lib.mkForce
+    [
+      "nixpkgs=${../imports/nixpkgs}"
+      "home-manager=${../imports/home-manager}"
+      "nixos-config=/etc/nixos/configuration.nix"
+    ];
   };
 
   # List packages installed in system profile. To search, run:
