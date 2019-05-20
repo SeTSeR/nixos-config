@@ -20,7 +20,7 @@
       "vim-airline-themes"
       "vim-wakatime"
       "vim-nix"
-      "vim-colors-solarized"
+      "gruvbox"
     ];
     extraConfig = ''
 set nocompatible
@@ -57,7 +57,8 @@ let g:netrw_winsize = 25
 
 filetype plugin indent on
 syntax enable
-colorscheme solarized
+set background=dark
+colorscheme gruvbox
 
 set spelllang=ru,en
 au BufRead *.md setlocal spell
