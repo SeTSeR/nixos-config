@@ -4,7 +4,7 @@
     pkgs.fetchFromGitHub {
       owner = "morhetz";
       repo = "gruvbox-contrib";
-      rev = "025ceddbddf55f2eb4ab40b05889148aab9699fc";
+      rev = "edb3ee5f626cdfb250d5ab42c1f5ccb9f8050514";
       sha256 = "0n32s5var4xxwk3bwm70mwja0gy6vaj2awm6kji10yw3fpqgg7yh";
     } + "/xresources/gruvbox-dark.xresources"
   );
