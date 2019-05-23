@@ -16,6 +16,7 @@
   home-manager.users.smakarov = {
     home.sessionVariables = {
       EDITOR = "emacs";
+      RUST_SRC_PATH = "${pkgs.rustc.src}/src";
     };
   };
 }
