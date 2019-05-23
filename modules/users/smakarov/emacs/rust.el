@@ -19,6 +19,7 @@
     :hook
     (rust-mode . racer-mode)
     (racer-mode . company-mode)
+    (racer-mode . eldoc-mode)
     (racer-mode . lsp)))
 
 ;;; rust.el ends here
