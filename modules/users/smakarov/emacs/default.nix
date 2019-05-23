@@ -40,6 +40,7 @@
         lsp-ui
         company-lsp
         ccls
+        helm
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;

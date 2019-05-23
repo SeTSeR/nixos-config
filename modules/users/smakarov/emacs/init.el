@@ -112,6 +112,14 @@
 (use-package ace-jump-mode
   :bind ("C-c SPC" . ace-jump-mode))
 
+(use-package helm-config)
+
+(use-package ido
+  :config
+  (ido-mode 1)
+  (setq ido-everywhere 1)
+  (setq ido-enable-flex-matching t))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (setq-default major-mode 'org-mode)
