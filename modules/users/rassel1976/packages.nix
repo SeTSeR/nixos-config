@@ -1,9 +1,5 @@
 { config, pkgs, lib, ... }:
 let homePackages = with pkgs; [
-      unstable.discord
-      unstable.spotify
-      unstable.steam
-      unstable.vk-messenger
       xpdf
       djview
       torsocks
@@ -21,7 +17,7 @@ let homePackages = with pkgs; [
       jetbrains.clion
     ];
     commonPackages = with pkgs; [
-      unstable.tdesktop
+      tdesktop
       rxvt_unicode
       imagemagick7
       xclip
@@ -42,11 +38,6 @@ in
     nixpkgs.config = {
       # For Steam
       allowUnfree = true;
-      packageOverrides = pkgs: {
-        unstable = import ../../../imports/nixpkgs-unstable {
-          config = config.nixpkgs.config;
-        };
-      };
     };
 
     home.packages = commonPackages ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
