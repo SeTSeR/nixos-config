@@ -19,15 +19,6 @@
   (google-make-newline-indent)
   (c-add-style "prac-style" prac-cc-style t))
 
-(use-package lsp-mode
-  :commands lsp)
-
-(use-package lsp-ui
-  :commands lsp-ui-mode)
-
-(use-package company-lsp
-  :commands company-lsp)
-
 (use-package ccls
   :hook ((c-mode c++-mode objc-mode) .
          (lambda () (require 'ccls) (lsp))))

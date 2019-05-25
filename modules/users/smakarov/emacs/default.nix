@@ -35,6 +35,7 @@
         ccls
         helm
         reverse-im
+        free-keys
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;
@@ -44,5 +45,6 @@
     home.file.".emacs.d/org.el".source=./org.el;
     home.file.".emacs.d/projectile.el".source=./projectile.el;
     home.file.".emacs.d/rust.el".source=./rust.el;
+    home.file.".emacs.d/lsp.el".source=./lsp.el;
   };
 }

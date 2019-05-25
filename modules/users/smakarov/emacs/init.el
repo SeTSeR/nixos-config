@@ -57,7 +57,7 @@
   (interactive "f")
   (load-file (expand-file-name file user-init-dir)))
 
-(set-default-font "Source Code Pro Medium-13")
+(add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
 (global-wakatime-mode)
 
@@ -100,6 +100,7 @@
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
 (load-user-file "lldb-gud.el")
+(load-user-file "lsp.el")
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
