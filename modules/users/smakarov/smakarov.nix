@@ -15,7 +15,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {
-      EDITOR = "emacs";
+      EDITOR = "${pkgs.emacs}/bin/emacsclient -c";
       RUST_SRC_PATH = "${pkgs.rustc.src}/src";
     };
   };
