@@ -6,23 +6,17 @@
       package = pkgs.emacs;
       extraPackages = epkgs: with epkgs; [
         use-package
-        ace-jump-mode
         diminish
         nix-mode
-        nixos-options
         haskell-mode
         powerline
         magit
-        solarized-theme
-        dracula-theme
         gruvbox-theme
-        evil
         wakatime-mode
         projectile
         irony
         flycheck
         flycheck-pkg-config
-        auto-indent-mode
         graphviz-dot-mode
         markdown-mode
         company
@@ -31,7 +25,6 @@
         flycheck-rust
         company-racer
         racer
-        evil-tabs
         smartparens
         company-irony-c-headers
         rainbow-delimiters
