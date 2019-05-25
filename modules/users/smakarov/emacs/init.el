@@ -120,6 +120,10 @@
   (setq ido-everywhere 1)
   (setq ido-enable-flex-matching t))
 
+(use-package reverse-im
+  :config
+  (reverse-im-activate "russian-computer"))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (setq-default major-mode 'org-mode)

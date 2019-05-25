@@ -41,6 +41,7 @@
         company-lsp
         ccls
         helm
+        reverse-im
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;
