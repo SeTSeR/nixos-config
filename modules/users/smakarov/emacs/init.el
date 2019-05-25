@@ -122,7 +122,8 @@
 
 (use-package reverse-im
   :config
-  (reverse-im-activate "russian-computer"))
+  (add-to-list 'reverse-im-input-methods "russian-computer")
+  (reverse-im-mode 1))
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
