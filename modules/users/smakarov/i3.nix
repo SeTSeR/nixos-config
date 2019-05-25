@@ -13,12 +13,12 @@ in
       assigns = {
         "1: " = [ { class = "Chromium"; } { class = "Firefox"; } ];
         "2: " = [ { class = "urxvt"; } ];
-        "3: " = [ { class = "Steam"; } ];
-        "5: " = [ { class = "^Telegram"; } { class = "^VK"; } { class = "^Discord"; } { class = "^Mail"; } ];
+        "3: " = [ { class = "^Telegram"; } { class = "^VK"; } { class = "^Discord"; } { class = "^Mail"; } ];
+        "5: " = [ { class = "Steam"; } ];
       };
       bars = [
         {
-          fonts = [ "FontAwesome 10" "Ubuntu Mono 10" ];
+          fonts = [ "FontAwesome 12" "Ubuntu Mono 12" ];
           statusCommand = "${pkgs.i3status}/bin/i3status";
           position = "top";
           workspaceNumbers = false;
@@ -64,14 +64,14 @@ in
         "${modifier}+Shift+e" = "exec ${pkgs.i3}/bin/i3-msg exit";
         "${modifier}+1" = "workspace 1: ";
         "${modifier}+2" = "workspace 2: ";
-        "${modifier}+3" = "workspace 3: ";
+        "${modifier}+3" = "workspace 3: ";
         "${modifier}+4" = "workspace 4: ";
-        "${modifier}+5" = "workspace 5: ";
+        "${modifier}+5" = "workspace 5: ";
         "${modifier}+Shift+1" = "move container to workspace 1: ";
         "${modifier}+Shift+2" = "move container to workspace 2: ";
-        "${modifier}+Shift+3" = "move container to workspace 3: ";
+        "${modifier}+Shift+3" = "move container to workspace 3: ";
         "${modifier}+Shift+4" = "move container to workspace 4: ";
-        "${modifier}+Shift+5" = "move container to workspace 5: ";
+        "${modifier}+Shift+5" = "move container to workspace 5: ";
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 -5%";
         "XF86AudioMute" = "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-mute 0 toggle";
