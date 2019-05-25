@@ -35,11 +35,10 @@
 
       tdesktop = old.tdesktop.overrideAttrs (oldAttrs: {
         patches = [
-          (builtins.fetchurl 
-          {
-            url = "https://raw.githubusercontent.com/msva/mva-overlay/master/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"; 
-            sha256 = "12ibh0wfc8jg6hj5dqbvnbzwwjyl86fz65ypvckn8d9msbf0i826";
-          })
+          "${builtins.fetchGit {
+            url = https://github.com/msva/mva-overlay;
+            rev = "e5121619c9814b36284146dbe3dae92cf41a7c25";
+          }}/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"
         ] ++ oldAttrs.patches;
       });
     }
