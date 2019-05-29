@@ -39,6 +39,7 @@
         ccls
         reverse-im
         free-keys
+        russian-holidays
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;

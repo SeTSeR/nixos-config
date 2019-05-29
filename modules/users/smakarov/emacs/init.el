@@ -130,6 +130,13 @@
   (add-to-list 'reverse-im-input-methods "russian-computer")
   (reverse-im-mode 1))
 
+
+(use-package calendar
+  :config
+  (use-package russian-holidays
+    :config
+    (setq calendar-holidays russian-holidays)))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (setq-default major-mode 'org-mode)
