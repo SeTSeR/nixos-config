@@ -32,6 +32,7 @@
         rainbow-delimiters
         google-c-style
         ivy
+        ivy-yasnippet
         ix
         lsp-mode
         lsp-ui
@@ -40,6 +41,8 @@
         reverse-im
         free-keys
         russian-holidays
+        yasnippet
+        yasnippet-snippets
       ];
     };
     home.file.".emacs.d/cpp.el".source=./cpp.el;

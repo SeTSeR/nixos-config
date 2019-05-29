@@ -130,6 +130,22 @@
   (add-to-list 'reverse-im-input-methods "russian-computer")
   (reverse-im-mode 1))
 
+(defun org-latex-yasnippet ()
+  "Activate org and LaTeX yasnippet expansion in org-mode buffers."
+  (yas-minor-mode)
+  (yas-activate-extra-mode 'latex-mode))
+
+(use-package yasnippet
+  :hook
+  ((prog-mode . yas-minor-mode)
+   (org-mode . org-latex-yasnippet))
+  :diminish yas-minor-mode
+  :config
+  (use-package yasnippet-snippets)
+  (yas-reload-all))
+
+(use-package ivy-yasnippet
+  :bind ("C-x y" . ivy-yasnippet))
 
 (use-package calendar
   :config
