@@ -30,6 +30,7 @@
         rainbow-delimiters
         google-c-style
         ivy
+        ix
         lsp-mode
         lsp-ui
         company-lsp

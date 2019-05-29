@@ -114,6 +114,7 @@
   :bind ("C-c SPC" . ace-jump-mode))
 
 (use-package helm-config)
+(use-package ix)
 
 (use-package ivy
   :diminish ivy-mode
