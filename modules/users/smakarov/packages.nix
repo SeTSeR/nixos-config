@@ -13,6 +13,7 @@ let homePackages = with pkgs; [
       wpa_supplicant_gui
       racket
       gnuplot
+      nixfmt
     ];
     cppPackages = with pkgs; [
       irony-server

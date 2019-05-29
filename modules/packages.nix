@@ -41,6 +41,11 @@
           }}/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"
         ] ++ oldAttrs.patches;
       });
+
+      nixfmt = (import (builtins.fetchGit {
+        url = "https://github.com/serokell/nixfmt";
+        rev = "1b9b16dbefba39514d01f00836ce3b69788257b0";
+      }) { installOnly = true; });
     }
   )];
 
