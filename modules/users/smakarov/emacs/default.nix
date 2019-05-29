@@ -5,42 +5,44 @@
       enable = true;
       package = pkgs.emacs;
       extraPackages = epkgs: with epkgs; [
-        use-package
+        ccls
+        company
+        company-irony
+        company-irony-c-headers
+        company-lsp
+        company-nixos-options
+        company-racer
         counsel
         counsel-projectile
         diminish
-        nix-mode
-        haskell-mode
-        powerline
-        magit
-        gruvbox-theme
-        wakatime-mode
-        projectile
-        irony
         flycheck
         flycheck-pkg-config
-        graphviz-dot-mode
-        markdown-mode
-        company
-        company-irony
-        rust-mode
         flycheck-rust
-        company-racer
-        racer
-        smartparens
-        company-irony-c-headers
-        rainbow-delimiters
+        free-keys
         google-c-style
+        graphviz-dot-mode
+        gruvbox-theme
+        haskell-mode
+        irony
         ivy
         ivy-yasnippet
         ix
         lsp-mode
         lsp-ui
-        company-lsp
-        ccls
+        magit
+        markdown-mode
+        nix-mode
+        powerline
+        projectile
+        racer
+        racket-mode
+        rainbow-delimiters
         reverse-im
-        free-keys
         russian-holidays
+        rust-mode
+        smartparens
+        use-package
+        wakatime-mode
         yasnippet
         yasnippet-snippets
       ];
