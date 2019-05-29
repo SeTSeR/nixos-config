@@ -5,10 +5,7 @@
 device:
 { config, pkgs, options, ... }:
 
-let
-  unstableTarball = fetchTarball
-  "https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz";
-in {
+{
   imports = [ # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
     ./imports/home-manager/nixos
