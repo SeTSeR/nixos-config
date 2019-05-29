@@ -29,6 +29,7 @@
         company-irony-c-headers
         rainbow-delimiters
         google-c-style
+        ivy
         lsp-mode
         lsp-ui
         company-lsp

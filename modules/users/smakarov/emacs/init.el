@@ -115,11 +115,10 @@
 
 (use-package helm-config)
 
-(use-package ido
+(use-package ivy
+  :diminish ivy-mode
   :config
-  (ido-mode 1)
-  (setq ido-everywhere 1)
-  (setq ido-enable-flex-matching t))
+  (ivy-mode 1))
 
 (use-package reverse-im
   :config

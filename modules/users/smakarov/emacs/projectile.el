@@ -7,6 +7,7 @@
 (use-package projectile
   :diminish projectile-mode
   :config
+  (setq projectile-completion-system 'ivy)
   (define-key projectile-mode-map (kbd "C-c p") nil)
   (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   (projectile-mode 1)
