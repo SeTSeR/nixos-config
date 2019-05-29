@@ -35,7 +35,6 @@
         lsp-ui
         company-lsp
         ccls
-        helm
         reverse-im
         free-keys
       ];
