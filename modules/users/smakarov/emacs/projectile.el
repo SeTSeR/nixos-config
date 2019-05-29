@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+(use-package counsel-projectile
+  :hook
+  (projectile-mode . counsel-projectile))
+
 (use-package projectile
   :diminish projectile-mode
   :config

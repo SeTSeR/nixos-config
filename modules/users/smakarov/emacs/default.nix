@@ -6,6 +6,8 @@
       package = pkgs.emacs;
       extraPackages = epkgs: with epkgs; [
         use-package
+        counsel
+        counsel-projectile
         diminish
         nix-mode
         haskell-mode

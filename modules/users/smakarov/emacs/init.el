@@ -120,6 +120,11 @@
   :config
   (ivy-mode 1))
 
+(use-package counsel
+  :diminish counsel-mode
+  :config
+  (counsel-mode 1))
+
 (use-package reverse-im
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
