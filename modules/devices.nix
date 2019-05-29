@@ -1,12 +1,11 @@
 { pkgs, lib, config, ... }:
 with lib;
-with types;
-{
+with types; {
   options = {
-    device = mkOption { type = strMatching "[A-Za-z]*\-[A-Za-z]*"; };
+    device = mkOption { type = strMatching "[A-Za-z]*-[A-Za-z]*"; };
     deviceSpecific = mkOption { type = attrs; };
   };
-  
+
   config = {
     deviceSpecific = let device = config.device;
     in rec {

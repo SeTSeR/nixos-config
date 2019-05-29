@@ -1,7 +1,5 @@
-{...}:
-{
-  imports = 
-  [
+{ ... }: {
+  imports = [
     ./emacs
     ./git.nix
     ./i3.nix

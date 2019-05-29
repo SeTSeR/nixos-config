@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home-manager.users.rassel1976.programs.vim = {
     enable = true;
     settings = {
@@ -23,59 +22,59 @@
       "vim-colors-solarized"
     ];
     extraConfig = ''
-set nocompatible
+      set nocompatible
 
-set backspace=indent,eol,start
+      set backspace=indent,eol,start
 
-set autoread
-set clipboard=unnamedplus
-set splitright
+      set autoread
+      set clipboard=unnamedplus
+      set splitright
 
-set encoding=utf-8
+      set encoding=utf-8
 
-set ruler
-set noshowmode
+      set ruler
+      set noshowmode
 
-if !has('packages')
-    execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
-endif
+      if !has('packages')
+          execute pathogen#infect('pack/plugins/start/{}', 'pack/themes/opt/{}')
+      endif
 
-set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+      set laststatus=2
+      let g:airline_powerline_fonts = 1
+      let g:airline#extensions#tabline#enabled = 1
+      let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-set noswapfile
+      set noswapfile
 
-set cindent
-set shiftwidth=4
-set softtabstop=4
-set expandtab
+      set cindent
+      set shiftwidth=4
+      set softtabstop=4
+      set expandtab
 
-let g:netrw_browse_split = 4
-let g:netrw_winsize = 25
+      let g:netrw_browse_split = 4
+      let g:netrw_winsize = 25
 
-filetype plugin indent on
-syntax enable
-colorscheme solarized
+      filetype plugin indent on
+      syntax enable
+      colorscheme solarized
 
-set spelllang=ru,en
-au BufRead *.md setlocal spell
+      set spelllang=ru,en
+      au BufRead *.md setlocal spell
 
-autocmd FileType nix setlocal shiftwidth=2 tabstop=2 expandtab
+      autocmd FileType nix setlocal shiftwidth=2 tabstop=2 expandtab
 
-augroup Binary
-    au!
-    au BufReadPre  *.bin let &bin=1
-    au BufReadPost * if &bin | %!xxd
-    au BufReadPost * set ft=xxd | endif
-    au BufWritePre * if &bin | %!xxd -r
-    au BufWritePre * endif
-    au BufWritePost * if &bin | %!xxd
-    au BufWritePost * set nomod | endif
-augroup END
+      augroup Binary
+          au!
+          au BufReadPre  *.bin let &bin=1
+          au BufReadPost * if &bin | %!xxd
+          au BufReadPost * set ft=xxd | endif
+          au BufWritePre * if &bin | %!xxd -r
+          au BufWritePre * endif
+          au BufWritePost * if &bin | %!xxd
+          au BufWritePost * set nomod | endif
+      augroup END
 
-set foldmethod=syntax
-    '';
+      set foldmethod=syntax
+          '';
   };
 }

@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home-manager.users.smakarov = {
     services.blueman-applet.enable = true;
     services.emacs.enable = true;

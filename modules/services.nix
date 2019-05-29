@@ -1,24 +1,24 @@
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
-  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf pkgs.blueman ];
   systemd.coredump = {
     enable = true;
     extraConfig = "Storage=journal";
   };
-  security.pam.loginLimits = [
-    {
-      domain = "smakarov";
-      type = "soft";
-      item = "core";
-      value = 1024;
-    }
-  ];
-  
+  security.pam.loginLimits = [{
+    domain = "smakarov";
+    type = "soft";
+    item = "core";
+    value = 1024;
+  }];
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -26,7 +26,7 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-  
+
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -44,7 +44,7 @@
 
   # Enable hamachi
   services.logmein-hamachi.enable = config.deviceSpecific.isHomeMachine;
-  
+
   # Activate D-Bus socket
   services.dbus.socketActivated = true;
 

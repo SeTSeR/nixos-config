@@ -1,7 +1,5 @@
-{...}:
-{
-  imports = 
-  [
+{ ... }: {
+  imports = [
     ./devices.nix
     ./fonts.nix
     ./hardware.nix

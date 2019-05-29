@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   home-manager.users.smakarov.programs.git = {
     enable = true;
     signing = {

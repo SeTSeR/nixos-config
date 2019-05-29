@@ -1,9 +1,7 @@
 { pkgs, config, lib, ... }:
 
-let
-  isVM = !isNull (builtins.match "^VirtualBox-.*" config.device);
-in
-{
+let isVM = !isNull (builtins.match "^VirtualBox-.*" config.device);
+in {
   boot.loader = (if isVM then {
     grub.enable = true;
     grub.useOSProber = true;
@@ -14,7 +12,7 @@ in
     efi.canTouchEfiVariables = true;
   });
   boot.initrd.checkJournalingFS = !isVM;
-  
+
   hardware = {
     opengl = {
       enable = true;
@@ -29,9 +27,10 @@ in
       # For bt headphones
       package = pkgs.pulseaudioFull;
     };
-    } // (if config.deviceSpecific.isHomeMachine then {
-      acpilight.enable = true;
-      bluetooth.enable = true;
-      cpu.intel.updateMicrocode = true;
-    } else {});
+  } // (if config.deviceSpecific.isHomeMachine then {
+    acpilight.enable = true;
+    bluetooth.enable = true;
+    cpu.intel.updateMicrocode = true;
+  } else
+    { });
 }

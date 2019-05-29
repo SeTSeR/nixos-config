@@ -1,10 +1,10 @@
-{ config, pkgs, libs, ... }:
-{
+{ config, pkgs, libs, ... }: {
   home-manager.users.rassel1976 = {
     programs.emacs = {
       enable = true;
       package = pkgs.emacs;
-      extraPackages = epkgs: with epkgs; [
+      extraPackages = epkgs:
+      with epkgs; [
         use-package
         diminish
         nix-mode
@@ -33,10 +33,10 @@
         google-c-style
       ];
     };
-    home.file.".emacs.d/cpp.el".source=./cpp.el;
-    home.file.".emacs.d/init.el".source=./init.el;
-    home.file.".emacs.d/keys.el".source=./keys.el;
-    home.file.".emacs.d/projectile.el".source=./projectile.el;
-    home.file.".emacs.d/rust.el".source=./rust.el;
+    home.file.".emacs.d/cpp.el".source = ./cpp.el;
+    home.file.".emacs.d/init.el".source = ./init.el;
+    home.file.".emacs.d/keys.el".source = ./keys.el;
+    home.file.".emacs.d/projectile.el".source = ./projectile.el;
+    home.file.".emacs.d/rust.el".source = ./rust.el;
   };
 }

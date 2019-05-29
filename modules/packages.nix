@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }:
-{
-  nixpkgs.overlays = [ (self: old:
-    let cacosPkg = { gcc8Stdenv, fetchgit, pkgconfig, boost, cmake, curl, gcc8, git }:
+{ config, pkgs, lib, ... }: {
+  nixpkgs.overlays = [
+    (self: old:
+    let
+      cacosPkg =
+      { gcc8Stdenv, fetchgit, pkgconfig, boost, cmake, curl, gcc8, git }:
       let
-        boostpkg = boost.override {
-          enableStatic = true;
-        };
+        boostpkg = boost.override { enableStatic = true; };
         stdenv = gcc8Stdenv;
       in stdenv.mkDerivation rec {
         name = "cacos";
@@ -31,14 +31,16 @@
         };
       };
     in {
-      cacos = self.pkgs.callPackage cacosPkg {};
+      cacos = self.pkgs.callPackage cacosPkg { };
 
       tdesktop = old.tdesktop.overrideAttrs (oldAttrs: {
         patches = [
-          "${builtins.fetchGit {
-            url = https://github.com/msva/mva-overlay;
-            rev = "e5121619c9814b36284146dbe3dae92cf41a7c25";
-          }}/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"
+          "${
+            builtins.fetchGit {
+              url = "https://github.com/msva/mva-overlay";
+              rev = "e5121619c9814b36284146dbe3dae92cf41a7c25";
+            }
+          }/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"
         ] ++ oldAttrs.patches;
       });
 
@@ -46,17 +48,14 @@
         url = "https://github.com/serokell/nixfmt";
         rev = "1b9b16dbefba39514d01f00836ce3b69788257b0";
       }) { installOnly = true; });
-    }
-  )];
+    })
+  ];
 
-  nixpkgs.pkgs = import ../imports/nixpkgs
-  {
-    config.allowUnfree = true;
-  } // config.nixpkgs.config;
+  nixpkgs.pkgs = import ../imports/nixpkgs { config.allowUnfree = true; }
+  // config.nixpkgs.config;
 
   nix = {
-    nixPath = lib.mkForce
-    [
+    nixPath = lib.mkForce [
       "nixpkgs=${../imports/nixpkgs}"
       "home-manager=${../imports/home-manager}"
       "nixos-config=/etc/nixos/configuration.nix"

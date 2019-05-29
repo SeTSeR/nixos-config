@@ -1,5 +1,4 @@
-{ pkgs, lib, config, ... }:
-{
+{ pkgs, lib, config, ... }: {
   networking = {
     networkmanager.enable = false;
     wireless = if config.deviceSpecific.isHomeMachine then {
