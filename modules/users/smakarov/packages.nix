@@ -11,6 +11,8 @@ let homePackages = with pkgs; [
       texlive.combined.scheme-full
       cacos
       wpa_supplicant_gui
+      racket
+      gnuplot
     ];
     cppPackages = with pkgs; [
       irony-server
