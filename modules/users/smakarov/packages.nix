@@ -48,6 +48,12 @@ in {
       allowUnfree = true;
     };
 
+    home.file.".config/nixpkgs/config.nix".text = ''
+    {
+      allowUnfree = true;
+    }
+    '';
+
     home.packages = commonPackages
     ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
   };
