@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 let
-  term = "${pkgs.rxvt_unicode}/bin/urxvt";
+  term = "${pkgs.alacritty}/bin/alacritty";
   homeCommands = [
     {
       command = "${pkgs.vk-messenger}/bin/vk";
