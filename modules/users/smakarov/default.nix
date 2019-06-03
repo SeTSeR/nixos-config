@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./emacs
+    ./firefox.nix
     ./git.nix
     ./i3.nix
     ./i3status.nix

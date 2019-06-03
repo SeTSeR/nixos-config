@@ -34,7 +34,6 @@ let
     xclip
     unzip
     nitrogen
-    firefox
     efibootmgr
     gnupg
     htop
