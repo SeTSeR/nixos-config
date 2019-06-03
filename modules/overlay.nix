@@ -67,7 +67,7 @@ let
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
     version = "3.0.15";
-    addonId = "{27c3c9d8-95cd-44e6-ae9c-ff537348b9f3}";
+    addonId = "treestyletab@piro.sakura.ne.jp";
     url = "https://addons.mozilla.org/firefox/downloads/file/2993967/tree_style_tab-3.0.15-fx.xpi?src=";
     sha256 = "99f851e16457a19d8c7c6f9c1911388c03bcb6fd5c8ea939912be3a009a751b9";
     meta = with self.stdenv.lib; {
