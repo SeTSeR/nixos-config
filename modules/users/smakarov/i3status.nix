@@ -5,18 +5,33 @@
       	  output_format = "i3bar"
         }
 
+        order += "wireless wlp2s0"
+        order += "cpu_usage"
+        order += "cpu_temperature 0"
         order += "disk /"
         order += "battery 0"
         order += "tztime local"
         order += "volume master"
 
-        wireless iwm0 {
+        cpu_usage {
+          format = "CPU: %usage"
+        }
+
+        cpu_temperature 0 {
+          format = "T degrees °C"
+        }
+
+        wireless wlp2s0 {
       	  format_up = "W: (%quality at %essid) %ip"
           format_down = "W: down"
         }
 
         battery 0 {
           format = "%status %percentage %remaining %emptytime"
+          status_bat = "🔋"
+          status_chr = "⚡"
+          status_unk = "?"
+          status_full = "☻"
         }
 
         tztime local {
