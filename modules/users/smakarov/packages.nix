@@ -50,9 +50,9 @@ in {
     };
 
     home.file.".config/nixpkgs/config.nix".text = ''
-    {
-      allowUnfree = true;
-    }
+      {
+        allowUnfree = true;
+      }
     '';
 
     home.packages = commonPackages
