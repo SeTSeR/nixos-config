@@ -42,9 +42,6 @@
     windowManager.i3.enable = true;
   };
 
-  # Enable hamachi
-  services.logmein-hamachi.enable = config.deviceSpecific.isHomeMachine;
-
   # Activate D-Bus socket
   services.dbus.socketActivated = true;
 
