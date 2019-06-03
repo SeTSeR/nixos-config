@@ -18,8 +18,8 @@ in {
     enable = true;
     config = rec {
       assigns = {
-        "1: " = [ { class = "Chromium"; } { class = "Firefox"; } ];
-        "2: " = [{ class = "urxvt"; }];
+        "1: " = [ { class = "^Chromium"; } { class = "^Firefox"; } ];
+        "2: " = [{ class = "urxvt"; } { class = "alacritty"; }];
         "3: " = [
           {
             class = "^Telegram";

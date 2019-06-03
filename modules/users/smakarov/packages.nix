@@ -29,7 +29,6 @@ let
   [
     tdesktop
     rxvt_unicode
-    alacritty
     imagemagick7
     xclip
     unzip
