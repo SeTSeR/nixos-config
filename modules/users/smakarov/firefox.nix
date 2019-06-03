@@ -4,6 +4,7 @@
     enableAdobeFlash = false;
     extensions = with pkgs; [
       lastpass
+      tridactyl
       treestyletab
       ublock
       umatrix

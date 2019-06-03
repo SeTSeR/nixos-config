@@ -18,7 +18,7 @@
         }
 
         cpu_temperature 0 {
-          format = "T degrees °C"
+          format = "T %degrees °C"
         }
 
         wireless wlp2s0 {

@@ -64,6 +64,20 @@ let
     };
   };
 
+  tridactylPkg = buildFirefoxXpiAddon {
+    pname = "tridactyl";
+    version = "1.15.0";
+    addonId = "tridactyl.vim@cmcaine.co.uk";
+    url = "https://addons.mozilla.org/firefox/downloads/file/2988759/tridactyl-1.15.0-an+fx.xpi?src=";
+    sha256 = "bf50c1e95715d12b40e3d62eacd5eac80e07a5c7debefaca71945d1afb952bb3";
+    meta = with self.stdenv.lib; {
+      homepage = "https://github.com/tridactyl/tridactyl";
+      description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
+      license = licenses.apache2;
+      platforms = platforms.all;
+    };
+  };
+
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
     version = "3.0.15";
@@ -126,6 +140,7 @@ in {
 
   lastpass = self.callPackage lastpassPkg {};
   treestyletab = self.callPackage tstPkg {};
+  tridactyl = self.callPackage tridactylPkg {};
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
 }
