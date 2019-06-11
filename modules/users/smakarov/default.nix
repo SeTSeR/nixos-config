@@ -9,7 +9,6 @@
     ./packages.nix
     ./services.nix
     ./smakarov.nix
-    ./urxvt.nix
     ./ssh.nix
     ./xresources.nix
     ./vim.nix
