@@ -131,7 +131,7 @@
   (reverse-im-mode 1))
 
 (defun org-latex-yasnippet ()
-  "Activate org and LaTeX yasnippet expansion in org-mode buffers."
+  "Activate org and LaTeX yasnippet expansion in 'org-mode' buffers."
   (yas-minor-mode)
   (yas-activate-extra-mode 'latex-mode))
 
@@ -142,6 +142,7 @@
   :diminish yas-minor-mode
   :config
   (use-package yasnippet-snippets)
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippet-snippets")
   (yas-reload-all))
 
 (use-package ivy-yasnippet
