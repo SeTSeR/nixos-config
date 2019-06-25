@@ -69,12 +69,6 @@
   :config
   (global-flycheck-mode))
 
-(use-package company
-  :diminish company-mode
-  :config
-  (global-company-mode 1)
-  (setq company-global-modes '(not gud-mode)))
-
 (use-package gruvbox-theme
   :config (load-theme 'gruvbox-dark-hard t))
 
@@ -97,6 +91,7 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
+(load-user-file "completion.el")
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
 (load-user-file "lldb-gud.el")
@@ -104,6 +99,7 @@
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
+(load-user-file "snippets.el")
 (load-user-file "spell.el")
 
 (use-package lldb-gud)
@@ -115,16 +111,6 @@
   :bind ("C-c SPC" . ace-jump-mode))
 
 (use-package ix)
-
-(use-package ivy
-  :diminish ivy-mode
-  :config
-  (ivy-mode 1))
-
-(use-package counsel
-  :diminish counsel-mode
-  :config
-  (counsel-mode 1))
 
 (use-package reverse-im
   :config
