@@ -18,6 +18,7 @@
         flycheck
         flycheck-pkg-config
         flycheck-rust
+        flyspell-correct
         free-keys
         google-c-style
         graphviz-dot-mode
@@ -55,6 +56,7 @@
     home.file.".emacs.d/projectile.el".source = ./projectile.el;
     home.file.".emacs.d/rust.el".source = ./rust.el;
     home.file.".emacs.d/lsp.el".source = ./lsp.el;
+    home.file.".emacs.d/spell.el".source = ./spell.el;
     home.file.".emacs.d/yasnippet-snippets".source = ./yasnippet-snippets;
   };
 }

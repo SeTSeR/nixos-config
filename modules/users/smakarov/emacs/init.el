@@ -104,6 +104,7 @@
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
+(load-user-file "spell.el")
 
 (use-package lldb-gud)
 

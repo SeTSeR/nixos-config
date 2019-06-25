@@ -15,6 +15,9 @@ let
     racket
     gnuplot
     nixfmt
+    aspell
+    aspellDicts.en
+    aspellDicts.ru
   ];
   cppPackages = with pkgs; [ irony-server clang_8 ccls ];
   rustPackages = with pkgs; [
