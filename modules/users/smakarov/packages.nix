@@ -1,25 +1,25 @@
 { config, pkgs, lib, ... }:
 let
   homePackages = with pkgs; [
-    discord
-    spotify
-    vk-messenger
-    steam
-    xpdf
-    djview
-    torsocks
-    graphviz
-    texlive.combined.scheme-full
-    cacos
-    wpa_supplicant_gui
-    racket
-    gnuplot
-    nixfmt
     aspell
     aspellDicts.en
     aspellDicts.ru
+    cacos
+    discord
+    djview
+    gnuplot
+    graphviz
+    nixfmt
+    racket
+    spotify
+    steam
+    texlive.combined.scheme-full
+    torsocks
+    vk-messenger
+    wpa_supplicant_gui
+    xpdf
   ];
-  cppPackages = with pkgs; [ irony-server clang_8 ccls ];
+  cppPackages = with pkgs; [ ccls clang_8 irony-server ];
   rustPackages = with pkgs; [
     cargo
     rustc
@@ -30,17 +30,17 @@ let
   ];
   commonPackages = with pkgs;
   [
-    tdesktop
-    imagemagick7
-    xclip
-    unzip
-    nitrogen
     efibootmgr
     gnupg
     htop
-    unrar
+    imagemagick7
+    nitrogen
+    tdesktop
     thunderbird
+    unrar
+    unzip
     wakatime
+    xclip
   ] ++ cppPackages ++ rustPackages;
 in {
   home-manager.users.smakarov = {
