@@ -66,10 +66,10 @@ let
 
   tridactylPkg = buildFirefoxXpiAddon {
     pname = "tridactyl";
-    version = "1.15.0";
+    version = "1.16.0";
     addonId = "tridactyl.vim@cmcaine.co.uk";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2988759/tridactyl-1.15.0-an+fx.xpi?src=";
-    sha256 = "bf50c1e95715d12b40e3d62eacd5eac80e07a5c7debefaca71945d1afb952bb3";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3027747/tridactyl-1.16.1-an+fx.xpi?src=";
+    sha256 = "11rkvbv1q3qlpjackmlrk82yghb0ly49zd73d6rbc9xl2r02ql0b";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
@@ -80,10 +80,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.0.15";
+    version = "3.1.2";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2993967/tree_style_tab-3.0.15-fx.xpi?src=";
-    sha256 = "99f851e16457a19d8c7c6f9c1911388c03bcb6fd5c8ea939912be3a009a751b9";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3038888/tree_style_tab-3.1.2-fx.xpi?src=";
+    sha256 = "0lwh2qs5c135snwwg9mjjhfz1w9rmd2b1nwy0hgn0m356v0g8ibb";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
