@@ -15,6 +15,8 @@
         counsel
         counsel-projectile
         diminish
+        evil
+        evil-magit
         flycheck
         flycheck-pkg-config
         flycheck-rust
@@ -50,6 +52,7 @@
     };
     home.file.".emacs.d/completion.el".source = ./completion.el;
     home.file.".emacs.d/cpp.el".source = ./cpp.el;
+    home.file.".emacs.d/evil.el".source = ./evil.el;
     home.file.".emacs.d/init.el".source = ./init.el;
     home.file.".emacs.d/keys.el".source = ./keys.el;
     home.file.".emacs.d/lldb-gud.el".source = ./lldb-gud.el;

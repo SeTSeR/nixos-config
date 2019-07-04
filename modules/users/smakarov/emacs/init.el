@@ -93,6 +93,7 @@
 
 (load-user-file "completion.el")
 (load-user-file "cpp.el")
+(load-user-file "evil.el")
 (load-user-file "keys.el")
 (load-user-file "lldb-gud.el")
 (load-user-file "lsp.el")
