@@ -28,7 +28,6 @@ let
   commonPackages = with pkgs;
   [
     tdesktop
-    rxvt_unicode
     imagemagick7
     xclip
     unzip
