@@ -111,9 +111,6 @@
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
-(use-package ace-jump-mode
-  :bind ("C-c SPC" . ace-jump-mode))
-
 (use-package ix)
 
 (use-package ivy
