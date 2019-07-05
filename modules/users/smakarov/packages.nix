@@ -38,6 +38,8 @@ let
     unrar
     thunderbird
     wakatime
+    fd
+    ripgrep
   ] ++ cppPackages ++ rustPackages;
 in {
   home-manager.users.smakarov = {
