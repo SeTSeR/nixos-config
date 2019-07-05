@@ -76,7 +76,7 @@
   (setq company-global-modes '(not gud-mode)))
 
 (use-package gruvbox-theme
-  :config (load-theme 'gruvbox-dark-hard t))
+  :config (load-theme 'gruvbox-light-soft t))
 
 (use-package powerline
   :config

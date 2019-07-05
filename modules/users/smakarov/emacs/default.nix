@@ -5,6 +5,7 @@
       package = pkgs.emacs;
       extraPackages = epkgs:
       with epkgs; [
+        apropospriate-theme
         ccls
         company
         company-irony
