@@ -122,7 +122,7 @@ let
 in {
   cacos = self.pkgs.callPackage cacosPkg { };
 
-  tdesktop = old.tdesktop.overrideAttrs (oldAttrs: {
+  tdesktopWideBaloons = old.tdesktop.overrideAttrs (oldAttrs: {
     patches = [
       "${
         builtins.fetchGit {
