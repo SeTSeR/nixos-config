@@ -9,7 +9,7 @@ let
 
     src = fetchgit {
       url = "https://github.com/BigRedEye/cacos";
-      rev = "v0.1.4";
+      rev = "v1.0.0";
       sha256 = "1b6bph086qlaz5l0zslakniyzx4cwg1532vmza2fci4x64l54mkw";
       fetchSubmodules = true;
     };
