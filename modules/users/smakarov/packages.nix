@@ -5,12 +5,10 @@ let
     aspellDicts.en
     aspellDicts.ru
     cacos
-    discord
     djview
     gnuplot
     graphviz
     nixfmt
-    racket
     spotify
     steam
     texlive.combined.scheme-full

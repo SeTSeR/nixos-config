@@ -38,7 +38,6 @@
         powerline
         projectile
         racer
-        racket-mode
         rainbow-delimiters
         reverse-im
         russian-holidays
