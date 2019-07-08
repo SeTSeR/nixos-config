@@ -23,6 +23,7 @@
     ];
     extraConfig = ''
       set nocompatible
+      set termguicolors
 
       set backspace=indent,eol,start
 
@@ -56,7 +57,7 @@
 
       filetype plugin indent on
       syntax enable
-      set background=dark
+      set background=light
       colorscheme gruvbox
 
       set spelllang=ru,en

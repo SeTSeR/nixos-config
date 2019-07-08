@@ -75,8 +75,8 @@
   (global-company-mode 1)
   (setq company-global-modes '(not gud-mode)))
 
-(use-package gruvbox-theme
-  :config (load-theme 'gruvbox-light-soft t))
+(use-package apropospriate-theme
+  :config (load-theme 'apropospriate-light t))
 
 (use-package powerline
   :config
