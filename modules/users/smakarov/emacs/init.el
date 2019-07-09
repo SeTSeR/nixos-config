@@ -104,8 +104,11 @@
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
+(load-user-file "pivot-mode.el")
 
 (use-package lldb-gud)
+
+(use-package pivot-mode)
 
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")

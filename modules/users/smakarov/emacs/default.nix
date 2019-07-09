@@ -59,5 +59,6 @@
     home.file.".emacs.d/projectile.el".source = ./projectile.el;
     home.file.".emacs.d/rust.el".source = ./rust.el;
     home.file.".emacs.d/lsp.el".source = ./lsp.el;
+    home.file.".emacs.d/pivot-mode.el".source = ./pivot-mode.el;
   };
 }
