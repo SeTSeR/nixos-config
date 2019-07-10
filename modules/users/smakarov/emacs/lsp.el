@@ -7,7 +7,8 @@
 (use-package lsp-mode
   :commands lsp
   :config
-  (setq lsp-prefer-flymake nil))
+  (setq lsp-prefer-flymake nil)
+  (setq lsp-enable-snippet nil))
 
 (use-package lsp-ui
   :commands lsp-ui-mode)

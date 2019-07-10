@@ -90,23 +90,17 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
 
-(use-package graphviz-dot-mode)
-
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(load-user-file "cpp.el")
 (load-user-file "evil.el")
 (load-user-file "keys.el")
-(load-user-file "lldb-gud.el")
 (load-user-file "lsp.el")
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
 (load-user-file "pivot-mode.el")
-
-(use-package lldb-gud)
 
 (use-package pivot-mode)
 
@@ -130,29 +124,6 @@
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
   (reverse-im-mode 1))
-
-(defun org-latex-yasnippet ()
-  "Activate org and LaTeX yasnippet expansion in org-mode buffers."
-  (yas-minor-mode)
-  (yas-activate-extra-mode 'latex-mode))
-
-(use-package yasnippet
-  :hook
-  ((prog-mode . yas-minor-mode)
-   (org-mode . org-latex-yasnippet))
-  :diminish yas-minor-mode
-  :config
-  (use-package yasnippet-snippets)
-  (yas-reload-all))
-
-(use-package ivy-yasnippet
-  :bind ("C-x y" . ivy-yasnippet))
-
-(use-package calendar
-  :config
-  (use-package russian-holidays
-    :config
-    (setq calendar-holidays russian-holidays)))
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
