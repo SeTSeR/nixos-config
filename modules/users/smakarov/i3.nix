@@ -89,7 +89,7 @@ in {
         "${modifier}+Shift+5" = "move container to workspace 5: ";
         "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
         "${modifier}+Ctrl+p" = "exec ${pkgs.emacs}/bin/emacsclient -nc";
-        "${modifier}+Ctrl+g" = "exec ${pkgs.nix}/bin/nix-shell ~/Projects/gf/shell.nix --run emacs";
+        "${modifier}+Ctrl+g" = "exec ${pkgs.nix}/bin/nix-shell ~/Projects/gf/shell.nix --run \"emacs ~/Projects/gf\"";
         "${modifier}+Ctrl+f" = "exec ${pkgs.firefox}/bin/firefox";
         "XF86AudioRaiseVolume" =
         "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
