@@ -66,10 +66,10 @@ let
 
   tridactylPkg = buildFirefoxXpiAddon {
     pname = "tridactyl";
-    version = "1.16.0";
+    version = "1.16.2";
     addonId = "tridactyl.vim@cmcaine.co.uk";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3027747/tridactyl-1.16.1-an+fx.xpi?src=";
-    sha256 = "11rkvbv1q3qlpjackmlrk82yghb0ly49zd73d6rbc9xl2r02ql0b";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3348489/tridactyl-1.16.2-an+fx.xpi?src=";
+    sha256 = "5aadd08d0c557ae38d37a82534110585fa81e20c5068cfd09cd49be008cd6365";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
