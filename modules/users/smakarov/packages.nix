@@ -15,6 +15,7 @@ let
     wakatime
     fd
     ripgrep
+    autorandr
   ];
 in {
   home-manager.users.smakarov = {
