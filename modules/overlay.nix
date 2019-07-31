@@ -80,10 +80,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.1.2";
+    version = "3.1.5";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3038888/tree_style_tab-3.1.2-fx.xpi?src=";
-    sha256 = "0lwh2qs5c135snwwg9mjjhfz1w9rmd2b1nwy0hgn0m356v0g8ibb";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3339183/tree_style_tab-3.1.5-fx.xpi?src=";
+    sha256 = "772f169dc0424e55c63db2d1d5635c47c7cbdd18dbc6c077d2bfea9799e147f5";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
