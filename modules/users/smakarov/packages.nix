@@ -43,7 +43,7 @@ let
     unzip
     wakatime
     xclip
-  ] ++ cppPackages ++ rustPackages;
+  ];
 in {
   home-manager.users.smakarov = {
     nixpkgs.config = {
