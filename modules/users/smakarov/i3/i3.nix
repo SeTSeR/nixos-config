@@ -54,8 +54,10 @@ in {
           criteria = { class = "Spotify"; };
         }];
       };
-      startup = [{ command = "${pkgs.tdesktop}/bin/telegram-desktop"; }]
-      ++ lib.optionals config.deviceSpecific.isHomeMachine homeCommands;
+      startup = [
+        { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
+        { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
+      ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
@@ -77,15 +79,15 @@ in {
         "${modifier}+h" = "split h";
         "${modifier}+v" = "split v";
         "${modifier}+Shift+e" = "exec ${pkgs.i3}/bin/i3-msg exit";
-        "${modifier}+1" = "workspace 1: ";
-        "${modifier}+2" = "workspace 2: ";
-        "${modifier}+3" = "workspace 3: ";
-        "${modifier}+4" = "workspace 4: ";
+        "${modifier}+1" = "workspace 2: ";
+        "${modifier}+2" = "workspace 1: ";
+        "${modifier}+3" = "workspace 4: ";
+        "${modifier}+4" = "workspace 3: ";
         "${modifier}+5" = "workspace 5: ";
-        "${modifier}+Shift+1" = "move container to workspace 1: ";
-        "${modifier}+Shift+2" = "move container to workspace 2: ";
-        "${modifier}+Shift+3" = "move container to workspace 3: ";
-        "${modifier}+Shift+4" = "move container to workspace 4: ";
+        "${modifier}+Shift+1" = "move container to workspace 2: ";
+        "${modifier}+Shift+2" = "move container to workspace 1: ";
+        "${modifier}+Shift+3" = "move container to workspace 4: ";
+        "${modifier}+Shift+4" = "move container to workspace 3: ";
         "${modifier}+Shift+5" = "move container to workspace 5: ";
         "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
         "${modifier}+Ctrl+p" = "exec ${pkgs.emacs}/bin/emacsclient -nc";

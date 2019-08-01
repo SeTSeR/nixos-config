@@ -15,7 +15,7 @@ let
     wakatime
     fd
     ripgrep
-    autorandr
+    spotify
   ];
 in {
   home-manager.users.smakarov = {

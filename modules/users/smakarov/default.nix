@@ -1,12 +1,10 @@
 { ... }: {
   imports = [
     ./alacritty.nix
-    ./autorandr.nix
     ./emacs
     ./firefox.nix
     ./git.nix
-    ./i3.nix
-    ./i3status.nix
+    ./i3
     ./packages.nix
     ./services.nix
     ./smakarov.nix
