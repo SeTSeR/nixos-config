@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./rassel1976 ./smakarov ];
+  imports = [ ./smakarov ];
 
   users.mutableUsers = false;
   users.users.root.hashedPassword =
