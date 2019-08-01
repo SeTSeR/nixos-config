@@ -4,7 +4,6 @@ let
     aspell
     aspellDicts.en
     aspellDicts.ru
-    cacos
     djview
     gnuplot
     graphviz
@@ -17,7 +16,12 @@ let
     wpa_supplicant_gui
     xpdf
   ];
-  cppPackages = with pkgs; [ ccls clang_8 irony-server ];
+  cppPackages = with pkgs; [
+    cacos
+    ccls
+    clang_8
+    irony-server
+  ];
   rustPackages = with pkgs; [
     cargo
     rustc
