@@ -17,6 +17,14 @@ with lib; {
       type = types.string;
       description = "Work wi-fi key";
     };
+    isprasUserName = mkOption {
+      type = types.string;
+      description = "Username for ISP RAS OpenVPN server";
+    };
+    isprasPassword = mkOption {
+      type = types.string;
+      description = "Password for ISP RAS OpenVPN server";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }

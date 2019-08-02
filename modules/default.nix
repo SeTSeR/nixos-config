@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ./config.nix
     ./devices.nix
     ./fonts.nix
     ./hardware.nix

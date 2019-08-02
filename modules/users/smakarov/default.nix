@@ -6,6 +6,7 @@
     ./git.nix
     ./i3.nix
     ./i3status.nix
+    ./openvpn
     ./packages.nix
     ./services.nix
     ./smakarov.nix

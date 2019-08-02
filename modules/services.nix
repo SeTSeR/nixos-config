@@ -52,6 +52,5 @@
   # Enable Tor
   services.tor.enable = false;
 
-  services.geoclue2.enable = true;
   services.udisks2.enable = true;
 }
