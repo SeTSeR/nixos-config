@@ -1,6 +1,6 @@
 { pkgs, config, lib, ... }: {
   services.openssh = {
-    enable = false;
+    enable = true;
     passwordAuthentication = false;
   };
 
