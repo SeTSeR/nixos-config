@@ -9,8 +9,8 @@ let
 
     src = fetchgit {
       url = "https://github.com/BigRedEye/cacos";
-      rev = "v0.1.4";
-      sha256 = "1b6bph086qlaz5l0zslakniyzx4cwg1532vmza2fci4x64l54mkw";
+      rev = "v1.0.0";
+      sha256 = "0av84475dxamvmf8slqp2h6p2y4j08nm94qjc6rvxcqbp54bn1zi";
       fetchSubmodules = true;
     };
 
@@ -53,10 +53,10 @@ let
 
   lastpassPkg = buildFirefoxXpiAddon {
     pname = "lastpass";
-    version = "4.28.0.4";
+    version = "4.29.0.4";
     addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2958892/lastpass_password_manager-4.28.0.4-fx.xpi?src=";
-    sha256 = "dde8c89bdc0daedcdeedcbab1af99d464d56b4a6699355e57b59b5b0f0473f33";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3019318/lastpass_password_manager-4.29.0.4-fx.xpi?src=";
+    sha256 = "a31f86b22a13fa1c363428d207a68ac5fde664dde5e8557ff598ff39c77825be";
     meta = with self.stdenv.lib; {
       homepage = "lastpass.com";
       description = "LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.";
@@ -66,10 +66,10 @@ let
 
   tridactylPkg = buildFirefoxXpiAddon {
     pname = "tridactyl";
-    version = "1.15.0";
+    version = "1.16.2";
     addonId = "tridactyl.vim@cmcaine.co.uk";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2988759/tridactyl-1.15.0-an+fx.xpi?src=";
-    sha256 = "bf50c1e95715d12b40e3d62eacd5eac80e07a5c7debefaca71945d1afb952bb3";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3348489/tridactyl-1.16.2-an+fx.xpi?src=";
+    sha256 = "5aadd08d0c557ae38d37a82534110585fa81e20c5068cfd09cd49be008cd6365";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
@@ -80,10 +80,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.0.15";
+    version = "3.1.5";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2993967/tree_style_tab-3.0.15-fx.xpi?src=";
-    sha256 = "99f851e16457a19d8c7c6f9c1911388c03bcb6fd5c8ea939912be3a009a751b9";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3339183/tree_style_tab-3.1.5-fx.xpi?src=";
+    sha256 = "772f169dc0424e55c63db2d1d5635c47c7cbdd18dbc6c077d2bfea9799e147f5";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
@@ -94,10 +94,10 @@ let
 
   ublockPkg = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.19.6";
+    version = "1.21.2";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/2990453/ublock_origin-1.19.6-an+fx.xpi?src=";
-    sha256 = "42cc200785c6c644a557a8439e4c94e835e83ff7a7dcbf0d2b2d7a7e8a0efa88";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3361355/ublock_origin-1.21.2-an+fx.xpi?src=";
+    sha256 = "6c7ecdb7704963b83e03f9ada79d70a9af7486c1149f41edac3ed760fec0ed7a";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/gorhill/uBlock#ublock-origin";
       description = "Finally, an efficient blocker. Easy on CPU and memory.";
@@ -122,7 +122,7 @@ let
 in {
   cacos = self.pkgs.callPackage cacosPkg { };
 
-  tdesktop = old.tdesktop.overrideAttrs (oldAttrs: {
+  tdesktopWideBaloons = old.tdesktop.overrideAttrs (oldAttrs: {
     patches = [
       "${
         builtins.fetchGit {
