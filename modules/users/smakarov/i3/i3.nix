@@ -118,11 +118,11 @@ in {
       }) 4));
       workspaceLayout = "tabbed";
     };
-    extraConfig = ''
+    extraConfig = if config.deviceSpecific.isWorkMachine then ''
       workspace "1: " output HDMI-0
       workspace "2: " output primary
       workspace "3: " output HDMI-0
       workspace "4: " output primary
-    '';
+    '' else "";
   };
 }
