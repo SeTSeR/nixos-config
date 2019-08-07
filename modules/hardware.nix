@@ -31,6 +31,7 @@ in {
     acpilight.enable = true;
     bluetooth.enable = true;
     cpu.intel.updateMicrocode = true;
-  } else
-    { });
+  } else (if config.deviceSpecific.isWorkMachine then {
+    cpu.amd.updateMicrocode = true;
+  } else {}));
 }
