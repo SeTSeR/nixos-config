@@ -3,7 +3,7 @@
     enable = true;
     enableAdobeFlash = false;
     extensions = with pkgs; [
-      lastpass
+      bitwarden
       tridactyl
       treestyletab
       ublock

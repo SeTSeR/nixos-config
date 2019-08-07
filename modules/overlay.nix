@@ -51,6 +51,19 @@ let
         '';
       };
 
+  bitwardenPkg = buildFirefoxXpiAddon {
+    pname = "bitwarden";
+    version = "1.4.1.0";
+    addonId = "hello@bitwarden.com";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3369227/bitwarden_free_password_manager-1.41.0-an+fx.xpi?src=";
+    sha256 = "0j0rm0vzpy6vqzqqw57w7pm55lcgcxvzl9djalavjxmjqq34i05z";
+    meta = with self.stdenv.lib; {
+      homepage = "bitwarden.com";
+      description = "A secure and free password manager for all of your devices.";
+      platforms = platforms.all;
+    };
+  };
+
   lastpassPkg = buildFirefoxXpiAddon {
     pname = "lastpass";
     version = "4.29.0.4";
@@ -138,6 +151,7 @@ in {
     rev = "1b9b16dbefba39514d01f00836ce3b69788257b0";
   }) { installOnly = true; });
 
+  bitwarden = self.callPackage bitwardenPkg {};
   lastpass = self.callPackage lastpassPkg {};
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
