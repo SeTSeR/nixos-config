@@ -3,7 +3,7 @@
   services.openvpn = {
     servers = {
       ispras = {
-        autoStart = true;
+        autoStart = config.deviceSpecific.isHomeMachine;
         config = "config ${config.openVPNConfigPath}/bird.ovpn";
         authUserPass = {
           username = config.secrets.isprasUserName;

@@ -1,11 +1,10 @@
-{ ... }: {
+{ config, lib, ... }: {
   imports = [
     ./alacritty.nix
     ./emacs
     ./firefox.nix
     ./git.nix
-    ./i3.nix
-    ./i3status.nix
+    ./i3
     ./openvpn
     ./packages.nix
     ./services.nix

@@ -39,6 +39,7 @@
     libinput.enable = true;
     desktopManager.mate.enable = config.deviceSpecific.isWorkMachine;
     displayManager.lightdm.enable = true;
+    videoDrivers = [ "nvidia" ];
     windowManager.i3.enable = true;
   };
 

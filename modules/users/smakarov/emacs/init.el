@@ -69,8 +69,14 @@
   :config
   (global-flycheck-mode))
 
-(use-package gruvbox-theme
-  :config (load-theme 'gruvbox-dark-hard t))
+(use-package company
+  :diminish company-mode
+  :config
+  (global-company-mode 1)
+  (setq company-global-modes '(not gud-mode)))
+
+(use-package apropospriate-theme
+  :config (load-theme 'apropospriate-light t))
 
 (use-package powerline
   :config
@@ -84,34 +90,38 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
 
-(use-package graphviz-dot-mode)
-
-(global-linum-mode 1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
 (load-user-file "completion.el")
-(load-user-file "cpp.el")
 (load-user-file "evil.el")
 (load-user-file "keys.el")
-(load-user-file "lldb-gud.el")
 (load-user-file "lsp.el")
 (load-user-file "org.el")
+(load-user-file "pivot-mode.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
 (load-user-file "snippets.el")
 (load-user-file "spell.el")
 
-(use-package lldb-gud)
+(use-package pivot-mode)
 
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
-(use-package ace-jump-mode
-  :bind ("C-c SPC" . ace-jump-mode))
-
 (use-package ix)
+
+(use-package ivy
+  :diminish ivy-mode
+  :config
+  (ivy-mode 1))
+
+(use-package counsel
+  :diminish counsel-mode
+  :config
+  (counsel-mode 1)
+  :bind ("<f6>" . counsel-rg))
 
 (use-package reverse-im
   :config

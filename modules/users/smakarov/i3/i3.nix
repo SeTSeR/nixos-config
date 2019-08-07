@@ -54,8 +54,10 @@ in {
           criteria = { class = "Spotify"; };
         }];
       };
-      startup = [{ command = "${pkgs.tdesktop}/bin/telegram-desktop"; }]
-      ++ lib.optionals config.deviceSpecific.isHomeMachine homeCommands;
+      startup = [
+        { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
+        { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
+      ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
@@ -89,6 +91,7 @@ in {
         "${modifier}+Shift+5" = "move container to workspace 5: ";
         "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
         "${modifier}+Ctrl+p" = "exec ${pkgs.emacs}/bin/emacsclient -nc";
+        "${modifier}+Ctrl+g" = "exec ${pkgs.nix}/bin/nix-shell ~/Projects/gf/default.nix --run \"emacs ~/Projects/gf\"";
         "${modifier}+Ctrl+f" = "exec ${pkgs.firefox}/bin/firefox";
         "XF86AudioRaiseVolume" =
         "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
@@ -115,5 +118,11 @@ in {
       }) 4));
       workspaceLayout = "tabbed";
     };
+    extraConfig = if config.deviceSpecific.isWorkMachine then ''
+      workspace "1: " output HDMI-0
+      workspace "2: " output primary
+      workspace "3: " output HDMI-0
+      workspace "4: " output primary
+    '' else "";
   };
 }

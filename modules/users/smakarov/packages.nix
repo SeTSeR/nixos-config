@@ -8,7 +8,6 @@ let
     gnuplot
     graphviz
     nixfmt
-    spotify
     steam
     texlive.combined.scheme-full
     torsocks
@@ -16,22 +15,13 @@ let
     wpa_supplicant_gui
     xpdf
   ];
-  cppPackages = with pkgs; [
-    cacos
-    ccls
-    clang_8
-    irony-server
-  ];
-  rustPackages = with pkgs; [
-    cargo
-    rustc
-    rustPlatform.rustcSrc
-    rustracer
-    rustfmt
-    rls
-  ];
   commonPackages = with pkgs;
   [
+    tdesktop
+    imagemagick7
+    xclip
+    unzip
+    nitrogen
     efibootmgr
     gnupg
     htop
@@ -43,21 +33,18 @@ let
     unzip
     wakatime
     xclip
+    fd
+    ripgrep
+    spotify
   ];
 in {
   home-manager.users.smakarov = {
-    nixpkgs.config = {
-      # For Steam
-      allowUnfree = true;
-    };
-
     home.file.".config/nixpkgs/config.nix".text = ''
       {
         allowUnfree = true;
       }
     '';
 
-    home.packages = commonPackages
-    ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
+    home.packages = commonPackages ++ lib.optional config.deviceSpecific.isHomeMachine homePackages;
   };
 }
