@@ -7,7 +7,6 @@
       with epkgs; [
         apropospriate-theme
         company
-        company-irony
         company-lsp
         company-nixos-options
         company-racer
