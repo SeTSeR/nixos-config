@@ -45,6 +45,6 @@ in {
       }
     '';
 
-    home.packages = commonPackages ++ lib.optional config.deviceSpecific.isHomeMachine homePackages;
+    home.packages = commonPackages ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
   };
 }
