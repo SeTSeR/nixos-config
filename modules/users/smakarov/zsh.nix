@@ -5,7 +5,7 @@
     enableCompletion = true;
     oh-my-zsh = {
       enable = true;
-      theme = "agnoster";
+      theme = "lambda";
       plugins = [ "colorize" "command-not-found" "git" "git-extras" "github" ];
     };
     shellAliases = { post = ''curl -F "f:1=<-" ix.io''; };
