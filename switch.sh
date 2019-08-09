@@ -8,6 +8,6 @@ export SHELL=/bin/sh
 
 nix build -f ./imports/nixpkgs/nixos system $@ && {
     dir=$(pwd)
-    gksudo "nix-env --profile /nix/var/nix/profiles/system --set $(readlink $dir/result)"
+    gksudo "nix-env --profile /nix/var/nix/profiles/system --set $(readlink $dir/result)" &&
     gksudo "$dir/result/bin/switch-to-configuration switch"
 }
