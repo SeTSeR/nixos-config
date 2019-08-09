@@ -1,19 +1,5 @@
 { pkgs, config, ... }: {
-  programs.zsh = {
-    enable = true;
-
-    promptInit = ''
-      if [ "$TERM" != dumb ]; then
-        autoload -U promptinit && promptinit && prompt walters
-      fi
-
-      # Disable color and theme in dumb terminals.
-      if [[ "$TERM" == 'dumb' ]]; then
-        zstyle ':prezto:*:*' color 'no'
-        zstyle ':prezto:module:prompt' theme 'off'
-      fi
-    '';
-  };
+  programs.zsh.enable = true;
   # Set up the user
   users.users.smakarov = {
     isNormalUser = true;
