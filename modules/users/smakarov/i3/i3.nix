@@ -57,7 +57,7 @@ in {
       startup = [
         { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
-      ];
+      ] ++ lib.optionals config.deviceSpecific.isHomeMachine homeCommands;
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
