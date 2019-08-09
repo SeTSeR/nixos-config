@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -p gksu -i bash
+#!nix-shell -p bash -i bash
 
 unset IN_NIX_SHELL
 
@@ -8,6 +8,6 @@ export SHELL=/bin/sh
 
 nix build -f ./imports/nixpkgs/nixos system $@ && {
     dir=$(pwd)
-    gksudo "nix-env --profile /nix/var/nix/profiles/system --set $(readlink $dir/result)" &&
-    gksudo "$dir/result/bin/switch-to-configuration switch"
+    pkexec nix-env --profile /nix/var/nix/profiles/system --set $(readlink $dir/result) &&
+    pkexec $dir/result/bin/switch-to-configuration switch
 }

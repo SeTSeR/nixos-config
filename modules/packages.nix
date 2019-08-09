@@ -42,5 +42,6 @@ in {
     lightdm
     manpages
     fuse_exfat
+    mate.mate-polkit
   ];
 }
