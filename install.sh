@@ -1,15 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env nix-shell
+#!nix-shell -p gnupg git -i bash
 
 echo "SeTSeR's config installation."
 
 CONFIG="/mnt/etc/nixos/configuration.nix"
 USER_HOME="/home/smakarov"
 
-nix-shell -p git --run "git submodule update --init --recursive"
+git submodule update --init --recursive
 
 read -p "Do you know the password? [Y/n]: " ASK_PASSWORD
 if [ "$ASK_PASSWORD" != "n" ]; then
-    nix-shell -p gnupg --run "gpg -d secret.nix.gpg" > secret.nix
+    gpg -d secret.nix.gpg > secret.nix
     echo "secret.nix extracted!"
 else
     echo "{
@@ -17,6 +18,8 @@ else
 }" > secret.nix
     echo "secret.nix created!"
 fi
+
+export NIX_PATH=nixpkgs=./imports/nixpkgs:nixos-config=/etc/nixos/configuration.nix
 
 echo "Creating ${CONFIG}..."
 mkdir -p /mnt/etc/nixos
