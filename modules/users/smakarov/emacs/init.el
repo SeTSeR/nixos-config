@@ -158,7 +158,8 @@
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
-(setq-default major-mode 'org-mode)
-(setq-default initial-scratch-message ";; Emacs lisp scratch buffer. Happy hacking.\n\n")
+(org-agenda-list)
+(setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))
+(delete-other-windows)
 
 ;;; init.el ends here
