@@ -49,7 +49,6 @@
     home.file.".authinfo.gpg".source = ./authinfo.gpg;
     home.file.".gnus.el".source = ./gnus.el;
     home.file.".emacs.d/completion.el".source = ./completion.el;
-    home.file.".emacs.d/evil.el".source = ./evil.el;
     home.file.".emacs.d/init.el".source = ./init.el;
     home.file.".emacs.d/keys.el".source = ./keys.el;
     home.file.".emacs.d/lsp.el".source = ./lsp.el;
