@@ -14,7 +14,6 @@
       enable = false;
     };
     hostName = config.device;
-    nameservers = [ "8.8.8.8" ];
     firewall = {
       allowedTCPPorts = [ 27015 26900 ];
       allowedUDPPorts = [ 27015 ];
