@@ -155,6 +155,10 @@
   :config
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
 
+(use-package telega
+  :commands (telega)
+  :defer t)
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (org-agenda-list)

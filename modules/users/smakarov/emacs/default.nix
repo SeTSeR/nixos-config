@@ -1,10 +1,15 @@
-{ config, pkgs, libs, ... }: {
+{ config, pkgs, libs, ... }:
+let emacsWithImagemagick = (pkgs.emacs.override {
+      srcRepo = true;
+      imagemagick = pkgs.imagemagickBig;
+    });
+in {
   home-manager.users.smakarov = {
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs;
+      package = emacsWithImagemagick;
       extraPackages = epkgs:
-      with epkgs; [
+      (with epkgs; [
         apropospriate-theme
         ccls
         company-lsp
@@ -41,9 +46,29 @@
         rust-mode
         smartparens
         use-package
+        visual-fill-column
         wakatime-mode
         yasnippet
         yasnippet-snippets
+      ])
+      ++
+      [
+        ((pkgs.emacsPackagesNgFor emacsWithImagemagick).melpaBuild {
+          pname = "telega";
+          ename = "telega";
+          recipe = pkgs.fetchurl {
+            url = "https://raw.githubusercontent.com/melpa/melpa/master/recipes/telega";
+            sha256 = "0n1n1fciwh7jbakdjkx36aq6k0is0c694j3n5dicwvfp7spca7p8";
+            name = "recipe";
+          };
+          version = "0.4.0";
+          src = pkgs.fetchFromGitHub {
+            owner  = "zevlg";
+            repo   = "telega.el";
+            rev    = "0.4.0";
+            sha256 = "1a5fxix2zvs461vn6zn36qgpg65bl38gfb3ivr24wmxq1avja5s1";
+          };
+        })
       ];
     };
     home.file.".authinfo.gpg".source = ./authinfo.gpg;

@@ -14,6 +14,13 @@ in {
         }) {
           config = config.nixpkgs.config;
         };
+
+        pr64977 = import (pkgs.fetchzip {
+          url = "${nixpkgs-tars}7da8de19b1f394c92f27b8d953b85cfce1770427.zip";
+          sha256 = "1bc6lg8p8r8sw49vzprzkyvwvm9j8qndbdlj792djkqkvkrpzzka";
+        }) {
+          config = config.nixpkgs.config;
+        };
       };
     } // config.nixpkgs.config;
   };

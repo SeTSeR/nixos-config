@@ -36,6 +36,7 @@ let
     fd
     ripgrep
     spotify
+    pr64977.telega-server
   ];
 in {
   home-manager.users.smakarov = {
