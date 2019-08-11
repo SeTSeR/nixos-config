@@ -55,7 +55,6 @@ in {
         }];
       };
       startup = [
-        { command = "${pkgs.tdesktop}/bin/telegram-desktop"; }
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
         {
           command = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
