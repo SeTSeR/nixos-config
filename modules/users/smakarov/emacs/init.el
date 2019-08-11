@@ -103,6 +103,7 @@
 (load-user-file "rust.el")
 (load-user-file "snippets.el")
 (load-user-file "spell.el")
+(load-user-file "telega-settings.el")
 
 (use-package pivot-mode)
 
@@ -154,10 +155,6 @@
 (use-package tramp
   :config
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
-
-(use-package telega
-  :commands (telega)
-  :defer t)
 
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)

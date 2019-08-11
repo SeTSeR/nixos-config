@@ -83,6 +83,7 @@ in {
     home.file.".emacs.d/rust.el".source = ./rust.el;
     home.file.".emacs.d/snippets.el".source = ./snippets.el;
     home.file.".emacs.d/spell.el".source = ./spell.el;
+    home.file.".emacs.d/telega-settings.el".source = ./telega-settings.el;
     home.file.".emacs.d/yasnippet-snippets".source = ./yasnippet-snippets;
   };
 }
