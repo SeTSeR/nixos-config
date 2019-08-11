@@ -37,6 +37,7 @@ let
     ripgrep
     spotify
     pr64977.telega-server
+    ffmpeg
   ];
 in {
   home-manager.users.smakarov = {
