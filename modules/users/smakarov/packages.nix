@@ -1,9 +1,6 @@
 { config, pkgs, lib, ... }:
 let
   homePackages = with pkgs; [
-    aspell
-    aspellDicts.en
-    aspellDicts.ru
     djview
     gnuplot
     graphviz
@@ -17,6 +14,9 @@ let
   ];
   commonPackages = with pkgs;
   [
+    aspell
+    aspellDicts.en
+    aspellDicts.ru
     tdesktop
     imagemagick7
     xclip
