@@ -27,6 +27,7 @@ let
     htop
     imagemagick7
     nitrogen
+    spotify
     tdesktop
     thunderbird
     unrar
@@ -35,8 +36,6 @@ let
     xclip
     fd
     ripgrep
-    spotify
-    pr64977.telega-server
     ffmpeg-full
   ];
 in {
