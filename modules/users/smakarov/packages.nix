@@ -37,6 +37,7 @@ let
     fd
     ripgrep
     ffmpeg-full
+    emacsPackagesNg.melpaPackages.telega
   ];
 in {
   home-manager.users.smakarov = {
