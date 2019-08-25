@@ -59,7 +59,9 @@
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
-(global-wakatime-mode)
+(use-package wakatime-mode
+ :config
+ (global-wakatime-mode))
 
 (use-package magit
   :bind
