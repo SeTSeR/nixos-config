@@ -64,6 +64,10 @@ in {
       text = readWithSubstitute ./completion.el;
       onChange = ''systemctl --user restart emacs'';
     };
+    home.file.".emacs.d/evil.el" = {
+      text = readWithSubstitute ./evil.el;
+      onChange = ''systemctl --user restart emacs'';
+    };
     home.file.".emacs.d/init.el" = {
       text = readWithSubstitute ./init.el;
       onChange = ''systemctl --user restart emacs'';
