@@ -13,6 +13,7 @@ in {
       package = emacsWithImagemagick;
       extraPackages = epkgs:
         with epkgs; [
+          ace-jump-mode
           apropospriate-theme
           ccls
           company-lsp

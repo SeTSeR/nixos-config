@@ -155,6 +155,9 @@
     :config
     (setq calendar-holidays russian-holidays)))
 
+(use-package ace-jump-mode
+  :bind ("C-c SPC" . ace-jump-mode))
+
 (use-package tramp
   :config
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
