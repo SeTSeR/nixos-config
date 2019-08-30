@@ -61,47 +61,36 @@ in {
     };
     home.file.".emacs.d/completion.el" = {
       text = readWithSubstitute ./completion.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/init.el" = {
       text = readWithSubstitute ./init.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/keys.el" = {
       text = readWithSubstitute ./keys.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/lsp.el" = {
       text = readWithSubstitute ./lsp.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/org.el" = {
       text = readWithSubstitute ./org.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/pivot-mode.el" = {
       text = readWithSubstitute ./pivot-mode.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/projectile.el" = {
       text = readWithSubstitute ./projectile.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/rust.el" = {
       text = readWithSubstitute ./rust.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/snippets.el" = {
       text = readWithSubstitute ./snippets.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/spell.el" = {
       text = readWithSubstitute ./spell.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/telega-settings.el" = {
       text = readWithSubstitute ./telega-settings.el;
-      onChange = ''systemctl --user restart emacs'';
     };
     home.file.".emacs.d/yasnippet-snippets".source = ./yasnippet-snippets;
   };
