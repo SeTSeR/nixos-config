@@ -155,8 +155,14 @@
     :config
     (setq calendar-holidays russian-holidays)))
 
-(use-package ace-jump-mode
-  :bind ("C-c SPC" . ace-jump-mode))
+(use-package avy
+  :bind
+  ("C-:" . avy-goto-char)
+  ("C-'" . avy-goto-char-2)
+  ("M-g f" . avy-goto-line)
+  ("M-g w" . avy-goto-word-1)
+  :config
+  (avy-setup-default))
 
 (use-package tramp
   :config
