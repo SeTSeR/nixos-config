@@ -9,7 +9,6 @@
   programs.dconf.enable = true;
   services.dbus.packages = [ pkgs.gnome3.dconf pkgs.blueman ];
   systemd.coredump = {
-    enable = true;
     extraConfig = "Storage=journal";
   };
   security.pam.loginLimits = [{
