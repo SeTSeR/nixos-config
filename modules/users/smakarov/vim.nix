@@ -13,13 +13,13 @@
       tabstop = 4;
       undodir = [ "~/.vim/undo" ];
     };
-    plugins = [
-      "auto-pairs"
-      "vim-airline"
-      "vim-airline-themes"
-      "vim-wakatime"
-      "vim-nix"
-      "gruvbox"
+    plugins = with pkgs.vimPlugins; [
+      auto-pairs
+      vim-airline
+      vim-airline-themes
+      vim-wakatime
+      vim-nix
+      gruvbox
     ];
     extraConfig = ''
       set nocompatible
