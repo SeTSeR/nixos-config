@@ -52,4 +52,9 @@
   services.tor.enable = false;
 
   services.udisks2.enable = true;
+
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "mydb" ];
+  };
 }

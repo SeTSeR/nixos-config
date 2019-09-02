@@ -43,5 +43,6 @@ in {
     manpages
     fuse_exfat
     mate.mate-polkit
+    postgresql
   ];
 }
