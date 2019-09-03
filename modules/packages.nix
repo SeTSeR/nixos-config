@@ -26,6 +26,11 @@ in {
     ];
 
     package = pkgs.stable.nixStable;
+
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
   };
 
   # List packages installed in system profile. To search, run:
