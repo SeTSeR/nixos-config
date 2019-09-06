@@ -1,7 +1,7 @@
 { config, lib, ... }:
 with lib; {
   options.openVPNConfigPath = mkOption {
-    type = types.string;
+    type = types.str;
     description = "Path to OpenVPN configuration";
   };
 
