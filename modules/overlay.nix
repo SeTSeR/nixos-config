@@ -64,33 +64,6 @@ let
     };
   };
 
-  lastpassPkg = buildFirefoxXpiAddon {
-    pname = "lastpass";
-    version = "4.29.0.4";
-    addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3019318/lastpass_password_manager-4.29.0.4-fx.xpi?src=";
-    sha256 = "a31f86b22a13fa1c363428d207a68ac5fde664dde5e8557ff598ff39c77825be";
-    meta = with self.stdenv.lib; {
-      homepage = "lastpass.com";
-      description = "LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.";
-      platforms = platforms.all;
-    };
-  };
-
-  tridactylPkg = buildFirefoxXpiAddon {
-    pname = "tridactyl";
-    version = "1.16.2";
-    addonId = "tridactyl.vim@cmcaine.co.uk";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3348489/tridactyl-1.16.2-an+fx.xpi?src=";
-    sha256 = "5aadd08d0c557ae38d37a82534110585fa81e20c5068cfd09cd49be008cd6365";
-    meta = with self.stdenv.lib; {
-      homepage = "https://github.com/tridactyl/tridactyl";
-      description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
-      license = licenses.apache2;
-      platforms = platforms.all;
-    };
-  };
-
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
     version = "3.1.5";
@@ -152,9 +125,7 @@ in {
   }) { installOnly = true; });
 
   bitwarden = self.callPackage bitwardenPkg {};
-  lastpass = self.callPackage lastpassPkg {};
   treestyletab = self.callPackage tstPkg {};
-  tridactyl = self.callPackage tridactylPkg {};
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
 }

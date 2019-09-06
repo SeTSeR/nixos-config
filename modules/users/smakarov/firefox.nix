@@ -4,7 +4,6 @@
     enableAdobeFlash = false;
     extensions = with pkgs; [
       bitwarden
-      tridactyl
       treestyletab
       ublock
       umatrix
