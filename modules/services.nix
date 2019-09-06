@@ -54,7 +54,7 @@
   services.udisks2.enable = true;
 
   services.postgresql = {
-    enable = true;
+    enable = config.deviceSpecific.isHomeMachine;
     ensureDatabases = [ "mydb" ];
   };
 }
