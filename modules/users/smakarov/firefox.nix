@@ -5,6 +5,7 @@
     extensions = with pkgs; [
       bitwarden
       treestyletab
+      tridactyl
       ublock
       umatrix
     ];

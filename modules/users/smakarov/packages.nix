@@ -30,6 +30,7 @@ let
     spotify
     tdesktop
     thunderbird
+    tridactyl-native
     unrar
     unzip
     wakatime
