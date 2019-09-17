@@ -6,7 +6,7 @@ let
     graphviz
     nixfmt
     steam
-    stable.texlive.combined.scheme-full
+    texlive.combined.scheme-full
     torsocks
     vk-messenger
     wpa_supplicant_gui
