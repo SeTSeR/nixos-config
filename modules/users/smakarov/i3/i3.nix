@@ -1,18 +1,6 @@
 { config, pkgs, lib, ... }:
 let
   term = "${pkgs.alacritty}/bin/alacritty";
-  homeCommands = [
-    {
-      command = "${pkgs.vk-messenger}/bin/vk";
-    }
-    {
-      command = "${pkgs.spotify}/bin/spotify";
-    }
-    {
-      command = "${pkgs.nitrogen}/bin/nitrogen --restore";
-      notification = false;
-    }
-  ];
 in {
   home-manager.users.smakarov.xsession.windowManager.i3 = {
     enable = true;
@@ -56,11 +44,12 @@ in {
       };
       startup = [
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
+        { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
         {
           command = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
           notification = false;
         }
-      ] ++ lib.optionals config.deviceSpecific.isHomeMachine homeCommands;
+      ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec --no-startup-id ${term}";
