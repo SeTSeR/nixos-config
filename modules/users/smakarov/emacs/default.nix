@@ -62,6 +62,9 @@ in {
     home.file.".emacs.d/completion.el" = {
       text = readWithSubstitute ./completion.el;
     };
+    home.file.".emacs.d/cpp.el" = {
+      text = readWithSubstitute ./cpp.el;
+    };
     home.file.".emacs.d/init.el" = {
       text = readWithSubstitute ./init.el;
     };
