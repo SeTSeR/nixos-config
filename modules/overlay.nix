@@ -133,11 +133,6 @@ in {
     ] ++ oldAttrs.patches;
   });
 
-  nixfmt = (self.callPackage (builtins.fetchGit {
-    url = "https://github.com/serokell/nixfmt";
-    rev = "1b9b16dbefba39514d01f00836ce3b69788257b0";
-  }) { installOnly = true; });
-
   bitwarden = self.callPackage bitwardenPkg {};
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
