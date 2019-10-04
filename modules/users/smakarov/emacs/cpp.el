@@ -4,20 +4,6 @@
 
 ;;; Code:
 
-(defun set-prac-c-style ()
-  (google-set-c-style)
-  (c-add-style "prac-style"
-               '("google"
-                 (indent-tabs-mode . nil)
-                 (c-basic-offset . 4)) t)
-  (google-make-newline-indent))
-
-(use-package cc-mode
-    :config
-    (use-package google-c-style
-        :config
-        (add-hook 'c-mode-common-hook 'set-prac-c-style)))
-
 (use-package irony-mode
   :hook
   (c-mode . irony-mode)
