@@ -15,7 +15,7 @@ in {
         with epkgs; [
           avy
           apropospriate-theme
-          ccls
+          company-irony
           company-lsp
           company-nixos-options
           company-racer
@@ -25,12 +25,14 @@ in {
           flycheck
           flycheck-pkg-config
           flycheck-rust
+          flycheck-irony
           flyspell-correct
           free-keys
           google-c-style
           graphviz-dot-mode
           gruvbox-theme
           haskell-mode
+          irony
           ivy
           ivy-yasnippet
           ix
