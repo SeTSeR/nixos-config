@@ -7,7 +7,9 @@
 (use-package irony-mode
   :hook
   (c-mode . irony-mode)
+  (c-mode . lsp)
   (c++-mode . irony-mode)
+  (c++-mode . lsp)
   :config
   (use-package company-irony-c-headers
     :config
