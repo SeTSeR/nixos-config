@@ -22,6 +22,7 @@ in {
           counsel
           counsel-projectile
           diminish
+          eshell-toggle
           flycheck
           flycheck-pkg-config
           flycheck-rust
