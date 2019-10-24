@@ -69,7 +69,7 @@ let
     version = "1.16.2";
     addonId = "tridactyl.vim@cmcaine.co.uk";
     url = "https://tridactyl.cmcaine.co.uk/betas/tridactyl-latest.xpi";
-    sha256 = "0q712yjmyq52xff1zqkpzh7d6lbbifxqmz6i4rhpswn5g2si6n1d";
+    sha256 = "1dgg51zfm2ayybaw4547synini3s3fa4lxaq6mw28lh0z3zr74sy";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
