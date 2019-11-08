@@ -1,17 +1,6 @@
 { pkgs, lib, config, ... }: {
   networking = {
-    wireless = if config.deviceSpecific.isHomeMachine then {
-      enable = true;
-      userControlled.enable = true;
-      networks = {
-        "My Home net ASUS".psk = config.secrets.home-wifi-psk;
-        AndroidAP_3161.psk = config.secrets.phone-psk;
-        storm2.psk = config.secrets.work-psk;
-        BMK_WIFI_FREE.psk = null;
-      };
-    } else {
-      enable = false;
-    };
+    networkmanager.enable = true;
     hostName = config.device;
     firewall = {
       allowedTCPPorts = [ 27015 26900 ];
