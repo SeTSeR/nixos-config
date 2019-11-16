@@ -25,8 +25,6 @@ in {
       "nixos-config=/etc/nixos/configuration.nix"
     ];
 
-    package = pkgs.stable.nixStable;
-
     gc = {
       automatic = true;
       options = "--delete-older-than 7d";
