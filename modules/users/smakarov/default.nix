@@ -4,6 +4,7 @@
     ./emacs
     ./firefox.nix
     ./git.nix
+    ./gnupg.nix
     ./i3
     ./openvpn
     ./packages.nix
