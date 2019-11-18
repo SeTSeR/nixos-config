@@ -29,6 +29,7 @@ in {
           flycheck-irony
           flyspell-correct
           free-keys
+          gnuplot
           google-c-style
           graphviz-dot-mode
           gruvbox-theme

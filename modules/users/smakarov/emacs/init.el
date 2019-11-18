@@ -172,6 +172,8 @@
   :bind
   ("s-`" . eshell-toggle))
 
+(use-package gnuplot)
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (org-agenda-list)

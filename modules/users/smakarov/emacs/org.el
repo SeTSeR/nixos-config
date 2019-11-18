@@ -56,6 +56,9 @@
              org-babel-execute:bash
              org-babel-expand-body:bash))
 
+(use-package ob-gnuplot
+  :commands (org-babel-execute:gnuplot))
+
 (use-package org
   :bind (("C-c l" . org-store-link)
          ("C-c a" . org-agenda))
