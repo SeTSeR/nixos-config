@@ -149,6 +149,12 @@
 (use-package ivy-yasnippet
   :bind ("C-x y" . ivy-yasnippet))
 
+(use-package ivy-xref
+  :init
+  (when (>= emacs-major-version 27)
+    (setq xref-show-definitions-function #'ivy-xref-show-defs))
+  (setq xref-show-xrefs-function #'ivy-xref-show-defs))
+
 (use-package calendar
   :config
   (use-package russian-holidays

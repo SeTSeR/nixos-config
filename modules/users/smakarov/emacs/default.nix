@@ -15,6 +15,7 @@ in {
         with epkgs; [
           avy
           apropospriate-theme
+          ccls
           company-irony
           company-lsp
           company-nixos-options
@@ -35,6 +36,7 @@ in {
           haskell-mode
           irony
           ivy
+          ivy-xref
           ivy-yasnippet
           ix
           lsp-mode
