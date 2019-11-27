@@ -18,7 +18,6 @@ in {
           company-irony
           company-lsp
           company-nixos-options
-          company-racer
           counsel
           counsel-projectile
           diminish
@@ -45,7 +44,6 @@ in {
           nix-mode
           powerline
           projectile
-          racer
           rainbow-delimiters
           reverse-im
           russian-holidays
