@@ -10,7 +10,6 @@ let
     torsocks
     vk-messenger
     wpa_supplicant_gui
-    xpdf
     gnuplot
   ];
   commonPackages = with pkgs;
