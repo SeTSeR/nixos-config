@@ -44,6 +44,7 @@ in {
           magit
           markdown-mode
           nix-mode
+          pinentry
           powerline
           projectile
           rainbow-delimiters

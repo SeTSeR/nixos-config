@@ -180,6 +180,10 @@
 
 (use-package gnuplot)
 
+(use-package pinentry
+  :config
+  (pinentry-start))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (org-agenda-list)
