@@ -28,7 +28,8 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+
+  services.blueman.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver = {
