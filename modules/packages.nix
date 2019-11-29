@@ -29,6 +29,8 @@ in {
       automatic = true;
       options = "--delete-older-than 7d";
     };
+
+    extraOptions = "keep-outputs = true";
   };
 
   # List packages installed in system profile. To search, run:
