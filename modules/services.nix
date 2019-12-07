@@ -53,18 +53,4 @@
   services.tor.enable = false;
 
   services.udisks2.enable = true;
-
-  services.postgresql = {
-    enable = config.deviceSpecific.isHomeMachine;
-    ensureDatabases = [ "autocorp_analytic" ];
-    ensureUsers = [
-      {
-        name = "smakarov";
-        ensurePermissions = {
-          "DATABASE autocorp_analytic" = "ALL PRIVILEGES";
-        };
-      }
-    ];
-    package = pkgs.postgresql_11;
-  };
 }
