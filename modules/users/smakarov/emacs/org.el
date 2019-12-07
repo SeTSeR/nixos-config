@@ -63,6 +63,12 @@
   :bind (("C-c l" . org-store-link)
          ("C-c a" . org-agenda))
   :mode (("\\.org$" . org-mode))
-  :config (setq org-log-done t))
+  :config
+  (setq org-log-done t)
+  (setq org-latex-listings 'minted
+        org-latex-packages-alist '(("" "minted"))
+        org-latex-pdf-process
+        '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
 
 ;;; org.el ends here
