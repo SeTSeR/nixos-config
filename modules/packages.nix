@@ -1,27 +1,18 @@
 { config, pkgs, lib, ... }:
-let nixpkgs-tars = "https://github.com/NixOS/nixpkgs/archive/";
+let imports = import ../nix/sources.nix;
 in {
   nixpkgs.overlays = [ (import ./overlay.nix) ];
 
-  nixpkgs.pkgs = import ../imports/nixpkgs {
+  nixpkgs.pkgs = import imports.nixpkgs {
     config = {
       allowUnfree = true;
-
-      packageOverrides = pkgs: {
-        stable = import (pkgs.fetchzip {
-          url = "${nixpkgs-tars}19.03.zip";
-          sha256 = "0q2m2qhyga9yq29yz90ywgjbn9hdahs7i8wwlq7b55rdbyiwa5dy";
-        }) {
-          config = config.nixpkgs.config;
-        };
-      };
     } // config.nixpkgs.config;
   };
 
+  environment.etc.nixpkgs.source = imports.nixpkgs;
   nix = {
     nixPath = lib.mkForce [
-      "nixpkgs=${../imports/nixpkgs}"
-      "home-manager=${../imports/home-manager}"
+      "nixpkgs=/etc/nixpkgs"
       "nixos-config=/etc/nixos/configuration.nix"
     ];
 

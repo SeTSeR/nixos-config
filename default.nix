@@ -5,10 +5,12 @@
 device:
 { config, pkgs, options, ... }:
 
+let sources = import ./nix/sources.nix;
+in
 {
   imports = [ # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
-    ./imports/home-manager/nixos
+    "${sources.home-manager}/nixos"
     ./modules
   ];
   inherit device;

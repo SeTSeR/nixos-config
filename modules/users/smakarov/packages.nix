@@ -13,6 +13,7 @@ let
     gnuplot
     pinentry-qt
     python37Packages.pygments
+    niv
   ];
   commonPackages = with pkgs;
   [

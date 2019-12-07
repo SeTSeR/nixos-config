@@ -3,10 +3,12 @@
 
 unset IN_NIX_SHELL
 
-export NIX_PATH=nixpkgs=./imports/nixpkgs:nixos-config=/etc/nixos/configuration.nix
+nixpkgs=$(nix-build ./nix/sources.nix -A nixpkgs --no-out-link $@)
+
+export NIX_PATH=nixpkgs=$nixpkgs:nixos-config=/etc/nixos/configuration.nix
 export SHELL=/bin/sh
 
-nix build -f ./imports/nixpkgs/nixos system $@ && {
+nix build -f $nixpkgs/nixos system $@ && {
     dir=$(pwd)
     pkexec nix-env --profile /nix/var/nix/profiles/system --set $(readlink $dir/result) &&
     pkexec $dir/result/bin/switch-to-configuration switch
