@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ config, lib, ... }:
 with lib; {
   options.secrets = {
     id_rsa = mkOption {
@@ -24,6 +24,14 @@ with lib; {
     isprasPassword = mkOption {
       type = types.str;
       description = "Password for ISP RAS OpenVPN server";
+    };
+    an_secret = mkOption {
+      type = types.str;
+      description = "Secret for Telegram proxy";
+    };
+    pr_secret = mkOption {
+      type = types.str;
+      description = "Secret for Telegram proxy";
     };
   };
   config = { secrets = import ../secret.nix; };
