@@ -11,6 +11,7 @@ let
     vk-messenger
     wpa_supplicant_gui
     gnuplot
+    pinentry-qt
     python37Packages.pygments
   ];
   commonPackages = with pkgs;

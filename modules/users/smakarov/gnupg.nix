@@ -12,9 +12,11 @@
       enableSshSupport = true;
       extraConfig = ''
           allow-emacs-pinentry
+          pinentry-program /etc/profiles/per-user/smakarov/bin/pinentry-qt
               '';
     };
-  };
+ };
+
  programs.gnupg.agent = {
    enable = true;
    enableSSHSupport = true;
