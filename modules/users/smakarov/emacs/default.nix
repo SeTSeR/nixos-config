@@ -44,6 +44,7 @@ in {
           magit
           markdown-mode
           nix-mode
+          pdf-tools
           pinentry
           powerline
           projectile
