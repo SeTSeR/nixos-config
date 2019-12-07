@@ -25,7 +25,6 @@ let
     unzip
     nitrogen
     efibootmgr
-    gnupg
     htop
     imagemagick7
     nitrogen
