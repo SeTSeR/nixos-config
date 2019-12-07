@@ -7,7 +7,6 @@ let
     nixfmt
     steam
     texlive.combined.scheme-full
-    torsocks
     vk-messenger
     wpa_supplicant_gui
     gnuplot
@@ -30,7 +29,6 @@ let
     imagemagick7
     nitrogen
     spotify
-    tdesktop
     thunderbird
     tridactyl-native
     unrar
