@@ -12,7 +12,19 @@
   home-manager.users.smakarov.programs.ssh = {
     enable = true;
     matchBlocks = {
-      "*" = {
+      "polus" = {
+        hostname = "polus.hpc.cs.msu.ru";
+        user = "edu-cmc-skpod19-327-07";
+        identityFile = "/home/smakarov/.ssh/edu-cmc-skpod19-327-07";
+      };
+      "bluegene" = {
+        hostname = "bluegene.hpc.cs.msu.ru";
+        user = "edu-cmc-skpod19-327-07";
+        identityFile = "/home/smakarov/.ssh/edu-cmc-skpod19-327-07";
+      };
+      "work" = {
+        hostname = "10.10.156.56";
+        user = "smakarov";
         identityFile = toString (pkgs.writeTextFile {
           name = "id_rsa";
           text = config.secrets.id_rsa;
