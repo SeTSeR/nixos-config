@@ -2,12 +2,12 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
   programs.dconf.enable = true;
-  services.dbus.packages = [ pkgs.gnome3.dconf pkgs.blueman ];
+  services.dbus = {
+    enable = true;
+    packages = [ pkgs.gnome3.dconf pkgs.blueman ];
+    socketActivated = true;
+  };
   systemd.coredump = {
     extraConfig = "Storage=journal";
   };
@@ -41,9 +41,6 @@
     videoDrivers = lib.optionals config.deviceSpecific.isWorkMachine [ "nvidia" ];
     windowManager.i3.enable = true;
   };
-
-  # Activate D-Bus socket
-  services.dbus.socketActivated = true;
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
