@@ -21,6 +21,8 @@ in {
       options = "--delete-older-than 7d";
     };
 
+    optimise.automatic = true;
+
     extraOptions = "keep-outputs = true";
   };
 
