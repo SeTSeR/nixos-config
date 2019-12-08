@@ -33,6 +33,10 @@ with lib; {
       type = types.str;
       description = "Secret for Telegram proxy";
     };
+    skpod_key = mkOption {
+      type = types.str;
+      description = "SSH key for skpod course";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }
