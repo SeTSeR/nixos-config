@@ -1,7 +1,6 @@
 self: old:
 let
   imports = import ../nix/sources.nix;
-  stable = import imports.nixpkgs-stable { config.allowUnfree = true; };
   cacosPkg = { gcc8Stdenv, fetchgit, pkgconfig, boost, cmake, curl, gcc8, git }:
   let
     boostpkg = boost.override { enableStatic = true; };
@@ -141,4 +140,5 @@ in {
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
   inherit (import imports.niv {}) niv;
+  stable = import imports.nixpkgs-stable { config.allowUnfree = true; };
 }
