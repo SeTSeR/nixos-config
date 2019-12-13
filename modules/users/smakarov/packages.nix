@@ -10,7 +10,6 @@ let
     vk-messenger
     wpa_supplicant_gui
     gnuplot
-    pinentry-qt
     python37Packages.pygments
     niv
   ];
@@ -40,6 +39,7 @@ let
     ffmpeg-full
     emacsPackagesNg.melpaPackages.telega
     kitty
+    pinentry-qt
   ];
 in {
   home-manager.users.smakarov = {
