@@ -40,6 +40,7 @@
     displayManager.lightdm.enable = true;
     videoDrivers = lib.optionals config.deviceSpecific.isWorkMachine [ "nvidia" ];
     windowManager.i3.enable = true;
+    desktopManager.plasma5.enable = config.deviceSpecific.isHomeMachine;
   };
 
   # Enable the KDE Desktop Environment.
