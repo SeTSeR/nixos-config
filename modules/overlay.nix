@@ -89,10 +89,10 @@ let
 
   tridactylPkg = buildFirefoxXpiAddonFromArchPkg rec {
     pname = "tridactyl";
-    version = "1.16.3-1";
+    version = "1.17.1-1";
     addonId = "tridactyl.vim@cmcaine.co.uk";
     url = "https://archive.archlinux.org/packages/f/firefox-tridactyl/firefox-tridactyl-${version}-any.pkg.tar.xz";
-    sha256 = "0bzc4x7rx9p0srh9h4znz6hdb5v5hlym6a9mimj8bx26y5zwnbdr";
+    sha256 = "174jkqq1pmma70is1b6xksc267wjqaf9xlijgg8mrqjj8bb4b6z0";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
@@ -103,10 +103,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.1.8";
+    version = "3.2.5";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3402997/tree_style_tab-3.1.8-fx.xpi?src=";
-    sha256 = "15l3l0cwnm9ynzaim5z2adqy64ka025caqh9xsc6i1hvm5rsgvmf";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3446051/tree_style_tab-3.2.5-fx.xpi?src=";
+    sha256 = "0xsjxsfnwfq4m3xbq7vp94qnp85sq0ibm066z7w0klrnkvjjgrxs";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
@@ -117,10 +117,10 @@ let
 
   ublockPkg = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.21.2";
+    version = "1.24.2";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3361355/ublock_origin-1.21.2-an+fx.xpi?src=";
-    sha256 = "6c7ecdb7704963b83e03f9ada79d70a9af7486c1149f41edac3ed760fec0ed7a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3452970/ublock_origin-1.24.2-an+fx.xpi?src=";
+    sha256 = "0kjjwi91ri958gsj4l2j3xqwj4jgkcj4mlqahqd1rz9z886sd9dy";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/gorhill/uBlock#ublock-origin";
       description = "Finally, an efficient blocker. Easy on CPU and memory.";
@@ -131,10 +131,10 @@ let
 
   uMatrixPkg = buildFirefoxXpiAddon {
     pname = "umatrix";
-    version = "1.3.16";
+    version = "1.4.0";
     addonId = "uMatrix@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/1193322/umatrix-1.3.16-an+fx.xpi?src=";
-    sha256 = "03dcdbca2135f81820167c49ac83b9fc75f1ba3c1792a1713f886d9274ad7fb6";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3396815/umatrix-1.4.0-an+fx.xpi?src=search";
+    sha256 = "1ixz5j432rhwiqs91i3qh30s3ss30zv0l08apjibhwj1qsjhy7wr";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/gorhill/uMatrix";
       description = "Point & click to forbid/allow any class of requests made by your browser. Use it to block scripts, iframes, ads, facebook, etc.";
