@@ -12,6 +12,7 @@ let
     gnuplot
     python37Packages.pygments
     niv
+    dwarf-fortress
   ];
   commonPackages = with pkgs;
   [

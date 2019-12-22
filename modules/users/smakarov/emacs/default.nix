@@ -48,6 +48,8 @@ in {
           pinentry
           powerline
           projectile
+          quelpa
+          quelpa-use-package
           rainbow-delimiters
           reverse-im
           russian-holidays
@@ -79,6 +81,9 @@ in {
     };
     home.file.".emacs.d/lsp.el" = {
       text = readWithSubstitute ./lsp.el;
+    };
+    home.file.".emacs.d/matrix.el" = {
+      text = readWithSubstitute ./matrix.el;
     };
     home.file.".emacs.d/org.el" = {
       text = readWithSubstitute ./org.el;

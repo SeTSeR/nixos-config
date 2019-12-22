@@ -29,6 +29,12 @@
   (require 'use-package))
 (setq use-package-always-ensure nil)
 
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+
 ;; backup in one place. flat, no tree structure
 (setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
 
@@ -100,6 +106,7 @@
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
 (load-user-file "lsp.el")
+(load-user-file "matrix.el")
 (load-user-file "org.el")
 (load-user-file "pivot-mode.el")
 (load-user-file "projectile.el")
