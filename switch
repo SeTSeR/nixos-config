@@ -1,12 +1,10 @@
-#!/usr/bin/env nix-shell
-#!nix-shell -p bash -i bash
+#!/usr/bin/env bash
 
 unset IN_NIX_SHELL
 
-nixpkgs=$(nix-build ./nix/sources.nix -A nixpkgs --no-out-link $@)
+nixpkgs=$(nix eval --raw '(import ./nix/sources.nix).nixpkgs')
 
 export NIX_PATH=nixpkgs=$nixpkgs:nixos-config=/etc/nixos/configuration.nix
-export SHELL=/bin/sh
 
 nix build -f $nixpkgs/nixos system $@ && {
     dir=$(pwd)
