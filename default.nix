@@ -9,7 +9,7 @@ let sources = import ./nix/sources.nix;
 in
 {
   imports = [ # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    "${./machines}/${device}.nix"
     "${sources.home-manager}/nixos"
     ./modules
   ];
