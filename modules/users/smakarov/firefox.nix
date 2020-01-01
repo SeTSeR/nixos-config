@@ -15,6 +15,7 @@
       name = "default";
       settings = {
         "toolkit.telemetry.enabled" = "false";
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = "true";
         "app.update.mode" = 1;
         "browser.search.defaultenginename" = "Google";
         "browser.search.selectedEngine" = "Google";
@@ -27,15 +28,11 @@
       };
       userChrome = ''
                /* Hide tab bar in FF Quantum */
-               @-moz-document url("chrome://browser/content/browser.xul") {
+               @-moz-document url("chrome://browser/content/browser.xhtml") {
                  #TabsToolbar {
                    visibility: collapse !important;
                    margin-bottom: 21px !important;
                    border-style: 0px !important;
-                 }
-
-                 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-                   visibility: collapse !important;
                  }
                }
       '';
