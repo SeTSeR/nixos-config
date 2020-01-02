@@ -191,6 +191,10 @@
   :config
   (pinentry-start))
 
+(use-package pdf-tools
+  :config
+  (pdf-tools-install))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (org-agenda-list)
