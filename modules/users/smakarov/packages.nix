@@ -39,7 +39,6 @@ let
     ripgrep
     ffmpeg-full
     emacsPackagesNg.melpaPackages.telega
-    kitty
     pinentry-qt
   ];
 in {
