@@ -59,6 +59,9 @@
 (use-package ob-gnuplot
   :commands (org-babel-execute:gnuplot))
 
+(use-package ox-md)
+(use-package ox-textile)
+
 (use-package org
   :bind (("C-c l" . org-store-link)
          ("C-c a" . org-agenda))

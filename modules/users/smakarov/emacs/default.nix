@@ -44,6 +44,7 @@ in {
           magit
           markdown-mode
           nix-mode
+          ox-textile
           pdf-tools
           pinentry
           powerline
