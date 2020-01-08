@@ -19,7 +19,6 @@ let
     aspell
     aspellDicts.en
     aspellDicts.ru
-    tdesktop
     imagemagick7
     xclip
     unzip
