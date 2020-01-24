@@ -39,6 +39,7 @@ let
     ffmpeg-full
     emacsPackagesNg.melpaPackages.telega
     pinentry-qt
+    bitwarden-cli
   ];
 in {
   home-manager.users.smakarov = {

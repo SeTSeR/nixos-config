@@ -37,6 +37,14 @@ with lib; {
       type = types.str;
       description = "SSH key for skpod course";
     };
+    stud-mail = mkOption {
+      type = types.str;
+      description = "CMC student mail";
+    };
+    mbsync-pass = mkOption {
+      type = types.str;
+      description = "Mbsync mail password";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }
