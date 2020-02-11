@@ -61,6 +61,7 @@
 
 (use-package ox-md)
 (use-package ox-textile)
+(use-package org-tempo)
 
 (use-package org
   :bind (("C-c l" . org-store-link)
