@@ -87,6 +87,20 @@ let
     };
   };
 
+  seleniumPkg = buildFirefoxXpiAddon {
+    pname = "selenium-ide";
+    version = "3.16.1";
+    addonId = "ide@selenium.dev";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3459412/selenium_ide-3.16.1-fx.xpi?src=";
+    sha256 = "0hxrcf3gnyknxpcn8zrgik7lh8yglkjj52fcv96k1vrkww20v2k8";
+    meta = with self.stdenv.lib; {
+      homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
+      description = "Show tabs like a tree.";
+      license = licenses.gpl2;
+      platforms = platforms.all;
+    };
+  };
+
   tridactylPkg = buildFirefoxXpiAddonFromArchPkg rec {
     pname = "tridactyl";
     version = "1.17.1-1";
@@ -157,6 +171,7 @@ in {
   });
 
   bitwarden = self.callPackage bitwardenPkg {};
+  selenium = self.callPackage seleniumPkg {};
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
   ublock = self.callPackage ublockPkg {};
