@@ -42,6 +42,20 @@
     windowManager.i3.enable = true;
   };
 
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_12;
+    ensureDatabases = [ "learn_center" ];
+    ensureUsers = [
+    {
+      name = "smakarov";
+      ensurePermissions = {
+        "DATABASE learn_center" = "ALL PRIVILEGES";
+      };
+    }
+    ];
+  };
+
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
