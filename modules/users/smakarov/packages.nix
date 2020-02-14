@@ -19,7 +19,6 @@ let
     aspell
     aspellDicts.en
     aspellDicts.ru
-    imagemagick7
     xclip
     unzip
     nitrogen
