@@ -18,7 +18,7 @@
 
 (defconst pivot-font-lock-keywords
   (list
-   '("\\<\\(bits\\|struct\\|trait\\|const\\|space\\|of\\|local\\|remote\\|is\\|fn\\|op\\|let\\|if\\|else\\|while\\|default\\)\\>" . font-lock-keyword-face)
+   '("\\<\\(bits\\|struct\\|trait\\|const\\|space\\|of\\|local\\|remote\\|where\\|fn\\|op\\|let\\|if\\|else\\|while\\|default\\)\\>" . font-lock-keyword-face)
    '("trait *\\(\\w+\\)" . (1 font-lock-type-face))
    '("const *\\(\\w+\\)" . (1 font-lock-constant-face))
    '("let *\\(\\w+\\)" . (1 font-lock-variable-name-face))
