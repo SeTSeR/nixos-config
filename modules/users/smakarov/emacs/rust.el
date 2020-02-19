@@ -13,6 +13,7 @@
     (setq racer-rust-src-path nil)
     :requires rust-mode
     :hook
-    (rust-mode . lsp)))
+    (rust-mode . lsp))
+  (add-to-list 'auto-mode-alist '("\\.lalrpop\\'" . rust-mode)))
 
 ;;; rust.el ends here
