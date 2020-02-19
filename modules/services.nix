@@ -43,7 +43,7 @@
   };
 
   services.postgresql = {
-    enable = true;
+    enable = config.deviceSpecific.isHomeMachine;
     package = pkgs.postgresql_12;
     ensureDatabases = [ "learn_center" ];
     ensureUsers = [
