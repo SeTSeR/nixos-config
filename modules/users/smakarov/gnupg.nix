@@ -11,7 +11,6 @@
       enable = true;
       enableSshSupport = true;
       extraConfig = ''
-          allow-emacs-pinentry
           pinentry-program /etc/profiles/per-user/smakarov/bin/pinentry-qt
               '';
     };

@@ -187,10 +187,6 @@
 
 (use-package gnuplot)
 
-(use-package pinentry
-  :config
-  (pinentry-start))
-
 (use-package pdf-tools
   :config
   (pdf-tools-install))

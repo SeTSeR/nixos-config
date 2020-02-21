@@ -46,7 +46,6 @@ in {
           nix-mode
           ox-textile
           pdf-tools
-          pinentry
           powerline
           projectile
           quelpa
