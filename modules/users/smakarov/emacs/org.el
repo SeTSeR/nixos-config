@@ -41,7 +41,9 @@
 (use-package ob-plantuml
   :commands (org-babel-execute:plantuml
              org-babel-prep-session:plantuml
-             org-babel-variable-assignments:plantuml))
+             org-babel-variable-assignments:plantuml)
+  :config (setq org-plantuml-jar-path
+                (expand-file-name "@plantUMLjar@")))
 
 (use-package ob-python
   :commands (org-babel-execute:python))

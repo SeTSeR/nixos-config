@@ -36,9 +36,9 @@ let
     fd
     ripgrep
     ffmpeg-full
-    emacsPackagesNg.melpaPackages.telega
     pinentry-qt
     bitwarden-cli
+    plantuml
   ];
 in {
   home-manager.users.smakarov = {
