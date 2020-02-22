@@ -83,7 +83,7 @@ in {
       text = readWithSubstitute ./lsp.el;
     };
     home.file.".emacs.d/matrix.el" = {
-      text = readWithSubstitute ./matrix.el;
+      text = lib.optionalString config.deviceSpecific.isHomeMachine (readWithSubstitute ./matrix.el);
     };
     home.file.".emacs.d/org.el" = {
       text = readWithSubstitute ./org.el;
