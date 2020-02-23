@@ -58,6 +58,9 @@
              org-babel-execute:bash
              org-babel-expand-body:bash))
 
+(use-package ob-sql
+  :commands (org-babel-execute:sql))
+
 (use-package ob-gnuplot
   :commands (org-babel-execute:gnuplot))
 
