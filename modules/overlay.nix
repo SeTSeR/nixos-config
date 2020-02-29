@@ -76,10 +76,10 @@ let
 
   bitwardenPkg = buildFirefoxXpiAddon {
     pname = "bitwarden";
-    version = "1.4.1.0";
+    version = "1.4.2.2";
     addonId = "hello@bitwarden.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3369227/bitwarden_free_password_manager-1.41.0-an+fx.xpi?src=";
-    sha256 = "0j0rm0vzpy6vqzqqw57w7pm55lcgcxvzl9djalavjxmjqq34i05z";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3475993/bitwarden_free_password_manager-1.42.2-an+fx.xpi?src=";
+    sha256 = "0bnlj6cf7hrdmd5wr9lgh4fk8x90zqxbwvxkjg6cywkplcnl0byx";
     meta = with self.stdenv.lib; {
       homepage = "bitwarden.com";
       description = "A secure and free password manager for all of your devices.";
@@ -94,8 +94,8 @@ let
     url = "https://addons.mozilla.org/firefox/downloads/file/3459412/selenium_ide-3.16.1-fx.xpi?src=";
     sha256 = "0hxrcf3gnyknxpcn8zrgik7lh8yglkjj52fcv96k1vrkww20v2k8";
     meta = with self.stdenv.lib; {
-      homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
-      description = "Show tabs like a tree.";
+      homepage = "https://github.com/SeleniumHQ/selenium-ide";
+      description = "Selenium IDE is an integrated development environment for Selenium tests. It is implemented as a Firefox extension, and allows you to record, edit, and debug tests.";
       license = licenses.gpl2;
       platforms = platforms.all;
     };
@@ -117,10 +117,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.3.5";
+    version = "3.3.6";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3492484/tree_style_tab_-3.3.5-fx.xpi?src=";
-    sha256 = "0xp0pxcch377xwcvw85qkqrznmrgxq2svc42mi16gsi7lpb7s0mc";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3511277/tree_style_tab_-3.3.6-fx.xpi?src=";
+    sha256 = "09849frhc12w94ig7m405lrgcmr434a6204dazg4nmrmh8rckizr";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
@@ -131,10 +131,10 @@ let
 
   ublockPkg = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.24.2";
+    version = "1.25.0";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3452970/ublock_origin-1.24.2-an+fx.xpi?src=";
-    sha256 = "0kjjwi91ri958gsj4l2j3xqwj4jgkcj4mlqahqd1rz9z886sd9dy";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3509800/ublock_origin-1.25.0-an+fx.xpi?src=";
+    sha256 = "0pyna4c2b2ffh8ifjj4c8ga9b73g37pk432nyinf8majyb1fq6rc";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/gorhill/uBlock#ublock-origin";
       description = "Finally, an efficient blocker. Easy on CPU and memory.";
