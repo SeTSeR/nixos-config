@@ -55,9 +55,9 @@ in {
           russian-holidays
           rust-mode
           smartparens
-          telega
+          melpaPackages.telega
           use-package
-          visual-fill-column
+          melpaPackages.visual-fill-column
           wakatime-mode
           yasnippet
           yasnippet-snippets
