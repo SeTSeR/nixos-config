@@ -1,7 +1,10 @@
 { config, pkgs, lib, ... }:
 let imports = import ../nix/sources.nix;
 in {
-  nixpkgs.overlays = [ (import ./overlay.nix) ];
+  nixpkgs.overlays = [
+    (import ./overlay.nix)
+    (import imports.emacs-overlay)
+  ];
 
   nixpkgs.pkgs = import imports.nixpkgs {
     config = {
