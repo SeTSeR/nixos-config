@@ -9,7 +9,6 @@ let
     texlive.combined.scheme-full
     vk-messenger
     wpa_supplicant_gui
-    gnuplot
     python37Packages.pygments
     niv
     dwarf-fortress
