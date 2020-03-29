@@ -45,12 +45,13 @@
   services.postgresql = {
     enable = config.deviceSpecific.isHomeMachine;
     package = pkgs.postgresql_12;
-    ensureDatabases = [ "learn_center" ];
+    ensureDatabases = [ "learn_center" "learn_center_test" ];
     ensureUsers = [
     {
       name = "smakarov";
       ensurePermissions = {
         "DATABASE learn_center" = "ALL PRIVILEGES";
+        "DATABASE learn_center_test" = "ALL PRIVILEGES";
       };
     }
     ];
