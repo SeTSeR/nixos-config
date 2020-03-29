@@ -11,7 +11,6 @@ let
     wpa_supplicant_gui
     python37Packages.pygments
     niv
-    dwarf-fortress
   ];
   commonPackages = with pkgs;
   [
