@@ -5,7 +5,9 @@
 ;;; Code:
 
 (use-package lsp-mode
-  :commands lsp
+  :commands (lsp lsp-deferred)
+  :hook
+  ((c-mode c++-mode rust-mode) . lsp-deferred)
   :config
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
@@ -13,6 +15,9 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode)
+
+(use-package lsp-ivy
+  :commands ivy-lsp-workspace-symbol)
 
 (use-package company-lsp
   :commands company-lsp)
