@@ -10,6 +10,13 @@
         tab-width 8
         indent-tabs-mode t))
 
+(use-package glsl-mode
+  :mode "\\.glsl\\'"
+  :mode "\\.vert\\'"
+  :mode "\\.frag\\'"
+  :mode "\\.geom\\'"
+  :interpreter "glsl")
+
 (use-package irony
   :hook
   ((c-mode . c++-mode) . (irony-mode))

@@ -28,6 +28,7 @@ in {
           flycheck-irony
           flyspell-correct
           free-keys
+          glsl-mode
           gnuplot
           google-c-style
           graphviz-dot-mode
