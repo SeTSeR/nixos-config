@@ -1,1 +1,1 @@
-((nil . ((projectile-project-compilation-cmd . "./switch.sh"))))
+((nil . ((projectile-project-compilation-cmd . "./switch"))))
