@@ -1,4 +1,4 @@
 secret.nix
 result
 installer/result
-modules/users/smakarov/openvpn/bird.ovpn
+modules/users/smakarov/openvpn/
