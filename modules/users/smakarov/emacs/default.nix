@@ -15,7 +15,6 @@ in {
         with epkgs; [
           avy
           apropospriate-theme
-          ccls
           company-irony
           company-lsp
           company-nixos-options

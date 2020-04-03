@@ -19,11 +19,4 @@
     (eval-after-load 'company
       '(add-to-list 'company-backends '(company-irony-c-headers company-irony)))))
 
-(use-package ccls
-  :hook ((c-mode c++-mode) .
-         (lambda () (require 'ccls) (lsp)))
-  :config
-  (setq ccls-sem-highlight-method 'font-lock)
-  (setq ccls-args '("--log-file=/tmp/ccls.log")))
-
 ;;; cpp.el ends here
