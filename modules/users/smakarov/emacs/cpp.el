@@ -17,6 +17,13 @@
   :mode "\\.geom\\'"
   :interpreter "glsl")
 
+(use-package ccls
+  :hook ((c-mode c++-mode) .
+         (lambda () (require 'ccls) (lsp)))
+  :config
+  (setq ccls-sem-highlight-method 'font-lock)
+  (setq ccls-args '("--log-file=/tmp/ccls.log")))
+
 (use-package irony
   :hook
   ((c-mode . c++-mode) . (irony-mode))
