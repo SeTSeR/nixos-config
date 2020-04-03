@@ -20,6 +20,7 @@ in {
           company-nixos-options
           counsel
           counsel-projectile
+          dap-mode
           diminish
           eshell-toggle
           flycheck
@@ -72,6 +73,9 @@ in {
     };
     home.file.".emacs.d/cpp.el" = {
       text = readWithSubstitute ./cpp.el;
+    };
+    home.file.".emacs.d/dap.el" = {
+      text = readWithSubstitute ./dap.el;
     };
     home.file.".emacs.d/init.el" = {
       text = readWithSubstitute ./init.el;
