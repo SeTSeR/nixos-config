@@ -55,7 +55,7 @@ in {
         "${modifier}+Return" = "exec --no-startup-id ${term}";
         "${modifier}+d" = "exec ${pkgs.dmenu}/bin/dmenu_run";
         "${modifier}+f" = "fullscreen toggle";
-        "${modifier}+l" = "layout toggle";
+        "${modifier}+Shift+l" = "layout toggle";
         "${modifier}+Left" = "focus child; focus left";
         "${modifier}+Down" = "focus child; focus down";
         "${modifier}+Up" = "focus child; focus up";
