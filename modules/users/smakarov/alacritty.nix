@@ -3,7 +3,6 @@
   home-manager.users.smakarov.programs.alacritty = {
     enable = true;
     settings = {
-      tabspaces = 4;
       window = {
         dimensions = {
           columns = 80;
