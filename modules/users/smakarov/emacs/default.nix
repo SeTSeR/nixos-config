@@ -38,6 +38,7 @@ in {
           haskell-mode
           irony
           ivy
+          ivy-bibtex
           ivy-xref
           ivy-yasnippet
           ix
@@ -46,6 +47,7 @@ in {
           magit
           markdown-mode
           nix-mode
+          org-ref
           ox-textile
           pdf-tools
           powerline
