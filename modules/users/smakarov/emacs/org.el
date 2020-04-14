@@ -89,6 +89,9 @@
         org-latex-packages-alist '(("" "minted"))
         org-latex-pdf-process
         '("pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"
-        "pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f")))
+          "pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"))
+  (setq org-confirm-babel-evaluate (lambda (lang body)
+                                     (and (not (string= lang "dot"))
+                                         (not (string= lang "sql"))))))
 
 ;;; org.el ends here
