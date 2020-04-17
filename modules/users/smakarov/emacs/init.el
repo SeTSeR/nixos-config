@@ -187,6 +187,9 @@
   :config
   (pdf-tools-install))
 
+(setq safe-local-variable-values
+      '((projectile-project-compilation-cmd . "./switch")))
+
 ;; Setup Splash Screen
 (setq inhibit-startup-screen t)
 (org-agenda-list)
