@@ -106,7 +106,6 @@
 (load-user-file "cpp.el")
 (load-user-file "keys.el")
 (load-user-file "lsp.el")
-(load-user-file "matrix.el")
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
