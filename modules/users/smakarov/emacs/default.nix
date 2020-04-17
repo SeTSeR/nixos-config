@@ -95,9 +95,6 @@ in {
     home.file.".emacs.d/org.el" = {
       text = readWithSubstitute ./org.el;
     };
-    home.file.".emacs.d/pivot-mode.el" = {
-      text = readWithSubstitute ./pivot-mode.el;
-    };
     home.file.".emacs.d/projectile.el" = {
       text = readWithSubstitute ./projectile.el;
     };
