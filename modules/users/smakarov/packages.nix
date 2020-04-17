@@ -45,5 +45,10 @@ in {
     '';
 
     home.packages = commonPackages ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
+
+    programs.direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

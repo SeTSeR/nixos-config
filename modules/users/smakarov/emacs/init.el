@@ -98,6 +98,10 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 (show-paren-mode 1)
 
+(use-package direnv
+  :config
+  (direnv-mode))
+
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)

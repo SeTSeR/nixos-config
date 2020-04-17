@@ -23,6 +23,7 @@ in {
           counsel-projectile
           dap-mode
           diminish
+          direnv
           eshell-toggle
           flycheck
           flycheck-irony
