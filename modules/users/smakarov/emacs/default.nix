@@ -13,8 +13,8 @@ in {
       package = emacsWithImagemagick;
       extraPackages = epkgs:
         with epkgs; [
-          avy
           apropospriate-theme
+          avy
           ccls
           company-irony
           company-lsp
@@ -25,9 +25,9 @@ in {
           diminish
           eshell-toggle
           flycheck
+          flycheck-irony
           flycheck-pkg-config
           flycheck-rust
-          flycheck-irony
           flyspell-correct
           free-keys
           glsl-mode
@@ -68,9 +68,6 @@ in {
         ];
     };
     home.file.".authinfo.gpg".source = ./authinfo.gpg;
-    home.file.".gnus.el" = {
-      text = readWithSubstitute ./gnus.el;
-    };
     home.file.".emacs.d/completion.el" = {
       text = readWithSubstitute ./completion.el;
     };
@@ -108,5 +105,8 @@ in {
       text = readWithSubstitute ./telega-settings.el;
     };
     home.file.".emacs.d/yasnippet-snippets".source = ./yasnippet-snippets;
+    home.file.".gnus.el" = {
+      text = readWithSubstitute ./gnus.el;
+    };
   };
 }

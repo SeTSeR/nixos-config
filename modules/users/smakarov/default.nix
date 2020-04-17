@@ -12,8 +12,8 @@
     ./services.nix
     ./smakarov.nix
     ./ssh.nix
-    ./xresources.nix
     ./vim.nix
+    ./xresources.nix
     ./zsh.nix
   ];
 }

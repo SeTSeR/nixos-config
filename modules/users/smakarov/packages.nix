@@ -4,26 +4,30 @@ let
     djview
     gnuplot
     graphviz
+    niv
     nixfmt
+    python37Packages.pygments
     steam
     texlive.combined.scheme-full
     vk-messenger
     wpa_supplicant_gui
-    python37Packages.pygments
-    niv
   ];
   commonPackages = with pkgs;
   [
     aspell
     aspellDicts.en
     aspellDicts.ru
-    xclip
-    unzip
-    nitrogen
+    bitwarden-cli
     efibootmgr
+    fd
+    ffmpeg-full
     htop
     imagemagick7
+    lorri
     nitrogen
+    pinentry-qt
+    plantuml
+    ripgrep
     spotify
     thunderbird
     tridactyl-native
@@ -31,12 +35,6 @@ let
     unzip
     wakatime
     xclip
-    fd
-    ripgrep
-    ffmpeg-full
-    pinentry-qt
-    bitwarden-cli
-    plantuml
   ];
 in {
   home-manager.users.smakarov = {
