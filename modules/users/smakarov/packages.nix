@@ -9,7 +9,6 @@ let
     python37Packages.pygments
     steam
     texlive.combined.scheme-full
-    vk-messenger
     wpa_supplicant_gui
   ];
   commonPackages = with pkgs;
