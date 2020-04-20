@@ -21,6 +21,7 @@ let
     fd
     ffmpeg-full
     htop
+    inkscape
     imagemagick7
     lorri
     nitrogen
