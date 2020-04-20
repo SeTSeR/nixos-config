@@ -156,6 +156,17 @@ let
       platforms = platforms.all;
     };
   };
+  jitsiDrv = { makeDesktopItem }:
+  old.jitsi.overrideAttrs (oldAttrs: {
+    jitsiItem = makeDesktopItem {
+      name = "Jitsi";
+      exec = "jitsi";
+      comment = "VoIP and Instant Messaging client";
+      desktopName = "Jitsi";
+      genericName = "Instant Messaging";
+      categories = "Network;";
+    };
+  });
 in {
   cacos = self.pkgs.callPackage cacosPkg { };
 
@@ -176,6 +187,7 @@ in {
   tridactyl = self.callPackage tridactylPkg {};
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
+  jitsi = self.callPackage jitsiDrv {};
   inherit (import imports.niv {}) niv;
   stable = import imports.nixpkgs-stable { config.allowUnfree = true; };
 }
