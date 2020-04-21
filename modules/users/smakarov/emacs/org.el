@@ -40,7 +40,8 @@
           "pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"))
   (setq org-confirm-babel-evaluate (lambda (lang body)
                                      (not (or (string= lang "dot")
-                                              (string= lang "sql")))))
+                                              (string= lang "sql")
+                                              (string= lang "plantuml")))))
   (org-babel-do-load-languages 'org-babel-load-languages
         '((emacs-lisp . t)
           (C . t)
