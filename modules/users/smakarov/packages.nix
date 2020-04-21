@@ -2,6 +2,7 @@
 let
   homePackages = with pkgs; [
     djview
+    dot2tex
     gnuplot
     graphviz
     niv
