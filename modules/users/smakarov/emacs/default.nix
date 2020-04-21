@@ -53,8 +53,6 @@ in {
           pdf-tools
           powerline
           projectile
-          quelpa
-          quelpa-use-package
           rainbow-delimiters
           reverse-im
           russian-holidays
