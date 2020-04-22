@@ -42,21 +42,6 @@
     windowManager.i3.enable = true;
   };
 
-  services.postgresql = {
-    enable = config.deviceSpecific.isHomeMachine;
-    package = pkgs.postgresql_12;
-    ensureDatabases = [ "learn_center" "learn_center_test" ];
-    ensureUsers = [
-    {
-      name = "smakarov";
-      ensurePermissions = {
-        "DATABASE learn_center" = "ALL PRIVILEGES";
-        "DATABASE learn_center_test" = "ALL PRIVILEGES";
-      };
-    }
-    ];
-  };
-
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
