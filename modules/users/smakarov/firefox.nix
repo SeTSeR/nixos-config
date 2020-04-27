@@ -17,8 +17,8 @@
         "toolkit.telemetry.enabled" = "false";
         "toolkit.legacyUserProfileCustomizations.stylesheets" = "true";
         "app.update.mode" = 1;
-        "browser.search.defaultenginename" = "Google";
-        "browser.search.selectedEngine" = "Google";
+        "browser.search.defaultenginename" = "DuckDuckGo";
+        "browser.search.selectedEngine" = "DuckDuckGo";
         "browser.uidensity" = 1;
         "browser.search.openintab" = true;
         "extensions.pocket.enabled" = false;
