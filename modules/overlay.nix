@@ -52,28 +52,6 @@ let
         '';
       };
 
-  # https://github.com/wiedzmin/nixos-config/blob/999e2c67e5d203771467c6c5ff2436b49aec6385/nix/firefox-addons/default.nix
-  buildFirefoxXpiAddonFromArchPkg = { pname, version, addonId, url, sha256, meta, ... }:
-  { stdenv, fetchurl }:
-    stdenv.mkDerivation {
-      name = "${pname}-${version}";
-
-      inherit meta;
-
-      src = fetchurl { inherit url sha256; };
-
-      sourceRoot = ".";
-
-      preferLocalBuild = true;
-      allowSubstitutes = false;
-
-      installPhase = ''
-        dst="$out/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-        mkdir -p "$dst"
-        install -v -m644 "$sourceRoot/usr/lib/firefox/browser/extensions/${addonId}.xpi" "$dst/${addonId}.xpi"
-      '';
-    };
-
   bitwardenPkg = buildFirefoxXpiAddon {
     pname = "bitwarden";
     version = "1.4.2.2";
@@ -87,12 +65,12 @@ let
     };
   };
 
-  tridactylPkg = buildFirefoxXpiAddonFromArchPkg rec {
+  tridactylPkg = buildFirefoxXpiAddon {
     pname = "tridactyl";
-    version = "1.17.1-1";
+    version = "1.18.1";
     addonId = "tridactyl.vim@cmcaine.co.uk";
-    url = "https://archive.archlinux.org/packages/f/firefox-tridactyl/firefox-tridactyl-${version}-any.pkg.tar.xz";
-    sha256 = "174jkqq1pmma70is1b6xksc267wjqaf9xlijgg8mrqjj8bb4b6z0";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3557449/tridactyl-1.18.1-an+fx.xpi?src=";
+    sha256 = "1hvhkk6gnc39v9fpcx96xkhpkf107gcgqcx2p8222x7s6zjzgrw2";
     meta = with self.stdenv.lib; {
       homepage = "https://github.com/tridactyl/tridactyl";
       description = "Vim, but in your browser. Replace Firefox's control mechanism with one modelled on Vim.";
