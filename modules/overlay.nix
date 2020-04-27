@@ -87,20 +87,6 @@ let
     };
   };
 
-  seleniumPkg = buildFirefoxXpiAddon {
-    pname = "selenium-ide";
-    version = "3.16.1";
-    addonId = "ide@selenium.dev";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3459412/selenium_ide-3.16.1-fx.xpi?src=";
-    sha256 = "0hxrcf3gnyknxpcn8zrgik7lh8yglkjj52fcv96k1vrkww20v2k8";
-    meta = with self.stdenv.lib; {
-      homepage = "https://github.com/SeleniumHQ/selenium-ide";
-      description = "Selenium IDE is an integrated development environment for Selenium tests. It is implemented as a Firefox extension, and allows you to record, edit, and debug tests.";
-      license = licenses.gpl2;
-      platforms = platforms.all;
-    };
-  };
-
   tridactylPkg = buildFirefoxXpiAddonFromArchPkg rec {
     pname = "tridactyl";
     version = "1.17.1-1";
@@ -156,17 +142,6 @@ let
       platforms = platforms.all;
     };
   };
-  jitsiDrv = { makeDesktopItem }:
-  old.jitsi.overrideAttrs (oldAttrs: {
-    jitsiItem = makeDesktopItem {
-      name = "Jitsi";
-      exec = "jitsi";
-      comment = "VoIP and Instant Messaging client";
-      desktopName = "Jitsi";
-      genericName = "Instant Messaging";
-      categories = "Network;";
-    };
-  });
 in {
   cacos = self.pkgs.callPackage cacosPkg { };
 
@@ -182,12 +157,10 @@ in {
   });
 
   bitwarden = self.callPackage bitwardenPkg {};
-  selenium = self.callPackage seleniumPkg {};
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
-  jitsi = self.callPackage jitsiDrv {};
   inherit (import imports.niv {}) niv;
   stable = import imports.nixpkgs-stable { config.allowUnfree = true; };
 }
