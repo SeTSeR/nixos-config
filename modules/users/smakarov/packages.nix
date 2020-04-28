@@ -5,7 +5,6 @@ let
     dot2tex
     gnuplot
     graphviz
-    niv
     nixfmt
     python37Packages.pygments
     steam
@@ -21,6 +20,7 @@ let
     efibootmgr
     fd
     ffmpeg-full
+    git-crypt
     htop
     imagemagick7
     lorri

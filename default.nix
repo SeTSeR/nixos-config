@@ -2,18 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-device:
-{ config, pkgs, options, ... }:
-
-let sources = import ./nix/sources.nix;
-in
-{
+{ config, pkgs, lib, inputs, name, ... }:
+rec {
   imports = [ # Include the results of the hardware scan.
-    "${./machines}/${device}.nix"
-    "${sources.home-manager}/nixos"
-    ./modules
+    (./machines + "/${name}.nix")
+    inputs.home-manager.nixosModules.home-manager
+    (import ./modules device)
   ];
-  inherit device;
+
+  device = name;
 
   # Select internationalisation properties.
   console = {

@@ -1,20 +1,18 @@
-{ config, pkgs, lib, ... }:
-let imports = import ../nix/sources.nix;
-in {
+{ config, pkgs, lib, inputs, ... }:
+{
   nixpkgs.overlays = [
-    (import ./overlay.nix)
-    (import imports.emacs-overlay)
+    inputs.nix.overlay
+    (import ./overlay.nix { inherit inputs; })
+    (import inputs.emacs-overlay)
   ];
 
-  nixpkgs.pkgs = import imports.nixpkgs {
-    config = {
-      allowUnfree = true;
-    } // config.nixpkgs.config;
+  nixpkgs.config = {
+    allowUnfree = true;
   };
 
-  environment.etc.nixpkgs.source = imports.nixpkgs;
+  environment.etc.nixpkgs.source = inputs.nixpkgs;
   nix = {
-    package = pkgs.stable.nix;
+    package = pkgs.nixFlakes;
     nixPath = lib.mkForce [
       "nixpkgs=/etc/nixpkgs"
       "nixos-config=/etc/nixos/configuration.nix"
@@ -27,7 +25,11 @@ in {
 
     optimise.automatic = true;
 
-    extraOptions = "keep-outputs = true";
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+
+    trustedUsers = [ "smakarov" "root" "@wheel" ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -44,6 +46,5 @@ in {
     lightdm
     manpages
     fuse_exfat
-    mate.mate-polkit
   ];
 }
