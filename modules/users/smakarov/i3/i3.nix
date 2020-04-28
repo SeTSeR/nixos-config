@@ -45,10 +45,6 @@ in {
       startup = [
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
-        {
-          command = "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1";
-          notification = false;
-        }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
