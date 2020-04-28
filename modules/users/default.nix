@@ -8,7 +8,8 @@
   security.sudo = {
     enable = true;
     extraConfig = ''
-      smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild switch
+      smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild switch --flake .
+      smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-collect-garbage -d
       '';
   };
 }
