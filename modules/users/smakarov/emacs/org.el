@@ -12,10 +12,6 @@
 (use-package ox-textile)
 (use-package org-tempo)
 
-(use-package ob-plantuml
-  :config (setq org-plantuml-jar-path
-                (expand-file-name "@plantUMLjar@")))
-
 (use-package org-ref
  :config
  (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
@@ -40,15 +36,13 @@
           "pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"))
   (setq org-confirm-babel-evaluate (lambda (lang body)
                                      (not (or (string= lang "dot")
-                                              (string= lang "sql")
-                                              (string= lang "plantuml")))))
+                                              (string= lang "sql")))))
   (org-babel-do-load-languages 'org-babel-load-languages
         '((emacs-lisp . t)
           (C . t)
           (dot . t)
           (gnuplot . t)
           (latex . t)
-          (plantuml . t)
           (shell . t))))
 
 ;;; org.el ends here

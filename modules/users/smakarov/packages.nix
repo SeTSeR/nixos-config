@@ -22,12 +22,10 @@ let
     fd
     ffmpeg-full
     htop
-    inkscape
     imagemagick7
     lorri
     nitrogen
     pinentry-qt
-    plantuml
     ripgrep
     spotify
     thunderbird

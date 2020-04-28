@@ -3,5 +3,4 @@ with import ../../../secrets.nix {};
 rec {
   proxySecretOne = config.secrets.an_secret;
   proxySecretTwo = config.secrets.pr_secret;
-  plantUMLjar = "${pkgs.plantuml}/lib/plantuml.jar";
 }
