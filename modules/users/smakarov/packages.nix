@@ -23,7 +23,6 @@ let
     git-crypt
     htop
     imagemagick7
-    lorri
     nitrogen
     pinentry-qt
     ripgrep
