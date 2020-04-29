@@ -33,6 +33,7 @@ let
     unzip
     wakatime
     xclip
+    zoom-us
   ];
 in {
   home-manager.users.smakarov = {

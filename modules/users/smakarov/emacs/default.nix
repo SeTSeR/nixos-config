@@ -1,16 +1,12 @@
 { config, pkgs, lib, ... }:
-let emacsWithImagemagick = (pkgs.emacs.override {
-      srcRepo = true;
-      imagemagick = pkgs.imagemagickBig;
-    });
-    readWithSubstitute = file:
+let readWithSubstitute = file:
       builtins.readFile (pkgs.substituteAll ((import ./subst.nix { inherit config pkgs lib; }) //
                                              { src = file; }));
 in {
   home-manager.users.smakarov = {
     programs.emacs = {
       enable = true;
-      package = emacsWithImagemagick;
+      package = pkgs.emacsGit;
       extraPackages = epkgs:
         with epkgs; [
           apropospriate-theme
@@ -66,44 +62,45 @@ in {
           yasnippet-snippets
         ];
     };
+
     home.file.".authinfo.gpg".source = ./authinfo.gpg;
-    home.file.".emacs.d/completion.el" = {
+    home.file.".config/emacs/completion.el" = {
       text = readWithSubstitute ./completion.el;
     };
-    home.file.".emacs.d/cpp.el" = {
+    home.file.".config/emacs/cpp.el" = {
       text = readWithSubstitute ./cpp.el;
     };
-    home.file.".emacs.d/dap.el" = {
+    home.file.".config/emacs/dap.el" = {
       text = readWithSubstitute ./dap.el;
     };
-    home.file.".emacs.d/init.el" = {
+    home.file.".config/emacs/init.el" = {
       text = readWithSubstitute ./init.el;
     };
-    home.file.".emacs.d/keys.el" = {
+    home.file.".config/emacs/keys.el" = {
       text = readWithSubstitute ./keys.el;
     };
-    home.file.".emacs.d/lsp.el" = {
+    home.file.".config/emacs/lsp.el" = {
       text = readWithSubstitute ./lsp.el;
     };
-    home.file.".emacs.d/org.el" = {
+    home.file.".config/emacs/org.el" = {
       text = readWithSubstitute ./org.el;
     };
-    home.file.".emacs.d/projectile.el" = {
+    home.file.".config/emacs/projectile.el" = {
       text = readWithSubstitute ./projectile.el;
     };
-    home.file.".emacs.d/rust.el" = {
+    home.file.".config/emacs/rust.el" = {
       text = readWithSubstitute ./rust.el;
     };
-    home.file.".emacs.d/snippets.el" = {
+    home.file.".config/emacs/snippets.el" = {
       text = readWithSubstitute ./snippets.el;
     };
-    home.file.".emacs.d/spell.el" = {
+    home.file.".config/emacs/spell.el" = {
       text = readWithSubstitute ./spell.el;
     };
-    home.file.".emacs.d/telega-settings.el" = {
+    home.file.".config/emacs/telega-settings.el" = {
       text = readWithSubstitute ./telega-settings.el;
     };
-    home.file.".emacs.d/yasnippet-snippets".source = ./yasnippet-snippets;
+    home.file.".config/emacs/yasnippet-snippets".source = ./yasnippet-snippets;
     home.file.".gnus.el" = {
       text = readWithSubstitute ./gnus.el;
     };
