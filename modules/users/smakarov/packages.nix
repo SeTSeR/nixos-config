@@ -8,9 +8,9 @@ let
     nixfmt
     python37Packages.pygments
     steam
+    (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
     texlive.combined.scheme-full
     wpa_supplicant_gui
-    openmw
   ];
   commonPackages = with pkgs;
   [
