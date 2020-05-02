@@ -10,6 +10,7 @@ let
     steam
     texlive.combined.scheme-full
     wpa_supplicant_gui
+    openmw
   ];
   commonPackages = with pkgs;
   [
