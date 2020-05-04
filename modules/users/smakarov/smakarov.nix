@@ -14,7 +14,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.smakarov = {
     home.sessionVariables = {
-      EDITOR = "${pkgs.emacs}/bin/emacsclient -c";
+      EDITOR = "${pkgs.emacsGit}/bin/emacsclient -c";
     };
   };
 }
