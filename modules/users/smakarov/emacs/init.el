@@ -30,10 +30,10 @@
 (setq use-package-always-ensure nil)
 
 ;; backup in one place. flat, no tree structure
-(setq backup-directory-alist '(("" . "~/.emacs.d/backup")))
+(setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
 
 (setq auto-save-file-name-transforms
-      `((".*" "~/.emacs.d/auto-save-list/" t)))
+      `((".*" "@emacsConfigDir@/auto-save-list/" t)))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-always-indent 'complete)
@@ -49,7 +49,7 @@
 (defconst user-init-dir
   (cond ((boundp 'user-emacs-directory) user-emacs-directory)
         ((boundp 'user-init-directory)  user-init-directory)
-        (t "~/.emacs.d/")))
+        (t "@emacsConfigDir@")))
 
 ;; Function for loading user files
 (defun load-user-file (file)
@@ -131,24 +131,6 @@
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
   (reverse-im-mode 1))
-
-(defun org-latex-yasnippet ()
-  "Activate org and LaTeX yasnippet expansion in 'org-mode' buffers."
-  (yas-minor-mode)
-  (yas-activate-extra-mode 'latex-mode))
-
-(use-package yasnippet
-  :hook
-  ((prog-mode . yas-minor-mode)
-   (org-mode . org-latex-yasnippet))
-  :diminish yas-minor-mode
-  :config
-  (use-package yasnippet-snippets)
-  (add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippet-snippets")
-  (yas-reload-all))
-
-(use-package ivy-yasnippet
-  :bind ("C-x y" . ivy-yasnippet))
 
 (use-package ivy-xref
   :init
