@@ -4,11 +4,12 @@
 
 ;;; Code:
 (use-package telega
-  :init (defun telega-ignore-larry-orwell (msg &rest notused)
-  (when (= (plist-get msg :sender_user_id) 165277130)
-    (telega-msg-ignore msg)))
+  :init (defun ignore-user-messages (msg &rest notused)
+            (when (= (plist-get msg :sender_user_id) 370449679)
+              (telega-msg-ignore msg)))
   :commands (telega)
   :defer t
+  :hook (telega-chat-pre-message . (ignore-user-messages))
   :config
   (telega-notifications-mode 1)
   (setq telega-proxies
