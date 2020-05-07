@@ -4,12 +4,14 @@
 
 ;;; Code:
 (use-package telega
-  :init (defun ignore-user-messages (msg &rest notused)
-            (when (= (plist-get msg :sender_user_id) 370449679)
-              (telega-msg-ignore msg)))
+  :init
+  (defun ignore-user-messages-by-id (id msg)
+      (when (= (plist-get msg :sender_user_id) id)
+        (telega-msg-ignore msg)))
+  (add-hook 'telega-chat-pre-message-hook (lambda (msg &rest notused)
+                                            (ignore-user-messages-by-id 370449679 msg)))
   :commands (telega)
   :defer t
-  :hook (telega-chat-pre-message . (ignore-user-messages))
   :config
   (telega-notifications-mode 1)
   (setq telega-proxies
