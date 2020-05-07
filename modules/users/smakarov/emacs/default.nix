@@ -9,6 +9,7 @@ in {
       package = pkgs.emacsGit;
       extraPackages = epkgs:
         with epkgs; [
+          ace-window
           apropospriate-theme
           avy
           ccls

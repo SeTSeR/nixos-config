@@ -153,6 +153,10 @@
   :config
   (avy-setup-default))
 
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window))
+
 (use-package tramp
   :config
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
