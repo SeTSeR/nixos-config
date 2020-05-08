@@ -17,7 +17,8 @@
  (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
  (setq org-ref-bibliography-notes "~/Projects/Hometask/bibliography/notes.org"
        org-ref-default-bibliography '("~/Projects/Hometask/bibliography/references.bib")
-       org-ref-pdf-directory '("~/Projects/Hometask/bibliography/bibtex-pdfs/"))
+       org-ref-pdf-directory '("~/Projects/Hometask/bibliography/bibtex-pdfs/")
+       org-ref-completion-library 'org-ref-ivy-cite)
  (setq bibtex-completion-biography "~/Projects/Hometask/bibliography/references.bib"
        bibtex-completion-library-path "~/Projects/Hometask/bibliography/bibtex-pdfs"
        bibtex-completion-notes-path "~/Projects/Hometask/bibliography/helm-bibtex-notes")
