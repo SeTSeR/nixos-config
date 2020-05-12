@@ -12,6 +12,7 @@
                                             (ignore-user-messages-by-id 370449679 msg)))
   :commands (telega)
   :defer t
+  :bind-keymap ("C-c t" . telega-prefix-map)
   :config
   (telega-notifications-mode 1)
   (setq telega-proxies
