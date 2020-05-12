@@ -22,7 +22,7 @@
         normal = {
           family = "Source Code Pro Medium";
         };
-        size = 10.0;
+        size = 14.0;
       };
       colors = {
         # Default colors
