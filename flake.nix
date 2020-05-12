@@ -1,8 +1,6 @@
 {
   description = "My NixOS config";
 
-  edition = 201909;
-
   inputs = {
     nixpkgs = {
       type = "github";
