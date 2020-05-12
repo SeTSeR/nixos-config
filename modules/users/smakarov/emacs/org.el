@@ -33,8 +33,10 @@
   (setq org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
         org-latex-pdf-process
-        '("pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"
-          "pdflatex -shell-escape -interaction nonstopmode -bibtex -output-directory %o %f"))
+        '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "bibtex %b"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   (setq org-confirm-babel-evaluate (lambda (lang body)
                                      (not (or (string= lang "dot")
                                               (string= lang "sql")))))
