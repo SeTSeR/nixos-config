@@ -2,7 +2,7 @@
 {
   nixpkgs.overlays = [
     inputs.nix.overlay
-    (import ./overlay.nix { inherit inputs; })
+    (import ./overlay.nix { inherit inputs; inherit config; })
     (import inputs.emacs-overlay)
   ];
 

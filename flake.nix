@@ -14,6 +14,12 @@
       repo = "nixpkgs-channels";
       ref = "nixos-20.03";
     };
+    pr88061 = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "86473542810226faabde8dc13a448ae4efcc31c1";
+    };
     NUR = {
       type = "github";
       owner = "nix-community";

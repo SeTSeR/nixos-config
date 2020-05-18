@@ -162,6 +162,24 @@
         "type": "github"
       }
     },
+    "pr88061": {
+      "info": {
+        "lastModified": 1589803592,
+        "narHash": "sha256-aRsjCCf7onWZItFMYneiFY55zKltxR7+P3zfHWSRjwI="
+      },
+      "locked": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "86473542810226faabde8dc13a448ae4efcc31c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "86473542810226faabde8dc13a448ae4efcc31c1",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "NUR": "NUR",
@@ -169,7 +187,8 @@
         "home-manager": "home-manager",
         "nix": "nix",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-stable": "nixpkgs-stable"
+        "nixpkgs-stable": "nixpkgs-stable",
+        "pr88061": "pr88061"
       }
     }
   },
