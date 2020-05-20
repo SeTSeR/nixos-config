@@ -24,7 +24,6 @@ let
     ffmpeg-full
     git-crypt
     htop
-    imagemagick7
     nitrogen
     pinentry-qt
     ripgrep
@@ -34,7 +33,7 @@ let
     unrar
     unzip
     wakatime
-    xclip
+    wl-clipboard
     zoom-us
   ];
 in {

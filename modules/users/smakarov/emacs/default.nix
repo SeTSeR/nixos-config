@@ -2,11 +2,15 @@
 let readWithSubstitute = file:
       builtins.readFile (pkgs.substituteAll ((import ./subst.nix { inherit config pkgs lib; }) //
                                              { src = file; }));
+      emacsWithImagemagick = (pkgs.emacsGit.override {
+        srcRepo = true;
+        imagemagick = pkgs.imagemagick7Big;
+      });
 in {
   home-manager.users.smakarov = {
     programs.emacs = {
       enable = true;
-      package = pkgs.emacsGit;
+      package = emacsWithImagemagick;
       extraPackages = epkgs:
         with epkgs; [
           ace-window
