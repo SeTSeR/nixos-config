@@ -18,7 +18,7 @@
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      ref = "86473542810226faabde8dc13a448ae4efcc31c1";
+      ref = "6e0c5dbcdc2bb2d6aee3303344071ff8bf0e6cb4";
     };
     NUR = {
       type = "github";

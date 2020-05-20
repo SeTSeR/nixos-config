@@ -164,18 +164,18 @@
     },
     "pr88061": {
       "info": {
-        "lastModified": 1589803592,
-        "narHash": "sha256-aRsjCCf7onWZItFMYneiFY55zKltxR7+P3zfHWSRjwI="
+        "lastModified": 1589913681,
+        "narHash": "sha256-hKM9wrA5sKJFxzIF72YCxAy0AFogc4rLCRkt8rixCTE="
       },
       "locked": {
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "86473542810226faabde8dc13a448ae4efcc31c1",
+        "rev": "6e0c5dbcdc2bb2d6aee3303344071ff8bf0e6cb4",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "86473542810226faabde8dc13a448ae4efcc31c1",
+        "ref": "6e0c5dbcdc2bb2d6aee3303344071ff8bf0e6cb4",
         "repo": "nixpkgs",
         "type": "github"
       }
