@@ -171,11 +171,7 @@
   :config
   (pdf-tools-install))
 
-(use-package multitran
-  :config
-  (add-to-list multitran-languages
-               ("Russian" . "English")
-               ("English" . "Russian")))
+(use-package multitran)
 
 (setq safe-local-variable-values
       '((projectile-project-compilation-cmd . "./switch")))
