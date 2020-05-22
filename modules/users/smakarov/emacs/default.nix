@@ -48,6 +48,7 @@ in {
           lsp-ui
           magit
           markdown-mode
+          multitran
           nix-mode
           org-ref
           ox-textile
