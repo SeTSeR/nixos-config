@@ -9,7 +9,6 @@
                              "~/org/hobby.org"))
 
 (use-package ox-md)
-(use-package ox-textile)
 (use-package org-tempo)
 
 (use-package org-ref

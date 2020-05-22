@@ -1,34 +1,6 @@
 {inputs, config}:
 self: old:
 let
-  cacosPkg = { gcc8Stdenv, fetchgit, pkgconfig, boost, cmake, curl, gcc8, git }:
-  let
-    boostpkg = boost.override { enableStatic = true; };
-    stdenv = gcc8Stdenv;
-  in stdenv.mkDerivation rec {
-    name = "cacos";
-
-    src = fetchgit {
-      url = "https://github.com/BigRedEye/cacos";
-      rev = "v1.0.0";
-      sha256 = "0av84475dxamvmf8slqp2h6p2y4j08nm94qjc6rvxcqbp54bn1zi";
-      fetchSubmodules = true;
-    };
-
-    nativeBuildInputs = [ cmake pkgconfig ];
-    buildInputs = [ boostpkg curl gcc8 git ];
-
-    cmakeFlags = [ "-DCMAKE_USE_CONAN=OFF -DCMAKE_BUILD_TYPE=Release" ];
-
-    enableParallelBuilding = true;
-
-    meta = {
-      homepage = "https://github.com/BigRedEye/cacos";
-      description = "Ejudge client and local testing system";
-      license = stdenv.lib.licenses.mit;
-    };
-  };
-
   dot2texPkg = { stdenv, buildPythonPackage, fetchgit, isPy3k, pyparsing }:
   buildPythonPackage rec {
     pname = "dot2tex";
@@ -137,19 +109,6 @@ let
     };
   };
 in {
-  cacos = self.pkgs.callPackage cacosPkg { };
-
-  tdesktopWideBaloons = old.tdesktop.overrideAttrs (oldAttrs: {
-    patches = [
-      "${
-        builtins.fetchGit {
-          url = "https://github.com/msva/mva-overlay";
-          rev = "e5121619c9814b36284146dbe3dae92cf41a7c25";
-        }
-      }/net-im/telegram-desktop/files/patches/9999/conditional/wide-baloons/0001_baloons-follows-text-width-on-adaptive-layout.patch"
-    ] ++ oldAttrs.patches;
-  });
-
   dot2tex = self.callPackage dot2texPkg {
     buildPythonPackage = self.pythonPackages.buildPythonPackage;
     isPy3k = self.pythonPackages.isPy3k;

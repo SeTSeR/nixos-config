@@ -12,22 +12,6 @@
   home-manager.users.smakarov.programs.ssh = {
     enable = true;
     matchBlocks = {
-      "polus" = {
-        hostname = "polus.hpc.cs.msu.ru";
-        user = "edu-cmc-skpod19-327-07";
-        identityFile = toString (pkgs.writeTextFile {
-          name = "edu-cmc-skpod19-327-07";
-          text = config.secrets.skpod_key;
-        });
-      };
-      "bluegene" = {
-        hostname = "bluegene.hpc.cs.msu.ru";
-        user = "edu-cmc-skpod19-327-07";
-        identityFile = toString (pkgs.writeTextFile {
-          name = "edu-cmc-skpod19-327-07";
-          text = config.secrets.skpod_key;
-        });
-      };
       "work" = {
         hostname = "10.10.156.56";
         user = "smakarov";

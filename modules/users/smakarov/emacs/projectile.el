@@ -13,14 +13,10 @@
   ("<f9>" . projectile-compile-project)
   :config
   (setq projectile-completion-system 'ivy)
-  (setq safe-local-variable-values (quote ((projectile-project-compilation-cmd . "./switch.sh"))))
   (projectile-mode 1)
   (use-package counsel-projectile
     :config (counsel-projectile-mode))
   (global-unset-key [menu-bar tools Projectile])
-  (projectile-register-project-type 'nix-shell '("shell.nix")
-                                    :compile "nix-build shell.nix"
-                                    :run "nix-shell")
   (setq projectile-project-search-path '("~/Projects/")))
   
 ;;; projectile.el ends here

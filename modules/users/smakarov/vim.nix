@@ -57,7 +57,6 @@
 
       filetype plugin indent on
       syntax enable
-      set background=light
       colorscheme gruvbox
 
       set spelllang=ru,en

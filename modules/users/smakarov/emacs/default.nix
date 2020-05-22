@@ -22,7 +22,6 @@ in {
           company-nixos-options
           counsel
           counsel-projectile
-          dap-mode
           diminish
           direnv
           eshell-toggle
@@ -43,7 +42,6 @@ in {
           ivy-bibtex
           ivy-xref
           ivy-yasnippet
-          ix
           lsp-mode
           lsp-ui
           magit
@@ -51,13 +49,11 @@ in {
           multitran
           nix-mode
           org-ref
-          ox-textile
           pdf-tools
           powerline
           projectile
           rainbow-delimiters
           reverse-im
-          russian-holidays
           rust-mode
           smartparens
           telega
@@ -69,21 +65,14 @@ in {
         ];
     };
 
-    home.file.".authinfo.gpg".source = ./authinfo.gpg;
     home.file.".config/emacs/completion.el" = {
       text = readWithSubstitute ./completion.el;
     };
     home.file.".config/emacs/cpp.el" = {
       text = readWithSubstitute ./cpp.el;
     };
-    home.file.".config/emacs/dap.el" = {
-      text = readWithSubstitute ./dap.el;
-    };
     home.file.".config/emacs/init.el" = {
       text = readWithSubstitute ./init.el;
-    };
-    home.file.".config/emacs/keys.el" = {
-      text = readWithSubstitute ./keys.el;
     };
     home.file.".config/emacs/lsp.el" = {
       text = readWithSubstitute ./lsp.el;
@@ -107,8 +96,5 @@ in {
       text = readWithSubstitute ./telega-settings.el;
     };
     home.file.".config/emacs/yasnippet-snippets".source = ./yasnippet-snippets;
-    home.file.".gnus.el" = {
-      text = readWithSubstitute ./gnus.el;
-    };
   };
 }

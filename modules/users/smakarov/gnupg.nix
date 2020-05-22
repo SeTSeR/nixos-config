@@ -11,7 +11,7 @@
       enable = true;
       enableSshSupport = true;
       extraConfig = ''
-          pinentry-program /etc/profiles/per-user/smakarov/bin/pinentry-qt
+          pinentry-program ${pkgs.pinentry-qt}/bin/pinentry-qt
               '';
     };
  };

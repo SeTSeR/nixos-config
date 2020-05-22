@@ -29,22 +29,6 @@
   (require 'use-package))
 (setq use-package-always-ensure nil)
 
-;; backup in one place. flat, no tree structure
-(setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
-
-(setq auto-save-file-name-transforms
-      `((".*" "@emacsConfigDir@/auto-save-list/" t)))
-
-(setq-default indent-tabs-mode nil)
-(setq-default tab-always-indent 'complete)
-
-;; Allow sentences ending with one space
-(setq-default sentence-end-double-space nil)
-
-(setq compilation-scroll-output 'first-error)
-
-(electric-indent-mode 1)
-
 ;; User's configuration directory
 (defconst user-init-dir
   (cond ((boundp 'user-emacs-directory) user-emacs-directory)
@@ -65,7 +49,7 @@
 
 (use-package magit
   :bind
-  (("C-x g" . magit-status )))
+  (("C-x g" . magit-status)))
 
 (use-package flycheck
   :config
@@ -102,47 +86,20 @@
 
 (load-user-file "completion.el")
 (load-user-file "cpp.el")
-(load-user-file "keys.el")
 (load-user-file "lsp.el")
 (load-user-file "org.el")
 (load-user-file "projectile.el")
 (load-user-file "rust.el")
 (load-user-file "snippets.el")
-(load-user-file "spell.el")
 (load-user-file "telega-settings.el")
 
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
-(use-package ix)
-
-(use-package ivy
-  :diminish ivy-mode
-  :config
-  (ivy-mode 1))
-
-(use-package counsel
-  :diminish counsel-mode
-  :config
-  (counsel-mode 1)
-  :bind ("<f6>" . counsel-rg))
-
 (use-package reverse-im
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
   (reverse-im-mode 1))
-
-(use-package ivy-xref
-  :init
-  (when (>= emacs-major-version 27)
-    (setq xref-show-definitions-function #'ivy-xref-show-defs))
-  (setq xref-show-xrefs-function #'ivy-xref-show-defs))
-
-(use-package calendar
-  :config
-  (use-package russian-holidays
-    :config
-    (setq calendar-holidays russian-holidays)))
 
 (use-package avy
   :bind
@@ -173,13 +130,28 @@
 
 (use-package multitran)
 
-(setq safe-local-variable-values
-      '((projectile-project-compilation-cmd . "./switch")))
+(use-package emacs
+  :config
+  ;; backup in one place. flat, no tree structure
+  (setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
 
-;; Setup Splash Screen
-(setq inhibit-startup-screen t)
-(org-agenda-list)
-(setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))
-(delete-other-windows)
+  (setq auto-save-file-name-transforms
+        `((".*" "@emacsConfigDir@/auto-save-list/" t)))
+
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-always-indent 'complete)
+
+  ;; Allow sentences ending with one space
+  (setq-default sentence-end-double-space nil)
+
+  (setq compilation-scroll-output 'first-error)
+
+  (electric-indent-mode 1)
+
+  ;; Setup Splash Screen
+  (setq inhibit-startup-screen t)
+  (org-agenda-list)
+  (setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))
+  (delete-other-windows))
 
 ;;; init.el ends here

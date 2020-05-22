@@ -5,35 +5,22 @@ let
     dot2tex
     gnuplot
     graphviz
-    nixfmt
     python37Packages.pygments
     steam
     (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
     texlive.combined.scheme-full
-    wpa_supplicant_gui
   ];
   commonPackages = with pkgs;
   [
-    aspell
-    aspellDicts.en
-    aspellDicts.ru
-    bitwarden-cli
-    efibootmgr
     fd
     ffmpeg-full
     git-crypt
     htop
-    nitrogen
-    pinentry-qt
     ripgrep
     spotify
     thunderbird
     tridactyl-native
-    unrar
-    unzip
     wakatime
-    wl-clipboard
-    zoom-us
   ];
 in {
   home-manager.users.smakarov = {
