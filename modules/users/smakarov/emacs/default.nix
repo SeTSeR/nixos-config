@@ -6,6 +6,7 @@ let readWithSubstitute = file:
         srcRepo = true;
         imagemagick = pkgs.imagemagick7Big;
       });
+      modulePaths = dir: map (fname: dir + "/${fname}") (builtins.attrNames (builtins.readDir dir));
 in {
   home-manager.users.smakarov = {
     programs.emacs = {
@@ -65,36 +66,9 @@ in {
         ];
     };
 
-    home.file.".config/emacs/completion.el" = {
-      text = readWithSubstitute ./completion.el;
-    };
-    home.file.".config/emacs/cpp.el" = {
-      text = readWithSubstitute ./cpp.el;
-    };
-    home.file.".config/emacs/init.el" = {
-      text = readWithSubstitute ./init.el;
-    };
-    home.file.".config/emacs/lsp.el" = {
-      text = readWithSubstitute ./lsp.el;
-    };
-    home.file.".config/emacs/org.el" = {
-      text = readWithSubstitute ./org.el;
-    };
-    home.file.".config/emacs/projectile.el" = {
-      text = readWithSubstitute ./projectile.el;
-    };
-    home.file.".config/emacs/rust.el" = {
-      text = readWithSubstitute ./rust.el;
-    };
-    home.file.".config/emacs/snippets.el" = {
-      text = readWithSubstitute ./snippets.el;
-    };
-    home.file.".config/emacs/spell.el" = {
-      text = readWithSubstitute ./spell.el;
-    };
-    home.file.".config/emacs/telega-settings.el" = {
-      text = readWithSubstitute ./telega-settings.el;
-    };
+    home.file.".config/emacs/init.el".text =
+      readWithSubstitute ./init.el
+      + lib.concatStringsSep "\n" (map readWithSubstitute (modulePaths ./modules));
     home.file.".config/emacs/yasnippet-snippets".source = ./yasnippet-snippets;
   };
 }

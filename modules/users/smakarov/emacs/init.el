@@ -84,15 +84,6 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-(load-user-file "completion.el")
-(load-user-file "cpp.el")
-(load-user-file "lsp.el")
-(load-user-file "org.el")
-(load-user-file "projectile.el")
-(load-user-file "rust.el")
-(load-user-file "snippets.el")
-(load-user-file "telega-settings.el")
-
 (use-package markdown-mode
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
