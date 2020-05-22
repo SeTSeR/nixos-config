@@ -29,6 +29,7 @@
       type = "github";
       owner = "nix-community";
       repo = "emacs-overlay";
+      rev = "6adc035f5e8b600af4269ae4ee95824e802f50a9";
       flake = false;
     };
   };
