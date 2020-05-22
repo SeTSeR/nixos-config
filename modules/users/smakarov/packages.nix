@@ -9,7 +9,6 @@ let
     python37Packages.pygments
     steam
     (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
-    pr88061.openmw-tes3mp
     texlive.combined.scheme-full
     wpa_supplicant_gui
   ];

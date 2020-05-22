@@ -161,10 +161,6 @@ in {
   ublock = self.callPackage ublockPkg {};
   umatrix = self.callPackage uMatrixPkg {};
 
-  pr88061 = import inputs.pr88061 ({
-    config = config.nixpkgs.config;
-    localSystem = { system = "x86_64-linux"; };
-  });
   stable = import inputs.stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
