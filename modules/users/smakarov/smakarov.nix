@@ -15,6 +15,14 @@
   home-manager.users.smakarov = {
     home.sessionVariables = {
       EDITOR = "${pkgs.emacsGit}/bin/emacsclient -c";
+      VISUAL = "${pkgs.emacsGit}/bin/emacsclient -c";
+      NIX_AUTO_RUN = "1";
+      XKB_DEFAULT_LAYOUT = "us,ru(winkeys)";
+      XKB_DEFAULT_OPTIONS = "grp:caps_toggle";
+    };
+    home.keyboard = {
+      layout = "us,ru(winkeys)";
+      options = [ "grp:caps_toggle" ];
     };
   };
 }

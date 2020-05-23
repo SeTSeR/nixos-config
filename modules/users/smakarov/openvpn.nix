@@ -23,8 +23,8 @@
     };
   };
 
-  home-manager.users.smakarov.home.file.".config/openvpn/bird.ovpn".source = ./openvpn/bird.ovpn;
-  home-manager.users.smakarov.home.file.".config/openvpn/aviator-dep-padaryan.conf".source = ./openvpn/aviator-dep-padaryan.conf;
-  home-manager.users.smakarov.home.file.".config/openvpn/ca-aviator.crt".source = ./openvpn/ca-aviator.crt;
-  home-manager.users.smakarov.home.file.".config/openvpn/ta-aviator.key".source = ./openvpn/ta-aviator.key;
+  home-manager.users.smakarov.xdg.configFile."openvpn/bird.ovpn".source = ./openvpn/bird.ovpn;
+  home-manager.users.smakarov.xdg.configFile."openvpn/aviator-dep-padaryan.conf".source = ./openvpn/aviator-dep-padaryan.conf;
+  home-manager.users.smakarov.xdg.configFile."openvpn/ca-aviator.crt".source = ./openvpn/ca-aviator.crt;
+  home-manager.users.smakarov.xdg.configFile."openvpn/ta-aviator.key".source = ./openvpn/ta-aviator.key;
 }

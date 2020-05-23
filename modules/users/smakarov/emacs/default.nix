@@ -66,9 +66,9 @@ in {
         ];
     };
 
-    home.file.".config/emacs/init.el".text =
+    xdg.configFile."emacs/init.el".text =
       readWithSubstitute ./init.el
       + lib.concatStringsSep "\n" (map readWithSubstitute (modulePaths ./modules));
-    home.file.".config/emacs/yasnippet-snippets".source = ./yasnippet-snippets;
+    xdg.configFile."emacs/yasnippet-snippets".source = ./yasnippet-snippets;
   };
 }

@@ -13,5 +13,6 @@
     ./ssh.nix
     ./vim.nix
     ./zsh.nix
+    ./xdg.nix
   ];
 }
