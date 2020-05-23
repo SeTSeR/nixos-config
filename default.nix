@@ -14,8 +14,8 @@ rec {
 
   # Select internationalisation properties.
   console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
+    font = "cyr-sun16";
+    keyMap = "ruwin_cplk-UTF-8";
   };
   i18n.defaultLocale = "en_US.UTF-8";
 
