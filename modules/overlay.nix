@@ -38,19 +38,6 @@ let
           mkdir -p "$dst"
           install -v -m644 "$src" "$dst/${addonId}.xpi"
         '';
-      };
-
-  bitwardenPkg = buildFirefoxXpiAddon {
-    pname = "bitwarden";
-    version = "1.4.2.2";
-    addonId = "hello@bitwarden.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3475993/bitwarden_free_password_manager-1.42.2-an+fx.xpi?src=";
-    sha256 = "0bnlj6cf7hrdmd5wr9lgh4fk8x90zqxbwvxkjg6cywkplcnl0byx";
-    meta = with self.stdenv.lib; {
-      homepage = "bitwarden.com";
-      description = "A secure and free password manager for all of your devices.";
-      platforms = platforms.all;
-    };
   };
 
   tridactylPkg = buildFirefoxXpiAddon {
@@ -80,49 +67,21 @@ let
       platforms = platforms.all;
     };
   };
-
-  ublockPkg = buildFirefoxXpiAddon {
-    pname = "ublock-origin";
-    version = "1.25.0";
-    addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3509800/ublock_origin-1.25.0-an+fx.xpi?src=";
-    sha256 = "0pyna4c2b2ffh8ifjj4c8ga9b73g37pk432nyinf8majyb1fq6rc";
-    meta = with self.stdenv.lib; {
-      homepage = "https://github.com/gorhill/uBlock#ublock-origin";
-      description = "Finally, an efficient blocker. Easy on CPU and memory.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
-  };
-
-  uMatrixPkg = buildFirefoxXpiAddon {
-    pname = "umatrix";
-    version = "1.4.0";
-    addonId = "uMatrix@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3396815/umatrix-1.4.0-an+fx.xpi?src=search";
-    sha256 = "1ixz5j432rhwiqs91i3qh30s3ss30zv0l08apjibhwj1qsjhy7wr";
-    meta = with self.stdenv.lib; {
-      homepage = "https://github.com/gorhill/uMatrix";
-      description = "Point & click to forbid/allow any class of requests made by your browser. Use it to block scripts, iframes, ads, facebook, etc.";
-      license = licenses.gpl3;
-      platforms = platforms.all;
-    };
-  };
 in {
   dot2tex = self.callPackage dot2texPkg {
     buildPythonPackage = self.pythonPackages.buildPythonPackage;
     isPy3k = self.pythonPackages.isPy3k;
     pyparsing = self.pythonPackages.pyparsing;
   };
-  bitwarden = self.callPackage bitwardenPkg {};
+
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
-  ublock = self.callPackage ublockPkg {};
-  umatrix = self.callPackage uMatrixPkg {};
-
   stable = import inputs.stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
   });
-  nur = inputs.NUR.repos;
+  nur = (import inputs.NUR {
+    pkgs = self;
+    nurpkgs = self;
+  }).repos;
 }
