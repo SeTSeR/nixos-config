@@ -34,7 +34,7 @@
     };
   };
 
-  outputs = { nixpkgs, nix, ... }@inputs: {
+  outputs = { nixpkgs, nix, self, ... }@inputs: {
     nixosConfigurations = with nixpkgs.lib;
       let
         hosts = map (fname: builtins.head (builtins.match "(.*)\\.nix" fname))
@@ -46,5 +46,7 @@
             specialArgs = { inherit inputs name; };
           };
       in genAttrs hosts mkHost;
+    legacyPackages.x86_64-linux =
+      (builtins.head (builtins.attrValues self.nixosConfigurations)).pkgs;
   };
 }

@@ -25,6 +25,8 @@
 
     optimise.automatic = true;
 
+    registry.self.flake = inputs.self;
+
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
