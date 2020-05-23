@@ -14,8 +14,8 @@
       isDefault = true;
       name = "default";
       settings = {
-        "toolkit.telemetry.enabled" = "false";
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = "true";
+        "toolkit.telemetry.enabled" = false;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "app.update.mode" = 1;
         "browser.search.defaultenginename" = "DuckDuckGo";
         "browser.search.selectedEngine" = "DuckDuckGo";
