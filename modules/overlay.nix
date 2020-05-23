@@ -1,22 +1,6 @@
 {inputs, config}:
 self: old:
 let
-  dot2texPkg = { stdenv, buildPythonPackage, fetchgit, isPy3k, pyparsing }:
-  buildPythonPackage rec {
-    pname = "dot2tex";
-    version = "2.11.3";
-
-    src = fetchgit {
-      url = "https://github.com/SeTSeR/dot2tex";
-      rev = "4b25559cd9b958b2f372baac3d4f647b590e4356";
-      sha256 = "098gx2dr9v00y7ckn5183gczijzagzdb20z2v0svlrnzshfdirn1";
-    };
-
-    disabled = isPy3k;
-
-    propagatedBuildInputs = [ pyparsing ];
-  };
-
   # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/default.nix
   buildFirefoxXpiAddon =
   { pname, version, addonId, url, sha256, meta, ... }:
@@ -68,11 +52,13 @@ let
     };
   };
 in {
-  dot2tex = self.callPackage dot2texPkg {
-    buildPythonPackage = self.pythonPackages.buildPythonPackage;
-    isPy3k = self.pythonPackages.isPy3k;
-    pyparsing = self.pythonPackages.pyparsing;
-  };
+  dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
+    src = self.fetchgit {
+      url = "https://github.com/SeTSeR/dot2tex";
+      rev = "4b25559cd9b958b2f372baac3d4f647b590e4356";
+      sha256 = "098gx2dr9v00y7ckn5183gczijzagzdb20z2v0svlrnzshfdirn1";
+    };    
+  });
 
   treestyletab = self.callPackage tstPkg {};
   tridactyl = self.callPackage tridactylPkg {};
