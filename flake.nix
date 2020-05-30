@@ -16,12 +16,12 @@
     };
     NUR = {
       type = "github";
-      owner = "nix-community";
+      owner = "SeTSeR";
       repo = "NUR";
     };
     home-manager = {
       type = "github";
-      owner = "rycee";
+      owner = "SeTSeR";
       repo = "home-manager";
       ref = "bqv-flakes";
     };
