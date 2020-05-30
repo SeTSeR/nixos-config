@@ -11,6 +11,16 @@
 (use-package ox-md)
 (use-package org-tempo)
 
+(use-package ox-latex
+  :config
+    (add-to-list 'org-latex-classes
+               '("course" "\\documentclass{BYUPhys}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+
 (use-package org-ref
  :config
  (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
