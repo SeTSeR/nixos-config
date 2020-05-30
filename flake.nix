@@ -16,7 +16,7 @@
     };
     NUR = {
       type = "github";
-      owner = "SeTSeR";
+      owner = "nix-community";
       repo = "NUR";
     };
     home-manager = {

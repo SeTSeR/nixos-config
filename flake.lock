@@ -2,20 +2,20 @@
   "nodes": {
     "NUR": {
       "info": {
-        "lastModified": 1590831828,
+        "lastModified": 1590834557,
         "narHash": "sha256-XZNZBZHNPecydrvsiesZWGBMG4lSFaYxahZpP/xmeXE="
       },
       "inputs": {
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "owner": "SeTSeR",
+        "owner": "nix-community",
         "repo": "NUR",
-        "rev": "7eb394a035e64b04753d16fb2f45da779990d9b9",
+        "rev": "524d34583c8a3df882c9c12eaa9934eecdbb60f0",
         "type": "github"
       },
       "original": {
-        "owner": "SeTSeR",
+        "owner": "nix-community",
         "repo": "NUR",
         "type": "github"
       }
@@ -41,7 +41,7 @@
     },
     "home-manager": {
       "info": {
-        "lastModified": 1590832159,
+        "lastModified": 1590835233,
         "narHash": "sha256-x3YvavJSrnZrVrtgRudw4Ms2iVk5jgM1Aofs9nh4cAA="
       },
       "inputs": {
@@ -50,7 +50,7 @@
       "locked": {
         "owner": "SeTSeR",
         "repo": "home-manager",
-        "rev": "5eaed525160af00f6a2a2324001d51c93060b539",
+        "rev": "ea1270127a27a28fe324657064c8b35844854556",
         "type": "github"
       },
       "original": {
