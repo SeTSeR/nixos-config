@@ -16,10 +16,12 @@ let
     ffmpeg-full
     git-crypt
     htop
+    imagemagick7
     ripgrep
     spotify
     thunderbird
     tridactyl-native
+    xclip
     wakatime
   ];
 in {
