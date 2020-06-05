@@ -40,12 +40,13 @@
   :config
   (setq org-log-done t)
   (setq org-latex-listings 'minted
-        org-latex-packages-alist '(("" "minted"))
-        org-latex-pdf-process
-        '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "bibtex %b"
-          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+        org-latex-packages-alist '(("" "minted")
+                                   ("AUTO" "babel" t ("pdflatex"))
+                                   ("AUTO" "polyglossia" t ("xelatex" "lualatex")))
+        org-latex-pdf-process '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	                        "%bib %b"
+	                        "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+	                        "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   (setq org-confirm-babel-evaluate (lambda (lang body)
                                      (not (or (string= lang "dot")
                                               (string= lang "sql")))))
