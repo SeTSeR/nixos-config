@@ -24,6 +24,7 @@
       owner = "SeTSeR";
       repo = "home-manager";
       ref = "bqv-flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay-pinned = {
       type = "github";
