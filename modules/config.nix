@@ -11,5 +11,8 @@ with lib; {
   };
 
   config.openVPNConfigPath = "${config.users.users.smakarov.home}/.config/openvpn";
-  config.emacsPackage = pkgs.emacs-overlay-pinned.emacsGit;
+  config.emacsPackage = pkgs.emacs-overlay-pinned.emacsGit.override {
+    srcRepo = true;
+    imagemagick = pkgs.imagemagick7Big;
+  };
 }

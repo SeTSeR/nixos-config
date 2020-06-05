@@ -2,16 +2,12 @@
 let readWithSubstitute = file:
       builtins.readFile (pkgs.substituteAll ((import ./subst.nix { inherit config pkgs lib; }) //
                                              { src = file; }));
-      emacsWithImagemagick = (config.emacsPackage.override {
-        srcRepo = true;
-        imagemagick = pkgs.imagemagick7Big;
-      });
       modulePaths = dir: map (fname: dir + "/${fname}") (builtins.attrNames (builtins.readDir dir));
 in {
   home-manager.users.smakarov = {
     programs.emacs = {
       enable = true;
-      package = emacsWithImagemagick;
+      package = config.emacsPackage;
       extraPackages = epkgs:
         with epkgs; [
           ace-window
