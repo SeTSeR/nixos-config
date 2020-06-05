@@ -2,8 +2,8 @@
   "nodes": {
     "NUR": {
       "info": {
-        "lastModified": 1590834557,
-        "narHash": "sha256-XZNZBZHNPecydrvsiesZWGBMG4lSFaYxahZpP/xmeXE="
+        "lastModified": 1591343254,
+        "narHash": "sha256-1y8lzBw5LHG9LrmGRI16vd0DyfuBbhLZSuVBdNGp8do="
       },
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -11,7 +11,7 @@
       "locked": {
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "524d34583c8a3df882c9c12eaa9934eecdbb60f0",
+        "rev": "597f78e4acb3bfe8215fd55e97e8d5d1ca8b1565",
         "type": "github"
       },
       "original": {
@@ -62,8 +62,8 @@
     },
     "nix": {
       "info": {
-        "lastModified": 1590794213,
-        "narHash": "sha256-CrpciR3RZI9p8zGb9IBlv7RwmXwPITW/mjDTGK7KpVM="
+        "lastModified": 1591358952,
+        "narHash": "sha256-YpuDr7PY47NPDSb2akaXh32bf5z5xRSzUzTwn03UplU="
       },
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -71,7 +71,7 @@
       "locked": {
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "89e0b3e2d62f72e48bdda63b77a086c69b314113",
+        "rev": "488ff83e6b5b3120ce100b0f7b065280f2ce30c2",
         "type": "github"
       },
       "original": {
@@ -97,13 +97,13 @@
     },
     "nixpkgs-stable": {
       "info": {
-        "lastModified": 1590755949,
-        "narHash": "sha256-obN47E6A9PAtzGmBXigrf7vLWBGeuXDxYQW/+FTjotM="
+        "lastModified": 1591200341,
+        "narHash": "sha256-6RiqKKyvQAYNbmCdQq/b7umkJS4jymfrqLMERyoRCHE="
       },
       "locked": {
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "e7752db2fb6c5e05f1de2b275535dbde07d30090",
+        "rev": "05a32d8e771dc39438835ba0e3141d68ad4e3068",
         "type": "github"
       },
       "original": {
@@ -148,13 +148,13 @@
     },
     "nixpkgs_4": {
       "info": {
-        "lastModified": 1590732511,
-        "narHash": "sha256-ZU8Wv9GrB33qy5ZjLpUj9n3CvI7E/1DqJ5mYc6J/s2g="
+        "lastModified": 1591120815,
+        "narHash": "sha256-kmG7D+k5L1VidMeit8Hmk7XGXUa1o2DLGKvdYOLj52M="
       },
       "locked": {
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "135073a87b7e2c631739f4ffa016e1859b1a425e",
+        "rev": "467ce5a9f45aaf96110b41eb863a56866e1c2c3c",
         "type": "github"
       },
       "original": {
