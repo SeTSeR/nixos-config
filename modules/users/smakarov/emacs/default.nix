@@ -2,7 +2,7 @@
 let readWithSubstitute = file:
       builtins.readFile (pkgs.substituteAll ((import ./subst.nix { inherit config pkgs lib; }) //
                                              { src = file; }));
-      emacsWithImagemagick = (pkgs.emacsGit.override {
+      emacsWithImagemagick = (config.emacsPackage.override {
         srcRepo = true;
         imagemagick = pkgs.imagemagick7Big;
       });

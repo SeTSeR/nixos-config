@@ -78,7 +78,7 @@ in {
         "${modifier}+Shift+4" = "move container to workspace 4: ";
         "${modifier}+Shift+5" = "move container to workspace 5: ";
         "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
-        "${modifier}+Ctrl+p" = "exec ${pkgs.emacsGit}/bin/emacsclient -nc";
+        "${modifier}+Ctrl+p" = "exec ${config.emacsPackage}/bin/emacsclient -nc";
         "${modifier}+Ctrl+f" = "exec ${pkgs.firefox}/bin/firefox";
         "XF86AudioRaiseVolume" =
         "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
