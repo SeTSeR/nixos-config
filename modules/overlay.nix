@@ -1,4 +1,4 @@
-{inputs, config}:
+{ inputs, config }:
 self: old:
 let
   # https://gitlab.com/rycee/nur-expressions/blob/master/pkgs/firefox-addons/default.nix
@@ -70,4 +70,9 @@ in {
     pkgs = self;
     nurpkgs = self;
   }).repos;
+  emacs-overlay-pinned = import inputs.nixpkgs ({
+    config = config.nixpkgs.config;
+    localSystem = { system = "x86_64-linux"; };
+    overlays = [ (import inputs.emacs-overlay-pinned) ];
+  });
 }
