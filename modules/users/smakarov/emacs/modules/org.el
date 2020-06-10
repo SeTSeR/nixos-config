@@ -40,8 +40,7 @@
   :config
   (setq org-log-done t)
   (setq org-latex-listings 'minted
-        org-latex-packages-alist '(("" "minted")
-                                   ("AUTO" "babel" t ("pdflatex"))
+        org-latex-packages-alist '(("AUTO" "babel" t ("pdflatex"))
                                    ("AUTO" "polyglossia" t ("xelatex" "lualatex")))
         org-latex-pdf-process '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
 	                        "%bib %b"
