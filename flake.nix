@@ -1,8 +1,7 @@
 {
   description = "My NixOS config";
 
-  inputs = {
-    nixpkgs = {
+  inputs = { nixpkgs = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs-channels";
@@ -40,7 +39,7 @@
     };
   };
 
-  outputs = { nixpkgs, nix, self, ... }@inputs: {
+  outputs = { nixpkgs, self, ... }@inputs: {
     nixosConfigurations = with nixpkgs.lib;
       let
         hosts = map (fname: builtins.head (builtins.match "(.*)\\.nix" fname))
