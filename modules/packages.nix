@@ -1,6 +1,7 @@
 { config, pkgs, lib, inputs, ... }:
 {
   nixpkgs.overlays = [
+    inputs.nix.overlay
     inputs.emacs-overlay.overlay
     (import ./overlay.nix { inherit inputs; inherit config; })
   ];
@@ -11,7 +12,7 @@
 
   environment.etc.nixpkgs.source = inputs.nixpkgs;
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nix;
     nixPath = lib.mkForce [
       "nixpkgs=/etc/nixpkgs"
       "nixos-config=/etc/nixos/configuration.nix"

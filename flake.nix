@@ -39,7 +39,7 @@
     };
   };
 
-  outputs = { nixpkgs, self, ... }@inputs: {
+  outputs = { nixpkgs, nix, self, ... }@inputs: {
     nixosConfigurations = with nixpkgs.lib;
       let
         hosts = map (fname: builtins.head (builtins.match "(.*)\\.nix" fname))
