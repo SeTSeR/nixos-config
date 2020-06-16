@@ -20,7 +20,7 @@
     };
     home-manager = {
       type = "github";
-      owner = "SeTSeR";
+      owner = "rycee";
       repo = "home-manager";
       ref = "bqv-flakes";
       inputs.nixpkgs.follows = "nixpkgs";
