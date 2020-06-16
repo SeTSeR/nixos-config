@@ -12,6 +12,7 @@ let
   ];
   commonPackages = with pkgs;
   [
+    emacsPackages.melpaPackages.telega
     fd
     ffmpeg-full
     git-crypt
