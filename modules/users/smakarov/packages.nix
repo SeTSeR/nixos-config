@@ -12,7 +12,7 @@ let
   ];
   commonPackages = with pkgs;
   [
-    emacsPackages.melpaPackages.telega
+    emacs-overlay-pinned.emacsPackages.melpaPackages.telega
     fd
     ffmpeg-full
     git-crypt

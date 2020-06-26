@@ -1,8 +1,5 @@
 { config, lib, pkgs, ... }:
-let emacsWithImagemagick = pkgs.emacsGit.override {
-  srcRepo = true;
-  imagemagick = pkgs.imagemagick7Big;
-};
+let telega = pkgs.emacs-overlay-pinned.emacsPackages.melpaPackages.telega;
 in with lib; {
   options.openVPNConfigPath = mkOption {
     type = types.str;

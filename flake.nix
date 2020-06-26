@@ -30,6 +30,12 @@
       owner = "nix-community";
       repo = "emacs-overlay";
     };
+    emacs-overlay-pinned = {
+      type = "github";
+      owner = "nix-community";
+      repo = "emacs-overlay";
+      rev = "60ccd988e041b4dbb3e4f03a00e80173c6a57982";
+    };
   };
 
   outputs = { nixpkgs, nix, self, ... }@inputs: {

@@ -23,7 +23,8 @@
 (use-package counsel
   :diminish counsel-mode
   :config
-  (counsel-mode 1))
+  (counsel-mode 1)
+  :bind ("<f6>" . counsel-rg))
 
   (setq company-global-modes '(not gud-mode)))
 
