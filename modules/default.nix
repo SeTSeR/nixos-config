@@ -1,6 +1,7 @@
 device:
 { ... }: {
   imports = [
+    ./containers.nix
     ./config.nix
     ./devices.nix
     ./fonts.nix
