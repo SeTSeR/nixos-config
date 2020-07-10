@@ -1,15 +1,12 @@
 {
   "nodes": {
     "NUR": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
       "locked": {
-        "lastModified": 1593848335,
-        "narHash": "sha256-Ks2WEfD7IJ2PyKmOWdtB6qZ4TeQNNMCLvkstq3l7Amk=",
+        "lastModified": 1594390345,
+        "narHash": "sha256-sTq5qwGkf5Qt3B5ub5LZpbnXpGm2wv6VkqU60htX6MA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "5d86a99ce3726f7f7aeafdf5e054db20d75fb423",
+        "rev": "dcd71e37abe15e859c70f1dd8355a743f2949ddc",
         "type": "github"
       },
       "original": {
@@ -20,11 +17,11 @@
     },
     "emacs-overlay": {
       "locked": {
-        "lastModified": 1593850640,
-        "narHash": "sha256-gWYiguT0YN9Nj0D0Fiy/y3BsW0DbgGuJiISOTHa2Rr8=",
+        "lastModified": 1594383744,
+        "narHash": "sha256-LarPMfAz3R3+pGYp1ulbmhH9pmsXLTfS4JAX+8+IhrQ=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "71bd7694eba00668bc0d27fdff8feda3f975022c",
+        "rev": "1b8e6020181640fd3bb27e04002191701df07986",
         "type": "github"
       },
       "original": {
@@ -72,14 +69,14 @@
     },
     "nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1593628299,
-        "narHash": "sha256-TG05BV4fbJdDW4RzoYBYaGdFtOq6NNet1JHjP1Au/VE=",
+        "lastModified": 1594216519,
+        "narHash": "sha256-ylTRaRg44LtpUDDrANTulkJw8cQQaNzhcMO7WtmOz8g=",
         "owner": "NixOS",
         "repo": "nix",
-        "rev": "6ff9aa8df7ce8266147f74c65e2cc529a1e72ce0",
+        "rev": "9223603908abaa62711296aa224e1bc3d7fb0a91",
         "type": "github"
       },
       "original": {
@@ -88,36 +85,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1590824667,
-        "narHash": "sha256-ut9bcUiG3LKIQtvLrhivTGqvjSP87fLlPssepQy7Ikg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "89e60f61ab6f09362433fd23370c590cd47e9c72",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1593771211,
-        "narHash": "sha256-TmsihBpsFv9dNAVBVrTQBtGAw6sjNmNek1WjNuyjUaE=",
-        "owner": "nixos",
-        "repo": "nixpkgs-channels",
-        "rev": "d6260a33e43a500528b2be834d3ee4ad45441a6a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-20.03",
-        "repo": "nixpkgs-channels",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1591633336,
         "narHash": "sha256-oVXv4xAnDJB03LvZGbC72vSVlIbbJr8tpjEW5o/Fdek=",
@@ -132,13 +99,29 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1593626871,
-        "narHash": "sha256-H7EvlLuE2QpCQf2gtmrQV/axVYG3obTt9rffpmXOVSw=",
+        "lastModified": 1594252326,
+        "narHash": "sha256-agE61qMQve4QImGwhZzMZ2ATAcDbRME+52Lg9estCPA=",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "55668eb671b915b49bcaaeec4518cc49d8de0a99",
+        "rev": "6a00eba02a38cd0f71367adc42857395a36ab4cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-20.03",
+        "repo": "nixpkgs-channels",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1593886469,
+        "narHash": "sha256-it7gY5BmUcDr09dUsE6VPnUsSCeBUtU/GfUwqs6twDc=",
+        "owner": "nixos",
+        "repo": "nixpkgs-channels",
+        "rev": "dc80d7bc4a244120b3d766746c41c0d9c5f81dfa",
         "type": "github"
       },
       "original": {
@@ -155,7 +138,7 @@
         "emacs-overlay-pinned": "emacs-overlay-pinned",
         "home-manager": "home-manager",
         "nix": "nix",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable"
       }
     }
