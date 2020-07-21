@@ -46,6 +46,17 @@ in {
     };    
   });
 
+  tdlib = old.tdlib.overrideAttrs (oldAttrs: {
+    version = "1.6.6";
+
+    src = self.fetchFromGitHub {
+      owner = "tdlib";
+      repo = "td";
+      rev = "c78fbe4bc5e31395e08f916816704e8051f27296";
+      sha256 = "sha256-7T3AswaA24b17pvwryNSDi1kJbCJXFmaLpLbzUBK3qI=";
+    };
+  });
+
   treestyletab = self.callPackage tstPkg {};
   stable = import inputs.stable ({
     config = config.nixpkgs.config;
@@ -55,9 +66,4 @@ in {
     pkgs = self;
     nurpkgs = self;
   }).repos;
-  emacs-overlay-pinned = import inputs.nixpkgs ({
-    config = config.nixpkgs.config;
-    localSystem = { system = "x86_64-linux"; };
-    overlays = [ (import inputs.emacs-overlay-pinned) ];
-  });
 }

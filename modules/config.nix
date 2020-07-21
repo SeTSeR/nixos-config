@@ -1,6 +1,5 @@
 { config, lib, pkgs, ... }:
-let telega = pkgs.emacs-overlay-pinned.emacsPackages.melpaPackages.telega;
-in with lib; {
+with lib; {
   options.openVPNConfigPath = mkOption {
     type = types.str;
     description = "Path to OpenVPN configuration";
