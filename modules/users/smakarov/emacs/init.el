@@ -43,11 +43,6 @@
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
-(use-package wakatime-mode
- :config
- (global-wakatime-mode)
- (setq wakatime-api-key "@emacsWakatimeAPIKey@"))
-
 (use-package magit
   :bind
   (("C-x g" . magit-status)))
