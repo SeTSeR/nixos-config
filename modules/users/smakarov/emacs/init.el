@@ -45,7 +45,8 @@
 
 (use-package wakatime-mode
  :config
- (global-wakatime-mode))
+ (global-wakatime-mode)
+ (setq wakatime-api-key "@emacsWakatimeAPIKey@"))
 
 (use-package magit
   :bind

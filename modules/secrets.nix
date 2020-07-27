@@ -37,6 +37,10 @@ with lib; {
       type = types.str;
       description = "CMC student mail";
     };
+    wakatime-api-key = mkOption {
+      type = types.str;
+      description = "API key for Wakatime";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }
