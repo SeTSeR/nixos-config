@@ -11,7 +11,7 @@
 
   environment.etc.nixpkgs.source = inputs.nixpkgs;
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixUnstable;
     nixPath = lib.mkForce [
       "nixpkgs=/etc/nixpkgs"
       "nixos-config=/etc/nixos/configuration.nix"
