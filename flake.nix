@@ -1,7 +1,8 @@
 {
   description = "My NixOS config";
 
-  inputs = { nixpkgs = {
+  inputs = {
+    nixpkgs = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs-channels";
@@ -32,7 +33,7 @@
     };
   };
 
-  outputs = { nixpkgs, self, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations = with nixpkgs.lib;
       let
         hosts = map (fname: builtins.head (builtins.match "(.*)\\.nix" fname))
@@ -44,7 +45,5 @@
             specialArgs = { inherit inputs name; };
           };
       in genAttrs hosts mkHost;
-    legacyPackages.x86_64-linux =
-      (builtins.head (builtins.attrValues self.nixosConfigurations)).pkgs;
   };
 }
