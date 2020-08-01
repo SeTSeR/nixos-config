@@ -80,6 +80,10 @@ in {
         "${modifier}+Ctrl+l" = "exec ${pkgs.i3lock}/bin/i3lock";
         "${modifier}+Ctrl+p" = "exec ${config.emacsPackage}/bin/emacsclient -nc";
         "${modifier}+Ctrl+f" = "exec ${pkgs.firefox}/bin/firefox";
+        "XF86AudioPause" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+        "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioRaiseVolume" =
         "exec --no-startup-id ${pkgs.pulseaudio}/bin/pactl set-sink-volume 0 +5%";
         "XF86AudioLowerVolume" =
