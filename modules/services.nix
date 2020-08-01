@@ -35,6 +35,8 @@
   # Enable Tor
   services.tor.enable = false;
 
+  services.blueman.enable = true;
+
   services.udisks2.enable = true;
 
   services.fstrim.enable = true;
