@@ -30,7 +30,7 @@
 
   # Enable Terraria server.
   services.terraria = {
-    enable = true;
+    enable = config.deviceSpecific.isHomeMachine;
     autoCreatedWorldSize = "large";
     password = config.secrets.terraria-password;
     port = 7777;
