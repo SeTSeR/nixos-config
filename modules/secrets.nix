@@ -37,6 +37,10 @@ with lib; {
       type = types.str;
       description = "CMC student mail";
     };
+    terraria-password = mkOption {
+      type = types.str;
+      description = "Terraria server password";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }
