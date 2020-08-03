@@ -35,7 +35,7 @@
     password = config.secrets.terraria-password;
     port = 7777;
     secure = false;
-    worldPath = "/home/smakarov/Documents/Bad_Arbor_of_Birds.wld";
+    worldPath = "/var/lib/terraria/Bad_Arbor_of_Birds.wld";
   };
 
   # Enable the KDE Desktop Environment.
