@@ -11,6 +11,7 @@
     ./services.nix
     ./smakarov.nix
     ./ssh.nix
+    ./tmux.nix
     ./vim.nix
     ./zsh.nix
     ./xdg.nix
