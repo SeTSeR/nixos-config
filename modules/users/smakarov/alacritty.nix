@@ -14,6 +14,7 @@
         };
         decorations = "none";
         startup_mode = "Maximized";
+        dynamic_title = true;
       };
       env = {
           TERM = "xterm-256color";
@@ -68,7 +69,6 @@
       selection = {
         semantic_escape_chars = ",│`|:\"' ()[]{}<>";
       };
-      dynamic_title = true;
       cursor = {
         style = "Block";
         unfocused_hollow = false;
