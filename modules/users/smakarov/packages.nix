@@ -14,6 +14,7 @@ let
   commonPackages = with pkgs;
   [
     emacsPackages.melpaPackages.telega
+    libwebp
     fd
     ffmpeg-full
     git-crypt
