@@ -15,6 +15,7 @@
   ((telega-load . telega-mode-line-mode)
    (telega-load . telega-squash-message-mode))
   :config
+  (use-package telega-dired-dwim)
   (use-package telega-mnz)
   (setq telega-proxies
         (list
