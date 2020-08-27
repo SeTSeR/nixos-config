@@ -23,7 +23,6 @@
       type = "github";
       owner = "rycee";
       repo = "home-manager";
-      ref = "bqv-flakes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     emacs-overlay = {
