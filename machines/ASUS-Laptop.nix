@@ -8,8 +8,8 @@
     [ "${inputs.nixpkgs}/nixos/modules/installer/scan/not-detected.nix" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a15f3914-05a2-46b3-a0f0-42f4c9f65528";
