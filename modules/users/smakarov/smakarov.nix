@@ -12,17 +12,20 @@
   };
 
   home-manager.useUserPackages = true;
-  home-manager.users.smakarov = {
-    home.sessionVariables = {
+  home-manager.users.smakarov.home = {
+    homeDirectory = "/home/smakarov";
+    username = "smakarov";
+    sessionVariables = {
       EDITOR = "${config.emacsPackage}/bin/emacsclient -c";
       VISUAL = "${config.emacsPackage}/bin/emacsclient -c";
       NIX_AUTO_RUN = "1";
       XKB_DEFAULT_LAYOUT = "us,ru(winkeys)";
       XKB_DEFAULT_OPTIONS = "grp:caps_toggle";
     };
-    home.keyboard = {
+    keyboard = {
       layout = "us,ru(winkeys)";
       options = [ "grp:caps_toggle" ];
     };
+    stateVersion = "20.09";
   };
 }
