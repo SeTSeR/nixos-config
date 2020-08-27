@@ -11,7 +11,7 @@ with lib; {
   };
 
   config.openVPNConfigPath = "${config.users.users.smakarov.home}/.config/openvpn";
-  config.emacsPackage = (pkgs.emacsPackagesNgGen pkgs.emacsGit).emacsWithPackages(epkgs:
+  config.emacsPackage = (pkgs.emacsPackagesNgGen pkgs.emacs).emacsWithPackages(epkgs:
   with epkgs.melpaPackages; [
     ace-window
     apropospriate-theme
