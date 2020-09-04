@@ -25,6 +25,7 @@ with lib; {
     diminish
     direnv
     eshell-toggle
+    geiser
     flycheck
     flycheck-irony
     flycheck-pkg-config
@@ -52,10 +53,12 @@ with lib; {
     pdf-tools
     powerline
     projectile
+    racket-mode
     rainbow-delimiters
     reverse-im
     rust-mode
     smartparens
+    quack
     telega
     use-package
     visual-fill-column
