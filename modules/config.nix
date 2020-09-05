@@ -1,5 +1,16 @@
 { config, lib, pkgs, ... }:
-with lib; {
+let overrides = self: super: rec {
+      direnv = self.melpaPackages.direnv.override {
+        src = pkgs.fetchFromGitHub {
+          owner = "wbolster";
+          repo = "emacs-direnv";
+          rev = "e547e4b658dd3ac6110663109f94b9b05bd032a2";
+          sha256 = "sha256-GGH1JbypThqVZmom3vLUGbqYdwx/8QsMU3mB/t0SKto=";
+          fetchSubmodules = true;
+        };
+      };
+    };
+in with lib; {
   options.openVPNConfigPath = mkOption {
     type = types.str;
     description = "Path to OpenVPN configuration";
@@ -11,7 +22,7 @@ with lib; {
   };
 
   config.openVPNConfigPath = "${config.users.users.smakarov.home}/.config/openvpn";
-  config.emacsPackage = (pkgs.emacsPackagesNgGen pkgs.emacs).emacsWithPackages(epkgs:
+  config.emacsPackage = ((pkgs.emacsPackagesNgGen pkgs.emacs).overrideScope' overrides).emacsWithPackages(epkgs:
   with epkgs.melpaPackages; [
     ace-window
     apropospriate-theme
