@@ -9,6 +9,11 @@
   :hook
   ((c-mode c++-mode rust-mode) . lsp-deferred)
   :config
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-tramp-connection "rust-analyzer")
+                    :major-modes '(rust-mode)
+                    :remote? t
+                    :server-id 'rust-analyzer-remote))
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
   (setq lsp-enable-xref t))

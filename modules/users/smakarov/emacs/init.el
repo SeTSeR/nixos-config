@@ -103,6 +103,8 @@
 
 (use-package tramp
   :config
+  (setenv "SHELL" "/bin/bash")
+  (setq tramp-terminal-type "tramp")
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
 
 (use-package eshell-toggle
