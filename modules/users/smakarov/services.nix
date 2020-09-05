@@ -7,7 +7,6 @@
       notify = true;
       tray = "auto";
     };
-    services.lorri.enable = true;
   };
 }
 
