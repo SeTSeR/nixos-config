@@ -127,6 +127,10 @@
 
 (use-package multitran)
 
+(use-package wakatime-mode
+  :config
+  (wakatime-mode))
+
 (use-package emacs
   :config
   ;; backup in one place. flat, no tree structure
