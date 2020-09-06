@@ -41,8 +41,6 @@
   (interactive "f")
   (load-file (expand-file-name file user-init-dir)))
 
-(add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
-
 (use-package magit
   :bind
   (("C-x g" . magit-status)))
@@ -107,13 +105,7 @@
   (setq tramp-terminal-type "tramp")
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
-  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
-  (defun executable-find-advice (orig &rest args)
-    (cl-letf* ((path (exec-path))
-               ((symbol-function 'exec-path) (lambda ()
-                                              (append path tramp-remote-path))))
-      (apply orig args)))
-  (advice-add 'executable-find :around #'executable-find-advice))
+  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
 
 (use-package eshell-toggle
   :bind
@@ -146,6 +138,8 @@
   (setq-default sentence-end-double-space nil)
 
   (setq compilation-scroll-output 'first-error)
+
+  (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
   (electric-indent-mode 1)
 
