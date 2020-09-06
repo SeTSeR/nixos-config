@@ -1,4 +1,4 @@
-{ config, pkgs, lib }:
+{ config, pkgs, lib, ... }:
 {
   home-manager.users.smakarov.programs.vscode = {
     enable = true;
