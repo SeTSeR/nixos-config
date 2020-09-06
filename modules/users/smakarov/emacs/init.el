@@ -107,7 +107,13 @@
   (setq tramp-terminal-type "tramp")
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
-  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
+  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+  (defun executable-find-advice (orig &rest args)
+    (cl-letf* ((path (exec-path))
+               ((symbol-function 'exec-path) (lambda ()
+                                              (append path tramp-remote-path))))
+      (apply orig args)))
+  (advice-add 'executable-find :around #'executable-find-advice))
 
 (use-package eshell-toggle
   :bind
