@@ -105,6 +105,8 @@
   :config
   (setenv "SHELL" "/bin/bash")
   (setq tramp-terminal-type "tramp")
+  (setq tramp-default-method "ssh")
+  (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
 
 (use-package eshell-toggle
