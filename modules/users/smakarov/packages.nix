@@ -20,6 +20,7 @@ let
     git-crypt
     htop
     imagemagick7
+    nodejs
     ripgrep
     spotify
     thunderbird
