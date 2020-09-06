@@ -69,18 +69,17 @@ with lib; {
       ((pkgs.emacsPackagesNgGen pkgs.emacs).melpaBuild {
         pname = "direnv";
         ename = "direnv";
-        version = "20200818";
+        version = "20200905";
         recipe = pkgs.writeText "recipe" ''
           (direnv
             :fetcher github
-            :repo "wbolster/emacs-direnv"
-            :commit "e547e4b658dd3ac6110663109f94b9b05bd032a2")
+            :repo "SeTSeR/emacs-direnv")
         '';
         src = pkgs.fetchFromGitHub {
-          owner = "wbolster";
+          owner = "SeTSeR";
           repo = "emacs-direnv";
-          rev = "e547e4b658dd3ac6110663109f94b9b05bd032a2";
-          sha256 = "sha256-GGH1JbypThqVZmom3vLUGbqYdwx/8QsMU3mB/t0SKto=";
+          rev = "dbd9802aab97cd79ac561400f2a115bef9835e79";
+          sha256 = "sha256-OYJpK5xg8xmvTTJoPAXiHSQ9wqJ5tzcw2Pk0aWuMUL8=";
           fetchSubmodules = true;
         };
       })
