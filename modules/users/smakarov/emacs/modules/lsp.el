@@ -10,10 +10,13 @@
   ((c-mode c++-mode rust-mode scheme-mode) . lsp-deferred)
   :config
   (lsp-register-client
-   (make-lsp-client :new-connection (lsp-tramp-connection "rust-analyzer")
-                    :major-modes '(rust-mode)
-                    :remote? t
-                    :server-id 'rust-analyzer-remote))
+   (make-lsp-client
+    :new-connection (lsp-tramp-connection "rust-analyzer")
+    :major-modes '(rust-mode rustic-mode)
+    :ignore-messages nil
+    :remote? t
+    :server-id 'rust-analyzer-remote
+    :custom-capabilities `((experimental . ((snippetTextEdit . ,lsp-enable-snippet ))))))
   (setq lsp-prefer-flymake nil)
   (setq lsp-enable-snippet nil)
   (setq lsp-enable-xref t))
