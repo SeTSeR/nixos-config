@@ -14,6 +14,7 @@
     ./ssh.nix
     ./tmux.nix
     ./vim.nix
+    ./vscode.nix
     ./zsh.nix
     ./xdg.nix
   ];
