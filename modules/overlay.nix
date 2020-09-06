@@ -37,6 +37,76 @@ let
       platforms = platforms.all;
     };
   };
+
+  direnvPkg =
+    { buildVscodeMarketplaceExtension, stdenv }:
+    buildVscodeMarketplaceExtension {
+      mktplcRef = {
+        name = "vscode-direnv";
+        publisher = "Rubymaniac";
+        version = "0.0.2";
+        sha256 = "sha256-TVvjKdKXeExpnyUh+fDPl+eSdlQzh7lt8xSfw1YgtL4=";
+      };
+      meta = {
+        license = stdenv.lib.licenses.mit;
+      };
+    };
+
+  schemePkg =
+      { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "vscode-scheme";
+          publisher = "sjhuangx";
+          version = "0.4.0";
+          sha256 = "sha256-BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
+
+  rustPkg =
+      { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "rust";
+          publisher = "rust-lang";
+          version = "0.7.8";
+          sha256 = "sha256-Y33agSNMVmaVCQdYd5mzwjiK5JTZTtzTkmSGTQrSNg0=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
+
+  orgPkg =
+      { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "org-mode";
+          publisher = "vscode-org-mode";
+          version = "1.0.0";
+          sha256 = "sha256-o9CIjMlYQQVRdtTlOp9BAVjqrfFIhhdvzlyhlcOv5rY=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
+
+  aceJumperPkg =
+      { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "codeacejumper";
+          publisher = "lucax88x";
+          version = "3.3.2";
+          sha256 = "sha256-Fltl6ryBK2g2WWxV2Ru74cSYwqxgfFGclLlm8ChwRQk=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
 in {
   dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
     src = self.fetchgit {
@@ -58,6 +128,13 @@ in {
   });
 
   treestyletab = self.callPackage tstPkg {};
+  vscode-extensions = old.vscode-extensions // {
+    Rubymaniac.vscode-direnv = self.callPackage direnvPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    sjhuangx.vscode-scheme = self.callPackage schemePkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    lucax88x.codeacejumper = self.callPackage aceJumperPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+  };
   stable = import inputs.stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
