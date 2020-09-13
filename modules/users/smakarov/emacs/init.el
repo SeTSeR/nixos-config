@@ -123,6 +123,10 @@
   :config
   (wakatime-mode))
 
+(use-package geiser
+  :hook
+  (scheme-mode . geiser-mode))
+
 (use-package emacs
   :config
   ;; backup in one place. flat, no tree structure

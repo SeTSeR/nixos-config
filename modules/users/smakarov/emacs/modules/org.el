@@ -49,6 +49,7 @@
   (setq org-confirm-babel-evaluate (lambda (lang body)
                                      (not (or (string= lang "dot")
                                               (string= lang "sql")))))
+  (setq org-enforce-todo-dependencies t)
   (org-babel-do-load-languages 'org-babel-load-languages
         '((emacs-lisp . t)
           (C . t)
