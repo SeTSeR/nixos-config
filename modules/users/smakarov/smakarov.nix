@@ -15,6 +15,9 @@
   home-manager.users.smakarov.home = {
     homeDirectory = "/home/smakarov";
     username = "smakarov";
+    file.".Xmodmap".text = ''
+    keysym Alt_R = Multi_key Alt_R
+    '';
     sessionVariables = {
       EDITOR = "${config.emacsPackage}/bin/emacsclient -c";
       VISUAL = "${config.emacsPackage}/bin/emacsclient -c";

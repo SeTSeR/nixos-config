@@ -45,6 +45,7 @@ in {
       startup = [
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
+        { command = "${pkgs.xorg.xmodmap}/bin/xmodmap ${config.users.users.smakarov.home}/.Xmodmap"; }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
