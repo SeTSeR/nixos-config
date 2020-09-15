@@ -120,8 +120,7 @@
 (use-package multitran)
 
 (use-package wakatime-mode
-  :config
-  (wakatime-mode))
+  :hook (prog-mode . wakatime-mode))
 
 (use-package geiser
   :hook
