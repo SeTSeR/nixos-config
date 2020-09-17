@@ -5,6 +5,9 @@
     enable = true;
     socketActivated = true;
   };
+  services.earlyoom = {
+    enable = true;
+  };
   systemd.coredump = {
     extraConfig = "Storage=journal";
   };
