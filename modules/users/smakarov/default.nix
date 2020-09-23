@@ -6,6 +6,7 @@
     ./git.nix
     ./gnupg.nix
     ./i3
+    ./mail.nix
     ./obs.nix
     ./openvpn.nix
     ./packages.nix

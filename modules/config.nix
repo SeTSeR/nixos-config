@@ -48,6 +48,7 @@ with lib; {
       markdown-mode
       multitran
       nix-mode
+      notmuch
       org-ref
       pdf-tools
       powerline

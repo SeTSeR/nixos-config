@@ -1,2 +1,3 @@
 secret.nix filter=git-crypt diff=git-crypt
+modules/users/smakarov/mail.nix filter=git-crypt diff=git-crypt
 modules/users/smakarov/openvpn/* filter=git-crypt diff=git-crypt
