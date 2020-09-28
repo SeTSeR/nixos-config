@@ -3,7 +3,7 @@
     networkmanager.enable = true;
     hostName = config.device;
     firewall = {
-      allowedTCPPorts = [ 27015 26900 25565 7777 ];
+      allowedTCPPorts = [ 27015 26900 25565 7777 4070 ];
       allowedUDPPorts = [ 27015 25565 7777 ];
     };
   };
