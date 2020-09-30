@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }: {
   services.openssh = {
     enable = config.deviceSpecific.isWorkMachine;
+    forwardX11 = true;
     passwordAuthentication = false;
   };
 
