@@ -135,7 +135,7 @@ in {
     rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
   };
-  stable = import inputs.stable ({
+  stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
   });
