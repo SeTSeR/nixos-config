@@ -10,6 +10,7 @@
     extraConfig = ''
       smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild switch --flake .
       smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-collect-garbage -d
+      smakarov ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild switch --rollback
       '';
   };
 }
