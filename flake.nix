@@ -5,13 +5,13 @@
     nixpkgs = {
       type = "github";
       owner = "nixos";
-      repo = "nixpkgs-channels";
+      repo = "nixpkgs";
       ref = "nixos-unstable";
     };
     nixpkgs-stable = {
       type = "github";
       owner = "nixos";
-      repo = "nixpkgs-channels";
+      repo = "nixpkgs";
       ref = "nixos-20.03";
     };
     NUR = {
