@@ -29,7 +29,7 @@ let
     version = "3.5.32";
     addonId = "treestyletab@piro.sakura.ne.jp";
     url = "https://addons.mozilla.org/firefox/downloads/file/3658512/tree_style_tab_-3.5.32-fx.xpi";
-    sha256 = "09849frhc12w94ig7m405lrgcmr434a6204dazg4nmrmh8rckizr";
+    sha256 = "sha256-uigzbBDj+g7KAhTo/KWa/TxmnlNkimLj99pJUSrzw9c=";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
@@ -117,13 +117,13 @@ in {
   });
 
   tdlib = old.tdlib.overrideAttrs (oldAttrs: {
-    version = "1.6.6";
+    version = "1.6.9";
 
     src = self.fetchFromGitHub {
       owner = "tdlib";
       repo = "td";
-      rev = "c78fbe4bc5e31395e08f916816704e8051f27296";
-      sha256 = "sha256-7T3AswaA24b17pvwryNSDi1kJbCJXFmaLpLbzUBK3qI=";
+      rev = "30921606c5a5ea4c31193adcbb457cce4503751d";
+      sha256 = "sha256-Lcu0zZqbO/wVS6jnRsw15rkQ/8B8StcAmOVSreN4rfQ=";
     };
   });
 
