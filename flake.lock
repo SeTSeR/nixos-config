@@ -2,11 +2,11 @@
   "nodes": {
     "NUR": {
       "locked": {
-        "lastModified": 1602216777,
-        "narHash": "sha256-mZAj5o7wvt7CLbUeVa5BwPDA8e7Cd+N40fNupHnyPWI=",
+        "lastModified": 1602496993,
+        "narHash": "sha256-lKkDOgJ8uNinstBcoTcZG9md++1QBXUaV586DhH2Pnc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9da1dba3a93c91bafa71a237d10e7c92cdf9bf97",
+        "rev": "acd22a49928d2de13b3b3e66dd7fdb19f6c4b30f",
         "type": "github"
       },
       "original": {
@@ -17,17 +17,16 @@
     },
     "emacs-overlay": {
       "locked": {
-        "lastModified": 1601727845,
-        "narHash": "sha256-Bm23UeXiEtXh864DBDqKnD3t3CHicgIs0pzn/woAABw=",
+        "lastModified": 1602505420,
+        "narHash": "sha256-rRdGwai0s+sp1cjro9hANYLt0bWQ2rrTzWF2e2tCoXk=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "7d53baa6d8bb989bb37ee7120457eac8695dfcd8",
+        "rev": "495a4425e22f8c403fd371ede44b771769537ae1",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "7d53baa6d8bb989bb37ee7120457eac8695dfcd8",
         "type": "github"
       }
     },
@@ -38,11 +37,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1602191848,
-        "narHash": "sha256-QDW+gK9yeojSwHHdTN+/J+li3I84cyB/5uf1899mYPA=",
+        "lastModified": 1602462464,
+        "narHash": "sha256-aSVSQpM6BYPH5dkWKNrc5WYTjpw8eS2SoFFP/r6xsxM=",
         "owner": "rycee",
         "repo": "home-manager",
-        "rev": "7e5fee4268f53be8758598b7634dff8b3ad8a22b",
+        "rev": "18a05a9604c1e5b0141d081e8733d1de4edd5520",
         "type": "github"
       },
       "original": {
@@ -69,11 +68,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1601840192,
-        "narHash": "sha256-QKCTftUgKrosAa93C/qdAi7rbJ2fYCTdxjNgbEJSF48=",
+        "lastModified": 1602239906,
+        "narHash": "sha256-34EPw2lpJgw3XUrrTYq8TUuI/1ykd/Flb8HWZywd7mc=",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "0d0660fde3bb53a3d013b65e5e141eb11d1efb82",
+        "rev": "08d429920bcb2dba1d47c93e5ed30d0f92838c89",
         "type": "github"
       },
       "original": {
