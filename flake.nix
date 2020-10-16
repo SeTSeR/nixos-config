@@ -12,7 +12,7 @@
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      ref = "nixos-20.03";
+      ref = "nixos-20.09";
     };
     NUR = {
       type = "github";
