@@ -21,7 +21,7 @@
     };
     home-manager = {
       type = "github";
-      owner = "rycee";
+      owner = "nix-community";
       repo = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
