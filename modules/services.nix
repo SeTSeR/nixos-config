@@ -3,7 +3,6 @@
   # started in user sessions.
   services.dbus = {
     enable = true;
-    socketActivated = true;
   };
   services.earlyoom = {
     enable = true;
