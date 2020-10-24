@@ -65,6 +65,14 @@ with lib; {
       type = types.str;
       description = "Password for yandex mail";
     };
+    org-gcal-client-id = mkOption {
+      type = types.str;
+      description = "Client ID for org-gcal";
+    };
+    org-gcal-client-secret = mkOption {
+      type = types.str;
+      description = "Client secret for org-gcal";
+    };
   };
   config = { secrets = import ../secret.nix; };
 }

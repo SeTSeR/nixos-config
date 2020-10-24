@@ -49,6 +49,8 @@ with lib; {
       multitran
       nix-mode
       notmuch
+      org
+      org-gcal
       org-ref
       pdf-tools
       powerline
