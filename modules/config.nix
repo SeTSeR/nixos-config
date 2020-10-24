@@ -49,7 +49,7 @@ with lib; {
       multitran
       nix-mode
       notmuch
-      org
+      epkgs.elpaPackages.org
       org-gcal
       org-ref
       pdf-tools
