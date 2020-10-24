@@ -40,6 +40,8 @@
     worldPath = "/var/lib/terraria/Bad_Arbor_of_Birds.wld";
   };
 
+  services.interception-tools.enable = true; # This remaps Ctrl and Caps;
+
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
