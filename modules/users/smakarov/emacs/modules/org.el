@@ -37,13 +37,15 @@
 
 (use-package org
   :bind (("C-c l" . org-store-link)
-         ("C-c a" . org-agenda))
+         ("C-c a" . org-agenda)
+         ("C-c c" . org-capture))
   :mode (("\\.org$" . org-mode))
   :config
   (setq org-agenda-files (list "~/org")
         org-log-done t
         org-enforce-todo-dependencies t
-        org-use-fast-todo-selection t)
+        org-use-fast-todo-selection t
+        org-default-notes-file "~/org/notes.org")
 
   (setq org-todo-keywords
         (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
@@ -65,6 +67,11 @@
               ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+  (setq org-capture-templates
+        '(("t" "TODO" entry (file+headline "~/org/notes.org" "Tasks")
+           "* TODO %?\n  %i\n  %a")
+          ("j" "Journal" entry (file+datetree "~/org/journal.org")
+           "* %?\nEntered on %U\n  %i\n  %a")))
 
   (setq org-latex-listings 'minted
         org-latex-packages-alist '(("AUTO" "babel" t ("pdflatex"))
