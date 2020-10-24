@@ -4,10 +4,6 @@
 
 ;;; Code:
 
-(setq org-agenda-files (list "~/org/work.org"
-                             "~/org/home.org"
-                             "~/org/hobby.org"))
-
 (use-package ox-md)
 (use-package org-tempo)
 
@@ -38,6 +34,10 @@
          ("C-c a" . org-agenda))
   :mode (("\\.org$" . org-mode))
   :config
+  (setq org-agenda-files (list "~/org/home.org"
+                             "~/org/hobby.org"
+                             "~/org/study.org"
+                             "~/org/work.org"))
   (setq org-log-done t)
   (setq org-latex-listings 'minted
         org-latex-packages-alist '(("AUTO" "babel" t ("pdflatex"))
