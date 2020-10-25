@@ -7,7 +7,7 @@
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :hook
-  ((c-mode c++-mode rust-mode scheme-mode) . lsp-deferred)
+  ((c-mode c++-mode rust-mode) . lsp-deferred)
   :config
   (lsp-register-client
    (make-lsp-client
