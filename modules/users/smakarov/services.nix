@@ -7,6 +7,7 @@
       notify = true;
       tray = "auto";
     };
+    services.syncthing.enable = true;
   };
 }
 
