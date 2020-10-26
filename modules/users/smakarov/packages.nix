@@ -23,7 +23,6 @@ let
     nodejs
     ripgrep
     spotify
-    thunderbird-78
     tridactyl-native
     xclip
     wakatime
