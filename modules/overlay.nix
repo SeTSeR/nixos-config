@@ -26,10 +26,10 @@ let
 
   tstPkg = buildFirefoxXpiAddon {
     pname = "treestyletab";
-    version = "3.5.32";
+    version = "3.5.34";
     addonId = "treestyletab@piro.sakura.ne.jp";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3658512/tree_style_tab_-3.5.32-fx.xpi";
-    sha256 = "sha256-uigzbBDj+g7KAhTo/KWa/TxmnlNkimLj99pJUSrzw9c=";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3664524/tree_style_tab_-3.5.34-fx.xpi";
+    sha256 = "sha256-VTPOD9EGC3oonmZud6+KaqigxN8eDDzovwKX/2W/8GY=";
     meta = with self.stdenv.lib; {
       homepage = "https://piro.sakura.ne.jp/xul/_treestyletab.html.en";
       description = "Show tabs like a tree.";
@@ -93,20 +93,6 @@ let
           license = stdenv.lib.licenses.mit;
         };
       };
-
-  aceJumperPkg =
-      { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "codeacejumper";
-          publisher = "lucax88x";
-          version = "3.3.2";
-          sha256 = "sha256-Fltl6ryBK2g2WWxV2Ru74cSYwqxgfFGclLlm8ChwRQk=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
 in {
   dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
     src = self.fetchgit {
@@ -131,7 +117,6 @@ in {
   vscode-extensions = old.vscode-extensions // {
     Rubymaniac.vscode-direnv = self.callPackage direnvPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     sjhuangx.vscode-scheme = self.callPackage schemePkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    lucax88x.codeacejumper = self.callPackage aceJumperPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
   };

@@ -9,6 +9,7 @@
       ms-vscode-remote.remote-ssh
       Rubymaniac.vscode-direnv
       rust-lang.rust
+      matklad.rust-analyzer
       sjhuangx.vscode-scheme
       james-yu.latex-workshop
       vscode-org-mode.org-mode
