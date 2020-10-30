@@ -13,12 +13,12 @@
       james-yu.latex-workshop
       vscode-org-mode.org-mode
       WakaTime.vscode-wakatime
-      lucax88x.codeacejumper
       vscodevim.vim
     ];
     userSettings = {
       "update.mode" = "none";
       "[nix].editor.tabSize" = 2;
+      "vim.easymotion.enable" = "true";
     };
   };
 }
