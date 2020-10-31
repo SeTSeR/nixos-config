@@ -16,7 +16,7 @@ let
     emacsPackages.melpaPackages.telega
     libwebp
     fd
-    ffmpeg-full
+    stable.ffmpeg-full
     git-crypt
     htop
     imagemagick7
