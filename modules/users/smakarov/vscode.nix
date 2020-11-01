@@ -3,19 +3,21 @@
   home-manager.users.smakarov.programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-extensions; with pkgs.nur.repos.setser.vscode-extensions; [
       bbenoist.Nix
       ms-vscode.cpptools
       ms-vscode-remote.remote-ssh
+      matklad.rust-analyzer
+      james-yu.latex-workshop
+      WakaTime.vscode-wakatime
+    ] ++
+    [ # Extensions from NUR
+      kahole.edamagit
       Rubymaniac.vscode-direnv
       rust-lang.rust
-      kahole.edamagit
-      matklad.rust-analyzer
       sjhuangx.vscode-scheme
       tuttieee.emacs-mcx
-      james-yu.latex-workshop
       vscode-org-mode.org-mode
-      WakaTime.vscode-wakatime
     ];
     keybindings = [
       {

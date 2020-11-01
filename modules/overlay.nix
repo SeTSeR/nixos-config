@@ -37,90 +37,6 @@ let
       platforms = platforms.all;
     };
   };
-
-  direnvPkg =
-    { buildVscodeMarketplaceExtension, stdenv }:
-    buildVscodeMarketplaceExtension {
-      mktplcRef = {
-        name = "vscode-direnv";
-        publisher = "Rubymaniac";
-        version = "0.0.2";
-        sha256 = "sha256-TVvjKdKXeExpnyUh+fDPl+eSdlQzh7lt8xSfw1YgtL4=";
-      };
-      meta = {
-        license = stdenv.lib.licenses.mit;
-      };
-    };
-
-  schemePkg =
-      { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "vscode-scheme";
-          publisher = "sjhuangx";
-          version = "0.4.0";
-          sha256 = "sha256-BN+C64YQ2hUw5QMiKvC7PHz3II5lEVVy0Shtt6t3ch8=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
-
-  rustPkg =
-      { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "rust";
-          publisher = "rust-lang";
-          version = "0.7.8";
-          sha256 = "sha256-Y33agSNMVmaVCQdYd5mzwjiK5JTZTtzTkmSGTQrSNg0=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
-
-  orgPkg =
-      { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "org-mode";
-          publisher = "vscode-org-mode";
-          version = "1.0.0";
-          sha256 = "sha256-o9CIjMlYQQVRdtTlOp9BAVjqrfFIhhdvzlyhlcOv5rY=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
-
-  emacsPkg =
-      { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "emacs-mcx";
-          publisher = "tuttieee";
-          version = "0.23.5";
-          sha256 = "sha256-elh0NapHDUhkfAZ5xXlCI5Mi7/u9e1QjX/YZ7nvJzTo=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
-
-  magitPkg =
-    { buildVscodeMarketplaceExtension, stdenv }:
-      buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          name = "magit";
-          publisher = "kahole";
-          version = "0.5.1";
-          sha256 = "sha256-yCetfMykrrN/q/Wf3LCwKBTC3ftr3orhosAXFEWngrI=";
-        };
-        meta = {
-          license = stdenv.lib.licenses.mit;
-        };
-      };
 in {
   dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
     src = self.fetchgit {
@@ -142,14 +58,6 @@ in {
   });
 
   treestyletab = self.callPackage tstPkg {};
-  vscode-extensions = old.vscode-extensions // {
-    Rubymaniac.vscode-direnv = self.callPackage direnvPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    sjhuangx.vscode-scheme = self.callPackage schemePkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    tuttieee.emacs-mcx = self.callPackage emacsPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    kahole.edamagit = self.callPackage magitPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-    vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
-  };
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
