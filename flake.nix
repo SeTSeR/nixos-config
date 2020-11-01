@@ -14,7 +14,7 @@
       repo = "nixpkgs";
       ref = "nixos-20.09";
     };
-    NUR = {
+    nur = {
       type = "github";
       owner = "nix-community";
       repo = "NUR";

@@ -154,8 +154,4 @@ in {
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
   });
-  nur = (import inputs.NUR {
-    pkgs = self;
-    nurpkgs = self;
-  }).repos;
 }

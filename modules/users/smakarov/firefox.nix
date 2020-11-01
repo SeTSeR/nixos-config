@@ -2,7 +2,7 @@
   home-manager.users.smakarov.programs.firefox = {
     enable = true;
     enableAdobeFlash = false;
-    extensions = with pkgs; with pkgs.nur.rycee.firefox-addons; [
+    extensions = with pkgs; with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       treestyletab
       tridactyl
