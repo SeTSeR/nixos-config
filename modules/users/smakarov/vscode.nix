@@ -24,6 +24,7 @@
         "TODO" "NEXT" "DONE" "WAITING" "HOLD" "CANCELLED"
       ];
       "emacs-mcx.strictEmacsMove" = true;
+      "workbench.colorTheme" = "Solarized Light";
     };
   };
 }
