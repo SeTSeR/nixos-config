@@ -93,6 +93,20 @@ let
           license = stdenv.lib.licenses.mit;
         };
       };
+
+  emacsPkg =
+      { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "emacs-mcx";
+          publisher = "tuttieee";
+          version = "0.23.5";
+          sha256 = "sha256-elh0NapHDUhkfAZ5xXlCI5Mi7/u9e1QjX/YZ7nvJzTo=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
 in {
   dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
     src = self.fetchgit {
@@ -117,6 +131,7 @@ in {
   vscode-extensions = old.vscode-extensions // {
     Rubymaniac.vscode-direnv = self.callPackage direnvPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     sjhuangx.vscode-scheme = self.callPackage schemePkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    tuttieee.emacs-mcx = self.callPackage emacsPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
   };

@@ -11,15 +11,18 @@
       rust-lang.rust
       matklad.rust-analyzer
       sjhuangx.vscode-scheme
+      tuttieee.emacs-mcx
       james-yu.latex-workshop
       vscode-org-mode.org-mode
       WakaTime.vscode-wakatime
-      vscodevim.vim
     ];
     userSettings = {
       "update.mode" = "none";
       "[nix].editor.tabSize" = 2;
-      "vim.easymotion.enable" = "true";
+      "org.todoKeywords" = [
+        "TODO" "NEXT" "DONE" "WAITING" "HOLD" "CANCELLED"
+      ];
+      "emacs-mcx.strictEmacsMove" = true;
     };
   };
 }
