@@ -107,6 +107,20 @@ let
           license = stdenv.lib.licenses.mit;
         };
       };
+
+  magitPkg =
+    { buildVscodeMarketplaceExtension, stdenv }:
+      buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "magit";
+          publisher = "kahole";
+          version = "0.5.1";
+          sha256 = "sha256-yCetfMykrrN/q/Wf3LCwKBTC3ftr3orhosAXFEWngrI=";
+        };
+        meta = {
+          license = stdenv.lib.licenses.mit;
+        };
+      };
 in {
   dot2tex = old.dot2tex.overrideAttrs (oldAttrs: {
     src = self.fetchgit {
@@ -132,6 +146,7 @@ in {
     Rubymaniac.vscode-direnv = self.callPackage direnvPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     sjhuangx.vscode-scheme = self.callPackage schemePkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     tuttieee.emacs-mcx = self.callPackage emacsPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
+    kahole.edamagit = self.callPackage magitPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     rust-lang.rust = self.callPackage rustPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
     vscode-org-mode.org-mode = self.callPackage orgPkg { inherit (self.vscode-utils) buildVscodeMarketplaceExtension; };
   };

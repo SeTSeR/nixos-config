@@ -9,6 +9,7 @@
       ms-vscode-remote.remote-ssh
       Rubymaniac.vscode-direnv
       rust-lang.rust
+      kahole.edamagit
       matklad.rust-analyzer
       sjhuangx.vscode-scheme
       tuttieee.emacs-mcx
