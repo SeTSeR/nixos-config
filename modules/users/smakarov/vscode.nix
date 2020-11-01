@@ -17,6 +17,16 @@
       vscode-org-mode.org-mode
       WakaTime.vscode-wakatime
     ];
+    keybindings = [
+      {
+        key = "ctrl-x g";
+        command = "magit.status";
+      }
+      {
+        key = "ctrl-x ctrl-c";
+        command = "workbench.action.quit";
+      }
+    ];
     userSettings = {
       "update.mode" = "none";
       "[nix].editor.tabSize" = 2;
