@@ -12,7 +12,7 @@
       WakaTime.vscode-wakatime
     ] ++
     [ # Extensions from NUR
-      kahole.edamagit
+      kahole.magit
       Rubymaniac.vscode-direnv
       rust-lang.rust
       sjhuangx.vscode-scheme
