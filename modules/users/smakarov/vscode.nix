@@ -2,7 +2,7 @@
 {
   home-manager.users.smakarov.programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscode;
     extensions = with pkgs.vscode-extensions; with pkgs.nur.repos.setser.vscode-extensions; [
       bbenoist.Nix
       ms-vscode.cpptools
