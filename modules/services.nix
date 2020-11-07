@@ -54,4 +54,6 @@
   services.udisks2.enable = true;
 
   services.fstrim.enable = true;
+
+  virtualisation.docker.enable = true;
 }
