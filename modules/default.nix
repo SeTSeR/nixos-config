@@ -1,5 +1,6 @@
 device:
-{ ... }: {
+{ lib, ... }:
+{
   imports = [
     ./config.nix
     ./devices.nix
@@ -10,5 +11,5 @@ device:
     ./secrets.nix
     ./services.nix
     ./users
-  ];
+  ] ++ lib.optionals (device == "ASUS-Laptop") [ ./erase.nix ];
 }
