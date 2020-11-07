@@ -4,7 +4,7 @@
     "NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
     adjtime.source = "persist/etc/adjtime";
   };
-  systemd.tmpfile.rules = [
+  systemd.tmpfiles.rules = [
     "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
     "L /var/lib/docker - - - - /persist/var/lib/docker"
     "L /var/lib/systemd/backlight - - - - /persist/var/lib/systemd/backlight"
