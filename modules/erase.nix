@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, inputs, ... }:
 {
   environment.etc = {
     "NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
@@ -7,7 +7,9 @@
   systemd.tmpfiles.rules = [
     "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
     "L /var/lib/docker - - - - /persist/var/lib/docker"
-    "L /var/lib/systemd/backlight - - - - /persist/var/lib/systemd/backlight"
+    "L /var/lib/NetworkManager/secret_key - - - - /persist/var/lib/NetworkManager/secret_key"
+    "L /var/lib/NetworkManager/seen-bssids - - - - /persist/var/lib/NetworkManager/seen-bssids"
+    "L /var/lib/NetworkManager/timestamps - - - - /persist/var/lib/NetworkManager/timestamps"
   ];
 
   # Note `lib.mkBefore` is used instead of `lib.mkAfter` here.
