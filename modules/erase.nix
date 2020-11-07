@@ -2,7 +2,7 @@
 {
   environment.etc = {
     "NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
-    adjtime.source = "persist/etc/adjtime";
+    adjtime.source = "/persist/etc/adjtime";
   };
   systemd.tmpfiles.rules = [
     "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
