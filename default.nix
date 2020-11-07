@@ -14,7 +14,7 @@ rec {
 
   # Select internationalisation properties.
   console = {
-    font = "cyr-sun16";
+    font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
     keyMap = "ruwin_cplk-UTF-8";
   };
   i18n.defaultLocale = "en_US.UTF-8";
