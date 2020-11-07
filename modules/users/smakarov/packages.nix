@@ -9,7 +9,6 @@ let
     steam
     (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
     texlive.combined.scheme-full
-    docker-compose
   ];
   commonPackages = with pkgs;
   [
