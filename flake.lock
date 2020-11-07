@@ -2,11 +2,11 @@
   "nodes": {
     "emacs-overlay": {
       "locked": {
-        "lastModified": 1604780783,
-        "narHash": "sha256-jArilv20TxMXihVLDd4SS5vxfEGsGIvsPUB5yp4rAv0=",
+        "lastModified": 1604694320,
+        "narHash": "sha256-K5WJZumiYqIFO16a+8J5OleJjFLKJAm5CaW/4PPWBs0=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "d9c57e2a377a103ebcc71222e063826888c37daa",
+        "rev": "73992e53a45a53bc18524b412fda18eb73e7f323",
         "type": "github"
       },
       "original": {
@@ -69,28 +69,17 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1604783073,
-        "narHash": "sha256-H21JRGllOvVL26StMoaej9BcO9ZyMQ6j9FW8PAXaunA=",
+        "lastModified": 1604684064,
+        "narHash": "sha256-YMoBvkYVWqennT6Q/p5PgRsFSuX9gE6dFr0JEnB2gKc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "967acbab33afce9e5a2dbc3a64714298b73b9df9",
+        "rev": "176473ad212289041b33a2760d5ec26ec48f05f4",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
         "type": "github"
-      }
-    },
-    "persist": {
-      "locked": {
-        "narHash": "sha256-qA/7VAn8kxTemS6OhscJX33fmrTmprAVe8MJssGEXLk=",
-        "path": "/persist",
-        "type": "path"
-      },
-      "original": {
-        "path": "/persist",
-        "type": "path"
       }
     },
     "root": {
@@ -99,8 +88,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
-        "nur": "nur",
-        "persist": "persist"
+        "nur": "nur"
       }
     }
   },

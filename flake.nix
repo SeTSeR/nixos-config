@@ -30,10 +30,6 @@
       owner = "nix-community";
       repo = "emacs-overlay";
     };
-    persist = {
-      type = "path";
-      path = "/persist";
-    };
   };
 
   outputs = { nixpkgs, ... }@inputs: {

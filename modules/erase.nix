@@ -1,16 +1,12 @@
-{ pkgs, config, lib, inputs, ... }:
+{ pkgs, config, lib, ... }:
 {
   environment.etc = {
-    "NetworkManager/system-connections".source = inputs.persist.persistPath + "/etc/NetworkManager/system-connections";
-    adjtime.source = inputs.persist.persistPath + "/etc/adjtime";
+    "NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
+    adjtime.source = "persist/etc/adjtime";
   };
-  systemd.tmpfiles.rules = [
-    "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
+  systemd.tmpfile.rules = [
     "L /var/lib/docker - - - - /persist/var/lib/docker"
     "L /var/lib/systemd/backlight - - - - /persist/var/lib/systemd/backlight"
-    "L /var/lib/NetworkManager/secret_key - - - - /persist/var/lib/NetworkManager/secret_key"
-    "L /var/lib/NetworkManager/seen-bssids - - - - /persist/var/lib/NetworkManager/seen-bssids"
-    "L /var/lib/NetworkManager/timestamps - - - - /persist/var/lib/NetworkManager/timestamps"
   ];
 
   # Note `lib.mkBefore` is used instead of `lib.mkAfter` here.
@@ -19,7 +15,7 @@
 
     # We first mount the btrfs root to /mnt
     # so we can manipulate btrfs subvolumes.
-    mount -o subvol=/ /dev/mapper/nixos-root /mnt
+    mount -o subvol=/ /dev/mapper/enc /mnt
 
     # While we're tempted to just delete /root and create
     # a new snapshot from /root-blank, /root is already
