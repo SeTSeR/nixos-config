@@ -70,6 +70,9 @@
                         (interactive)
                         (async-shell-command "import png:- | xclip -selection c -t image/png")))
   (use-package symon
-    :config (symon-mode)))
+    :config
+    (add-to-list 'symon-monitors 'symon-linux-battery-monitor)
+    (add-to-list 'symon-monitors 'symon-current-time-monitor)
+    (symon-mode)))
 
 ;;; exwm.el ends here
