@@ -24,6 +24,7 @@ with lib; {
       counsel-projectile
       diminish
       eshell-toggle
+      epkgs.elpaPackages.exwm
       geiser
       flycheck
       flycheck-irony
@@ -60,6 +61,7 @@ with lib; {
       reverse-im
       rust-mode
       smartparens
+      symon
       quack
       telega
       use-package

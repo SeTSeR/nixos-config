@@ -18,5 +18,6 @@
     ./vscode.nix
     ./zsh.nix
     ./xdg.nix
+    ./xsession.nix
   ];
 }

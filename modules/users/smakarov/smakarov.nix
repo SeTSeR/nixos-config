@@ -25,6 +25,7 @@
     };
     keyboard = {
       layout = "us,ru(winkeys)";
+      options = [ ",grp:win_space_toggle" ];
     };
     stateVersion = "20.09";
   };

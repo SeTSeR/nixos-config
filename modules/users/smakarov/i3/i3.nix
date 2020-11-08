@@ -3,7 +3,7 @@ let
   term = "${pkgs.alacritty}/bin/alacritty";
 in {
   home-manager.users.smakarov.xsession.windowManager.i3 = {
-    enable = true;
+    enable = false;
     config = rec {
       assigns = {
         "1: " = [ { class = "^Chromium"; } { class = "^Firefox"; } ];
@@ -45,7 +45,6 @@ in {
       startup = [
         { command = "${config.users.users.smakarov.home}/.screenlayouts/layout.sh"; }
         { command = "${pkgs.nitrogen}/bin/nitrogen --restore"; }
-        { command = "${pkgs.xorg.xmodmap}/bin/xmodmap ${config.users.users.smakarov.home}/.Xmodmap"; }
       ];
       keybindings = ({
         "${modifier}+Shift+q" = "kill";
