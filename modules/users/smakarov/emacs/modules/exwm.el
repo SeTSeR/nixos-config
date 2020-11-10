@@ -68,7 +68,7 @@
   (exwm-input-set-key (kbd "<print>")
                       (lambda ()
                         (interactive)
-                        (async-shell-command "import png:- | xclip -selection c -t image/png")))
+                        (start-process-shell-command "flameshot" nil "@flameshotPath@ gui")))
   (use-package symon
     :config
     (add-to-list 'symon-monitors 'symon-linux-battery-monitor)

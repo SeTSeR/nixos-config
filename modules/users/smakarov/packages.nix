@@ -16,6 +16,7 @@ let
     emacsPackages.melpaPackages.telega
     libwebp
     fd
+    flameshot
     stable.ffmpeg-full
     git-crypt
     htop
@@ -24,7 +25,6 @@ let
     ripgrep
     spotify
     tridactyl-native
-    xclip
     wakatime
   ];
 in {
