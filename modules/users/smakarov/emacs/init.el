@@ -122,6 +122,12 @@
 (use-package wakatime-mode
   :hook (prog-mode . wakatime-mode))
 
+(use-package nix-proced-readable-mode
+  :config
+  (setq nix-proced-readable-mode t))
+
+(use-package which-key)
+
 (use-package geiser
   :hook
   (scheme-mode . geiser-mode))

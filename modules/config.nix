@@ -67,6 +67,7 @@ with lib; {
       use-package
       visual-fill-column
       wakatime-mode
+      which-key
       yasnippet
       yasnippet-snippets
     ] ++
