@@ -11,6 +11,7 @@
       enable = true;
       enableSshSupport = true;
       extraConfig = ''
+          allow-emacs-pinentry
           pinentry-program ${pkgs.pinentry-qt}/bin/pinentry-qt
               '';
     };

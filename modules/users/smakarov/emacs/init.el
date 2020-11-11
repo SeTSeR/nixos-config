@@ -132,6 +132,10 @@
   :hook
   (scheme-mode . geiser-mode))
 
+(use-package pinentry
+  :config
+  (pinentry-start))
+
 (use-package emacs
   :config
   ;; backup in one place. flat, no tree structure

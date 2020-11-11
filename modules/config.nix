@@ -54,6 +54,7 @@ with lib; {
       org-gcal
       org-ref
       pdf-tools
+      epkgs.elpaPackages.pinentry
       powerline
       projectile
       racket-mode
