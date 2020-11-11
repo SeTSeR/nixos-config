@@ -122,10 +122,6 @@
 (use-package wakatime-mode
   :hook (prog-mode . wakatime-mode))
 
-(use-package nix-proced-readable-mode
-  :config
-  (setq nix-proced-readable-mode t))
-
 (use-package which-key)
 
 (use-package geiser
@@ -138,6 +134,7 @@
 
 (use-package emacs
   :config
+  (nix-proced-readable-mode) ;; readable process names for proced
   ;; backup in one place. flat, no tree structure
   (setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
 
