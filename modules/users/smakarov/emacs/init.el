@@ -122,7 +122,9 @@
 (use-package wakatime-mode
   :hook (prog-mode . wakatime-mode))
 
-(use-package which-key)
+(use-package which-key
+  :config
+  (which-key-mode))
 
 (use-package geiser
   :hook
