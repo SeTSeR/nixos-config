@@ -68,8 +68,8 @@
 
   (setq org-refile-target-verify-function 'bh/verify-refile-target)
 
-  (add-to-list 'org-agenda-custom-commands
-        '("N" todo "NEXT"))
+  (setq org-agenda-custom-commands
+        '(("N" todo "NEXT")))
 
   (setq org-todo-state-tags-triggers
       (quote (("CANCELLED" ("CANCELLED" . t))

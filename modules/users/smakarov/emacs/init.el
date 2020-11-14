@@ -135,8 +135,8 @@
   (pinentry-start))
 
 (use-package emacs
+  :hook (proced-mode . nix-proced-readable-mode)
   :config
-  (nix-proced-readable-mode) ;; readable process names for proced
   ;; backup in one place. flat, no tree structure
   (setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
 
