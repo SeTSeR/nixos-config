@@ -12,10 +12,6 @@
   };
 
   home-manager.useUserPackages = true;
-  environment.shellInit = ''
-    gpg-connect-agent /bye
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-  '';
   home-manager.users.smakarov.home = {
     homeDirectory = "/home/smakarov";
     username = "smakarov";
