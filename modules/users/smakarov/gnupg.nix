@@ -10,9 +10,9 @@
     services.gpg-agent = {
       enable = true;
       enableSshSupport = true;
+      pinentryFlavor = "qt";
       extraConfig = ''
           allow-emacs-pinentry
-          pinentry-program ${pkgs.pinentry-qt}/bin/pinentry-qt
               '';
     };
  };
