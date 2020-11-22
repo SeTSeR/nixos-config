@@ -20,10 +20,6 @@
         hostname = "10.10.156.56";
         user = "smakarov";
         compression = false;
-        identityFile = toString (pkgs.writeTextFile {
-          name = "id_rsa";
-          text = config.secrets.id_rsa;
-        });
       };
     };
   };
