@@ -14,7 +14,6 @@
     [ # Extensions from NUR
       kahole.magit
       Rubymaniac.vscode-direnv
-      rust-lang.rust
       sjhuangx.vscode-scheme
       tuttieee.emacs-mcx
       vscode-org-mode.org-mode
