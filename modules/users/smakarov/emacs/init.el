@@ -134,6 +134,14 @@
   :config
   (pinentry-start))
 
+(use-package ansi-color
+  :init
+  (defun colorize-compilation-buffer ()
+    (read-only-mode)
+    (ansi-color-apply-on-region compilation-filter-start (point))
+    (read-only-mode))
+  :hook (compilation-filter . colorize-compilation-buffer))
+
 (use-package emacs
   :hook (proced-mode . nix-proced-readable-mode)
   :config
@@ -150,6 +158,8 @@
   (setq-default sentence-end-double-space nil)
 
   (setq compilation-scroll-output 'first-error)
+
+  (setq dired-listing-switches "-alh")
 
   (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 

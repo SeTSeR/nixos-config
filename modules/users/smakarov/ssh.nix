@@ -20,6 +20,7 @@
         hostname = "10.10.156.56";
         user = "smakarov";
         compression = false;
+        forwardAgent = true;
       };
     };
   };
