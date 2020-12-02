@@ -5,7 +5,6 @@
     package = pkgs.vscode;
     extensions = with pkgs.vscode-extensions; with pkgs.nur.repos.setser.vscode-extensions; [
       bbenoist.Nix
-      ms-vscode.cpptools
       ms-vscode-remote.remote-ssh
       matklad.rust-analyzer
       james-yu.latex-workshop
