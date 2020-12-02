@@ -9,14 +9,14 @@ self: old:
     };    
   });
 
-  tdlib = old.tdlib.overrideAttrs (oldAttrs: {
-    version = "1.6.9";
+  tdlib = old.tdlib.overrideAttrs (oldAttrs: rec {
+    version = "1.7.0";
 
     src = self.fetchFromGitHub {
       owner = "tdlib";
       repo = "td";
-      rev = "30921606c5a5ea4c31193adcbb457cce4503751d";
-      sha256 = "sha256-Lcu0zZqbO/wVS6jnRsw15rkQ/8B8StcAmOVSreN4rfQ=";
+      rev = "v${version}";
+      sha256 = "sha256-sZzp9k7KDnqftcSGSgXkIy0siCksGPBmRckySU/J0TU=";
     };
   });
 
