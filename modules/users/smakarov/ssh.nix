@@ -23,6 +23,8 @@
         user = "smakarov";
         compression = false;
         forwardAgent = true;
+        serverAliveCountMax = 30;
+        serverAliveInterval = 5;
       };
     };
   };
