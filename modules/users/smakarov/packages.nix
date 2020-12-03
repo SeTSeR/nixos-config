@@ -21,7 +21,7 @@ let
     git-crypt
     htop
     imagemagick7
-    nodejs
+    nodejs-10_x
     ripgrep
     spotify
     tridactyl-native
