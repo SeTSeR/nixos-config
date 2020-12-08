@@ -67,6 +67,7 @@ with lib; {
       telega
       use-package
       visual-fill-column
+      vterm
       wakatime-mode
       which-key
       yasnippet
