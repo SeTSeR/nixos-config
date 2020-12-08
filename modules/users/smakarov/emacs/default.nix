@@ -10,6 +10,7 @@ in {
       package = config.emacsPackage;
     };
 
+    xdg.configFile."emacs/early-init.el".source = ./early-init.el;
     xdg.configFile."emacs/init.el".text =
       readWithSubstitute ./init.el
       + lib.concatStringsSep "\n" (map readWithSubstitute (modulePaths ./modules));

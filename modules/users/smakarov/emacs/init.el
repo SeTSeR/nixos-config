@@ -29,10 +29,6 @@
   (require 'use-package))
 (setq use-package-always-ensure nil)
 
-(use-package gcmh
-  :init
-  (gcmh-mode 1))
-
 (use-package magit
   :bind
   (("C-x g" . magit-status))
