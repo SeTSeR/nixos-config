@@ -29,31 +29,18 @@
   (require 'use-package))
 (setq use-package-always-ensure nil)
 
-;; User's configuration directory
-(defconst user-init-dir
-  (cond ((boundp 'user-emacs-directory) user-emacs-directory)
-        ((boundp 'user-init-directory)  user-init-directory)
-        (t "@emacsConfigDir@")))
-
-;; Function for loading user files
-(defun load-user-file (file)
-  "Load FILE in current user's configuration directory."
-  (interactive "f")
-  (load-file (expand-file-name file user-init-dir)))
+(use-package gcmh
+  :init
+  (gcmh-mode 1))
 
 (use-package magit
   :bind
-  (("C-x g" . magit-status)))
+  (("C-x g" . magit-status))
+  :defer t)
 
 (use-package flycheck
   :config
   (global-flycheck-mode))
-
-(use-package company
-  :diminish company-mode
-  :config
-  (global-company-mode 1)
-  (setq company-global-modes '(not gud-mode)))
 
 (use-package apropospriate-theme
   :config (load-theme 'apropospriate-light t))
@@ -68,17 +55,12 @@
 ;; Parentheses highlight
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
-(show-paren-mode 1)
 
 (use-package direnv
-  :config
-  (direnv-mode))
-
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
+  :config (direnv-mode))
 
 (use-package markdown-mode
+  :defer t
   :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
 (use-package reverse-im
@@ -93,11 +75,13 @@
   ("M-g f" . avy-goto-line)
   ("M-g w" . avy-goto-word-1)
   :config
-  (avy-setup-default))
+  (avy-setup-default)
+  :defer t)
 
 (use-package ace-window
   :bind
-  ("M-o" . ace-window))
+  ("M-o" . ace-window)
+  :defer t)
 
 (use-package tramp
   :config
@@ -109,32 +93,37 @@
 
 (use-package eshell-toggle
   :bind
-  ("s-`" . eshell-toggle))
+  ("s-`" . eshell-toggle)
+  :defer t)
 
-(use-package gnuplot)
+(use-package gnuplot
+  :defer t)
 
 (use-package pdf-tools
   :config
-  (pdf-tools-install))
+  (pdf-tools-install)
+  :defer t)
 
-(use-package multitran)
+(use-package multitran
+  :defer t)
 
 (use-package wakatime-mode
+  :defer t
   :hook (prog-mode . wakatime-mode))
 
 (use-package which-key
-  :config
-  (which-key-mode))
+  :config (which-key-mode))
 
 (use-package geiser
-  :hook
-  (scheme-mode . geiser-mode))
+  :defer t
+  :hook (scheme-mode . geiser-mode))
 
 (use-package pinentry
   :config
   (pinentry-start))
 
 (use-package ansi-color
+  :defer t
   :init
   (defun colorize-compilation-buffer ()
     (read-only-mode)
@@ -145,6 +134,12 @@
 (use-package emacs
   :hook (proced-mode . nix-proced-readable-mode)
   :config
+  ;; User's configuration directory
+  (defconst user-init-dir
+    (cond ((boundp 'user-emacs-directory) user-emacs-directory)
+          ((boundp 'user-init-directory)  user-init-directory)
+          (t "@emacsConfigDir@")))
+
   ;; backup in one place. flat, no tree structure
   (setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
 
@@ -164,6 +159,12 @@
   (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
   (electric-indent-mode 1)
+
+  (show-paren-mode 1)
+
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
 
   ;; Setup Splash Screen
   (setq inhibit-startup-screen t)

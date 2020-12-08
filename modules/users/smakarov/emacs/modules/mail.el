@@ -7,7 +7,8 @@
 (use-package notmuch
   :init
   (defun set-notmuch-config ()
-      (setenv "NOTMUCH_CONFIG" "/home/smakarov/.config/notmuch/notmuchrc"))
+    (setenv "NOTMUCH_CONFIG" "/home/smakarov/.config/notmuch/notmuchrc"))
+  :defer t
   :hook
   (message-setup . mml-secure-sign-pgpmime)
   (eshell-load . set-notmuch-config)

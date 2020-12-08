@@ -8,16 +8,19 @@
   :config
   (setq c-basic-offset 8
         tab-width 8
-        indent-tabs-mode t))
+        indent-tabs-mode t)
+  :defer t)
 
 (use-package glsl-mode
   :mode "\\.glsl\\'"
   :mode "\\.vert\\'"
   :mode "\\.frag\\'"
   :mode "\\.geom\\'"
-  :interpreter "glsl")
+  :interpreter "glsl"
+  :defer t)
 
 (use-package ccls
+  :defer t
   :hook ((c-mode c++-mode) .
          (lambda () (require 'ccls) (lsp)))
   :config
@@ -25,6 +28,7 @@
   (setq ccls-args '("--log-file=/tmp/ccls.log")))
 
 (use-package irony
+  :defer t
   :hook
   ((c-mode . c++-mode) . (irony-mode))
   :config

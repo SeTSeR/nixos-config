@@ -32,6 +32,7 @@ with lib; {
       flycheck-rust
       flyspell-correct
       free-keys
+      gcmh
       glsl-mode
       gnuplot
       google-c-style

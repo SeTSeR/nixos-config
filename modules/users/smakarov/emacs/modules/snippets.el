@@ -13,6 +13,7 @@
   :hook
   ((prog-mode . yas-minor-mode)
    (org-mode . org-latex-yasnippet))
+  :defer t
   :diminish yas-minor-mode
   :config
   (use-package yasnippet-snippets)

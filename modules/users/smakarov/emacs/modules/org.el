@@ -4,10 +4,13 @@
 
 ;;; Code:
 
-(use-package ox-md)
-(use-package org-tempo)
+(use-package ox-md
+  :defer t)
+(use-package org-tempo
+  :defer t)
 
 (use-package ox-latex
+  :defer t
   :config
     (add-to-list 'org-latex-classes
                '("course" "\\documentclass{BYUPhys}"
@@ -18,27 +21,30 @@
                  ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
 
 (use-package org-ref
- :config
- (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
- (setq org-ref-bibliography-notes "~/Projects/Hometask/bibliography/notes.org"
-       org-ref-default-bibliography '("~/Projects/Hometask/bibliography/references.bib")
-       org-ref-pdf-directory '("~/Projects/Hometask/bibliography/bibtex-pdfs/")
-       org-ref-completion-library 'org-ref-ivy-cite)
- (setq bibtex-completion-biography "~/Projects/Hometask/bibliography/references.bib"
-       bibtex-completion-library-path "~/Projects/Hometask/bibliography/bibtex-pdfs"
-       bibtex-completion-notes-path "~/Projects/Hometask/bibliography/helm-bibtex-notes")
- (setq bibtex-completion-pdf-open-function 'org-open-file))
+  :defer t
+  :config
+  (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
+  (setq org-ref-bibliography-notes "~/Projects/Hometask/bibliography/notes.org"
+        org-ref-default-bibliography '("~/Projects/Hometask/bibliography/references.bib")
+        org-ref-pdf-directory '("~/Projects/Hometask/bibliography/bibtex-pdfs/")
+        org-ref-completion-library 'org-ref-ivy-cite)
+  (setq bibtex-completion-biography "~/Projects/Hometask/bibliography/references.bib"
+        bibtex-completion-library-path "~/Projects/Hometask/bibliography/bibtex-pdfs"
+        bibtex-completion-notes-path "~/Projects/Hometask/bibliography/helm-bibtex-notes")
+  (setq bibtex-completion-pdf-open-function 'org-open-file))
 
 (use-package org-gcal
   :config
   (setq org-gcal-client-id "@orgGcalClientId@"
         org-gcal-client-secret "@orgGcalClientSecret@"
-        org-gcal-fetch-file-alist '(("setser200018@gmail.com" . "~/org/schedule.org"))))
+        org-gcal-fetch-file-alist '(("setser200018@gmail.com" . "~/org/schedule.org")))
+  :defer t)
 
 (use-package org
   :bind (("C-c l" . org-store-link)
          ("C-c a" . org-agenda)
          ("C-c c" . org-capture))
+  :defer t
   :mode (("\\.org$" . org-mode))
   :config
   (setq org-agenda-files (list "~/org")

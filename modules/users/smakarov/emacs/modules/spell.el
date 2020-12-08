@@ -9,6 +9,7 @@
   (("C-. d b" . ispell-buffer)
    ("C-. d e" . ispell-change-dictionary-to-english)
    ("C-. d r" . ispell-change-dictionary-to-russian))
+  :defer t
   :init
   (progn
     (setq ispell-dictionary "english")
@@ -41,9 +42,11 @@
   :hook (text-mode . flyspell-mode)
   :config
   (progn
-    (unbind-key "C-." flyspell-mode-map)))
+    (unbind-key "C-." flyspell-mode-map))
+  :defer t)
 
 (use-package flyspell-correct-ivy
+  :defer t
   :bind (("M-$" . flyspell-correct-at-point)))
 
 ;;; spell.el ends here
