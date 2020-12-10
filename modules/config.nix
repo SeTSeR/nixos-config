@@ -21,7 +21,6 @@ with lib; {
       company-lsp
       company-nixos-options
       counsel
-      counsel-projectile
       diminish
       eshell-toggle
       epkgs.elpaPackages.exwm
@@ -57,7 +56,6 @@ with lib; {
       pdf-tools
       epkgs.elpaPackages.pinentry
       powerline
-      projectile
       racket-mode
       rainbow-delimiters
       reverse-im
