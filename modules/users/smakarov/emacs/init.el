@@ -85,7 +85,8 @@
   (setq tramp-terminal-type "tramp")
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
-  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*"))
+  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+  :defer t)
 
 (use-package eshell-toggle
   :bind
@@ -97,8 +98,7 @@
 
 (use-package pdf-tools
   :config
-  (pdf-tools-install)
-  :defer t)
+  (pdf-tools-install))
 
 (use-package multitran
   :defer t)

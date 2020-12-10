@@ -6,8 +6,7 @@
 
 (use-package ox-md
   :defer t)
-(use-package org-tempo
-  :defer t)
+(use-package org-tempo)
 
 (use-package ox-latex
   :defer t
