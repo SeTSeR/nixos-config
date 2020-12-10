@@ -68,11 +68,6 @@
   (exwm-input-set-key (kbd "<print>")
                       (lambda ()
                         (interactive)
-                        (start-process-shell-command "flameshot" nil "@flameshotPath@ gui")))
-  (use-package symon
-    :config
-    (add-to-list 'symon-monitors 'symon-linux-battery-monitor)
-    (add-to-list 'symon-monitors 'symon-current-time-monitor)
-    (symon-mode)))
+                        (start-process-shell-command "flameshot" nil "@flameshotPath@ gui"))))
 
 ;;; exwm.el ends here
