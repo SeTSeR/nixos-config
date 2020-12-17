@@ -167,8 +167,6 @@
 
   ;; Setup Splash Screen
   (setq inhibit-startup-screen t)
-  (org-agenda-list)
-  (setq initial-buffer-choice '(lambda () (get-buffer org-agenda-buffer-name)))
   (delete-other-windows))
 
 ;;; init.el ends here
