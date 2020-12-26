@@ -9,17 +9,6 @@ self: old:
     };    
   });
 
-  tdlib = old.tdlib.overrideAttrs (oldAttrs: rec {
-    version = "1.7.0";
-
-    src = self.fetchFromGitHub {
-      owner = "tdlib";
-      repo = "td";
-      rev = "v${version}";
-      sha256 = "sha256-sZzp9k7KDnqftcSGSgXkIy0siCksGPBmRckySU/J0TU=";
-    };
-  });
-
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
