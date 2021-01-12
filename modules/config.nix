@@ -63,7 +63,7 @@ with lib; {
       smartparens
       symon
       quack
-      telega
+      epkgs.melpaStablePackages.telega
       use-package
       visual-fill-column
       vterm

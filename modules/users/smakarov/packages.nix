@@ -14,7 +14,6 @@ let
   ];
   commonPackages = with pkgs;
   [
-    emacsPackages.melpaPackages.telega
     libwebp
     fd
     flameshot
