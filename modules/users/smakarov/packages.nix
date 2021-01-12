@@ -20,7 +20,6 @@ let
     stable.ffmpeg-full
     git-crypt
     htop
-    imagemagick7
     nodejs-10_x
     ripgrep
     spotify
