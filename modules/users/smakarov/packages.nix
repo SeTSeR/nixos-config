@@ -10,7 +10,7 @@ let
     (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
     texlive.combined.scheme-full
     docker-compose
-#    musescore
+    musescore
   ];
   commonPackages = with pkgs;
   [
