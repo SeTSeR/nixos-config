@@ -50,7 +50,7 @@ with lib; {
       multitran
       nix-mode
       notmuch
-#      epkgs.elpaPackages.org
+      epkgs.elpaPackages.org
       org-gcal
       org-ref
       pdf-tools
@@ -71,22 +71,6 @@ with lib; {
       which-key
       yasnippet
       yasnippet-snippets
-    ] ++
-    [
-      ((pkgs.emacsPackagesNgGen pkgs.emacsGit).elpaBuild {
-        pname = "org";
-        ename = "org";
-        version = "9.4.4";
-        src = pkgs.fetchurl {
-          url = "https://elpa.gnu.org/packages/org-9.4.4.tar";
-          sha256 = "sha256-C2S4xqrVJXkg3grZkarAid3cQVTIq4LaEAOEDI1FqhY=";
-        };
-        packageRequires = [];
-        meta = {
-          homepage = "https://elpa.gnu.org/packages/org.html";
-          license = lib.licenses.free;
-        };
-      })
     ] ++
     [
       ((pkgs.emacsPackagesNgGen pkgs.emacsGit).melpaBuild {
