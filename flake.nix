@@ -44,5 +44,6 @@
             specialArgs = { inherit inputs name; };
           };
       in genAttrs hosts mkHost;
+    legacyPackages = nixpkgs.legacyPackages;
   };
 }
