@@ -107,7 +107,7 @@
 
 (use-package pdf-tools
   :config
-  (pdf-tools-install)
+  (pdf-loader-install)
   :ensure t)
 
 (use-package multitran

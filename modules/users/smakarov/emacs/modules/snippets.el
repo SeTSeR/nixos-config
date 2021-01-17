@@ -17,7 +17,8 @@
   :diminish yas-minor-mode
   :ensure t
   :config
-  (use-package yasnippet-snippets)
+  (use-package yasnippet-snippets
+    :defer t)
   (add-to-list 'yas-snippet-dirs "@emacsConfigDir@/yasnippet-snippets")
   (yas-reload-all))
 
