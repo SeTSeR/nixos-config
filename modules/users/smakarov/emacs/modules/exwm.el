@@ -7,6 +7,7 @@
 (use-package exwm
   :init (exwm-enable)
   :hook (exwm-update-class . (lambda () (exwm-workspace-rename-buffer exwm-class-name)))
+  :ensure t
   :config
   (exwm-input-set-key (kbd "s-r") #'exwm-reset)
   (exwm-input-set-key (kbd "s-w") #'exwm-workspace-switch)

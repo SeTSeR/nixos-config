@@ -7,6 +7,7 @@
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :defer t
+  :ensure t
   :hook
   ((c-mode c++-mode rust-mode) . lsp-deferred)
   :config
@@ -29,14 +30,17 @@
 
 (use-package lsp-ui
   :commands lsp-ui-mode
+  :ensure t
   :defer t)
 
 (use-package lsp-ivy
   :commands ivy-lsp-workspace-symbol
+  :ensure t
   :defer t)
 
 (use-package company-lsp
   :commands company-lsp
+  :ensure t
   :defer t)
 
 ;;; lsp.el ends here

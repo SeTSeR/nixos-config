@@ -5,11 +5,14 @@
 ;;; Code:
 
 (use-package ox-md
-  :defer t)
-(use-package org-tempo)
+  :defer t
+  :ensure t)
+(use-package org-tempo
+  :ensure t)
 
 (use-package ox-latex
   :defer t
+  :ensure t
   :config
     (add-to-list 'org-latex-classes
                '("course" "\\documentclass{BYUPhys}"
@@ -21,6 +24,7 @@
 
 (use-package org-ref
   :defer t
+  :ensure t
   :config
   (setq reftex-default-bibliography '("~/Projects/Hometask/bibliography/references.bib"))
   (setq org-ref-bibliography-notes "~/Projects/Hometask/bibliography/notes.org"
@@ -37,6 +41,7 @@
   (setq org-gcal-client-id "@orgGcalClientId@"
         org-gcal-client-secret "@orgGcalClientSecret@"
         org-gcal-fetch-file-alist '(("setser200018@gmail.com" . "~/org/schedule.org")))
+  :ensure t
   :defer t)
 
 (use-package org
@@ -44,6 +49,7 @@
          ("C-c a" . org-agenda)
          ("C-c c" . org-capture))
   :defer t
+  :ensure t
   :mode (("\\.org$" . org-mode))
   :config
   (setq org-agenda-files (list "~/org")

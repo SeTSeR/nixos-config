@@ -9,7 +9,8 @@
   (setq c-basic-offset 8
         tab-width 8
         indent-tabs-mode t)
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package glsl-mode
   :mode "\\.glsl\\'"
@@ -17,22 +18,26 @@
   :mode "\\.frag\\'"
   :mode "\\.geom\\'"
   :interpreter "glsl"
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package ccls
   :defer t
   :hook ((c-mode c++-mode) .
          (lambda () (require 'ccls) (lsp)))
+  :ensure t
   :config
   (setq ccls-sem-highlight-method 'font-lock)
   (setq ccls-args '("--log-file=/tmp/ccls.log")))
 
 (use-package irony
   :defer t
+  :ensure t
   :hook
   ((c-mode . c++-mode) . (irony-mode))
   :config
   (use-package company-irony-c-headers
+    :ensure t
     :config
     (eval-after-load 'company
       '(add-to-list 'company-backends '(company-irony-c-headers company-irony)))))

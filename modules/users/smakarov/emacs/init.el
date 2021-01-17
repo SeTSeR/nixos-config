@@ -27,42 +27,50 @@
   (package-install 'use-package))
 (eval-when-compile
   (require 'use-package))
-(setq use-package-always-ensure nil)
 
 (use-package magit
   :bind
   (("C-x g" . magit-status))
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package flycheck
   :config
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  :ensure t)
 
 (use-package apropospriate-theme
-  :config (load-theme 'apropospriate-light t))
+  :config (load-theme 'apropospriate-light t)
+  :ensure t)
 
 (use-package powerline
   :config
-  (powerline-center-theme))
+  (powerline-center-theme)
+  :ensure t)
 
 (use-package smartparens
-  :config (smartparens-global-mode 1))
+  :config (smartparens-global-mode 1)
+  :ensure t)
 
 ;; Parentheses highlight
 (use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+  :hook (prog-mode . rainbow-delimiters-mode)
+  :ensure t)
 
 (use-package direnv
-  :config (direnv-mode))
+  :config (direnv-mode)
+  :ensure t)
 
 (use-package markdown-mode
   :defer t
-  :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
+  :mode "\\.\\(m\\(ark\\)?down\\|md\\)$"
+  :ensure t)
 
 (use-package reverse-im
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
-  (reverse-im-mode 1))
+  (reverse-im-mode 1)
+  :ensure t)
 
 (use-package avy
   :bind
@@ -72,12 +80,14 @@
   ("M-g w" . avy-goto-word-1)
   :config
   (avy-setup-default)
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package ace-window
   :bind
   ("M-o" . ace-window)
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package tramp
   :config
@@ -86,37 +96,46 @@
   (setq tramp-default-method "ssh")
   (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
   (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package eshell-toggle
   :bind
   ("s-`" . eshell-toggle)
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package gnuplot
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package pdf-tools
   :config
-  (pdf-tools-install))
+  (pdf-tools-install)
+  :ensure t)
 
 (use-package multitran
-  :defer t)
+  :defer t
+  :ensure t)
 
 (use-package wakatime-mode
   :defer t
-  :hook (prog-mode . wakatime-mode))
+  :hook (prog-mode . wakatime-mode)
+  :ensure t)
 
 (use-package which-key
-  :config (which-key-mode))
+  :config (which-key-mode)
+  :ensure t)
 
 (use-package geiser
   :defer t
-  :hook (scheme-mode . geiser-mode))
+  :hook (scheme-mode . geiser-mode)
+  :ensure t)
 
 (use-package pinentry
   :config
-  (pinentry-start))
+  (pinentry-start)
+  :ensure t)
 
 (use-package ansi-color
   :defer t
@@ -125,7 +144,8 @@
     (read-only-mode)
     (ansi-color-apply-on-region compilation-filter-start (point))
     (read-only-mode))
-  :hook (compilation-filter . colorize-compilation-buffer))
+  :hook (compilation-filter . colorize-compilation-buffer)
+  :ensure t)
 
 (use-package emacs
   :hook (proced-mode . nix-proced-readable-mode)
