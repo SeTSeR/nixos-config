@@ -5,14 +5,11 @@
 ;;; Code:
 
 (use-package ox-md
-  :defer t
-  :ensure t)
-(use-package org-tempo
-  :ensure t)
+  :defer t)
+(use-package org-tempo)
 
 (use-package ox-latex
   :defer t
-  :ensure t
   :config
     (add-to-list 'org-latex-classes
                '("course" "\\documentclass{BYUPhys}"
