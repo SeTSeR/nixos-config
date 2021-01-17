@@ -1,5 +1,12 @@
 { config, lib, pkgs, ... }:
-with lib; {
+with lib;
+let emacsPackages = pkgs.emacsPackages.overrideScope' (self: super: {
+      emacs = pkgs.emacsGit;
+      telega = super.melpaPackages.telega.overrideAttrs (oldAttrs: {
+        nativeBuildInputs = [ pkgs.pkgconfig ];
+      });
+    });
+in {
   options.openVPNConfigPath = mkOption {
     type = types.str;
     description = "Path to OpenVPN configuration";
@@ -11,7 +18,7 @@ with lib; {
   };
 
   config.openVPNConfigPath = "${config.users.users.smakarov.home}/.config/openvpn";
-  config.emacsPackage = (pkgs.emacsPackagesNgGen pkgs.emacsGit).emacsWithPackages(epkgs:
+  config.emacsPackage = emacsPackages.emacsWithPackages(epkgs:
     with epkgs.melpaPackages; [
       ace-window
       apropospriate-theme
@@ -63,7 +70,7 @@ with lib; {
       smartparens
       symon
       quack
-      epkgs.melpaStablePackages.telega
+      telega
       use-package
       visual-fill-column
       vterm
@@ -73,7 +80,7 @@ with lib; {
       yasnippet-snippets
     ] ++
     [
-      ((pkgs.emacsPackagesNgGen pkgs.emacsGit).melpaBuild {
+      (epkgs.melpaBuild {
         pname = "direnv";
         ename = "direnv";
         version = "20201207";
