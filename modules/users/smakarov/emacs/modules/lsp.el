@@ -32,15 +32,4 @@
   :commands lsp-ui-mode
   :ensure t
   :defer t)
-
-(use-package lsp-ivy
-  :commands ivy-lsp-workspace-symbol
-  :ensure t
-  :defer t)
-
-(use-package company-lsp
-  :commands company-lsp
-  :ensure t
-  :defer t)
-
 ;;; lsp.el ends here
