@@ -34,12 +34,6 @@
   :defer t
   :ensure t
   :hook
-  ((c-mode . c++-mode) . (irony-mode))
-  :config
-  (use-package company-irony-c-headers
-    :ensure t
-    :config
-    (eval-after-load 'company
-      '(add-to-list 'company-backends '(company-irony-c-headers company-irony)))))
+  ((c-mode . c++-mode) . (irony-mode)))
 
 ;;; cpp.el ends here
