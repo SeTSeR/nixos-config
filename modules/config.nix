@@ -48,13 +48,8 @@ in {
     extraPackages = epkgs:
     (with epkgs.melpaPackages; [
       ace-window
-      apropospriate-theme
       avy
       ccls
-      company-irony
-      company-lsp
-      company-nixos-options
-      counsel
       diminish
       direnv
       eshell-toggle
@@ -70,7 +65,6 @@ in {
       gnuplot
       google-c-style
       graphviz-dot-mode
-      gruvbox-theme
       haskell-mode
       irony
       ivy
@@ -93,8 +87,6 @@ in {
       reverse-im
       rust-mode
       smartparens
-      symon
-      quack
       telega
       use-package
       visual-fill-column
@@ -106,7 +98,6 @@ in {
     ]) ++
     (with epkgs.elpaPackages; [
       exwm
-#      org
       pinentry
     ]);
   };
