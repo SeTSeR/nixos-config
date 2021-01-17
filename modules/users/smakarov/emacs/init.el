@@ -39,10 +39,6 @@
   (global-flycheck-mode)
   :ensure t)
 
-(use-package apropospriate-theme
-  :config (load-theme 'apropospriate-light t)
-  :ensure t)
-
 (use-package powerline
   :config
   (powerline-center-theme)
@@ -153,6 +149,7 @@
   ("<f5>" . project-compile)
   ("<f9>" . project-compile)
   :config
+  (load-theme 'modus-operandi t)
   ;; User's configuration directory
   (defconst user-init-dir
     (cond ((boundp 'user-emacs-directory) user-emacs-directory)
