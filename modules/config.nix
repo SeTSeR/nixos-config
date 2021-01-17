@@ -106,7 +106,7 @@ in {
     ]) ++
     (with epkgs.elpaPackages; [
       exwm
-      org
+#      org
       pinentry
     ]);
   };
