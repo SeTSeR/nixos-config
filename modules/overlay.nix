@@ -9,6 +9,10 @@ self: old:
     };    
   });
 
+  telega = old.emacsPackages.melpaPackages.telega.overrideAttrs(oldAttrs: {
+    nativeBuildInputs = [ old.pkgconfig ];
+  });
+
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };
