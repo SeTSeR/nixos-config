@@ -20,7 +20,7 @@ let
     stable.ffmpeg-full
     git-crypt
     htop
-    nodejs-10_x
+    nodejs-12_x
     ripgrep
     spotify
     telega
