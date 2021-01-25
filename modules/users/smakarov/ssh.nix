@@ -28,4 +28,6 @@
       };
     };
   };
+
+  programs.mosh.enable = true;
 }
