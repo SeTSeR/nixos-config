@@ -40,9 +40,6 @@ in {
             fetchSubmodules = true;
           };
         });
-        telega = epkgs.melpaPackages.telega.overrideAttrs(oldAttrs: {
-          nativeBuildInputs = [ pkgs.pkgconfig ];
-        });
       };
     };
     extraPackages = epkgs:

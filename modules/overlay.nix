@@ -9,9 +9,7 @@ self: old:
     };    
   });
 
-  telega = old.emacsPackages.melpaPackages.telega.overrideAttrs(oldAttrs: {
-    nativeBuildInputs = [ old.pkgconfig ];
-  });
+  telega = old.emacsPackages.melpaPackages.telega;
 
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
