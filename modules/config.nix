@@ -84,7 +84,7 @@ in {
       reverse-im
       rust-mode
       smartparens
-      telega
+      epkgs.melpaStablePackages.telega
       use-package
       visual-fill-column
       vterm

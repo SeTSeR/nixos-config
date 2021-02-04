@@ -9,7 +9,7 @@ self: old:
     };    
   });
 
-  telega = old.emacsPackages.melpaPackages.telega;
+  telega = old.emacsPackages.melpaStablePackages.telega;
 
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
