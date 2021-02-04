@@ -16,12 +16,12 @@
    (telega-load . telega-squash-message-mode)
    (telega-load . global-telega-mnz-mode))
   :config
-  (use-package telega-dashboard
+  (use-package telega-stories
+    :bind
+    (:map telega-root-mode-map
+          ("v e" . telega-view-emacs-stories))
     :config
-    (add-to-list 'dashboard-items '(telega-chats . 5))
-    (use-package telega-stories
-      :config
-      (add-to-list 'dashboard-items '(telega-stories . 5))))
+    (telega-stories-mode 1))
   (use-package telega-dired-dwim)
   (use-package telega-mnz)
   (use-package ol-telega)
