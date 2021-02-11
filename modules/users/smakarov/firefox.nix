@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
   home-manager.users.smakarov.programs.firefox = {
     enable = true;
-    enableAdobeFlash = false;
     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
       bitwarden
       tree-style-tab
