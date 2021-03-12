@@ -22,7 +22,6 @@ let
     nodejs-12_x
     ripgrep
     spotify
-    telega
     tridactyl-native
     wakatime
   ];
