@@ -12,6 +12,13 @@
   };
 
   home-manager.useUserPackages = true;
+  home-manager.users.smakarov = {
+    programs.command-not-found = {
+      enable = true;
+      dbPath = ../../../misc/programs.sqlite;
+    };
+    systemd.user.startServices = true;
+  };
   home-manager.users.smakarov.home = {
     homeDirectory = "/home/smakarov";
     username = "smakarov";
