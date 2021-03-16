@@ -34,6 +34,11 @@
       layout = "us,ru(winkeys)";
       options = [ ",grp:win_space_toggle" ];
     };
+    activation."mimeapps-remove" = {
+      before = [ "linkGeneration" ];
+      after = [];
+      data = "rm -f /home/smakarov/.config/mimeapps.list";
+    };
     stateVersion = "20.09";
   };
 }
