@@ -123,11 +123,6 @@
   :config (which-key-mode)
   :ensure t)
 
-(use-package geiser
-  :defer t
-  :hook (scheme-mode . geiser-mode)
-  :ensure t)
-
 (use-package pinentry
   :config
   (pinentry-start)

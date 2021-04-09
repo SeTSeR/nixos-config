@@ -50,7 +50,6 @@ in {
       diminish
       direnv
       eshell-toggle
-      geiser
       flycheck
       flycheck-irony
       flycheck-pkg-config
