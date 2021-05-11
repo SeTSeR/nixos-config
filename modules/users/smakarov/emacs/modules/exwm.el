@@ -5,7 +5,15 @@
 ;;; Code:
 
 (use-package exwm
-  :init (exwm-enable)
+  :init
+  (use-package exwm-randr
+    :config
+    (exwm-randr-enable)
+    (setq exwm-randr-workspace-output-plist '(0 "DP-0" 1 "HDMI-0" 2 "DP-0" 3 "HDMI-0" 4 "HDMI-0"))
+    :hook (exwm-randr-screen-change . (lambda ()
+            (start-process-shell-command
+             "xrandr" nil "xrandr --output DP-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-0 --mode 1920x1080 --pos 1920x0 --rotate left"))))
+  (exwm-enable)
   :hook (exwm-update-class . (lambda () (exwm-workspace-rename-buffer exwm-class-name)))
   :ensure t
   :config

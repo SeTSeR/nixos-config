@@ -47,6 +47,7 @@ in {
       ace-window
       avy
       ccls
+      dashboard
       diminish
       direnv
       eshell-toggle
