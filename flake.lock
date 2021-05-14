@@ -12,6 +12,7 @@
       "original": {
         "owner": "nix-community",
         "repo": "emacs-overlay",
+        "rev": "fe10d8d48585678c5b974e44dd3029eae8e2d0ce",
         "type": "github"
       }
     },
@@ -69,11 +70,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1620980031,
-        "narHash": "sha256-pWao50hvdOO2ptCwlDTPWAlzhyxLQFVZmLkd7EcN8aA=",
+        "lastModified": 1621012357,
+        "narHash": "sha256-Qi1AYYeL1QCiSYPlxJQ0AsKJ8A3HGFE2ghC2nU6syLg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fbf1baf239232172b3d0c076ca0e68a4364e3cfc",
+        "rev": "fac280e3ddb06cc9c03f9795afe35482fe96edeb",
         "type": "github"
       },
       "original": {
