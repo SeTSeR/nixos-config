@@ -14,6 +14,7 @@ in {
     xdg.configFile."emacs/init.el".text =
       readWithSubstitute ./init.el
       + lib.concatStringsSep "\n" (map readWithSubstitute (modulePaths ./modules));
+    xdg.configFile."emacs/pkgs".source = ./pkgs;
     xdg.configFile."emacs/yasnippet-snippets".source = ./yasnippet-snippets;
   };
 }
