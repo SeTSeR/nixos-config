@@ -79,6 +79,8 @@ in {
       org-ref
       pdf-tools
       powerline
+      quelpa
+      quelpa-use-package
       racket-mode
       rainbow-delimiters
       reverse-im
