@@ -3,8 +3,6 @@
 ;;; Main Emacs settings file
 
 ;;; Code:
-(setq load-prefer-newer t) ; Don't load outdated byte code
-
 ;; Package sources
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -37,43 +35,34 @@
 
 (use-package magit
   :bind
-  (("C-x g" . magit-status))
-  :defer t
-  :ensure t)
+  (("C-x g" . magit-status)))
 
 (use-package flycheck
   :config
-  (global-flycheck-mode)
-  :ensure t)
+  (global-flycheck-mode))
 
 (use-package powerline
   :config
-  (powerline-center-theme)
-  :ensure t)
+  (powerline-center-theme))
 
 (use-package smartparens
-  :config (smartparens-global-mode 1)
-  :ensure t)
+  :config (smartparens-global-mode 1))
 
 ;; Parentheses highlight
 (use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode)
-  :ensure t)
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package direnv
-  :config (direnv-mode)
-  :ensure t)
+  :config (direnv-mode))
 
 (use-package markdown-mode
   :defer t
-  :mode "\\.\\(m\\(ark\\)?down\\|md\\)$"
-  :ensure t)
+  :mode "\\.\\(m\\(ark\\)?down\\|md\\)$")
 
 (use-package reverse-im
   :config
   (add-to-list 'reverse-im-input-methods "russian-computer")
-  (reverse-im-mode 1)
-  :ensure t)
+  (reverse-im-mode 1))
 
 (use-package avy
   :bind
@@ -82,70 +71,49 @@
   ("M-g f" . avy-goto-line)
   ("M-g w" . avy-goto-word-1)
   :config
-  (avy-setup-default)
-  :defer t
-  :ensure t)
+  (avy-setup-default))
 
-(use-package ace-window
-  :bind
-  ("M-o" . ace-window)
-  :defer t
-  :ensure t)
+(use-package ace-window :bind ("M-o" . ace-window))
 
 (use-package tramp
   :config
-  (setenv "SHELL" "/bin/bash")
-  (setq tramp-terminal-type "tramp")
-  (setq tramp-default-method "ssh")
+  (setenv "SHELL" "@bashPath@")
   (add-to-list 'tramp-remote-path "/etc/profiles/per-user/@userName@/bin")
-  (setq tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
-  :defer t
-  :ensure t)
+  :custom
+  (tramp-terminal-type "tramp")
+  (tramp-default-method "ssh")
+  (tramp-shell-prompt-pattern "\\(?:^\\|\r\\)[^]#$%>\n]*#?[]#$%>].* *\\(^[\\[[0-9;]*[a-zA-Z] *\\)*")
+  :defer t)
 
 (use-package eshell-toggle
   :bind
-  ("s-`" . eshell-toggle)
-  :defer t
-  :ensure t)
+  ("s-`" . eshell-toggle))
 
 (use-package gnuplot
-  :defer t
-  :ensure t)
+  :defer t)
 
 (use-package pdf-tools
   :config
-  (pdf-loader-install)
-  :ensure t)
+  (pdf-loader-install))
 
-(use-package multitran
-  :defer t
-  :ensure t)
+(use-package multitran :defer t)
 
-(use-package wakatime-mode
-  :defer t
-  :hook (prog-mode . wakatime-mode)
-  :ensure t)
+(use-package wakatime-mode :hook (prog-mode . wakatime-mode))
 
-(use-package which-key
-  :config (which-key-mode)
-  :ensure t)
+(use-package which-key :config (which-key-mode))
 
-(use-package pinentry
-  :config
-  (pinentry-start)
-  :ensure t)
+(use-package pinentry :config (pinentry-start))
 
 (use-package ansi-color
-  :defer t
   :init
   (defun colorize-compilation-buffer ()
     (read-only-mode)
     (ansi-color-apply-on-region compilation-filter-start (point))
     (read-only-mode))
-  :hook (compilation-filter . colorize-compilation-buffer)
-  :ensure t)
+  :hook (compilation-filter . colorize-compilation-buffer))
 
 (use-package emacs
+  :init (add-to-list 'load-path "@emacsConfigDir@/pkgs")
   :hook (proced-mode . nix-proced-readable-mode)
   :bind
   ("<f5>" . project-compile)
@@ -158,22 +126,6 @@
           ((boundp 'user-init-directory)  user-init-directory)
           (t "@emacsConfigDir@")))
 
-  ;; backup in one place. flat, no tree structure
-  (setq backup-directory-alist '(("" . "@emacsConfigDir@/backup")))
-
-  (setq auto-save-file-name-transforms
-        `((".*" "@emacsConfigDir@/auto-save-list/" t)))
-
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-always-indent 'complete)
-
-  ;; Allow sentences ending with one space
-  (setq-default sentence-end-double-space nil)
-
-  (setq compilation-scroll-output 'first-error)
-
-  (setq dired-listing-switches "-alh")
-
   (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
 
   (electric-indent-mode 1)
@@ -183,9 +135,17 @@
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-
-  ;; Setup Splash Screen
-  (setq inhibit-startup-screen t)
-  (delete-other-windows))
+  (delete-other-windows)
+  :custom
+  (load-prefer-newer t "Don't load outdated byte code")
+  (backup-directory-alist '(("" . "@emacsConfigDir@/backup")) "backup in one place. flat, no tree structure")
+  (auto-save-file-name-transforms
+   `((".*" "@emacsConfigDir@/auto-save-list/" t)))
+  (indent-tabs-mode nil)
+  (tab-always-indent 'complete)
+  (sentence-end-double-space nil "Allow sentences ending with one space")
+  (compilation-scroll-output 'first-error)
+  (dired-listing-switches "-alh")
+  (inhibit-startup-screen t "Setup Splash Screen"))
 
 ;;; init.el ends here

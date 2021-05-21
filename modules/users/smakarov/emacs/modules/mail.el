@@ -7,14 +7,17 @@
 (use-package notmuch
   :init
   (defun set-notmuch-config ()
-    (setenv "NOTMUCH_CONFIG" "/home/smakarov/.config/notmuch/notmuchrc"))
+    (setenv "NOTMUCH_CONFIG" "@notmuchrc@"))
   :defer t
-  :ensure t
   :hook
   (message-setup . mml-secure-sign-pgpmime)
   (eshell-load . set-notmuch-config)
-  :config
-  (setq send-mail-function 'sendmail-send-it)
-  (setq mml-secure-openpgp-sign-with-sender t))
+  :custom
+  (send-mail-function 'sendmail-send-it)
+  (mml-secure-openpgp-sign-with-sender t))
+
+(use-package gnus
+  :custom
+  (gnus-home-directory "@emacsConfigDir@"))
 
 ;;; mail.el ends here

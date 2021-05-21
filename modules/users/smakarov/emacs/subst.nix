@@ -2,8 +2,10 @@
 with import ../../../secrets.nix {};
 rec {
   emacsConfigDir = "~/.config/emacs";
+  bashPath = "${pkgs.bash}/bin/bash";
   acpilightPath = "${pkgs.acpilight}/bin/xbacklight";
   flameshotPath = "${pkgs.flameshot}/bin/flameshot";
+  notmuchrc = "~/.config/notmuch/notmuchrc";
   pactlPath = "${pkgs.pulseaudio}/bin/pactl";
   playerctlPath = "${pkgs.playerctl}/bin/playerctl";
   proxySecretOne = config.secrets.an_secret;

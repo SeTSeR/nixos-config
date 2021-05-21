@@ -6,8 +6,6 @@
 
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
-  :defer t
-  :ensure t
   :hook
   ((c-mode c++-mode rust-mode) . lsp-deferred)
   :config
@@ -18,18 +16,17 @@
     :ignore-messages nil
     :remote? t
     :server-id 'rust-analyzer-remote
-    :custom-capabilities `((experimental . ((snippetTextEdit . ,lsp-enable-snippet ))))))
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-enable-snippet nil)
-  (setq lsp-enable-xref t)
+    :custom-capabilities `((experimental . ((snippetTextEdit . ,lsp-enable-snippet))))))
   (defun lsp-advice (orig &rest args)
       (cl-letf* ((path (exec-path))
                  ((symbol-function 'exec-path) (lambda () (append exec-path path))))
         (apply orig args)))
-  (advice-add 'lsp-server-present? :around #'lsp-advice))
+  (advice-add 'lsp-server-present? :around #'lsp-advice)
+  :custom
+  (lsp-enable-snippet t)
+  (lsp-enable-xref t))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
-  :ensure t
   :defer t)
 ;;; lsp.el ends here

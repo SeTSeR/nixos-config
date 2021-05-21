@@ -5,12 +5,11 @@
 ;;; Code:
 
 (use-package cc-mode
-  :config
-  (setq c-basic-offset 8
-        tab-width 8
-        indent-tabs-mode t)
-  :defer t
-  :ensure t)
+  :custom
+  (c-basic-offset 8)
+  (tab-width 8)
+  (indent-tabs-mode t)
+  :defer t)
 
 (use-package glsl-mode
   :mode "\\.glsl\\'"
@@ -18,22 +17,17 @@
   :mode "\\.frag\\'"
   :mode "\\.geom\\'"
   :interpreter "glsl"
-  :defer t
-  :ensure t)
+  :defer t)
 
 (use-package ccls
-  :defer t
-  :hook ((c-mode c++-mode) .
-         (lambda () (require 'ccls) (lsp)))
-  :ensure t
-  :config
-  (setq ccls-sem-highlight-method 'font-lock)
-  (setq ccls-args '("--log-file=/tmp/ccls.log")))
+  :init
+  (defun start-lsp ()
+    (require 'ccls) (lsp))
+  :hook ((c-mode c++-mode) . start-lsp)
+  :custom
+  (ccls-sem-highlight-method 'font-lock)
+  (ccls-args '("--log-file=/tmp/ccls.log")))
 
-(use-package irony
-  :defer t
-  :ensure t
-  :hook
-  ((c-mode . c++-mode) . (irony-mode)))
+(use-package irony :hook ((c-mode . c++-mode) . (irony-mode)))
 
 ;;; cpp.el ends here

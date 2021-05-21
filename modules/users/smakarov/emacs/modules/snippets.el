@@ -13,9 +13,7 @@
   :hook
   ((prog-mode . yas-minor-mode)
    (org-mode . org-latex-yasnippet))
-  :defer t
   :diminish yas-minor-mode
-  :ensure t
   :config
   (use-package yasnippet-snippets
     :defer t)
@@ -23,7 +21,6 @@
   (yas-reload-all))
 
 (use-package ivy-yasnippet
-  :ensure t
   :bind ("C-x y" . ivy-yasnippet))
 
 ;;; snippets.el ends here
