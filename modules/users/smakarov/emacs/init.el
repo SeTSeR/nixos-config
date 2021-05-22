@@ -26,6 +26,10 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package quelpa
+  :custom
+  (quelpa-checkout-melpa-p nil))
+
 ;; Bootstrap `quelpa-use-package'
 (quelpa
  '(quelpa-use-package
