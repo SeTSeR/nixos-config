@@ -20,17 +20,17 @@
 (use-package telega
   :init
   (defun ignore-user-messages-by-id (id msg)
-      (when (= (plist-get msg :sender_user_id) id)
-        (telega-msg-ignore msg)))
+    (let ((sender (telega-msg-sender msg)))
+      (and (telega-user-p sender)
+	   (= (plist-get sender :id) id))))
   :commands (telega)
   :bind-keymap ("C-c t" . telega-prefix-map)
   :hook
   ((telega-load . telega-mode-line-mode)
    (telega-load . telega-squash-message-mode))
-  :config
-  (setq telega-proxies
-        (list
-         '(:server "185.86.77.210" :port 3443 :enable :false :type
+  :custom
+  (telega-filter-default '(any (folder "Dev") (folder "Work") (custom "Important")))
+  (telega-proxies '((:server "185.86.77.210" :port 3443 :enable :false :type
                    (:@type "proxyTypeMtproto" :secret "@proxySecretOne@")))))
 
 ;;; telega-settings.el ends here
