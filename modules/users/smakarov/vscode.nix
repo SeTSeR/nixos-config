@@ -4,6 +4,7 @@
     enable = true;
     package = pkgs.vscode;
     extensions = with pkgs.vscode-extensions; with pkgs.nur.repos.setser.vscode-extensions; [
+      kahole.magit
       bbenoist.Nix
       ms-vscode-remote.remote-ssh
       matklad.rust-analyzer
@@ -11,7 +12,6 @@
       WakaTime.vscode-wakatime
     ] ++
     [ # Extensions from NUR
-      kahole.magit
       Rubymaniac.vscode-direnv
       sjhuangx.vscode-scheme
       tuttieee.emacs-mcx
