@@ -40,7 +40,17 @@
     worldPath = "/var/lib/terraria/Bad_Arbor_of_Birds.wld";
   };
 
-  services.interception-tools.enable = true; # This remaps Ctrl and Caps;
+  # Remap Ctrl and CapsLock
+  services.interception-tools = {
+    enable = true;
+    plugins = [ pkgs.interception-tools-plugins.caps2esc ];
+    udevmonConfig = ''
+    - JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.interception-tools-plugins.caps2esc}/bin/caps2esc | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
+      DEVICE:
+        EVENTS:
+          EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
+    '';
+  };
 
   # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
