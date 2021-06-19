@@ -153,6 +153,7 @@
   (sentence-end-double-space nil "Allow sentences ending with one space")
   (compilation-scroll-output 'first-error)
   (dired-listing-switches "-alh")
-  (inhibit-startup-screen t "Setup Splash Screen"))
+  (inhibit-startup-screen t "Setup Splash Screen")
+  (warning-minimum-level ":error"))
 
 ;;; init.el ends here
