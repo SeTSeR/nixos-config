@@ -117,7 +117,9 @@
   :hook (compilation-filter . colorize-compilation-buffer))
 
 (use-package emacs
-  :init (add-to-list 'load-path "@emacsConfigDir@/pkgs")
+  :init
+  (add-to-list 'load-path "@emacsConfigDir@/pkgs")
+  (server-start)
   :hook (proced-mode . nix-proced-readable-mode)
   :bind
   ("<f5>" . project-compile)
@@ -131,6 +133,7 @@
           (t "@emacsConfigDir@")))
 
   (add-to-list 'default-frame-alist '(font . "Source Code Pro Medium-13"))
+  (display-time-mode t)
 
   (electric-indent-mode 1)
 
