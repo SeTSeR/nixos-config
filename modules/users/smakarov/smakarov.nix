@@ -29,6 +29,7 @@
     sessionVariables = {
       EDITOR = "${config.emacsPackage}/bin/emacsclient -c";
       VISUAL = "${config.emacsPackage}/bin/emacsclient -c";
+      _JAVA_AWT_WM_NONPARENTING = "1";
       NIX_AUTO_RUN = "1";
     };
     keyboard = {
