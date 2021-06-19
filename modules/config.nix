@@ -22,7 +22,7 @@ in {
 
   config.openVPNConfigPath = "${config.users.users.smakarov.home}/.config/openvpn";
   config.emacsPackage = emacsWithPackages {
-    package = pkgs.emacsGit;
+    package = pkgs.emacsGcc;
     override = epkgs: epkgs // {
       melpaPackages = epkgs.melpaPackages // {
         direnv = epkgs.melpaPackages.direnv.overrideAttrs(oldAttrs: {

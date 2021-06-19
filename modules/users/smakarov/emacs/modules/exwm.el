@@ -18,7 +18,6 @@
     :hook (exwm-randr-screen-change . init-screens)
     :custom
     (exwm-randr-workspace-monitor-plist '(0 "DP-0" 1 "HDMI-0" 2 "DP-0" 3 "HDMI-0" 4 "HDMI-0")))
-  (exwm-enable)
   :hook (exwm-update-class . update-class)
   :config
   (exwm-input-set-key (kbd "s-r") #'exwm-reset)
@@ -81,6 +80,7 @@
   (exwm-input-set-key (kbd "<print>")
                       (lambda ()
                         (interactive)
-                        (start-process-shell-command "flameshot" nil "@flameshotPath@ gui"))))
+                        (start-process-shell-command "flameshot" nil "@flameshotPath@ gui")))
+  (exwm-enable))
 
 ;;; exwm.el ends here
