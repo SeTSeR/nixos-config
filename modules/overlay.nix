@@ -9,8 +9,68 @@ self: old:
     };    
   });
 
-  telega = old.emacsPackages.melpaStablePackages.telega;
-
+  emacsPackagesFor = emacs: (old.emacsPackagesFor emacs).overrideScope' (self: super: {
+    tsc = old.symlinkJoin {
+      name = "tsc";
+      paths = [
+        super.tsc
+        (old.rustPlatform.buildRustPackage rec {
+          pname = "tsc-dyn";
+          version = "0.15.1";
+          cargoPatches = [ ./add-cargo-lock.patch ];
+          src = old.fetchzip {
+            name = "tsc-${version}.tar.gz";
+            url = "https://github.com/ubolonton/emacs-tree-sitter/releases/download/${version}/${src.name}";
+            sha256 = "sha256-7HdKbYoOhFgO6hWyM9bL25JtIwrTBnhmYebfxmnkt04=";
+          };
+          nativeBuildInputs = [ old.clang ];
+          configurePhase = ''
+            export LIBCLANG_PATH="${old.llvmPackages.libclang.lib}/lib"
+          '';
+          postInstall = ''
+            LIB=($out/lib/libtsc_dyn.*)
+            TSC_PATH=$out/share/emacs/site-lisp/elpa/tsc-${super.tsc.version}
+            install -d $TSC_PATH
+            install -m444 $out/lib/libtsc_dyn.* $TSC_PATH/''${LIB/*libtsc_/tsc-}
+            echo -n $version > $TSC_PATH/DYN-VERSION
+            rm -r $out/lib
+          '';
+          cargoSha256 = "sha256-AVIa0sdcx9JUDGVF6z5K+uJLG5wUwi/xPSTftnINVCk=";
+        })
+      ];
+    };
+    tree-sitter-langs = old.symlinkJoin rec {
+      name = "tree-sitter-langs";
+      paths =
+        let
+          tree-sitter-grammars = old.stdenv.mkDerivation rec {
+            name = "tree-sitter-grammars";
+            version = "0.10.0";
+            src = old.fetchzip {
+              name = "tree-sitter-grammars-linux-${version}.tar.gz";
+              url = "https://github.com/ubolonton/tree-sitter-langs/releases/download/${version}/${src.name}";
+              sha256 = "sha256-XUbU4Q/JAFPINIJ88LbegVFNBLEb6VZ5waxdl6Sw2Sw=";
+              stripRoot = false;
+            };
+            installPhase = ''
+              install -d $out/langs/bin
+              install -m444 * $out/langs/bin
+              echo -n $version > $out/langs/bin/BUNDLE-VERSION
+            '';
+          };
+        in
+          [
+            (super.tree-sitter-langs.overrideAttrs (oldAttrs: {
+              postPatch = oldAttrs.postPatch or "" + ''
+          substituteInPlace ./tree-sitter-langs-build.el \
+          --replace "tree-sitter-langs-grammar-dir tree-sitter-langs--dir"  "tree-sitter-langs-grammar-dir \"${tree-sitter-grammars}/langs\""
+        '';
+            }))
+          tree-sitter-grammars
+          ];
+    };
+  });
+  
   stable = import inputs.nixpkgs-stable ({
     config = config.nixpkgs.config;
     localSystem = { system = "x86_64-linux"; };

@@ -84,8 +84,10 @@ in {
       racket-mode
       rainbow-delimiters
       reverse-im
-      rust-mode
+      rustic
       smartparens
+      epkgs.tree-sitter
+      epkgs.tree-sitter-langs
       epkgs.melpaStablePackages.telega
       use-package
       visual-fill-column
