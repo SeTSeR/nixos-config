@@ -47,44 +47,39 @@ in {
       ace-window
       avy
       ccls
-      dashboard
-      diminish
+      consult
       direnv
+      embark
+      embark-consult
       eshell-toggle
       flycheck
       flycheck-irony
       flycheck-pkg-config
       flycheck-rust
       flyspell-correct
-      free-keys
-      gcmh
-      glsl-mode
       gnuplot
       google-c-style
       graphviz-dot-mode
       haskell-mode
       irony
-      ivy
-      ivy-bibtex
-      ivy-xref
-      ivy-yasnippet
       lsp-mode
       lsp-ui
       magit
+      marginalia
       markdown-mode
       multitran
       nix-mode
-      notmuch
+      orderless
       org-gcal
       org-ref
       pdf-tools
       powerline
       quelpa
       quelpa-use-package
-      racket-mode
       rainbow-delimiters
       reverse-im
       rustic
+      selectrum
       smartparens
       epkgs.tree-sitter
       epkgs.tree-sitter-langs

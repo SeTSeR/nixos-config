@@ -6,9 +6,9 @@
 
 (use-package ispell
   :bind
-  (("C-. d b" . ispell-buffer)
-   ("C-. d e" . ispell-change-dictionary-to-english)
-   ("C-. d r" . ispell-change-dictionary-to-russian))
+  (("C-, d b" . ispell-buffer)
+   ("C-, d e" . ispell-change-dictionary-to-english)
+   ("C-, d r" . ispell-change-dictionary-to-russian))
   :init
   (defun ispell-set-dictionary (dict)
     "Set dictionary to dict."
@@ -36,10 +36,10 @@
   (ispell-program-name (executable-find "aspell")))
 
 (use-package flyspell
-  :bind (("C-. f b" . flyspell-buffer))
+  :bind (("C-, f b" . flyspell-buffer))
   :hook (text-mode . flyspell-mode)
   :config
-  (unbind-key "C-." flyspell-mode-map))
+  (unbind-key "C-," flyspell-mode-map))
 
 (use-package flyspell-correct
   :after flyspell
