@@ -48,6 +48,7 @@ in {
       avy
       ccls
       consult
+      consult-lsp
       direnv
       embark
       embark-consult

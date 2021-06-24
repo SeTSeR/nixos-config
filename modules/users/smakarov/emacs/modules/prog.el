@@ -31,6 +31,11 @@
   :commands lsp-ui-mode
   :defer t)
 
+(use-package consult-lsp
+  :after (lsp-mode consult)
+  :config
+  (define-key lsp-mode-map [remap xref-find-apropos] #'consult-lsp-symbols))
+
 ;; Tree-sitter
 (use-package tree-sitter
   :config
