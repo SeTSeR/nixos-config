@@ -15,9 +15,10 @@
 
 (use-package embark
   :bind
-  (("C-." . embark-act)
-   ("M-." . embark-dwim)
-   ("C-h B" . embark-bindings))
+  (:map minibuffer-local-map
+	(("C-." . embark-act)
+	 ("M-." . embark-dwim)
+	 ("C-h B" . embark-bindings)))
   :init
   (setq prefix-help-command #'embark-prefix-help-command))
 
