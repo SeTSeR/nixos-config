@@ -34,6 +34,7 @@
 ;; Tree-sitter
 (use-package tree-sitter
   :config
+  (use-package tree-sitter-langs)
   (add-to-list 'tree-sitter-major-mode-language-alist '(rustic-mode . rust))
   (add-to-list 'tree-sitter-major-mode-language-alist '(cc-mode . cpp))
   :hook ((cc-mode rustic-mode) . tree-sitter-hl-mode))
