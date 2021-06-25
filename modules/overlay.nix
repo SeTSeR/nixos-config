@@ -6,10 +6,23 @@ self: old:
       url = "https://github.com/SeTSeR/dot2tex";
       rev = "4b25559cd9b958b2f372baac3d4f647b590e4356";
       sha256 = "098gx2dr9v00y7ckn5183gczijzagzdb20z2v0svlrnzshfdirn1";
-    };    
+    };
+  });
+
+  tdlib = old.tdlib.overrideAttrs (oldAttrs: {
+    version = "1.7.4";
+    src = self.fetchFromGitHub {
+      owner = "tdlib";
+      repo = "td";
+      rev = "cf2be88c34b1b844fb9c2cdf28c3b5f0cce6be6b";
+      sha256 = "sha256-WbKGpCFMm+6PTyIWw7wcPqiNHu2cU6EihYppnTYi9gY=";
+    };
   });
 
   emacsPackagesFor = emacs: (old.emacsPackagesFor emacs).overrideScope' (self: super: {
+    telega = super.melpaPackages.telega.overrideAttrs (oldAttrs: {
+      patches = [ ./fix-store-paths.patch ];
+    });
     tsc = old.symlinkJoin {
       name = "tsc";
       paths = [
@@ -66,7 +79,7 @@ self: old:
           --replace "tree-sitter-langs-grammar-dir tree-sitter-langs--dir"  "tree-sitter-langs-grammar-dir \"${tree-sitter-grammars}/langs\""
         '';
             }))
-          tree-sitter-grammars
+            tree-sitter-grammars
           ];
     };
   });

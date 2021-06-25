@@ -84,7 +84,7 @@ in {
       smartparens
       epkgs.tree-sitter
       epkgs.tree-sitter-langs
-      epkgs.melpaStablePackages.telega
+      epkgs.telega
       use-package
       visual-fill-column
       vterm

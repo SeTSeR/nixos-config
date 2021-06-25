@@ -1,0 +1,14 @@
+diff --git a/telega-server.el b/telega-server-new.el
+index 3cc852c..1c40983 100644
+--- a/telega-server.el
++++ b/telega-server-new.el
+@@ -164,7 +164,8 @@ Raise error if not found."
+               (if telega-use-docker
+                   (telega-docker-run-cmd telega-server-command)
+                 (let ((exec-path (cons telega-directory exec-path)))
+-                  (or (executable-find telega-server-command)
++                  (or (if (file-executable-p telega-server-command) telega-server-command nil)
++		      (or (executable-find telega-server-command))
+                       (error "`%s' not found in exec-path"
+                              telega-server-command))))
+               flags)
