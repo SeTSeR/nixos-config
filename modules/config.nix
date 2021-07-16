@@ -70,6 +70,7 @@ in {
       markdown-mode
       multitran
       nix-mode
+      notmuch
       orderless
       org-gcal
       org-ref
