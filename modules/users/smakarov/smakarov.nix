@@ -34,7 +34,6 @@
     };
     keyboard = {
       layout = "us,ru(winkeys)";
-      options = [ ",grp:win_space_toggle" ];
     };
     activation."mimeapps-remove" = {
       before = [ "linkGeneration" ];

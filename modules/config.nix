@@ -95,7 +95,7 @@ in {
       yasnippet-snippets
     ]) ++
     (with epkgs.elpaPackages; [
-      exwm
+      org
       pinentry
     ]);
   };

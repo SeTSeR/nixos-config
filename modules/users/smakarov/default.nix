@@ -4,6 +4,7 @@
     ./firefox.nix
     ./git.nix
     ./gnupg.nix
+    ./i3
     ./mail.nix
     ./openvpn.nix
     ./packages.nix
@@ -12,8 +13,7 @@
     ./ssh.nix
     ./vim.nix
     ./vscode.nix
-    ./zsh.nix
     ./xdg.nix
-    ./xsession.nix
+    ./zsh.nix
   ];
 }
