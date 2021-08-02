@@ -46,7 +46,6 @@ in {
     (with epkgs.melpaPackages; [
       ace-window
       avy
-      ccls
       consult
       consult-lsp
       direnv
