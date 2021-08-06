@@ -12,7 +12,6 @@
     ./smakarov.nix
     ./ssh.nix
     ./vim.nix
-    ./vscode.nix
     ./xdg.nix
     ./zsh.nix
   ];
