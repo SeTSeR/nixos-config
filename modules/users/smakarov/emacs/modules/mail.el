@@ -27,11 +27,6 @@
 		(gnus-search-engine gnus-search-notmuch
 				    (remove-prefix "@maildir@/cmc"))
 		(get-new-mail nil))
-     (nnmaildir "work"
-		(directory "@maildir@/ispras")
-		(gnus-search-engine gnus-search-notmuch
-				    (remove-prefix "@notmuchrc@/ispras"))
-		(get-new-mail nil))
      (nnmaildir "personal"
 		(directory "@maildir@/main")
 		(gnus-search-engine gnus-search-notmuch
