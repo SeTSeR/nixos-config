@@ -9,20 +9,8 @@ self: old:
     };
   });
 
-  tdlib = old.tdlib.overrideAttrs (oldAttrs: {
-    version = "1.7.4";
-    src = self.fetchFromGitHub {
-      owner = "tdlib";
-      repo = "td";
-      rev = "cf2be88c34b1b844fb9c2cdf28c3b5f0cce6be6b";
-      sha256 = "sha256-WbKGpCFMm+6PTyIWw7wcPqiNHu2cU6EihYppnTYi9gY=";
-    };
-  });
-
   emacsPackagesFor = emacs: (old.emacsPackagesFor emacs).overrideScope' (self: super: {
-    telega = super.melpaPackages.telega.overrideAttrs (oldAttrs: {
-      patches = [ ./fix-store-paths.patch ];
-    });
+    telega = super.melpaStablePackages.telega;
     tsc = old.symlinkJoin {
       name = "tsc";
       paths = [
