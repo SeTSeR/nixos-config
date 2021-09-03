@@ -13,14 +13,6 @@ with lib; {
       type = types.str;
       description = "Work wi-fi key";
     };
-    isprasUserName = mkOption {
-      type = types.str;
-      description = "Username for ISP RAS OpenVPN server";
-    };
-    isprasPassword = mkOption {
-      type = types.str;
-      description = "Password for ISP RAS OpenVPN server";
-    };
     an_secret = mkOption {
       type = types.str;
       description = "Secret for Telegram proxy";
