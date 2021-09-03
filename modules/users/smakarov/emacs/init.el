@@ -37,10 +37,6 @@
    :url "https://github.com/quelpa/quelpa-use-package.git"))
 (require 'quelpa-use-package)
 
-(use-package magit
-  :bind
-  (("C-x g" . magit-status)))
-
 (use-package flycheck
   :config
   (global-flycheck-mode))
