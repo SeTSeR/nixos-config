@@ -41,9 +41,9 @@
 				    (remove-prefix "@maildir@/cmc"))
 		(get-new-mail nil))
      (nnmaildir "personal"
-		(directory "@maildir@/main")
+		(directory "@maildir@/main/[Gmail]")
 		(gnus-search-engine gnus-search-notmuch
-				    (remove-prefix "@maildir@/personal"))
+				    (remove-prefix "@maildir@/main/[Gmail]"))
 		(get-new-mail nil))
      (nnmaildir "microsoft"
 		(directory "@maildir@/microsoft")
