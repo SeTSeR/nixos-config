@@ -9,8 +9,17 @@ self: old:
     };
   });
 
+  tdlib = old.tdlib.overrideAttrs (oldAtrs: {
+    version = "1.7.7";
+    src = self.fetchgit {
+      url = "https://github.com/tdlib/td";
+      rev = "7135caa2bef38939f58e9e206db83fd316236682";
+      sha256 = "sha256-gk5xJMuhOthMLO9VjQhcCPcPCxiz27e3ec8CxHjxSCA=";
+    };
+  });
+
   emacsPackagesFor = emacs: (old.emacsPackagesFor emacs).overrideScope' (self: super: {
-    telega = super.melpaStablePackages.telega;
+    telega = super.melpaPackages.telega;
     tsc = old.symlinkJoin {
       name = "tsc";
       paths = [
