@@ -3,6 +3,7 @@ with import ../../../secrets.nix {};
 rec {
   emacsConfigDir = "~/.config/emacs";
   bashPath = "${pkgs.bash}/bin/bash";
+  notmuchPath = "${pkgs.notmuch}/bin/notmuch";
   notmuchrc = "/home/smakarov/.config/notmuch/notmuchrc";
   maildir = "/home/smakarov/Maildir";
   proxySecretOne = config.secrets.an_secret;

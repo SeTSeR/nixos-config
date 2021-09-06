@@ -7,7 +7,10 @@
 (use-package notmuch
   :init
   (defun set-notmuch-config ()
-    (setenv "NOTMUCH_CONFIG" "@notmuchrc@"))
+    (setenv "NOTMUCH_CONFIG"
+	    (concat (file-name-as-directory
+                 (expand-file-name "notmuch" (xdg-config-home)))
+                "notmuchrc")))
   :defer t
   :hook
   (message-setup . mml-secure-sign-pgpmime)
@@ -16,11 +19,21 @@
   (send-mail-function 'sendmail-send-it)
   (mml-secure-openpgp-sign-with-sender t))
 
+(use-package gnus-search
+  :after gnus
+  :init (use-package xdg)
+  :custom
+  (gnus-search-use-parsed-queries t)
+  (gnus-search-notmuch-config-file
+   (concat (file-name-as-directory
+                 (expand-file-name "notmuch" (xdg-config-home)))
+           "notmuchrc")))
+
 (use-package gnus
   :custom
   (user-mail-address "setser200018@gmail.com")
   (gnus-nntp-server nil)
-  (gnus-select-method '(nnnil ""))
+  (gnus-select-method '(nnnil "nowhere"))
   (gnus-secondary-select-methods
    '((nnmaildir "cmc"
 		(directory "@maildir@/cmc")
@@ -45,8 +58,8 @@
   (send-mail-function 'sendmail-send-it)
   (message-send-mail-function 'sendmail-send-it)
   (mml-secure-openpgp-sign-with-sender t)
+  (gnus-verbose 10)
   (gnus-asynchronous t)
-  (gnus-search-use-parsed-queries t)
-  (gnus-search-notmuch-config-file "@notmuchrc@"))
+  (gnus-use-cache t))
 
 ;;; mail.el ends here
