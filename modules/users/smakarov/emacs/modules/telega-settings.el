@@ -29,7 +29,7 @@
   ((telega-load . telega-mode-line-mode)
    (telega-load . telega-squash-message-mode))
   :custom
-  (telega-filter-default '(any (folder "Dev") (folder "Work") (custom "Important")))
+  (telega-filter-default '(any (folder "Dev") (folder "Work") (folder "Study") (custom "Important")))
   (telega-proxies '((:server "185.86.77.210" :port 3443 :enable :false :type
                    (:@type "proxyTypeMtproto" :secret "@proxySecretOne@")))))
 
