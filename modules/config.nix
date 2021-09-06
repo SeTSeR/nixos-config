@@ -16,7 +16,7 @@ in {
   };
 
   config.emacsPackage = emacsWithPackages {
-    package = pkgs.emacsGcc;
+    package = pkgs.emacsPgtkGcc;
     override = epkgs: epkgs // {
       melpaPackages = epkgs.melpaPackages // {
         direnv = epkgs.melpaPackages.direnv.overrideAttrs(oldAttrs: {
