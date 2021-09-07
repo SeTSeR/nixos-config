@@ -1,11 +1,11 @@
 { pkgs, config, ... }:
 with import ../../../secrets.nix {};
 rec {
-  emacsConfigDir = "~/.config/emacs";
   bashPath = "${pkgs.bash}/bin/bash";
+  emacsConfigDir = "${config.home-manager.users.smakarov.xdg.configHome}/emacs";
   notmuchPath = "${pkgs.notmuch}/bin/notmuch";
-  notmuchrc = "/home/smakarov/.config/notmuch/notmuchrc";
-  maildir = "/home/smakarov/Maildir";
+  notmuchrc = "${config.home-manager.users.smakarov.xdg.configHome}/notmuch/notmuchrc";
+  maildir = "${config.users.users.smakarov.home}/Maildir";
   proxySecretOne = config.secrets.an_secret;
   proxySecretTwo = config.secrets.pr_secret;
   orgGcalClientId = config.secrets.org-gcal-client-id;
