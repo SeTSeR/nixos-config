@@ -112,11 +112,13 @@
     (read-only-mode))
   :hook (compilation-filter . colorize-compilation-buffer))
 
+(use-package nix-proced-readable-mode
+  :hook (proced-mode . nix-proced-readable-mode))
+
 (use-package emacs
   :init
   (add-to-list 'load-path "@emacsConfigDir@/pkgs")
   (server-start)
-  :hook (proced-mode . nix-proced-readable-mode)
   :bind
   ("<f5>" . project-compile)
   ("<f9>" . project-compile)
