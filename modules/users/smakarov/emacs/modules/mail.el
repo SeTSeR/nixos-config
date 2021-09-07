@@ -55,8 +55,7 @@
 		(gnus-search-engine gnus-search-notmuch
 				    (remove-prefix "@maildir@/yandex"))
 		(get-new-mail-nil))))
-  (send-mail-function 'sendmail-send-it)
-  (message-send-mail-function 'sendmail-send-it)
+  (message-send-mail-function 'message-send-mail-with-sendmail)
   (mml-secure-openpgp-sign-with-sender t)
   (gnus-verbose 10)
   (gnus-asynchronous t)
