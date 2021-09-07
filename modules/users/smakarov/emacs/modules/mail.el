@@ -40,10 +40,10 @@
 		(gnus-search-engine gnus-search-notmuch
 				    (remove-prefix "@maildir@/cmc"))
 		(get-new-mail nil))
-     (nnmaildir "personal"
-		(directory "@maildir@/main/[Gmail]")
+     (nnmaildir "gmail"
+		(directory "@maildir@/main")
 		(gnus-search-engine gnus-search-notmuch
-				    (remove-prefix "@maildir@/main/[Gmail]"))
+				    (remove-prefix "@maildir@/main"))
 		(get-new-mail nil))
      (nnmaildir "microsoft"
 		(directory "@maildir@/microsoft")
