@@ -14,7 +14,7 @@
     domain = "smakarov";
     type = "soft";
     item = "core";
-    value = 1024;
+    value = "unlimited";
   }];
 
   sound.enable = true;
