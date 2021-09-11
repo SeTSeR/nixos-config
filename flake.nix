@@ -32,7 +32,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: {
+  outputs = { nixpkgs, ... }@inputs: rec {
     nixosConfigurations = with nixpkgs.lib;
       let
         hosts = map (fname: builtins.head (builtins.match "(.*)\\.nix" fname))
@@ -45,5 +45,20 @@
           };
       in genAttrs hosts mkHost;
     legacyPackages = nixpkgs.legacyPackages;
+    emacsConfig = let readWithSubstitute = file:
+      builtins.readFile (nixpkgs.substituteAll ({ 
+        config = nixosConfigurations.config;
+        lib = nixpkgs.lib;
+        pkgs = nixpkgs; } //
+      { src = file; }));
+      modulePaths = dir: map (fname: dir + "/${fname}") (builtins.attrNames (builtins.readDir dir));
+                  in nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation {
+                    src = ./modules/users/smakarov/emacs;
+                    unpackPhase = true;
+                    buildPhase = true;
+                    installPhase = ''
+install -t $out $src/early-init.el $src/init.el $src/pkgs $src/yasnippet-snippets
+                    '';
+                  };
   };
 }
