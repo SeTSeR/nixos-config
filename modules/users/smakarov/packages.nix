@@ -1,30 +1,5 @@
 { config, pkgs, lib, ... }:
-let
-  homePackages = with pkgs; [
-    djview
-    dot2tex
-    gnuplot
-    graphviz
-    python37Packages.pygments
-    steam
-    (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
-    texlive.combined.scheme-full
-  ];
-  commonPackages = with pkgs;
-  [
-    libwebp
-    fd
-    flameshot
-    stable.ffmpeg-full
-    git-crypt
-    htop
-    nodejs-12_x
-    ripgrep
-    spotify
-    tridactyl-native
-    wakatime
-  ];
-in {
+{
   home-manager.users.smakarov = {
     xdg.configFile."nixpkgs/config.nix".text = ''
       {
@@ -32,7 +7,28 @@ in {
       }
     '';
 
-    home.packages = commonPackages ++ lib.optionals config.deviceSpecific.isHomeMachine homePackages;
+    home.packages = with pkgs; [
+      vscodium
+      djview
+      dot2tex
+      gnuplot
+      graphviz
+      python37Packages.pygments
+      steam
+      (steam.override { extraPkgs = pkgs: [ openmw ]; }).run
+      texlive.combined.scheme-full
+      libwebp
+      fd
+      flameshot
+      stable.ffmpeg-full
+      git-crypt
+      htop
+      nodejs-12_x
+      ripgrep
+      spotify
+      tridactyl-native
+      wakatime
+    ];
 
     programs.direnv = {
       enable = true;
