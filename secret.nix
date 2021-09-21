@@ -1,7 +1,7 @@
 {
   pr_secret = "$PR_SECRET";
   an_secret = "$AN_SECRET";
-  stud_number = "$STUD_NUMBER";
+  stud-number = "$STUD_NUMBER";
   gmail-mbsync-password = "$GMAIL_MBSYNC_PASSWORD";
   stud-mail-password = "$STUD_MAIL_PASSWORD";
   outlook-mail-password = "$OUTLOOK_MAIL_PASSWORD";
