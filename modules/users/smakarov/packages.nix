@@ -8,7 +8,8 @@
     '';
 
     home.packages = with pkgs; [
-      vscodium
+      envsubst
+      vscode
       djview
       dot2tex
       gnuplot
