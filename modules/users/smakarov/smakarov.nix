@@ -6,7 +6,7 @@
     isNormalUser = true;
     home = "/home/smakarov";
     description = "Sergey Makarov";
-    extraGroups = [ "wheel" "networkmanager" "video" "storage" "docker" "terraria" "adbusers" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "storage" "docker" "terraria" "adbusers" "vboxusers" ];
     hashedPassword =
     "$6$bhfILKl6NKxZT25$wOQ0A9AtNYLCGLHcR4Bee7VBzYUusq4Af.DAL4Qr5c12JN3LBYH1PFtm.UvCcvXjZ1PbpuhGndnQCgbPaj/.C.";
     shell = pkgs.zsh;
