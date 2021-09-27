@@ -51,6 +51,7 @@
     "Exclude todo keywords with a done state from refile targets"
     (not (member (nth 2 (org-heading-components)) org-done-keywords)))
   :mode (("\\.org$" . org-mode))
+  :hook (emacs-startup . org-agenda-list)
   :config
   (org-babel-do-load-languages 'org-babel-load-languages
         '((emacs-lisp . t)
