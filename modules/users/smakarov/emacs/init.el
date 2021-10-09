@@ -102,8 +102,6 @@
 
 (use-package which-key :config (which-key-mode))
 
-(use-package pinentry :config (pinentry-start))
-
 (use-package ansi-color
   :init
   (defun colorize-compilation-buffer ()

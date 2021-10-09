@@ -88,7 +88,6 @@ in {
     ]) ++
     (with epkgs.elpaPackages; [
       org
-      pinentry
     ]);
   };
 }

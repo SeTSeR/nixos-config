@@ -15,9 +15,6 @@
         "E55515079A1F1D827849C252AEF4F49DB09A90FC"
       ];
       pinentryFlavor = "qt";
-      extraConfig = ''
-          allow-emacs-pinentry
-              '';
     };
  };
 }
