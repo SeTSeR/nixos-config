@@ -26,6 +26,12 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package use-package-core
+  :custom
+  (use-package-verbose t)
+  (use-package-minimum-reported-time 0.005)
+  (use-package-enable-imenu-support t))
+
 (use-package quelpa
   :custom
   (quelpa-checkout-melpa-p nil))
@@ -38,8 +44,7 @@
 (require 'quelpa-use-package)
 
 (use-package flycheck
-  :config
-  (global-flycheck-mode))
+  :defer t)
 
 (use-package powerline
   :config
@@ -53,7 +58,8 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package direnv
-  :config (direnv-mode))
+  :defer t
+  :hook (prog-mode . direnv-mode))
 
 (use-package markdown-mode
   :defer t
@@ -65,6 +71,7 @@
   (reverse-im-mode 1))
 
 (use-package avy
+  :defer t
   :bind
   ("C-;" . avy-goto-char)
   ("C-'" . avy-goto-char-2)
@@ -73,7 +80,9 @@
   :config
   (avy-setup-default))
 
-(use-package ace-window :bind ("M-o" . ace-window))
+(use-package ace-window
+  :bind ("M-o" . ace-window)
+  :defer t)
 
 (use-package tramp
   :config
@@ -87,14 +96,12 @@
 
 (use-package eshell-toggle
   :bind
-  ("s-`" . eshell-toggle))
-
-(use-package gnuplot
+  ("s-`" . eshell-toggle)
   :defer t)
 
-(use-package pdf-tools
-  :config
-  (pdf-loader-install))
+(use-package gnuplot :defer t)
+
+(use-package pdf-tools :config (pdf-loader-install))
 
 (use-package multitran :defer t)
 
