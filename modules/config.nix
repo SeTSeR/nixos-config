@@ -47,7 +47,6 @@ in {
       embark-consult
       eshell-toggle
       flycheck
-      flycheck-irony
       flycheck-pkg-config
       flycheck-rust
       flyspell-correct
@@ -55,7 +54,6 @@ in {
       google-c-style
       graphviz-dot-mode
       haskell-mode
-      irony
       lsp-mode
       lsp-ui
       marginalia

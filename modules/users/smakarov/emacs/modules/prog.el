@@ -54,6 +54,4 @@
   :interpreter "glsl"
   :defer t)
 
-(use-package irony :hook ((c-mode . c++-mode) . (irony-mode)))
-
 ;;; prog.el ends here
