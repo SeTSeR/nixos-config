@@ -14,7 +14,7 @@ self: old:
     src = self.fetchgit {
       url = "https://github.com/tdlib/td";
       rev = "7d41d9eaa58a6e0927806283252dc9e74eda5512";
-      sha256 = "098gx2dr9v00y7ckn5183gczijzagzdb20z2v0svlrnzshfdirn1";
+      sha256 = "sha256-SOPfojDokeIn8wVxNhrhMPYL8kVpxHbLq49E7FbWZyU=";
     };
   });
 
