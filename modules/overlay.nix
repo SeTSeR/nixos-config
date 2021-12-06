@@ -10,11 +10,11 @@ self: old:
   });
 
   tdlib = old.tdlib.overrideAttrs (oldAtrs: {
-    version = "1.7.7";
+    version = "1.7.9";
     src = self.fetchgit {
       url = "https://github.com/tdlib/td";
-      rev = "7135caa2bef38939f58e9e206db83fd316236682";
-      sha256 = "sha256-gk5xJMuhOthMLO9VjQhcCPcPCxiz27e3ec8CxHjxSCA=";
+      rev = "7d41d9eaa58a6e0927806283252dc9e74eda5512";
+      sha256 = "098gx2dr9v00y7ckn5183gczijzagzdb20z2v0svlrnzshfdirn1";
     };
   });
 
