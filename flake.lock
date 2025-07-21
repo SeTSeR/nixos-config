@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "nixpkgs-main-pc": {
+      "locked": {
+        "lastModified": 1752997324,
+        "narHash": "sha256-vtTM4oDke3SeDj+1ey6DjmzXdq8ZZSCLWSaApADDvIE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7c688a0875df5a8c28a53fb55ae45e94eae0dddb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-orangepi3": {
       "locked": {
         "lastModified": 1752950548,
@@ -18,6 +34,7 @@
     },
     "root": {
       "inputs": {
+        "nixpkgs-main-pc": "nixpkgs-main-pc",
         "nixpkgs-orangepi3": "nixpkgs-orangepi3"
       }
     }
