@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1753122741,
+        "narHash": "sha256-nFxE8lk9JvGelxClCmwuJYftbHqwnc01dRN4DVLUroM=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs-main-pc": {
       "locked": {
         "lastModified": 1752997324,
@@ -32,10 +48,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-visionfive2": {
+      "locked": {
+        "lastModified": 1753105564,
+        "narHash": "sha256-m2005yRP2mXLq10Xkl+HxlM1wB5bNQHolDpE9TS09y4=",
+        "owner": "NickCao",
+        "repo": "nixpkgs",
+        "rev": "c6704a4633ffdd04bf19c0e3bcc0d4dd49d1ccdc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NickCao",
+        "ref": "riscv",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs-main-pc": "nixpkgs-main-pc",
-        "nixpkgs-orangepi3": "nixpkgs-orangepi3"
+        "nixpkgs-orangepi3": "nixpkgs-orangepi3",
+        "nixpkgs-visionfive2": "nixpkgs-visionfive2"
       }
     }
   },
