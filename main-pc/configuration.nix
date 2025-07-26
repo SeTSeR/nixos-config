@@ -47,10 +47,7 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
+  console.font = "Lat2-Terminus16";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.trusted-users = [ "@wheel" ];
@@ -83,14 +80,8 @@
     pulse.enable = true;
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us,ru(winkeys)";
-  services.xserver.xkb.options = "grp:caps_toggle";
 
   # Custom udev rules
   services.udev.extraRules = ''
@@ -148,9 +139,6 @@
   programs.steam.package = pkgs.steam.override {
     extraLibraries = pkgs: [ pkgs.pkgsi686Linux.gperftools ];
   };
-
-  virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
 
   # List services that you want to enable:
 
