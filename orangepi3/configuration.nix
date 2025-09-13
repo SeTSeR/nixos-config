@@ -81,6 +81,15 @@
   services.tailscale.enable = true;
   services.adguardhome.enable = true;
   services.xrdp.enable = true;
+  services.zapret = {
+    enable = true;
+    params = [
+      "--dpi-desync=fake,multidisorder"
+      "--dpi-desync-fooling=md5sig"
+      "--dpi-desync-split-pos=method+2"
+      "--dpi-desync-fake-http=0x00000000"
+    ];
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 53 80 ];
