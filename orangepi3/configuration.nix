@@ -47,7 +47,6 @@
       tree
       screen
       dmenu
-      dwm
       git
       wiringOP
     ];
@@ -80,7 +79,12 @@
   services.openssh.enable = true;
   services.tailscale.enable = true;
   services.adguardhome.enable = true;
-  services.xrdp.enable = true;
+  services.xrdp = {
+    enable = true;
+    openFirewall = true;
+    defaultWindowManager = "${pkgs.dwm}/bin/dwm";
+  };
+  services.xserver.windowManager.dwm.enable = true;
   services.zapret = {
     enable = true;
     params = [
