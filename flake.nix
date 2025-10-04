@@ -1,10 +1,12 @@
 {
   description = "A NixOS configuration flake";
 
-  inputs.nixpkgs-main-pc.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  inputs.nixpkgs-orangepi3.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.nixpkgs-visionfive2.url = "github:NixOS/nixpkgs/nixos-unstable-small";
-  inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  inputs = {
+    nixpkgs-main-pc.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-orangepi3.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-visionfive2.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+  };
   
   outputs = { self, nixpkgs-main-pc, nixpkgs-orangepi3, nixpkgs-visionfive2, ... } @ inputs: {
     nixosConfigurations = {
