@@ -39,7 +39,9 @@
     system = "riscv64-linux";
     rustc.config = "riscv64gc-unknown-linux-gnu";
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   nix.registry = {
     self.flake = self;
     np.flake = nixpkgs;
@@ -70,8 +72,18 @@
       dmenu
       rtorrent
       git
-      verilog
       nethack
+      unzip
+      ((emacsPackagesFor emacs-nox).emacsWithPackages (
+        epkgs: with epkgs; [
+          async
+          nix-mode
+          org
+          epkgs.melpaPackages.telega
+          tree-sitter-langs
+          vterm
+        ]
+      ))
     ];
   };
 
