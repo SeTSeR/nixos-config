@@ -33,5 +33,12 @@
         specialArgs = { inherit self; nixpkgs = nixpkgs-visionfive2; };
       };
     };
+    devShells.aarch64-linux.default =
+      with import nixpkgs-orangepi3 { system = "aarch64-linux"; };
+      mkShell {
+      buildInputs = [
+        nixfmt
+      ];
+    };
   };
 }
