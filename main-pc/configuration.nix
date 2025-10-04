@@ -2,13 +2,20 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, self, nixpkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  self,
+  nixpkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
@@ -19,7 +26,10 @@
     efiSupport = true;
     efiInstallAsRemovable = true;
     mirroredBoots = [
-      { devices = [ "nodev" ]; path = "/boot"; }
+      {
+        devices = [ "nodev" ];
+        path = "/boot";
+      }
     ];
   };
 
@@ -27,7 +37,7 @@
   # Pick only one of the below networking options.
   networking = {
     wireless = {
-      enable = true;  # Enables wireless support via wpa_supplicant.
+      enable = true; # Enables wireless support via wpa_supplicant.
       secretsFile = "/home/wireless.env";
       networks."My Home net ASUS".psk = "LF73F4AS45MAIZDNACBN";
       networks."Galaxy S22 Ultra".psk = "blue2694";
@@ -49,7 +59,10 @@
   i18n.defaultLocale = "ru_RU.UTF-8";
   console.font = "Lat2-Terminus16";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.settings.trusted-users = [ "@wheel" ];
   nix.registry = {
     self.flake = self;
@@ -60,18 +73,20 @@
   services.emacs = {
     defaultEditor = true;
     install = true;
-    package = with pkgs; ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
-      epkgs: with epkgs; [
-        async
-        nix-mode
-        org
-        rustic
-        epkgs.melpaPackages.telega
-        ement
-        tree-sitter-langs
-        vterm
-      ]
-    ));
+    package =
+      with pkgs;
+      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
+        epkgs: with epkgs; [
+          async
+          nix-mode
+          org
+          rustic
+          epkgs.melpaPackages.telega
+          ement
+          tree-sitter-langs
+          vterm
+        ]
+      ));
     startWithGraphical = true;
   };
 
@@ -108,7 +123,13 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.whaleahead = {
     isNormalUser = true;
-    extraGroups = [ "dialout" "wheel" "disk" "docker" "kvm" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "dialout"
+      "wheel"
+      "disk"
+      "docker"
+      "kvm"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
       tree
@@ -175,4 +196,3 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }
-

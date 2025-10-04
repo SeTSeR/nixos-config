@@ -2,12 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, self, nixpkgs, ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  lib,
+  self,
+  nixpkgs,
+  ...
+}:
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
   boot.loader.grub.enable = false;
@@ -40,7 +47,10 @@
     rustc.config = "riscv64gc-unknown-linux-gnu";
   };
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
   nix.registry = {
     self.flake = self;
@@ -64,7 +74,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.whaleahead = {
     isNormalUser = true;
-    extraGroups = [ "video" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "video"
+      "wheel"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
       screen

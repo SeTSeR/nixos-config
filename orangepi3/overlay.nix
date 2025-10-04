@@ -1,6 +1,5 @@
 [
-  (self: super:
-    {
-      wiringOP = super.callPackage ./wiringop.nix { };
-    })
+  (self: super: {
+    wiringOP = super.callPackage ./wiringop.nix { };
+  })
 ]

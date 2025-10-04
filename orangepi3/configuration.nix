@@ -2,12 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ self, nixpkgs, config, pkgs, ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  self,
+  nixpkgs,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
   boot.loader.grub.enable = false;
@@ -20,7 +26,10 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = import ./overlay.nix;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.registry = {
     self.flake = self;
     np.flake = nixpkgs;
@@ -28,7 +37,7 @@
 
   networking.hostName = "orangepi3"; # Define your hostname.
   # Pick only one of the below networking options.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.wireless.networks."My Home net ASUS".psk = "LF73F4AS45MAIZDNACBN";
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
@@ -41,7 +50,11 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.whaleahead = {
     isNormalUser = true;
-    extraGroups = [ "dialout" "video" "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "dialout"
+      "video"
+      "wheel"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       luakit
       tree
@@ -96,7 +109,10 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 53 80 ];
+  networking.firewall.allowedTCPPorts = [
+    53
+    80
+  ];
   networking.firewall.allowedUDPPorts = [ 53 ];
   networking.firewall.checkReversePath = "loose";
 
@@ -117,4 +133,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
