@@ -102,12 +102,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.tailscale.enable = true;
-  services.xrdp = {
-    enable = true;
-    openFirewall = true;
-    defaultWindowManager = "dwm";
-  };
+  # services.tailscale.enable = true;
 
   networking.wireless = {
     enable = true;

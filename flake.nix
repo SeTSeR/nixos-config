@@ -3,7 +3,7 @@
 
   inputs.nixpkgs-main-pc.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   inputs.nixpkgs-orangepi3.url = "github:NixOS/nixpkgs/nixos-unstable";
-  inputs.nixpkgs-visionfive2.url = "github:NickCao/nixpkgs/riscv";
+  inputs.nixpkgs-visionfive2.url = "github:NixOS/nixpkgs/nixos-unstable-small";
   inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   
   outputs = { self, nixpkgs-main-pc, nixpkgs-orangepi3, nixpkgs-visionfive2, ... } @ inputs: {
@@ -40,5 +40,9 @@
         nixfmt
       ];
     };
+    packages.riscv64-linux = import nixpkgs-visionfive2 {
+        system = "riscv64-linux";
+        overlays = [ (import ./visionfive2/overlay.nix) ];
+      };
   };
 }
