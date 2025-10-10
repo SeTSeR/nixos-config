@@ -101,10 +101,7 @@
   services.zapret = {
     enable = true;
     params = [
-      "--dpi-desync=fake,multidisorder"
-      "--dpi-desync-fooling=md5sig"
-      "--dpi-desync-split-pos=method+2"
-      "--dpi-desync-fake-http=0x00000000"
+      "--methodeol"
     ];
   };
 
