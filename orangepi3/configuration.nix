@@ -62,6 +62,10 @@
       dmenu
       git
       wiringOP
+      (emacs-nox.pkgs.withPackages (pkgs: with pkgs; [
+        nix-mode
+        melpaPackages.telega
+      ]))
     ];
   };
 
