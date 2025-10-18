@@ -103,6 +103,15 @@
     params = [
       "--methodeol"
     ];
+    whitelist = [
+      "youtube.com"
+      "googlevideo.com"
+      "ytimg.com"
+      "youtu.be"
+      "matrix.org"
+      "discord.com"
+      "discordapp.com"
+    ];
   };
 
   # Open ports in the firewall.
