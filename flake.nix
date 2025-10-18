@@ -2,58 +2,51 @@
   description = "A NixOS configuration flake";
 
   inputs = {
-    nixpkgs-main-pc.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-orangepi3.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-visionfive2.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
     {
       self,
-      nixpkgs-main-pc,
-      nixpkgs-orangepi3,
-      nixpkgs-visionfive2,
+      nixpkgs,
       ...
     }@inputs:
     {
       nixosConfigurations = {
-        main-pc = nixpkgs-main-pc.lib.nixosSystem {
+        main-pc = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./main-pc/configuration.nix
           ];
           specialArgs = {
-            inherit self;
-            nixpkgs = nixpkgs-main-pc;
+            inherit self nixpkgs;
           };
         };
 
-        orangepi3 = nixpkgs-orangepi3.lib.nixosSystem {
+        orangepi3 = nixpkgs.lib.nixosSystem {
           system = "aarch64-linux";
           modules = [
             ./orangepi3/configuration.nix
           ];
           specialArgs = {
-            inherit self;
-            nixpkgs = nixpkgs-orangepi3;
+            inherit self nixpkgs;
           };
         };
 
-        visionfive2 = nixpkgs-visionfive2.lib.nixosSystem {
+        visionfive2 = nixpkgs.lib.nixosSystem {
           system = "riscv64-linux";
           modules = [
             ./visionfive2/configuration.nix
             inputs.nixos-hardware.nixosModules.starfive-visionfive-2
           ];
           specialArgs = {
-            inherit self;
-            nixpkgs = nixpkgs-visionfive2;
+            inherit self nixpkgs;
           };
         };
       };
-      formatter.aarch64-linux = nixpkgs-orangepi3.legacyPackages.aarch64-linux.nixfmt-tree;
-      packages.riscv64-linux = import nixpkgs-visionfive2 {
+      formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.nixfmt-tree;
+      packages.riscv64-linux = import nixpkgs {
         system = "riscv64-linux";
         overlays = [ (import ./visionfive2/overlay.nix) ];
       };
