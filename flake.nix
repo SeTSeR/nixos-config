@@ -15,7 +15,7 @@
       self,
       nixpkgs,
       nixos-hardware,
-      nix-on-droid
+      nix-on-droid,
     }:
     {
       nixosConfigurations = {

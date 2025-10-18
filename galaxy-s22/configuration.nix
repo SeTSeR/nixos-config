@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Simply install just the packages
@@ -27,13 +32,15 @@
     openssh
     mosh
     git
-    (emacs.pkgs.withPackages (epkgs: with epkgs; [
-      org
-      melpaPackages.telega
-      tree-sitter
-      vterm
-      nix-mode
-    ]))
+    (emacs.pkgs.withPackages (
+      epkgs: with epkgs; [
+        org
+        melpaPackages.telega
+        tree-sitter
+        vterm
+        nix-mode
+      ]
+    ))
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc
@@ -47,6 +54,6 @@
     experimental-features = nix-command flakes
   '';
 
-    # Set your time zone
+  # Set your time zone
   #time.timeZone = "Europe/Berlin";
 }
