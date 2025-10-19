@@ -57,7 +57,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
-  console.font = "Lat2-Terminus16";
+  console = {
+    font = "cyr-sun16";
+    useXkbConfig = true;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -103,6 +106,11 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  services.xserver.xkb = {
+    layout = "us,ru";
+    variant = ",winkeys";
+    options = "ctrl:nocaps,grp:lctrl_toggle";
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.whaleahead = {
