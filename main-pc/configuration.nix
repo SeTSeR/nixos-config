@@ -174,6 +174,12 @@
   };
   programs.waybar.enable = true;
 
+  security.apparmor = {
+    enable = true;
+    killUnconfinedConfinables = true;
+    packages = [ pkgs.apparmor-profiles ];
+  };
+
   services.upower.enable = true;
   services.udisks2.enable = true;
 
