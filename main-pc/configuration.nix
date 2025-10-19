@@ -70,33 +70,11 @@
   };
   nixpkgs.config.allowUnfree = true;
 
-  services.emacs = {
-    defaultEditor = true;
-    install = true;
-    package =
-      with pkgs;
-      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
-        epkgs: with epkgs; [
-          async
-          nix-mode
-          org
-          rustic
-          epkgs.melpaPackages.telega
-          ement
-          tree-sitter-langs
-          vterm
-        ]
-      ));
-    startWithGraphical = true;
-  };
-
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
     pulse.enable = true;
   };
-
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Custom udev rules
   services.udev.extraRules = ''
@@ -112,7 +90,13 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  fonts.packages = [ pkgs.noto-fonts-emoji ];
+  fonts.packages = with pkgs; [
+    noto-fonts-emoji
+    font-awesome
+    nerd-fonts.meslo-lg
+  ];
+
+  hardware.acpilight.enable = true;
 
   # Enable OpenGL hardware acceleration.
   hardware.graphics.enable = true;
@@ -129,6 +113,7 @@
       "disk"
       "docker"
       "kvm"
+      "video"
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
@@ -138,6 +123,28 @@
       rdesktop
       openmw
       git
+      bemenu
+      wl-clipboard
+      flameshot
+      mako
+      swaylock
+      s6
+      s6-rc
+      poweralertd
+      kitty
+      j4-dmenu-desktop
+      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
+        epkgs: with epkgs; [
+          async
+          nix-mode
+          org
+          rustic
+          epkgs.melpaPackages.telega
+          ement
+          tree-sitter-langs
+          vterm
+        ]
+      ))
     ];
   };
 
@@ -160,6 +167,15 @@
   programs.steam.package = pkgs.steam.override {
     extraLibraries = pkgs: [ pkgs.pkgsi686Linux.gperftools ];
   };
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+  programs.waybar.enable = true;
+
+  services.upower.enable = true;
+  services.udisks2.enable = true;
 
   # List services that you want to enable:
 
