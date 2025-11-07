@@ -94,7 +94,7 @@
   # services.printing.enable = true;
 
   fonts.packages = with pkgs; [
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     font-awesome
     nerd-fonts.meslo-lg
   ];
