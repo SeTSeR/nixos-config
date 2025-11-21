@@ -145,6 +145,8 @@
         epkgs: with epkgs; [
           async
           nix-mode
+          haskell-emacs
+          haskell-mode
           org
           rustic
           epkgs.melpaPackages.telega
