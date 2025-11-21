@@ -163,6 +163,26 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    (pkgs.writeShellApplication {
+      name = "sudo";
+      runtimeInputs = [ config.systemd.package ];
+      text = ''exec run0 ${
+        lib.concatMapStringsSep " " (var: "--setenv=${var}") [
+          "PATH"
+          "SHELL"
+          "LOCALE_ARCHIVE"
+          "TZDIR"
+          "NIX_PATH"
+          "EDITOR"
+          "PAGER"
+          "MANPAGER"
+          "LESS"
+          "LESSKEYIN_SYSTEM"
+          "LESSOPEN"
+          "SYSTEMD_LESS"
+        ]
+      } "$@"'';
+    })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -184,10 +204,13 @@
   };
   programs.waybar.enable = true;
 
-  security.apparmor = {
-    enable = true;
-    killUnconfinedConfinables = true;
-    packages = [ pkgs.apparmor-profiles ];
+  security = {
+    apparmor = {
+      enable = true;
+      killUnconfinedConfinables = true;
+      packages = [ pkgs.apparmor-profiles ];
+    };
+    sudo.enable = false;
   };
 
   services.upower.enable = true;

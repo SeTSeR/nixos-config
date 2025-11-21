@@ -65,11 +65,36 @@
     ];
   };
 
+  security = {
+    polkit.enable = true;
+    sudo.enable = false;
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    (pkgs.writeShellApplication {
+      name = "sudo";
+      runtimeInputs = [ config.systemd.package ];
+      text = ''exec run0 ${
+        lib.concatMapStringsSep " " (var: "--setenv=${var}") [
+          "PATH"
+          "SHELL"
+          "LOCALE_ARCHIVE"
+          "TZDIR"
+          "NIX_PATH"
+          "EDITOR"
+          "PAGER"
+          "MANPAGER"
+          "LESS"
+          "LESSKEYIN_SYSTEM"
+          "LESSOPEN"
+          "SYSTEMD_LESS"
+        ]
+      } "$@"'';
+    })
   ];
   environment.etc."orangepi-release".text = "BOARD=orangepi3-h6";
 
