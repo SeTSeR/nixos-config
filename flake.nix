@@ -8,6 +8,10 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,6 +20,7 @@
       nixpkgs,
       nixos-hardware,
       nix-on-droid,
+      sops-nix,
     }:
     {
       nixosConfigurations = {
@@ -23,6 +28,7 @@
           system = "x86_64-linux";
           modules = [
             ./main-pc/configuration.nix
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit self nixpkgs;
@@ -33,6 +39,7 @@
           system = "aarch64-linux";
           modules = [
             ./orangepi3/configuration.nix
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit self nixpkgs;
@@ -44,6 +51,7 @@
           modules = [
             ./visionfive2/configuration.nix
             nixos-hardware.nixosModules.starfive-visionfive-2
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit self nixpkgs;
