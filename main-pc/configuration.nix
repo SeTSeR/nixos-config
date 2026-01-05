@@ -33,27 +33,34 @@
     ];
   };
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  sops = {
+    age = {
+      generateKey = false;
+      keyFile = "/var/lib/sops-nix/keys.txt";
+    };
+    secrets.wifi-conf = {
+      format = "binary";
+      owner = config.users.users.wpa_supplicant.name;
+      group = config.users.users.wpa_supplicant.group;
+      mode = "0444";
+      restartUnits = [ "wpa_supplicant.service" ];
+      sopsFile = ../secrets/wifi-mobile.conf;
+    };
+  };
+
   # Pick only one of the below networking options.
   networking = {
     wireless = {
       enable = true; # Enables wireless support via wpa_supplicant.
-      secretsFile = "/home/wireless.env";
-      networks."My Home net ASUS".psk = "LF73F4AS45MAIZDNACBN";
-      networks."Galaxy S22 Ultra".psk = "blue2694";
+      extraConfigFiles = [ config.sops.secrets.wifi-conf.path ];
+      secretsFile = config.sops.secrets.wifi-conf.path;
     };
     hostId = "fb0d0e1d";
     hostName = "main-pc";
   };
 
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
@@ -89,9 +96,6 @@
     SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6010", MODE="0666", NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", RUN+="${pkgs.coreutils}/bin/chmod 0666 %c"
     SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666", NAME="bus/usb/$env{BUSNUM}/$env{DEVNUM}", RUN+="${pkgs.coreutils}/bin/chmod 0666 %c"
   '';
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   fonts.packages = with pkgs; [
     noto-fonts-color-emoji
@@ -217,20 +221,6 @@
   services.udisks2.enable = true;
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

@@ -1,0 +1,13 @@
+keys:
+  - &admin_main-pc age1ta68hr35ytuzdap3ese5w5ph40mksyzt29j6ws5n8m522crn3ggs36hnxr
+  - &host_main-pc age14zycuvtmhafq27udp23xlvj4nvsufxvzckw8hv3yzwa0gzzsyp4spyqnhn
+  - &admin_orangepi3 age1uwg0m4zp23yhx34h6mj55mdkjswv7cw0x2nh4dyf9h2mpgcxcelsrlrnws
+  - &host_orangepi3 age1rgxzh2hhz96pwshq4kskhmqu7zzy5ajy5z9udtvsh66trtekjcksc54y7c
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|conf)$
+    key_groups:
+    - age:
+      - *admin_main-pc
+      - *host_main-pc
+      - *admin_orangepi3
+      - *host_orangepi3

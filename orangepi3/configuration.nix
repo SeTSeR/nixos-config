@@ -35,11 +35,30 @@
     np.flake = nixpkgs;
   };
 
-  networking.hostName = "orangepi3"; # Define your hostname.
+  sops = {
+    age = {
+      generateKey = false;
+      keyFile = "/var/lib/sops-nix/keys.txt";
+    };
+    secrets.wifi-conf = {
+      format = "binary";
+      owner = config.users.users.wpa_supplicant.name;
+      group = config.users.users.wpa_supplicant.group;
+      mode = "0444";
+      restartUnits = [ "wpa_supplicant.service" ];
+      sopsFile = ../secrets/wifi-home.conf;
+    };
+  };
+
   # Pick only one of the below networking options.
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-  networking.wireless.networks."My Home net ASUS".psk = "LF73F4AS45MAIZDNACBN";
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking = {
+    wireless = {
+      enable = true; # Enables wireless support via wpa_supplicant.
+      extraConfigFiles = [ config.sops.secrets.wifi-conf.path ];
+      secretsFile = config.sops.secrets.wifi-conf.path;
+    };
+    hostName = "orangepi3";
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
