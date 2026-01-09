@@ -45,26 +45,9 @@
             inherit self nixpkgs;
           };
         };
-
-        visionfive2 = nixpkgs.lib.nixosSystem {
-          system = "riscv64-linux";
-          modules = [
-            ./visionfive2/configuration.nix
-            nixos-hardware.nixosModules.starfive-visionfive-2
-            sops-nix.nixosModules.sops
-          ];
-          specialArgs = {
-            inherit self nixpkgs;
-          };
-        };
       };
 
       formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.nixfmt-tree;
-
-      packages.riscv64-linux = import nixpkgs {
-        system = "riscv64-linux";
-        overlays = [ (import ./visionfive2/overlay.nix) ];
-      };
 
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs { system = "aarch64-linux"; };
