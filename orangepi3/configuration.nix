@@ -134,7 +134,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "server";
+    extraSetFlags = [ "--advertise-routes=192.0.0.0/8" ];
+  };
   services.adguardhome.enable = true;
   services.xrdp = {
     enable = true;
@@ -145,7 +149,14 @@
   services.zapret = {
     enable = true;
     params = [
-      "--methodeol"
+      "--dpi-desync=fakedsplit"
+      "--dpi-desync-fooling=ts"
+      "--dpi-desync-split-pos=1"
+      "--new"
+      "--filter-tcp=443"
+      "--hostlist-domains=rutracker.org"
+      "--dpi-desync=hostfakesplit"
+      "--dpi-desync-fooling=ts"
     ];
     whitelist = [
       "youtube.com"
