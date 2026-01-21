@@ -152,11 +152,6 @@
       "--dpi-desync=fakedsplit"
       "--dpi-desync-fooling=ts"
       "--dpi-desync-split-pos=1"
-      "--new"
-      "--filter-tcp=443"
-      "--hostlist-domains=rutracker.org"
-      "--dpi-desync=hostfakesplit"
-      "--dpi-desync-fooling=ts"
     ];
     whitelist = [
       "youtube.com"
