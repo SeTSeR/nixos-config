@@ -145,6 +145,8 @@
       poweralertd
       kitty
       j4-dmenu-desktop
+      libimobiledevice
+      ifuse
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
@@ -219,6 +221,7 @@
 
   services.upower.enable = true;
   services.udisks2.enable = true;
+  services.usbmuxd.enable = true;
 
   # List services that you want to enable:
 
