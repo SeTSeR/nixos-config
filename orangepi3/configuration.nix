@@ -81,6 +81,17 @@
       dmenu
       git
       wiringOP
+      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
+        epkgs: with epkgs; [
+          async
+          nix-mode
+          org
+          epkgs.melpaPackages.telega
+          ement
+          tree-sitter-langs
+          vterm
+        ]
+      ))
     ];
   };
 
