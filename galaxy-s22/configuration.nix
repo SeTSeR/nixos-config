@@ -32,6 +32,7 @@
     openssh
     mosh
     git
+    rclone
     (emacs.pkgs.withPackages (
       epkgs: with epkgs; [
         org
