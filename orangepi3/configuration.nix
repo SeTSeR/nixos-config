@@ -148,7 +148,7 @@
   services.tailscale = {
     enable = true;
     useRoutingFeatures = "server";
-    extraSetFlags = [ "--advertise-routes=192.0.31.0/24" ];
+    extraSetFlags = [ "--advertise-routes=192.168.31.0/24" ];
   };
   services.adguardhome.enable = true;
   services.xrdp = {
