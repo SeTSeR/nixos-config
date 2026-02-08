@@ -134,6 +134,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1770136044,
+        "narHash": "sha256-tlFqNG/uzz2++aAmn4v8J0vAkV3z7XngeIIB3rM3650=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e576e3c9cf9bad747afcddd9e34f51d18c855b4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nmd": {
       "flake": false,
       "locked": {
@@ -193,6 +209,7 @@
         "nix-on-droid": "nix-on-droid",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable",
         "sops-nix": "sops-nix"
       }
     },

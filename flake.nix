@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-24.05";
@@ -18,6 +19,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       nixos-hardware,
       nix-on-droid,
       sops-nix,
@@ -50,7 +52,7 @@
       formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.nixfmt-tree;
 
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        pkgs = import nixpkgs-stable { system = "aarch64-linux"; };
         modules = [ ./galaxy-s22/configuration.nix ];
       };
     };
