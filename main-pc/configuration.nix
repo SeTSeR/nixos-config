@@ -78,7 +78,10 @@
     self.flake = self;
     np.flake = nixpkgs;
   };
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ (import ./overlay.nix) ];
+  };
 
   services.pipewire = {
     enable = true;
@@ -147,6 +150,7 @@
       j4-dmenu-desktop
       libimobiledevice
       ifuse
+      kmscon
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
@@ -198,6 +202,7 @@
     enable = true;
     enableSSHSupport = true;
   };
+  programs.amnezia-vpn.enable = true;
 
   programs.steam.enable = true;
   programs.steam.package = pkgs.steam.override {
@@ -219,6 +224,24 @@
     sudo.enable = false;
   };
 
+  services.kmscon = {
+    enable = true;
+    fonts = [
+      {
+        name = "Iosevka";
+        package = pkgs.iosevka;
+      }
+      {
+        name = "Noto Fonts Color Emoji";
+        package = pkgs.noto-fonts-color-emoji;
+      }
+      {
+        name = "Meslo LG";
+        package = pkgs.nerd-fonts.meslo-lg;
+      }
+    ];
+    useXkbConfig = true;
+  };
   services.upower.enable = true;
   services.udisks2.enable = true;
   services.usbmuxd.enable = true;
