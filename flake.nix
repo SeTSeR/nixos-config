@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nix-on-droid = {
-      url = "github:nix-community/nix-on-droid/release-24.05";
+      url = "github:nix-community/nix-on-droid/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
@@ -52,6 +52,9 @@
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs-stable { system = "aarch64-linux"; };
         modules = [ ./galaxy-s22/configuration.nix ];
+        extraSpecialArgs = {
+          nixpkgs = nixpkgs-stable;
+        };
       };
     };
 }
