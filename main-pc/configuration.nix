@@ -124,11 +124,12 @@
     isNormalUser = true;
     extraGroups = [
       "dialout"
-      "wheel"
       "disk"
       "docker"
+      "input"
       "kvm"
       "video"
+      "wheel"
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       firefox
@@ -150,7 +151,6 @@
       j4-dmenu-desktop
       libimobiledevice
       ifuse
-      kmscon
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
@@ -225,7 +225,7 @@
   };
 
   services.kmscon = {
-    enable = true;
+    enable = false;
     fonts = [
       {
         name = "Iosevka";
