@@ -130,7 +130,7 @@
       "kvm"
       "video"
       "wheel"
-    ]; # Enable ‘sudo’ for the user.
+    ]; # Enable ‘run0’ for the user.
     packages = with pkgs; [
       firefox
       tree
@@ -154,18 +154,21 @@
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
+          ement
           nix-mode
           haskell-emacs
           haskell-mode
           org
+          pdf-tools
+          powershell
           rustic
           epkgs.melpaPackages.telega
-          ement
           tree-sitter-langs
           vterm
         ]
       ))
     ];
+    shell = pkgs.powershell;
   };
 
   # List packages installed in system profile. To search, run:
