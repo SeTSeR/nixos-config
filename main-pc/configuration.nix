@@ -151,6 +151,7 @@
       j4-dmenu-desktop
       libimobiledevice
       ifuse
+      gajim
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
