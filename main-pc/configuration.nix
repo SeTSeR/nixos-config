@@ -161,7 +161,6 @@
           haskell-mode
           org
           pdf-tools
-          powershell
           rustic
           epkgs.melpaPackages.telega
           tree-sitter-langs
@@ -169,7 +168,6 @@
         ]
       ))
     ];
-    shell = pkgs.powershell;
   };
 
   # List packages installed in system profile. To search, run:
