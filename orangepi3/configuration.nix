@@ -151,29 +151,6 @@
     extraSetFlags = [ "--advertise-routes=192.168.31.0/24" ];
   };
   services.adguardhome.enable = true;
-  services.xrdp = {
-    enable = true;
-    openFirewall = true;
-    defaultWindowManager = "${pkgs.dwm}/bin/dwm";
-  };
-  services.xserver.windowManager.dwm.enable = true;
-  services.zapret = {
-    enable = true;
-    params = [
-      "--dpi-desync=fakedsplit"
-      "--dpi-desync-fooling=ts"
-      "--dpi-desync-split-pos=1"
-    ];
-    whitelist = [
-      "youtube.com"
-      "googlevideo.com"
-      "ytimg.com"
-      "youtu.be"
-      "matrix.org"
-      "discord.com"
-      "discordapp.com"
-    ];
-  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
