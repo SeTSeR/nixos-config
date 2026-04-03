@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "ewm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774957225,
+        "narHash": "sha256-RSrw5EtfORiHJq0ZAX/T4jgrleZ4vyFSHNIbpXCf2Zs=",
+        "rev": "dde6134e380dc3074fa22494d689722a5c4af1a9",
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/ezemtsov/ewm/archive/dde6134e380dc3074fa22494d689722a5c4af1a9.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://codeberg.org/ezemtsov/ewm/archive/master.tar.gz"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -177,6 +195,7 @@
     },
     "root": {
       "inputs": {
+        "ewm": "ewm",
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",

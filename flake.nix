@@ -12,6 +12,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ewm = {
+      url = "https://codeberg.org/ezemtsov/ewm/archive/master.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -21,6 +25,7 @@
       nixpkgs-stable,
       nix-on-droid,
       sops-nix,
+      ewm,
     }:
     {
       nixosConfigurations = {
@@ -29,6 +34,7 @@
           modules = [
             ./main-pc/configuration.nix
             sops-nix.nixosModules.sops
+            ewm.nixosModules.default
           ];
           specialArgs = {
             inherit self nixpkgs;

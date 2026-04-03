@@ -10,8 +10,27 @@
   nixpkgs,
   ...
 }:
-
-{
+let emacsPkg = 
+    ((pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages (
+      epkgs: with epkgs; [
+        async
+        config.programs.ewm.ewmPackage
+        eat
+        ement
+        nix-mode
+        gptel
+        gptel-agent
+        haskell-emacs
+        haskell-mode
+        org
+        pdf-tools
+        rustic
+        epkgs.melpaPackages.telega
+        tree-sitter-langs
+        vterm
+      ]
+    ));
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -128,45 +147,32 @@
       "docker"
       "input"
       "kvm"
+      "seat"
       "video"
       "wheel"
     ]; # Enable ‘run0’ for the user.
     packages = with pkgs; [
-      firefox
-      tree
-      ffmpeg-full
-      nvtopPackages.amd
-      rdesktop
-      openmw
-      git
       bemenu
-      wl-clipboard
+      emacsPkg
+      ffmpeg-full
+      firefox
       flameshot
+      gajim
+      git
+      ifuse
+      j4-dmenu-desktop
+      kitty
+      libimobiledevice
       mako
-      swaylock
+      nvtopPackages.amd
+      openmw
+      poweralertd
+      rdesktop
       s6
       s6-rc
-      poweralertd
-      kitty
-      j4-dmenu-desktop
-      libimobiledevice
-      ifuse
-      gajim
-      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
-        epkgs: with epkgs; [
-          async
-          ement
-          nix-mode
-          haskell-emacs
-          haskell-mode
-          org
-          pdf-tools
-          rustic
-          epkgs.melpaPackages.telega
-          tree-sitter-langs
-          vterm
-        ]
-      ))
+      swaylock
+      tree
+      wl-clipboard
     ];
   };
 
@@ -206,6 +212,10 @@
   };
   programs.amnezia-vpn.enable = true;
 
+  programs.ewm = {
+    enable = true;
+    emacsPackage = emacsPkg;
+  };
   programs.steam.enable = true;
   programs.steam.package = pkgs.steam.override {
     extraLibraries = pkgs: [ pkgs.pkgsi686Linux.gperftools ];
