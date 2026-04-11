@@ -2,6 +2,10 @@
   description = "A NixOS configuration flake";
 
   inputs = {
+    ewm = {
+      url = "https://codeberg.org/ezemtsov/ewm/archive/master.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nix-on-droid = {
@@ -12,20 +16,16 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ewm = {
-      url = "https://codeberg.org/ezemtsov/ewm/archive/master.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     {
       self,
+      ewm,
       nixpkgs,
       nixpkgs-stable,
       nix-on-droid,
       sops-nix,
-      ewm,
     }:
     {
       nixosConfigurations = {
@@ -33,8 +33,8 @@
           system = "x86_64-linux";
           modules = [
             ./main-pc/configuration.nix
-            sops-nix.nixosModules.sops
             ewm.nixosModules.default
+            sops-nix.nixosModules.sops
           ];
           specialArgs = {
             inherit self nixpkgs;

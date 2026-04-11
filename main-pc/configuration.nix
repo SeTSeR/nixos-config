@@ -25,7 +25,7 @@ let emacsPkg =
         org
         pdf-tools
         rustic
-        epkgs.melpaPackages.telega
+        melpaPackages.telega
         tree-sitter-langs
         vterm
       ]
@@ -152,6 +152,7 @@ in {
       "wheel"
     ]; # Enable ‘run0’ for the user.
     packages = with pkgs; [
+      amneziawg-tools
       bemenu
       emacsPkg
       ffmpeg-full
@@ -163,15 +164,11 @@ in {
       j4-dmenu-desktop
       kitty
       libimobiledevice
-      mako
-      nvtopPackages.amd
-      openmw
       poweralertd
       rdesktop
       s6
       s6-rc
       swaylock
-      tree
       wl-clipboard
     ];
   };
@@ -210,15 +207,10 @@ in {
     enable = true;
     enableSSHSupport = true;
   };
-  programs.amnezia-vpn.enable = true;
 
   programs.ewm = {
     enable = true;
     emacsPackage = emacsPkg;
-  };
-  programs.steam.enable = true;
-  programs.steam.package = pkgs.steam.override {
-    extraLibraries = pkgs: [ pkgs.pkgsi686Linux.gperftools ];
   };
 
   programs.sway = {
