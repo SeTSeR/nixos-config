@@ -63,6 +63,7 @@ in
     rclone
     bash-completion
     sshd-start
+    pkgs.emacsPackages.melpaPackages.telega
     (emacs.pkgs.withPackages (
       epkgs: with epkgs; [
         org
