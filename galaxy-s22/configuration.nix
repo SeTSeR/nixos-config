@@ -35,47 +35,50 @@ let
 in
 {
   # Simply install just the packages
-  environment.packages = with pkgs; [
-    # User-facing stuff that you really really want to have
-    vim # or some other editor, e.g. nano or neovim
+  environment.packages =
+    with pkgs;
+    [
+      # User-facing stuff that you really really want to have
+      vim # or some other editor, e.g. nano or neovim
 
-    # Some common stuff that people expect to have
-    procps
-    killall
-    diffutils
-    findutils
-    util-linux
-    tzdata
-    hostname
-    man
-    gawk
-    gnugrep
-    gnupg
-    gnused
-    gnutar
-    bzip2
-    gzip
-    xz
-    zip
-    unzip
-    openssh
-    mosh
-    git
-    rclone
-    bash-completion
-    sshd-start
-  ] ++ (with pkgsUnstable; [
-    emacsPackages.melpaPackages.telega
-    (emacs.pkgs.withPackages (
-      epkgs: with epkgs; [
-        org
-        melpaPackages.telega
-        tree-sitter
-        vterm
-        nix-mode
-      ]
-    ))
-  ]);
+      # Some common stuff that people expect to have
+      procps
+      killall
+      diffutils
+      findutils
+      util-linux
+      tzdata
+      hostname
+      man
+      gawk
+      gnugrep
+      gnupg
+      gnused
+      gnutar
+      bzip2
+      gzip
+      xz
+      zip
+      unzip
+      openssh
+      mosh
+      git
+      rclone
+      bash-completion
+      sshd-start
+    ]
+    ++ (with pkgsUnstable; [
+      emacsPackages.melpaPackages.telega
+      (emacs.pkgs.withPackages (
+        epkgs: with epkgs; [
+          org
+          melpaPackages.telega
+          tree-sitter
+          vterm
+          nix-mode
+        ]
+      ))
+    ]);
 
   android-integration = {
     termux-open.enable = true;

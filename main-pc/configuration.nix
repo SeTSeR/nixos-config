@@ -10,8 +10,9 @@
   nixpkgs,
   ...
 }:
-let emacsPkg = 
-    ((pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages (
+let
+  emacsPkg = (
+    (pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages (
       epkgs: with epkgs; [
         async
         config.programs.ewm.ewmPackage
@@ -29,8 +30,10 @@ let emacsPkg =
         tree-sitter-langs
         vterm
       ]
-    ));
-in {
+    )
+  );
+in
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
