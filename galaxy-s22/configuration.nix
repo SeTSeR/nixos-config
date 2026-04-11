@@ -1,5 +1,6 @@
 {
   nixpkgs,
+  pkgsUnstable,
   config,
   lib,
   pkgs,
@@ -63,7 +64,8 @@ in
     rclone
     bash-completion
     sshd-start
-    pkgs.emacsPackages.melpaPackages.telega
+  ] ++ (with pkgsUnstable; [
+    emacsPackages.melpaPackages.telega
     (emacs.pkgs.withPackages (
       epkgs: with epkgs; [
         org
@@ -73,7 +75,7 @@ in
         nix-mode
       ]
     ))
-  ];
+  ]);
 
   android-integration = {
     termux-open.enable = true;

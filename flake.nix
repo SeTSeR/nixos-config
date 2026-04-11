@@ -60,6 +60,7 @@
         modules = [ ./galaxy-s22/configuration.nix ];
         extraSpecialArgs = {
           nixpkgs = nixpkgs-stable;
+          pkgsUnstable = import nixpkgs { system = "aarch64-linux"; };
         };
       };
     };
