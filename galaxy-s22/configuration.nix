@@ -1,6 +1,4 @@
 {
-  nixpkgs,
-  pkgsUnstable,
   config,
   lib,
   pkgs,
@@ -32,6 +30,8 @@ let
     echo "Starting sshd on port ${toString port}"
     ${pkgs.openssh}/bin/sshd -f "${sshdDirectory}/config"
   '';
+  sources = import ../npins;
+  pkgsUnstable = import sources.nixpkgs {};
 in
 {
   # Simply install just the packages
@@ -66,9 +66,6 @@ in
       rclone
       bash-completion
       sshd-start
-    ]
-    ++ (with pkgsUnstable; [
-      emacsPackages.melpaPackages.telega
       (emacs.pkgs.withPackages (
         epkgs: with epkgs; [
           org
@@ -78,6 +75,9 @@ in
           nix-mode
         ]
       ))
+    ]
+    ++ (with pkgsUnstable; [
+      emacsPackages.melpaPackages.telega
     ]);
 
   android-integration = {
@@ -119,9 +119,11 @@ in
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    registry = {
-      np.flake = nixpkgs;
+    registry.nipkgs.to = {
+      type = "path";
+      path = sources.nixpkgs;
     };
+    nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
 
   user = {

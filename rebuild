@@ -10,13 +10,25 @@ hostname=$(hostname)
 cmd=${1:-switch}
 shift
 
-nixpkgs_pin=$(nix eval --raw -f npins/default.nix nixpkgs)
-nix_path="nixpkgs=${nixpkgs_pin}:nixos-config=${PWD}/${hostname}/configuration.nix"
+pkgs="nixpkgs"
+if [ "$hostname" = "localhost" ]; then
+    pkgs="nixpkgs-stable"
+    # nix-on-droid does not allow changing hostname
+    hostname="galaxy-s22"
+fi
+
+config_path="${PWD}/${hostname}/configuration.nix"
+
+nixpkgs_pin=$(nix eval --raw -f npins/default.nix "$pkgs")
+nix_path="nixpkgs=${nixpkgs_pin}"
 
 if [ "$hostname" = "galaxy-s22" ]; then
-    env NIX_PATH="${nix_path}" nix-on-droid "$cmd" "$@"
+    nix_on_droid_pin=$(nix eval --raw -f npins/default.nix nix-on-droid)
+    nix_path="${nix_path}:nix-on-droid=${nix_on_droid_pin}"
+    env NIX_PATH="${nix_path}" nix-on-droid "$cmd" -f "${config_path}" "$@"
 else
-    # without --fast, nixos-rebuild will compile nix and use the compiled nix to
+    nix_path="${nix_path}:nixos-config=${PWD}/${hostname}/configuration.nix"
+    # without --no-reexec, nixos-rebuild will compile nix and use the compiled nix to
     # evaluate the config, wasting several seconds
     env NIX_PATH="${nix_path}" nixos-rebuild "$cmd" --no-reexec "$@"
 fi
