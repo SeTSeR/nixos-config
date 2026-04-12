@@ -6,8 +6,6 @@
   config,
   lib,
   pkgs,
-  self,
-  nixpkgs,
   ...
 }:
 let
@@ -32,11 +30,15 @@ let
       ]
     )
   );
+  sources = import ../npins;
 in
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../pinning.nix
+    "${sources.ewm}/nix/service.nix"
+    "${sources.sops-nix}/modules/sops"
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -91,15 +93,7 @@ in
     useXkbConfig = true;
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
   nix.settings.trusted-users = [ "@wheel" ];
-  nix.registry = {
-    self.flake = self;
-    np.flake = nixpkgs;
-  };
   nixpkgs = {
     config.allowUnfree = true;
   };
