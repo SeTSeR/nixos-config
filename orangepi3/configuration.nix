@@ -9,10 +9,15 @@
   pkgs,
   ...
 }:
+let
+  sources = import ../npins;
+in
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../pinning.nix
+    "${sources.sops-nix}/modules/sops"
   ];
 
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
@@ -26,14 +31,6 @@
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = import ./overlay.nix;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.registry = {
-    self.flake = self;
-    np.flake = nixpkgs;
-  };
 
   sops = {
     age = {
