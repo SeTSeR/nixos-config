@@ -10,9 +10,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "e58568c7e8312fb7683a8be0ebe23d6d04e78821",
-      "url": "https://codeberg.org/ezemtsov/ewm/archive/e58568c7e8312fb7683a8be0ebe23d6d04e78821.tar.gz",
-      "hash": "sha256-vqYdsodcPn5tGN2XYx3UK5ZbGzTPiVVj8bBCYfTRWAg="
+      "revision": "69aa217dd0926d5ab2f35b58d4063d697591cd5d",
+      "url": "https://codeberg.org/ezemtsov/ewm/archive/69aa217dd0926d5ab2f35b58d4063d697591cd5d.tar.gz",
+      "hash": "sha256-cMYAC+uoOIGBY3179B4DRQeNZPtZQBcLUhEH80hXLTA="
     },
     "nix-on-droid": {
       "type": "Git",
@@ -30,14 +30,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre978121.8c11f88bb957/nixexprs.tar.xz",
-      "hash": "sha256-7mxOGh6IY0czdXv0Ifx8WW4K8ERSub2msZkWZgvzv3A="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre980800.566acc07c54d/nixexprs.tar.xz",
+      "hash": "sha256-bo9Hbl5yPjDRldsn1Stnbsmn/nPF0cVlowuLSGHduuA="
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.9067.54170c54449e/nixexprs.tar.xz",
-      "hash": "sha256-VLpXI9ENHktgKNXHXFLFLLic6crXitfAcbogAOMG35s="
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.9320.1766437c5509/nixexprs.tar.xz",
+      "hash": "sha256-lLXp2pPsSspaqyX8mNzdHDauRUKjui6HL00Ngjqspik="
     },
     "sops-nix": {
       "type": "Git",
@@ -48,9 +48,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d2e8438d5886e92bc5e7c40c035ab6cae0c41f76",
-      "url": "https://github.com/Mic92/sops-nix/archive/d2e8438d5886e92bc5e7c40c035ab6cae0c41f76.tar.gz",
-      "hash": "sha256-0E9PohY/VuESLq0LR4doaH7hTag513sDDW5n5qmHd1Q="
+      "revision": "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd",
+      "url": "https://github.com/Mic92/sops-nix/archive/d4971dd58c6627bfee52a1ad4237637c0a2fb0cd.tar.gz",
+      "hash": "sha256-Zm6bxLNnEOYuS/SzrAGsYuXSwk3cbkRQZY0fJnk8a5M="
     }
   },
   "version": 7
