@@ -72,19 +72,20 @@ in
       "wheel"
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      luakit
-      tree
-      screen
+      amneziawg-tools
       dmenu
       git
+      luakit
+      screen
+      tree
       wiringOP
       ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
         epkgs: with epkgs; [
           async
+          ement
+          melpaPackages.telega
           nix-mode
           org
-          epkgs.melpaPackages.telega
-          ement
           tree-sitter-langs
           vterm
         ]
