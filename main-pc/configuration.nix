@@ -15,18 +15,19 @@ let
         async
         config.programs.ewm.ewmPackage
         eat
+        edit-server
         ement
-        nix-mode
         gptel
         gptel-agent
         haskell-emacs
         haskell-mode
+        journalctl-mode
+        melpaPackages.telega
+        nix-mode
         org
         pdf-tools
         rustic
-        melpaPackages.telega
         tree-sitter-langs
-        vterm
       ]
     )
   );
