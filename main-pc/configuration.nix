@@ -162,8 +162,6 @@ in
       libimobiledevice
       poweralertd
       rdesktop
-      s6
-      s6-rc
       swaylock
       wl-clipboard
     ];
@@ -208,12 +206,6 @@ in
     enable = true;
     emacsPackage = emacsPkg;
   };
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-  programs.waybar.enable = true;
 
   security = {
     apparmor = {
