@@ -10,9 +10,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9b20f4d9561a88da70e1fe2cf4899fbed75cff1d",
-      "url": "https://codeberg.org/ezemtsov/ewm/archive/9b20f4d9561a88da70e1fe2cf4899fbed75cff1d.tar.gz",
-      "hash": "sha256-OfNG6o0+eIk3yIOmTXrXQZZzcs71cYtImrWe6nuOM1A="
+      "revision": "4956e7631fa40cd71ec1cf00a6473056c9588fca",
+      "url": "https://codeberg.org/ezemtsov/ewm/archive/4956e7631fa40cd71ec1cf00a6473056c9588fca.tar.gz",
+      "hash": "sha256-oDQmIwlam3yhBdclnIK4rpOFD6Yh7IBR0Fe84/p1eys="
     },
     "nix-on-droid": {
       "type": "Git",
@@ -30,14 +30,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre988811.ebc08544afa7/nixexprs.tar.xz",
-      "hash": "sha256-fUlUlthbjH+ppUqSdGoLFM+GbtuxcDhp8V8ouXEAgow="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre993588.68a8af93ff42/nixexprs.tar.xz",
+      "hash": "sha256-Z5mLDoR8p0d7psIY4LnyaHHRykXngMcWXTZ9JWvtvPc="
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.10031.755f5aa91337/nixexprs.tar.xz",
-      "hash": "sha256-KswuI0LUh0/6wZsn8YvGo5DHUoe7xuSyY3iGCuQ7i6k="
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.10470.0c88e1f2bdb9/nixexprs.tar.xz",
+      "hash": "sha256-amc4Y3GF3+anUi7IJeLVzf7hVqLb3ZqCGzYtkVyp7Qw="
     },
     "sops-nix": {
       "type": "Git",
@@ -48,9 +48,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "8eaee5c45428b28b8c47a83e4c09dccec5f279b5",
-      "url": "https://github.com/Mic92/sops-nix/archive/8eaee5c45428b28b8c47a83e4c09dccec5f279b5.tar.gz",
-      "hash": "sha256-bc+ZZCmOTNq86/svGnw0tVpH7vJaLYvGLLKFYP08Q8E="
+      "revision": "c591bf665727040c6cc5cb409079acb22dcce33c",
+      "url": "https://github.com/Mic92/sops-nix/archive/c591bf665727040c6cc5cb409079acb22dcce33c.tar.gz",
+      "hash": "sha256-VfGRo1qTBKOe3s2gOv8LSoA6Fk19PvBlwQ1ECN0Evn8="
     }
   },
   "version": 7
