@@ -10,9 +10,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "4956e7631fa40cd71ec1cf00a6473056c9588fca",
-      "url": "https://codeberg.org/ezemtsov/ewm/archive/4956e7631fa40cd71ec1cf00a6473056c9588fca.tar.gz",
-      "hash": "sha256-oDQmIwlam3yhBdclnIK4rpOFD6Yh7IBR0Fe84/p1eys="
+      "revision": "e490d80d3ef426eeb15a6c67cfb6e81b2ea5c3db",
+      "url": "https://codeberg.org/ezemtsov/ewm/archive/e490d80d3ef426eeb15a6c67cfb6e81b2ea5c3db.tar.gz",
+      "hash": "sha256-Se6bX+54hB9jR/pyi6vR0IdWOOEZ+iKaA000SMT8M/E="
     },
     "nix-on-droid": {
       "type": "Git",
@@ -30,14 +30,14 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre993588.68a8af93ff42/nixexprs.tar.xz",
-      "hash": "sha256-Z5mLDoR8p0d7psIY4LnyaHHRykXngMcWXTZ9JWvtvPc="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre998133.8a1b0127302e/nixexprs.tar.xz",
+      "hash": "sha256-9yR9UAI7ZI5a98+eTkNFl8XogSQxU8bF3+pAU5zvuYI="
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.10470.0c88e1f2bdb9/nixexprs.tar.xz",
-      "hash": "sha256-amc4Y3GF3+anUi7IJeLVzf7hVqLb3ZqCGzYtkVyp7Qw="
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.10684.8fd9daa3db09/nixexprs.tar.xz",
+      "hash": "sha256-Wnep4aNfC1Mo18h9gHMDCkEApbLgSlKvS33AwHANChE="
     },
     "sops-nix": {
       "type": "Git",
