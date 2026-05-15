@@ -23,7 +23,7 @@ nixpkgs_pin=$(nix-instantiate --eval --raw -A "$pkgs" npins/default.nix)
 nix_path="nixpkgs=${nixpkgs_pin}"
 
 if [ "$hostname" = "galaxy-s22" ]; then
-    nix_on_droid_pin=$(nix-instantiate --eval --raw -A "$pkgs" npins/default.nix)
+    nix_on_droid_pin=$(nix-instantiate --eval --raw -A nix-on-droid npins/default.nix)
     nix_path="${nix_path}:nix-on-droid=${nix_on_droid_pin}"
     env NIX_PATH="${nix_path}" nix-on-droid "$cmd" -f "${config_path}" "$@"
 else
