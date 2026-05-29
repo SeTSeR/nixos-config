@@ -16,7 +16,6 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../pinning.nix
     "${sources.sops-nix}/modules/sops"
   ];
 
@@ -29,8 +28,16 @@ in
   hardware.enableRedistributableFirmware = true;
   hardware.graphics.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = import ./overlay.nix;
+  nix = {
+    channel.enable = false;
+    nixPath = [ "nixpkgs=${sources.nixpkgs}" ];
+    settings.trusted-users = [ "@wheel" ];
+  };
+
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = import ./overlay.nix;
+  };
 
   sops = {
     age = {
