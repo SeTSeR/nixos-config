@@ -116,14 +116,7 @@ in
 
   # Set up nix for flakes
   nix = {
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-    registry.nipkgs.to = {
-      type = "path";
-      path = sources.nixpkgs;
-    };
-    nixPath = [ "nixpkgs=flake:nixpkgs" ];
+    nixPath = [ "nixpkgs=${sources.nixpkgs}" ];
   };
 
   user = {
