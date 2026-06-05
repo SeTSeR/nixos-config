@@ -106,6 +106,7 @@ in
     noto-fonts-color-emoji
     font-awesome
     nerd-fonts.meslo-lg
+    iosevka
   ];
 
   hardware.acpilight.enable = true;
@@ -205,20 +206,7 @@ in
 
   services.kmscon = {
     enable = false;
-    fonts = [
-      {
-        name = "Iosevka";
-        package = pkgs.iosevka;
-      }
-      {
-        name = "Noto Fonts Color Emoji";
-        package = pkgs.noto-fonts-color-emoji;
-      }
-      {
-        name = "Meslo LG";
-        package = pkgs.nerd-fonts.meslo-lg;
-      }
-    ];
+    config.font-name = "Iosevka";
     useXkbConfig = true;
   };
   services.pipewire = {
