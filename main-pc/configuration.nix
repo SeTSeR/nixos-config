@@ -21,6 +21,7 @@ let
         gptel-agent
         haskell-emacs
         haskell-mode
+        jabber
         journalctl-mode
         melpaPackages.telega
         nix-mode
