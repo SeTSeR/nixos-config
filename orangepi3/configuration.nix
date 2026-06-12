@@ -81,6 +81,7 @@ in
     packages = with pkgs; [
       amneziawg-tools
       dmenu
+      dtach
       git
       luakit
       screen
