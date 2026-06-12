@@ -142,6 +142,7 @@ in
       amneziawg-tools
       bemenu
       emacsPkg
+      far2l
       ffmpeg-full
       firefox
       flameshot
