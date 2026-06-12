@@ -14,9 +14,11 @@ let
       epkgs: with epkgs; [
         async
         config.programs.ewm.ewmPackage
+        detached
         eat
         edit-server
         ement
+        gnuplot
         gptel
         gptel-agent
         haskell-emacs
