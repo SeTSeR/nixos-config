@@ -141,6 +141,7 @@ in
     packages = with pkgs; [
       amneziawg-tools
       bemenu
+      dtach
       emacsPkg
       far2l
       ffmpeg-full
@@ -208,6 +209,10 @@ in
     sudo.enable = false;
   };
 
+  services.dunst = {
+    enable = true;
+    enableWayland = true;
+  };
   services.kmscon = {
     enable = false;
     config.font-name = "Iosevka";
