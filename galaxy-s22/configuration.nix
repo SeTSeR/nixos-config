@@ -31,7 +31,7 @@ let
     ${pkgs.openssh}/bin/sshd -f "${sshdDirectory}/config"
   '';
   sources = import ../npins;
-  pkgsUnstable = import sources.nixpkgs {};
+  pkgsUnstable = import sources.nixpkgs { };
 in
 {
   # Simply install just the packages
