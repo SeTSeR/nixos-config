@@ -1,0 +1,16 @@
+# Build
+#+begin_src bash
+./rebuild build
+#+end_src
+
+# Switch
+#+begin_src bash
+./rebuild switch [--sudo]
+#+end_src
+
+# Format
+#+begin_src bash
+nix-shell -p nixfmt-tree --run treefmt
+#+end_src
+
+Hostname setting is not supported yet, config is build for machine with current hostname.
