@@ -10,9 +10,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1e6ad0c9c8f592e25bb3976f353cc587a5ad878c",
-      "url": "https://codeberg.org/ezemtsov/ewm/archive/1e6ad0c9c8f592e25bb3976f353cc587a5ad878c.tar.gz",
-      "hash": "sha256-gBOiFXK05aFKelxvEAOq2IYAF/qvj8W0pC+WMmZtptg="
+      "revision": "370b698320cdee06dbdeb243db6036d1a144a59e",
+      "url": "https://codeberg.org/ezemtsov/ewm/archive/370b698320cdee06dbdeb243db6036d1a144a59e.tar.gz",
+      "hash": "sha256-mOrAs8r1MpQuGDFbMRHUXg4AKbj9AgmVHShCR2/JeaA="
     },
     "nix-on-droid": {
       "type": "Git",
@@ -30,14 +30,16 @@
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1017567.3e41b24abd26/nixexprs.tar.xz",
-      "hash": "sha256-eM+l4TVD26SNoEjcxRcpispqZi5Qrqj/G0ZY4LfqwfM="
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1020805.89570f24e97e/nixexprs.tar.xz",
+      "hash": "sha256-8d2wCNWKnd86GzKZvbuqqlS+HqMrheXkvRf0qGJ/oA0="
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-25.11",
-      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.12168.d6df3513510a/nixexprs.tar.xz",
-      "hash": "sha256-ptZx/lEknBXBijfdXJdzJfZEQf7xq9umG3szmM3j5vo="
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixos/25.11/nixos-25.11.12378.03c72920da82/nixexprs.tar.xz",
+      "hash": "sha256-yqItmIgvQXe594kjeUqOIW/1P+e55wXA8kt9DOlUPRE="
     },
     "sops-nix": {
       "type": "Git",
@@ -48,10 +50,10 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "9ed65852b6257fbeae4355bc24ecfea307ca759a",
-      "url": "https://github.com/Mic92/sops-nix/archive/9ed65852b6257fbeae4355bc24ecfea307ca759a.tar.gz",
-      "hash": "sha256-Gq8KNx5A7hBB3uGJaj6eQfLDIz5YdLu92gqBcvHvoUo="
+      "revision": "56b24064fdcaedca53553b1a6d607fd23b613a24",
+      "url": "https://github.com/Mic92/sops-nix/archive/56b24064fdcaedca53553b1a6d607fd23b613a24.tar.gz",
+      "hash": "sha256-478kKQBvK6SYTOdN2h9jhKJv94nbXRbFMfuL1WshErg="
     }
   },
-  "version": 7
+  "version": 8
 }
