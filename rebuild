@@ -27,7 +27,7 @@ if [ "$hostname" = "galaxy-s22" ]; then
     nix_path="${nix_path}:nix-on-droid=${nix_on_droid_pin}"
     env NIX_PATH="${nix_path}" nix-on-droid "$cmd" -f "${config_path}" "$@"
 else
-    nix_path="${nix_path}:nixos-config=${PWD}/${hostname}/configuration.nix"
+    nix_path="${nix_path}:nixos-config=${config_path}"
     # without --no-reexec, nixos-rebuild will compile nix and use the compiled nix to
     # evaluate the config, wasting several seconds
     env NIX_PATH="${nix_path}" nixos-rebuild "$cmd" --no-reexec "$@"
