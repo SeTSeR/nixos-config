@@ -103,6 +103,7 @@ in
   };
   nixpkgs = {
     config.allowUnfree = true;
+    overlays = [ (import ./overlay.nix) ];
   };
 
   fonts.packages = with pkgs; [
