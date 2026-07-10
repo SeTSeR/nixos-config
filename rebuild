@@ -12,7 +12,6 @@ shift
 
 pkgs="nixpkgs"
 if [ "$hostname" = "localhost" ]; then
-    pkgs="nixpkgs-stable"
     # nix-on-droid does not allow changing hostname
     hostname="galaxy-s22"
 fi
