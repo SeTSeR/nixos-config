@@ -215,8 +215,11 @@ in
     enableWayland = true;
   };
   services.kmscon = {
-    enable = false;
-    config.font-name = "Iosevka";
+    enable = true;
+    config = {
+      font-name = "Iosevka";
+      libseat = false;
+    };
     useXkbConfig = true;
   };
   services.pipewire = {
