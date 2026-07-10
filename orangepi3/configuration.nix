@@ -24,7 +24,6 @@ in
   # Enables the generation of /boot/extlinux/extlinux.conf
   boot.loader.generic-extlinux-compatible.enable = true;
 
-  hardware.bluetooth.enable = true;
   hardware.enableRedistributableFirmware = true;
   hardware.graphics.enable = true;
 
@@ -80,24 +79,11 @@ in
     ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       amneziawg-tools
-      dmenu
       dtach
       git
-      luakit
       screen
       tree
       wiringOP
-      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (
-        epkgs: with epkgs; [
-          async
-          ement
-          melpaPackages.telega
-          nix-mode
-          org
-          tree-sitter-langs
-          vterm
-        ]
-      ))
     ];
   };
 
