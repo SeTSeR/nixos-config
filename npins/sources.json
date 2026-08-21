@@ -10,9 +10,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "dc5eb71642a9def5f2ac19005d3209ae092f45d9",
-      "url": "https://codeberg.org/ezemtsov/ewm/archive/dc5eb71642a9def5f2ac19005d3209ae092f45d9.tar.gz",
-      "hash": "sha256-LAjLmdzkxEStiMRjKd4Ze4c7eJ/R7whMnfsCrZSLoMc="
+      "revision": "9a0adec176ef2169568893caad131d74630fd46f",
+      "url": "https://codeberg.org/ezemtsov/ewm/archive/9a0adec176ef2169568893caad131d74630fd46f.tar.gz",
+      "hash": "sha256-p6Gur6a37he4GWZk1ZuqeT+1mF1oGfATWW6YLQzY8f4="
     },
     "nix-on-droid": {
       "type": "Git",
@@ -31,8 +31,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1052792.044bfe75bfe4/nixexprs.tar.xz",
-      "hash": "sha256-Cwffw7dPM56d8spt4/queFQ1cKg69D9qrsp+wfwKvfo="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1058374.07e1d92cdc0e/nixexprs.tar.xz",
+      "hash": "sha256-LS/aXgJh+/1UgtrOxdS5Wum/PgmQYa1AMFZHdH+xGyo="
     },
     "sops-nix": {
       "type": "Git",
